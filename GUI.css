@@ -1,0 +1,33 @@
+h1 {
+    color: rgb(142, 195, 195);
+}
+
+
+
+* {
+    text-align: center;
+}
+
+div{
+    margin-bottom: 37px ;
+}
+
+
+table, tr, td{
+    border: 1px solid;
+    height: 30px;
+    font-size: 15px;
+
+}
+
+table{
+
+    background-color: aquamarine;
+    width:80%;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+
+}
