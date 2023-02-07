@@ -1,99 +1,93 @@
-html{
-    font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
-}
+<html>
+    <!DOCTYPE html>
+    <script>
+        var Breakfast = new Array(10);
+        var Lunch = new Array(10);
+        var Dinner = new Array(10);
+    </script>
+
+    <link rel="stylesheet" href="GUI.css">
+
+    <head>
+        
+        <title>Auto Menu</title>
+        <h1>The Auto Menu</h1>
+        <div>It will help you to create a daily menu</div>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,100&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <div id = "input">
+            <button class="button-74" role="button">Button 74</button></br>
+            <button class="button-74" role="button">Button 74</button></br>
+            <button class="button-74" role="button">Button 74</button></br>
+            <button class="button-74" role="button">Button 74</button></br>
+        
+        </div>
+
+        <div>
+
+            <table>
+
+                <tr>
+                    <th><time>xx/xx/xxxx</time></th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+                <tr>
+                    <th>Monday</th>
+                    <td><script>document.write(Breakfast[0])</script></td>
+                    <td><script>document.write(Lunch[0])</script></td>
+                    <td><script>document.write(Dinner[0])</script></td>
+                </tr>
+                <tr>
+                    <th>Tuesday</th>
+                    <td><script>document.write(Breakfast[1])</script></td>
+                    <td><script>document.write(Lunch[1])</script></td>
+                    <td><script>document.write(Dinner[1])</script></td>
+                </tr>
+                <tr>
+                    <th>Wednesday</th>
+                    <td><script>document.write(Breakfast[2])</script></td>
+                    <td><script>document.write(Lunch[2])</script></td>
+                    <td><script>document.write(Dinner[2])</script></td>
+                </tr>
+                <tr>
+                    <th>Thursday</th>
+                    <td><script>document.write(Breakfast[3])</script></td>
+                    <td><script>document.write(Lunch[3])</script></td>
+                    <td><script>document.write(Dinner[3])</script></td>
+                </tr>
+                <tr>
+                    <th>Friday</th>
+                    <td><script>document.write(Breakfast[4])</script></td>
+                    <td><script>document.write(Lunch[4])</script></td>
+                    <td><script>document.write(Dinner[4])</script></td>
+                </tr>
+                <tr>
+                    <th>Saturday</th>
+                    <td><script>document.write(Breakfast[5])</script></td>
+                    <td><script>document.write(Lunch[5])</script></td>
+                    <td><script>document.write(Dinner[5])</script></td>
+                </tr>
+                <tr>
+                    <th>Sunday</th>
+                    <td><script>document.write(Breakfast[6])</script></td>
+                    <td><script>document.write(Lunch[6])</script></td>
+                    <td><script>document.write(Dinner[6])</script></td>
+                </tr>
+
+            </table>
+
+        </div>
 
 
-h1 {
-    color: rgb(142, 195, 195);
-    font-size: 50px;
-}
 
+    </body>
 
-
-* {
-    text-align: center;
-}
-
-div{
-    margin-bottom: 37px ;
-    font-size: 20px;
-}
-
-
-table, tr, td{
-    border: 1px solid;
-    font-size: 15px;
-
-}
-
-table{
-    background-color: #fbeee0;
-    border: 2px solid #422800;
-    border-radius: 30px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-    line-height: 50px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    max-width: 100%;
-    max-height: 100%;
-    min-width: fit-content;
-    min-height: fit-content;
-}
-
-
-
-
-th{
-    font-size: 18px;
-}
-
-
-
-
-
-
-
-
-.button-74 {
-  background-color: #fbeee0;
-  border: 2px solid #422800;
-  border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 0 18px;
-  line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.button-74:hover {
-  background-color: #fff;
-}
-
-.button-74:active {
-  box-shadow: #422800 2px 2px 0 0;
-  transform: translate(2px, 2px);
-}
-
-@media (min-width: 768px) {
-  .button-74 {
-    min-width: 120px;
-    padding: 0 25px;
-  }
-}
+</html>
