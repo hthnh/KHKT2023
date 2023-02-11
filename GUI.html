@@ -1,93 +1,198 @@
-<html>
-    <!DOCTYPE html>
-    <script>
-        var Breakfast = new Array(10);
-        var Lunch = new Array(10);
-        var Dinner = new Array(10);
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+  <script>
+    var Breakfast = new Array(10);
+    var Lunch = new Array(10);
+    var Dinner = new Array(10);
+  </script>
 
-    <link rel="stylesheet" href="GUI.css">
+  <link rel="stylesheet" href="GUI.css" />
+  <script src="scripts.js"></script>
 
-    <head>
-        
-        <title>Auto Menu</title>
-        <h1>The Auto Menu</h1>
-        <div>It will help you to create a daily menu</div>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,700;1,100&display=swap" rel="stylesheet">
+  <head>
+    <title>Auto Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    </head>
+  <body>
+    <div class="top">
+      <h1>Auto Daily Menu</h1>
+      <p>Giúp chúng ta làm thực đơn tự động hằng ngày</p>
+    </div>
 
-    <body>
+    <div class="main">
+      <div class="function">
+        <button class="button-74" role="button">Button 74</button> <br />
 
-        <div id = "input">
-            <button class="button-74" role="button">Button 74</button></br>
-            <button class="button-74" role="button">Button 74</button></br>
-            <button class="button-74" role="button">Button 74</button></br>
-            <button class="button-74" role="button">Button 74</button></br>
-        
-        </div>
+        <button class="button-74" role="button">Button 74</button> <br />
+        <button class="button-74" role="button">Button 74</button> <br />
+        <button class="button-74" role="button">Button 74</button> <br />
+      </div>
+          <input type="checkbox" id="show">
+          <label for="show" class="show-btn">View Form</label>
+      
+      <div class="menu">
+        <table>
+          <tr>
+            <th><time>xx/xx/xxxx</time></th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+          </tr>
+          <tr>
+            <th>Monday</th>
+            <td>
+              <script>
+                document.write(Breakfast[0]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[0]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[0]);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th>Tuesday</th>
+            <td>
+              <script>
+                document.write(Breakfast[1]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[1]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[1]);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th>Wednesday</th>
+            <td>
+              <script>
+                document.write(Breakfast[2]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[2]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[2]);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th>Thursday</th>
+            <td>
+              <script>
+                document.write(Breakfast[3]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[3]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[3]);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th>Friday</th>
+            <td>
+              <script>
+                document.write(Breakfast[4]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[4]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[4]);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th>Saturday</th>
+            <td>
+              <script>
+                document.write(Breakfast[5]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[5]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[5]);
+              </script>
+            </td>
+          </tr>
+          <tr>
+            <th>Sunday</th>
+            <td>
+              <script>
+                document.write(Breakfast[6]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Lunch[6]);
+              </script>
+            </td>
+            <td>
+              <script>
+                document.write(Dinner[6]);
+              </script>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
-        <div>
-
-            <table>
-
-                <tr>
-                    <th><time>xx/xx/xxxx</time></th>
-                    <th>Breakfast</th>
-                    <th>Lunch</th>
-                    <th>Dinner</th>
-                </tr>
-                <tr>
-                    <th>Monday</th>
-                    <td><script>document.write(Breakfast[0])</script></td>
-                    <td><script>document.write(Lunch[0])</script></td>
-                    <td><script>document.write(Dinner[0])</script></td>
-                </tr>
-                <tr>
-                    <th>Tuesday</th>
-                    <td><script>document.write(Breakfast[1])</script></td>
-                    <td><script>document.write(Lunch[1])</script></td>
-                    <td><script>document.write(Dinner[1])</script></td>
-                </tr>
-                <tr>
-                    <th>Wednesday</th>
-                    <td><script>document.write(Breakfast[2])</script></td>
-                    <td><script>document.write(Lunch[2])</script></td>
-                    <td><script>document.write(Dinner[2])</script></td>
-                </tr>
-                <tr>
-                    <th>Thursday</th>
-                    <td><script>document.write(Breakfast[3])</script></td>
-                    <td><script>document.write(Lunch[3])</script></td>
-                    <td><script>document.write(Dinner[3])</script></td>
-                </tr>
-                <tr>
-                    <th>Friday</th>
-                    <td><script>document.write(Breakfast[4])</script></td>
-                    <td><script>document.write(Lunch[4])</script></td>
-                    <td><script>document.write(Dinner[4])</script></td>
-                </tr>
-                <tr>
-                    <th>Saturday</th>
-                    <td><script>document.write(Breakfast[5])</script></td>
-                    <td><script>document.write(Lunch[5])</script></td>
-                    <td><script>document.write(Dinner[5])</script></td>
-                </tr>
-                <tr>
-                    <th>Sunday</th>
-                    <td><script>document.write(Breakfast[6])</script></td>
-                    <td><script>document.write(Lunch[6])</script></td>
-                    <td><script>document.write(Dinner[6])</script></td>
-                </tr>
-
-            </table>
-
-        </div>
 
 
+    <div class="container">
+        <label for="show" class="close-btn" title="close">×</label>
+        <h1>Welcome</h1>
+        <form action="#">
+            <label>Email or Phone</label>
+            <input type="text">
+            <label>Password</label>
+            <input type="password">
+            <a href="#">Forgot Password?</a>
+            <button id="submit">Submit</button>
+            <div class="link">Not a member? <a href="#">Sigup here</a></div>
+            
+        <closeform></closeform></form>
+    </div>
 
-    </body>
-
+    <!--     <div class="bottom">
+      <h3>Copyright by NH highschool</h3>
+    </div> -->
+  </body>
 </html>
