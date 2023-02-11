@@ -1,72 +1,69 @@
+*{
+  margin: 0;
+}
+
 html{
-    font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  font-family: 'Playfair Display', serif;
+  vertical-align: baseline;
+  background: linear-gradient(to right, #20002c,#cbb4d4);
 }
 
-
-h1 {
-    color: rgb(142, 195, 195);
-    font-size: 50px;
+.top{
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  margin-bottom:30px;
 }
 
-
-
-* {
-    text-align: center;
+.top h1{
+  margin-bottom:15px;
 }
 
-div{
-    margin-bottom: 37px ;
-    font-size: 20px;
+.bottom{
+  text-align:center;
+  font-weight: 700;
+  background-color:#ecf0f1;
+  line-height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: end; 
 }
 
-
-table, tr, td{
-    border: 1px solid;
-    font-size: 15px;
-
+.function{
+  padding: 0 320px 0 20px;
+  width:200px;
+  height:250px;
 }
 
-table{
-    background-color: #fbeee0;
-    border: 2px solid #422800;
-    border-radius: 30px;
-    box-shadow: #422800 4px 4px 0 0;
-    color: #422800;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 0 18px;
-    line-height: 50px;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    max-width: 100%;
-    max-height: 100%;
-    min-width: fit-content;
-    min-height: fit-content;
-    margin: 10px;
-    position: fixed;
+.main{
+  position:relative;
+  height:500px;
+  width:730px;
+  margin: auto;
+  padding: 10px;
 }
 
-
-
-
-th{
-    font-size: 18px;
-}
-
-
-
-
-
-
-button{
-    position: relative;
-    right: 200px;
+.menu{
+  position: absolute;
+  top:0;
+  left:170px;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 350px;
+  min-height:230px;
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: left;
+  margin-left:30px;
 }
 
 
@@ -88,10 +85,11 @@ button{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  margin-top:10px;
 }
 
 .button-74:hover {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .button-74:active {
@@ -104,4 +102,117 @@ button{
     min-width: 120px;
     padding: 0 25px;
   }
+}
+
+
+
+
+
+
+
+
+
+.show-btn{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.25);
+    position: absolute;
+    top: 100%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.container{
+    display: none;
+    width: 350px;
+    padding: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%)
+
+}
+
+#show:checked ~ .container{
+    display: block;
+}
+
+
+
+.container .close-btn{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+    color: red;
+}
+
+
+
+form{
+    margin: 20px;
+}
+label{
+    display: block;
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+input{
+    display: block;
+    width: 90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    color: white;
+  margin:100px 100px 5000px 100px;
+}
+
+button{
+    display: block;
+    width: 95%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #cbb4d4, 
+    #20002c);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+
+}
+
+a{
+    text-decoration: none;
+    color: #20002c;
+
+}
+
+.link{
+    margin-top: 30px;
+    text-align: center;
+    color:white;
+}
+
+a:hover{
+    text-decoration: underline;
 }
