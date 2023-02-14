@@ -6,6 +6,7 @@ html {
   font-family: "Playfair Display", serif;
   vertical-align: baseline;
   background: linear-gradient(to right, #20002c, #cbb4d4);
+  margin: relative;
 }
 
 .top {
@@ -50,6 +51,18 @@ html {
   margin-left: 30px;
 }
 
+
+#function {
+  margin: auto;
+  width: 350px;
+  height: 230px;
+  margin-left: 50px;
+}
+
+
+
+
+
 .show-btn {
   padding: 10px 20px;
   font-size: 25px;
@@ -69,12 +82,7 @@ html {
   font-weight: 600;
 }
 
-.show-btn {
-  position: absolute;
-  top: 18%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-}
+
 
 .show-btn1 {
   padding: 10px 20px;
@@ -95,12 +103,6 @@ html {
   font-weight: 600;
 }
 
-.show-btn1 {
-  position: absolute;
-  top: 28%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-}
 
 .show-btn2 {
   padding: 10px 20px;
@@ -121,12 +123,7 @@ html {
   font-weight: 600;
 }
 
-.show-btn2 {
-  position: absolute;
-  top: 38%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-}
+
 
 .show-btn3 {
   padding: 10px 20px;
@@ -147,10 +144,7 @@ html {
   font-weight: 600;
 }
 
-.show-btn3 {
-  position: absolute;
-  top: 48%;
-  left: 35%;
+.show-btn3, .show-btn2, .show-btn1, .show-btn {
   transform: translate(-50%, -50%);
 }
 
