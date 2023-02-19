@@ -157,13 +157,13 @@ input[type="checkbox"] {
   width: 350px;
   padding: 20px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(0, 249, 255, 0.5);
 }
 .container {
   position: absolute;
-  top: 50%;
-  left: 60%;
+  top: 20%;
+  left: 53%;
   transform: translate(-50%, -50%);
 }
 .container .close-btn {
@@ -176,16 +176,16 @@ input[type="checkbox"] {
 
 .container1 {
   display: none;
-  width: 350px;
+  width: 70%;
   padding: 20px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(0, 249, 255, 0.5);
 }
 .container1 {
   position: absolute;
-  top: 50%;
-  left: 60%;
+  top: 30%;
+  left: 53%;
   transform: translate(-50%, -50%);
 }
 .container1 .close-btn {
@@ -198,16 +198,16 @@ input[type="checkbox"] {
 
 .container2 {
   display: none;
-  width: 350px;
+  width: 70%;
   padding: 20px;
   border-radius: 4px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(0, 249, 255, 0.5);
 }
 .container2 {
   position: absolute;
-  top: 50%;
-  left: 60%;
+  top: 40%;
+  left: 53%;
   transform: translate(-50%, -50%);
 }
 .container2 .close-btn {
@@ -229,7 +229,7 @@ input[type="checkbox"] {
 .container3 {
   position: absolute;
   top: 50%;
-  left: 60%;
+  left: 53%;
   transform: translate(-50%, -50%);
 }
 .container3 .close-btn {
@@ -242,6 +242,9 @@ input[type="checkbox"] {
 
 #show:checked ~ .container {
   display: block;
+}
+#show:checked ~ .container1{
+  display: none;
 }
 
 #show1:checked ~ .container1 {
@@ -265,34 +268,15 @@ form {
 }
 label {
   display: block;
-  color: white;
+  color: Black;
   font-size: 18px;
   margin-top: 10px;
+  margin-bottom:10px ;
 }
 
-input {
-  display: block;
-  width: 90%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid white;
-  padding: 10px;
-  color: white;
-}
 
-button.popup {
-  display: block;
-  width: 95%;
-  padding: 8px;
-  border: none;
-  outline: none;
-  background: linear-gradient(to right, #cbb4d4, #20002c);
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  margin-top: 20px;
-}
+
+
 
 a {
   text-decoration: none;
@@ -307,4 +291,75 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+
+
+
+
+
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 88.3%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  color: black;
+}
+
+#myDish {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myDish li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+  text-align: center;
+}
+
+#myDish li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+label .container1{
+  font-size: medium;
+}
+
+
+
+
+
+#AllDish {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#AllDish li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+  text-align: center;
+}
+
+#AllDish li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
 }
