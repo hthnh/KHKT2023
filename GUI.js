@@ -16,15 +16,29 @@ function SearchList() {// search function in Order
   }
 }
 
-function addDish() { //for User
+function addDish(id,nameFood) { //for User
   var ul = document.getElementById("myDish");
   var li = document.createElement("li");
   var a = document.createElement("a");
-  a.appendChild(document.createTextNode("Four"));//name of more list
+  a.appendChild(document.createTextNode(nameFood));//name of more list
   li.appendChild(a);//name of more list
-  a.setAttribute("class", "element4"); // added line :setAttribute(thuoc tinh,gia tri thuoc tinh)
-  li.setAttribute("class", "element4"); // added line :setAttribute(thuoc tinh,gia tri thuoc tinh)
+  a.setAttribute("class", id); // added line :setAttribute(thuoc tinh,gia tri thuoc tinh)
+  li.setAttribute("class", id); // added line :setAttribute(thuoc tinh,gia tri thuoc tinh)
   li.appendChild(a);
   ul.appendChild(li);
 }
 // them do an b= id gia tri bang ten phan loai
+
+
+function addFoodToTable(food,id){
+  var td = document.getElementById(id);
+  td.innerHTML = food;
+}
+
+function Time(){
+  var t = document.getElementById("time");
+  var today = new Date();
+  var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+  t.innerHTML = date;
+}
+
