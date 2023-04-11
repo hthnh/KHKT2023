@@ -63,7 +63,7 @@ void importFood(){
         fscanf(f,"%d",&F[i].PickTime);
         fscanf(f,"%d",&F[i].LastPick);
         fscanf(f,"%d",&F[i].Calories);
-        if(F[i].ID >= 999998) break;
+        if(F[i].ID == 0) break;
         i++;
     }  
     fclose(f);
@@ -156,7 +156,7 @@ void check(){
         printf("%d\n",F[i].PickTime);
         printf("%d\n",F[i].LastPick);
         printf("%d\n",F[i].Calories);
-        if(F[i].ID >= 999998) break;
+        if(F[i].ID == 0) break;
         i++;
     }
     printf("%d\n",calories);
