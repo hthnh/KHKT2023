@@ -1,24 +1,34 @@
-from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivymd.uix.datatables import MDDataTable
+from kivymd.uix.button import MDRectangleFlatButton
 
 class MyApp(MDApp):
     def build(self):
         layout = Screen()
-        layout = BoxLayout(orientation='vertical')
+        layout = BoxLayout(orientation='horizontal')
+        Allbutton = BoxLayout(orientation='vertical')
         table = MDDataTable(column_data=[
             ("Breakfast", dp(30)),
             ("Lunch", dp(30)),
             ("Dinner", dp(30))
         ])
+        button1 = MDRectangleFlatButton(text="Add User",pos_hint={'center_x':0.5},on_release=self.btnfunc)
+        button2 = MDRectangleFlatButton(text="Order",pos_hint={'center_x':0.5},on_release=self.btnfunc)
+        button3 = MDRectangleFlatButton(text="Pick Now",pos_hint={'center_x':0.5},on_release=self.btnfunc)
+        button4 = MDRectangleFlatButton(text="Nutrition",pos_hint={'center_x':0.5},on_release=self.btnfunc)
+        Allbutton.add_widget(button1)
+        Allbutton.add_widget(button2)
+        Allbutton.add_widget(button3)
+        Allbutton.add_widget(button4)
+        layout.add_widget(Allbutton)
         layout.add_widget(table)
         return layout
-
+    def btnfunc(self,obj):
+            print("button is pressed!!")
 
 MyApp().run()
