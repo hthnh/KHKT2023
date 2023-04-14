@@ -6,9 +6,16 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.button import MDRectangleFlatButton
+from kivy.lang import Builder
+
+
+
+
+
 
 class MyApp(MDApp):
     def build(self):
+        Builder.load_file("D:\code\KHKT-Order\MainProgram.kv")
         layout = Screen()
         layout = BoxLayout(orientation='horizontal')
         Allbutton = BoxLayout(orientation='vertical')
