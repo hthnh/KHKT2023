@@ -12,11 +12,23 @@ class MyApp(MDApp):
         layout = Screen()
         layout = BoxLayout(orientation='horizontal')
         Allbutton = BoxLayout(orientation='vertical')
-        table = MDDataTable(column_data=[
-            ("Breakfast", dp(30)),
-            ("Lunch", dp(30)),
-            ("Dinner", dp(30))
-        ])
+        table = MDDataTable(
+            column_data=[
+             ("Date",dp(30)),
+             ("Breakfast",dp(30)),
+             ("Lunch",dp(30)),
+             ("Dinner",dp(30))
+            ],
+            row_data=[
+             ("Monday","","",""),
+             ("Tuesday","","",""),
+             ("Wednesday","","",""),
+             ("Thursday","","",""),
+             ("Friday","","",""),
+             ("Saturday","","",""),
+             ("Sunday","","","")
+            ]
+        )
         button1 = MDRectangleFlatButton(text="Add User",pos_hint={'center_x':0.5},on_release=self.btnfunc)
         button2 = MDRectangleFlatButton(text="Order",pos_hint={'center_x':0.5},on_release=self.btnfunc)
         button3 = MDRectangleFlatButton(text="Pick Now",pos_hint={'center_x':0.5},on_release=self.btnfunc)
