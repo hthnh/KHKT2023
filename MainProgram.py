@@ -7,11 +7,7 @@ from kivymd.uix.screen import Screen
 from kivymd.uix.datatables import MDDataTable
 from kivymd.uix.button import MDRectangleFlatButton
 from kivy.lang import Builder
-
-
-
-
-
+from kivy.uix.anchorlayout import AnchorLayout
 
 class MyApp(MDApp):
     def build(self):
@@ -36,10 +32,23 @@ class MyApp(MDApp):
              ("Sunday","","","")
             ]
         )
-        button1 = MDRectangleFlatButton(text="Add User",pos_hint={'center_x':0.5},on_release=self.btnfunc)
-        button2 = MDRectangleFlatButton(text="Order",pos_hint={'center_x':0.5},on_release=self.btnfunc)
-        button3 = MDRectangleFlatButton(text="Pick Now",pos_hint={'center_x':0.5},on_release=self.btnfunc)
-        button4 = MDRectangleFlatButton(text="Nutrition",pos_hint={'center_x':0.5},on_release=self.btnfunc)
+        button1 = MDRectangleFlatButton(
+            text="Add User",
+            pos_hint={'center_x':0.5},
+            on_release=self.btnfunc
+        )
+        button2 = MDRectangleFlatButton(
+            text="Order",
+            pos_hint={'center_x':0.5},
+            on_release=self.btnfunc
+        )
+        button3 = MDRectangleFlatButton(
+            text="Pick Now",
+            pos_hint={'center_x':0.5},
+            on_release=self.btnreturn
+        )
+        button4 = MDRectangleFlatButton(
+            text="Nutrition",pos_hint={'center_x':0.5},on_release=self.btnfunc)
         Allbutton.add_widget(button1)
         Allbutton.add_widget(button2)
         Allbutton.add_widget(button3)
@@ -49,5 +58,7 @@ class MyApp(MDApp):
         return layout
     def btnfunc(self,obj):
             print("button is pressed!!")
+    def btnreturn(self,obj):
+            print("hel")
 
 MyApp().run()
