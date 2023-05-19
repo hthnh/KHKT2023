@@ -5,7 +5,9 @@ from kivy.metrics import dp
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 import subprocess
-
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
+from kivy.uix.textinput import TextInput
 
 class MenuApp(MDApp):
     def build(self):
@@ -43,7 +45,7 @@ class MenuApp(MDApp):
                             color = (0,0,0,1.000),
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
-        btnAddUser.bind(on_press = self.AddUser)
+        btnAddUser.bind(on_press = self.User)
         btnAddFood = Button(text = "Add Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
@@ -92,8 +94,27 @@ class MenuApp(MDApp):
 
     def test(self , event):
         print("test")
-    def AddUser(seft , event):
-        subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
-# lam popup cho FamilyMember ben trong co Add va Remove
+    def User(self , event):
+        layout = BoxLayout(orientation = "vertical")
+        func = BoxLayout(orientation = "horizontal", padding = 10)
+        btnAdd = Button(text = "Add Member")
+        btnAdd.bind(on_press = self.AddUser)
+        btnRem = Button(text = "Remove All Member")
+        btnRem.bind(on_press = self.RemoveUser)
 
+
+        func.add_widget(btnAdd)
+        func.add_widget(btnRem)
+
+        layout.add_widget(func)
+        popUp = Popup(  
+                        content  = layout,
+                        auto_dismiss = True,
+                        size_hint = (.8 , .8),
+                        pos_hint = {"center_x": .5, "center_y": .5})
+        popUp.open()
+    def AddUser(self, event):
+        subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+    def RemoveUser(self, event):
+        subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 MenuApp().run()
