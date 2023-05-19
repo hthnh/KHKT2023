@@ -12,7 +12,7 @@ class MenuApp(MDApp):
     def build(self):
         screen = Screen()
         mainProgram = BoxLayout(orientation = "horizontal")
-        AllFunc = BoxLayout(orientation = "vertical")
+        AllFunc = BoxLayout(orientation = "vertical",)
         
         
         
@@ -36,13 +36,9 @@ class MenuApp(MDApp):
 
 
 
-        labAddUser = Label(text = "Add User",
-                           background_color = (1,1,1,1),
-                            size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5},
-                            font_size = dp(20))
-        btnAddUser = Button(background_color =(0,0,0,0),
-                            size_hint = (.5,.5),
+        btnAddUser = Button(text = "AddUser",
+                            background_color =(0,249,255,1.000),
+                            size_hint = (.5,None),
                             pos_hint = {"center_x": .5})
         btnAddUser.bind(on_press = self.test)
 
@@ -64,7 +60,6 @@ class MenuApp(MDApp):
                             pos_hint = {"center_x": .5})
         btnNutrition.bind(on_press = self.test)
 
-        AllFunc.add_widget(labAddUser)
         AllFunc.add_widget(btnAddUser)
         AllFunc.add_widget(btnOrder)
         AllFunc.add_widget(btnPickNow)
