@@ -4,9 +4,7 @@ from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.label import Label
-from kivy.uix.anchorlayout import AnchorLayout
-
+import subprocess
 
 
 class MenuApp(MDApp):
@@ -45,7 +43,7 @@ class MenuApp(MDApp):
                             color = (0,0,0,1.000),
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
-        btnAddUser.bind(on_press = self.test)
+        btnAddUser.bind(on_press = self.AddUser)
         btnAddFood = Button(text = "Add Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
@@ -94,7 +92,8 @@ class MenuApp(MDApp):
 
     def test(self , event):
         print("test")
- 
+    def AddUser(seft , event):
+        subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 
 
 MenuApp().run()
