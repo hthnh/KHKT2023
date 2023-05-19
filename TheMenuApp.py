@@ -94,6 +94,6 @@ class MenuApp(MDApp):
         print("test")
     def AddUser(seft , event):
         subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
-
+# lam popup cho FamilyMember ben trong co Add va Remove
 
 MenuApp().run()
