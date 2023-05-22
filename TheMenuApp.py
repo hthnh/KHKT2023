@@ -49,6 +49,7 @@ class MenuApp(MDApp):
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
         btnAddUser.bind(on_press = self.User)
+
         btnAddFood = Button(text = "Add Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
@@ -77,6 +78,9 @@ class MenuApp(MDApp):
                             pos_hint = {"center_x": .5})
         btnNutrition.bind(on_press = self.test)
 
+
+
+
         AllFunc.add_widget(btnAddUser)
         AllFunc.add_widget(btnAddFood)
         AllFunc.add_widget(btnOrder)
@@ -95,8 +99,7 @@ class MenuApp(MDApp):
     
 
 
-    def test(self , event):
-        print("test")
+
     def User(self , event):
         layout = BoxLayout(orientation = "vertical")
         func = BoxLayout(orientation = "horizontal", padding = 10,size_hint = (1,0.6))
@@ -117,25 +120,25 @@ class MenuApp(MDApp):
 
 
         Sex = BoxLayout(orientation = "horizontal")
+
         def checkbox_male(checkbox, value):
             if value :
                 global sex
                 sex = "0"
         male = CheckBox(color = (0,0,0,1), group = "sex")
         male.bind(active = checkbox_male)
+
         def checkbox_female(checkbox, value):
             if value :
                 global sex
                 sex = "1"
         female = CheckBox(color = (0,0,0,1), group = "sex")
         female.bind(active= checkbox_female)
+
         Sex.add_widget(Label(text ="Male",color = (0,0,0,1)))
         Sex.add_widget(male)
         Sex.add_widget(Label(text ="Female",color = (0,0,0,1)))
         Sex.add_widget(female)
-
-
-
 
         global height
         height = TextInput(multiline=False)
@@ -145,28 +148,37 @@ class MenuApp(MDApp):
         age = TextInput(multiline=False)
 
 
-
+        def takeStyle(value):
+            global style
+            if value == "office work" :
+                style = "1"
+            elif value == "outdoor work" :
+                style = "2"
+            elif value == "exercise sometimes" :
+                style = "3"
+            elif value == "always exercise" :
+                style = "4"
+            elif value == "athlete" :
+                style = "5"
         Style = DropDown()
-        one = Button(text = "office work", size_hint_y = None, height = 35)
+        one = Button(text = "office work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
         Style.add_widget(one)
-        two = Button(text = "outdoor work", size_hint_y = None, height = 35)
+        two = Button(text = "outdoor work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         two.bind(on_release = lambda two: Style.select(two.text))
         Style.add_widget(two)
-        three = Button(text = "exercise sometimes", size_hint_y = None, height = 35)
+        three = Button(text = "exercise sometimes", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         three.bind(on_release = lambda three: Style.select(three.text))
         Style.add_widget(three)
-        four = Button(text = "always exercise", size_hint_y = None, height = 35)
+        four = Button(text = "always exercise", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         four.bind(on_release = lambda four: Style.select(four.text))
         Style.add_widget(four)
-        five = Button(text = "athlete", size_hint_y = None, height = 35)
+        five = Button(text = "athlete", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         five.bind(on_release = lambda five: Style.select(five.text))
         Style.add_widget(five)
-        style = Button(text = "Choice your life style")
-        style.bind(on_release = Style.open)
-        Style.bind(on_select = lambda instance, x: setattr(style, 'text', x))
-
-
+        btnStyle = Button(text = "Choice your life style")
+        btnStyle.bind(on_release = Style.open)
+        Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
 
 
 
@@ -179,7 +191,7 @@ class MenuApp(MDApp):
         input.add_widget(Label(text = "Age",color = (0,0,0,1)))
         input.add_widget(age)
         input.add_widget(Label(text = "Style",color = (0,0,0,1)))
-        input.add_widget(style)
+        input.add_widget(btnStyle)
 
         func.add_widget(btnAdd)
         func.add_widget(btnRem)
@@ -197,6 +209,8 @@ class MenuApp(MDApp):
                         title_align = "center",
                         title_size = dp(20))
         popUp.open()
+
+    
     def AddUser(self, event):
         with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
             f.write(sex)
@@ -207,8 +221,10 @@ class MenuApp(MDApp):
             f.write("\n")
             f.write(age.text)
             f.write("\n")
+            f.write(style)
         f.close()
         subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+        
     def RemoveUser(self, event):
         subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
     
