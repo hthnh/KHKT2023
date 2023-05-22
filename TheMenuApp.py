@@ -77,7 +77,7 @@ class MenuApp(MDApp):
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
         btnNutrition.bind(on_press = self.test)
-
+        
 
 
 
@@ -98,7 +98,8 @@ class MenuApp(MDApp):
         return screen
     
 
-
+    def test(self, event):
+            print("test")
 
     def User(self , event):
         layout = BoxLayout(orientation = "vertical")
@@ -209,8 +210,8 @@ class MenuApp(MDApp):
                         title_align = "center",
                         title_size = dp(20))
         popUp.open()
+        
 
-    
     def AddUser(self, event):
         with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
             f.write(sex)
@@ -224,7 +225,7 @@ class MenuApp(MDApp):
             f.write(style)
         f.close()
         subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
-        
+
     def RemoveUser(self, event):
         subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
     
