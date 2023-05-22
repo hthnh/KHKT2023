@@ -55,7 +55,7 @@ class MenuApp(MDApp):
                             color = (0,0,0,1.000),
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
-        btnAddFood.bind(on_press = self.test)
+        btnAddFood.bind(on_press = self.Food)
 
         btnOrder = Button(text = "Order",
                             background_color =(0,249,255,1.000),
@@ -100,6 +100,9 @@ class MenuApp(MDApp):
 
     def test(self, event):
             print("test")
+
+
+
 
     def User(self , event):
         layout = BoxLayout(orientation = "vertical")
@@ -234,5 +237,56 @@ class MenuApp(MDApp):
         noti.open()
         subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
     
+
+
+
+    def Food(self, event):
+        layout = BoxLayout(orientation = "vertical")
+        func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
+        input = GridLayout(cols = 2)
+
+        btnAdd = Button(text = "Add Food",
+                            background_color =(0,249,255,1.000),
+                            color = (0,0,0,1.000),
+                            pos_hint = {"center_y": .5})
+       # btnAdd.bind(on_press = self.AddUser)
+        btnRem = Button(text = "Manage All Food",
+                            background_color =(0,249,255,1.000),
+                            color = (0,0,0,1.000),
+                            pos_hint = {"center_y": .5})
+        #btnRem.bind(on_press = self.RemoveUser)
+        func.add_widget(btnAdd)
+        func.add_widget(btnRem)
+
+        global name_food
+        name_food = TextInput(multiline = False)
+        global calories_of_food
+        calories_of_food = TextInput(multiline = False)
+
+
+        input.add_widget(Label(text = "Name food:",color = (0,0,0,1)))
+        input.add_widget(name_food)
+        input.add_widget(Label(text = "Calories of food:", color = (0,0,0,1)))
+        input.add_widget(calories_of_food)
+
+        layout.add_widget(input)
+        layout.add_widget(func)
+        popUp = Popup(  content  = layout,
+                        auto_dismiss = True,
+                        size_hint = (.8 , .8),
+                        pos_hint = {"center_x": .5, "center_y": .5},
+                        background_color = (255,255,255,0.8),
+                        title = "AddFood",
+                        title_color = (0,0,0,1.00),
+                        title_align = "center",
+                        title_size = dp(20))
+        popUp.open()
+
+    def add_food(self,event):
+        with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
+            f.write()
+
+
+
     
 MenuApp().run()

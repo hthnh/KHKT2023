@@ -15,6 +15,12 @@ Struct ID: 	XYZJJJ
 			2: Không ăn cùng cơm
 		J: Số thứ tự món
 
+Struct Food:
+	ID
+	Name
+	PickTime
+	LastPick
+	Calories
 
 
 152001
