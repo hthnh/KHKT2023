@@ -185,9 +185,9 @@ class MenuApp(MDApp):
 
         input.add_widget(Label(text = "What is your sex",color = (0,0,0,1)))
         input.add_widget(Sex)
-        input.add_widget(Label(text = "Height",color = (0,0,0,1)))
+        input.add_widget(Label(text = "Height(cm)",color = (0,0,0,1)))
         input.add_widget(height)
-        input.add_widget(Label(text = "Weight",color = (0,0,0,1)))
+        input.add_widget(Label(text = "Weight(kg)",color = (0,0,0,1)))
         input.add_widget(weight)
         input.add_widget(Label(text = "Age",color = (0,0,0,1)))
         input.add_widget(age)
@@ -210,7 +210,8 @@ class MenuApp(MDApp):
                         title_align = "center",
                         title_size = dp(20))
         popUp.open()
-        
+    
+
 
     def AddUser(self, event):
         with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
@@ -224,9 +225,13 @@ class MenuApp(MDApp):
             f.write("\n")
             f.write(style)
         f.close()
+        noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+        noti.open()
         subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 
     def RemoveUser(self, event):
+        noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+        noti.open()
         subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
     
     
