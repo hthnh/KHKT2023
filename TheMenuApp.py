@@ -99,7 +99,7 @@ class MenuApp(MDApp):
     
 
     def test(self, event):
-            print("test")
+            print("dang phat trien")
 
 
 
@@ -250,13 +250,13 @@ class MenuApp(MDApp):
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
         btnAdd.bind(on_press = self.add_food)
-        btnRem = Button(text = "All Food",
+        btnAll = Button(text = "All Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
-        #btnRem.bind(on_press = self.RemoveUser)
+        btnAll.bind(on_press = self.test)
         func.add_widget(btnAdd)
-        func.add_widget(btnRem)
+        func.add_widget(btnAll)
 
         global name_food
         name_food = TextInput(multiline = False)
@@ -286,13 +286,14 @@ class MenuApp(MDApp):
         print(name_food)
         print(calories_of_food)
         with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
-            f.write("")
+            f.write("\n")
+            f.write(" ")
             f.write("\n")
             f.write(name_food.text)
             f.write("\n")
-            f.write("")
+            f.write("0")
             f.write("\n")
-            f.write("")
+            f.write("0")
             f.write("\n")
             f.write(calories_of_food.text)
         f.close()
