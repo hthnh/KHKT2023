@@ -249,8 +249,8 @@ class MenuApp(MDApp):
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
-       # btnAdd.bind(on_press = self.AddUser)
-        btnRem = Button(text = "Manage All Food",
+        btnAdd.bind(on_press = self.add_food)
+        btnRem = Button(text = "All Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
@@ -283,8 +283,20 @@ class MenuApp(MDApp):
         popUp.open()
 
     def add_food(self,event):
+        print(name_food)
+        print(calories_of_food)
         with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
-            f.write()
+            f.write("")
+            f.write("\n")
+            f.write(name_food.text)
+            f.write("\n")
+            f.write("")
+            f.write("\n")
+            f.write("")
+            f.write("\n")
+            f.write(calories_of_food.text)
+        f.close()
+    
 
 
 
