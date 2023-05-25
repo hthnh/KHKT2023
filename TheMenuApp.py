@@ -123,9 +123,9 @@ class MenuApp(MDApp):
 
         Sex = BoxLayout(orientation = "horizontal")
         global sex
-        sex = int()
+        sex = int(5)
         global style
-        style = int()
+        style = int(6)
 
         def checkbox_male(checkbox, value):
             if value :
@@ -147,11 +147,11 @@ class MenuApp(MDApp):
         Sex.add_widget(female)
 
         global height
-        height = TextInput(multiline=False)
+        height = TextInput(multiline=False, text = "cm")
         global weight
-        weight = TextInput(multiline=False)
+        weight = TextInput(multiline=False, text = "kg")
         global age
-        age = TextInput(multiline=False)
+        age = TextInput(multiline=False, text = "year")
 
 
         def takeStyle(value):
@@ -190,9 +190,9 @@ class MenuApp(MDApp):
 
         input.add_widget(Label(text = "What is your sex",color = (0,0,0,1)))
         input.add_widget(Sex)
-        input.add_widget(Label(text = "Height(cm)",color = (0,0,0,1)))
+        input.add_widget(Label(text = "Height",color = (0,0,0,1)))
         input.add_widget(height)
-        input.add_widget(Label(text = "Weight(kg)",color = (0,0,0,1)))
+        input.add_widget(Label(text = "Weight",color = (0,0,0,1)))
         input.add_widget(weight)
         input.add_widget(Label(text = "Age",color = (0,0,0,1)))
         input.add_widget(age)
@@ -217,12 +217,18 @@ class MenuApp(MDApp):
         popUp.open()
     
     def check_add_user(self, event):
-        if sex == 1 | sex == 0 :
-            if style == 1 | style == 2 | style == 3 | style == 4 | style == 5 :
-                if height != int() :
-                    if weight != int():
-                        if age !=int():
-                            self.AddUser()
+        print(sex)
+        print(style)
+        print(height.text)
+        print(type(height))
+        print(weight)
+        print(age)
+        if sex == 1 or sex == 0 :
+            if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                if not "cm" in height.text :
+                    if not "kg" in weight.text :
+                        if not "year" in age.text :
+                            self.AddUser(event)
                         else :
                             noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
                             noti.open()
@@ -241,7 +247,7 @@ class MenuApp(MDApp):
 
     def AddUser(self, event):
         with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
-            f.write(sex)
+            f.write(str(sex))
             f.write("\n")
             f.write(height.text)
             f.write("\n")
@@ -249,7 +255,7 @@ class MenuApp(MDApp):
             f.write("\n")
             f.write(age.text)
             f.write("\n")
-            f.write(style)
+            f.write(str(style))
         f.close()
         noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
         noti.open()
