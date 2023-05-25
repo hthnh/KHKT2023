@@ -18,8 +18,6 @@ class MenuApp(MDApp):
         mainProgram = BoxLayout(orientation = "horizontal")
         AllFunc = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
         
-        
-        
         table = MDDataTable(
             pos_hint = {"center_x": .5, "center_y": .5},
             size_hint = (1, 1),
@@ -113,7 +111,7 @@ class MenuApp(MDApp):
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
-        btnAdd.bind(on_press = self.AddUser)
+        btnAdd.bind(on_press = self.check_add_user)
         btnRem = Button(text = "Remove All Member",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
@@ -124,18 +122,22 @@ class MenuApp(MDApp):
 
 
         Sex = BoxLayout(orientation = "horizontal")
+        global sex
+        sex = int()
+        global style
+        style = int()
 
         def checkbox_male(checkbox, value):
             if value :
                 global sex
-                sex = "0"
+                sex = 0
         male = CheckBox(color = (0,0,0,1), group = "sex")
         male.bind(active = checkbox_male)
 
         def checkbox_female(checkbox, value):
             if value :
                 global sex
-                sex = "1"
+                sex = 1
         female = CheckBox(color = (0,0,0,1), group = "sex")
         female.bind(active= checkbox_female)
 
@@ -155,15 +157,15 @@ class MenuApp(MDApp):
         def takeStyle(value):
             global style
             if value == "office work" :
-                style = "1"
+                style = 1
             elif value == "outdoor work" :
-                style = "2"
+                style = 2
             elif value == "exercise sometimes" :
-                style = "3"
+                style = 3
             elif value == "always exercise" :
-                style = "4"
+                style = 4
             elif value == "athlete" :
-                style = "5"
+                style = 5
         Style = DropDown()
         one = Button(text = "office work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
@@ -214,7 +216,28 @@ class MenuApp(MDApp):
                         title_size = dp(20))
         popUp.open()
     
-
+    def check_add_user(self, event):
+        if sex == 1 | sex == 0 :
+            if style == 1 | style == 2 | style == 3 | style == 4 | style == 5 :
+                if height != int() :
+                    if weight != int():
+                        if age !=int():
+                            self.AddUser()
+                        else :
+                            noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                            noti.open()
+                    else :
+                        noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
+                        noti.open()
+                else :
+                    noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
+                    noti.open()
+            else :
+                noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
+                noti.open()
+        else :
+            noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
+            noti.open()
 
     def AddUser(self, event):
         with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
