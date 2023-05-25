@@ -105,12 +105,12 @@ class User_Button():
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
-        # btnAdd.bind(on_press = self.check_add_user)
+        btnAdd.bind(on_press = self.check_add_user)
         btnRem = Button(text = "Remove All Member",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
-        # btnRem.bind(on_press = self.RemoveUser)
+        btnRem.bind(on_press = self.RemoveUser)
         func.add_widget(btnAdd)
         func.add_widget(btnRem)
 
