@@ -12,13 +12,13 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.checkbox import CheckBox
 from kivy.uix.dropdown import DropDown
 
-class MainWindows(MDApp):
+class MenuApp(MDApp):
     def build(self):
         screen = Screen()
-
-        window = BoxLayout( orientation = "horizontal")
-
-        calendar = MDDataTable(
+        mainProgram = BoxLayout(orientation = "horizontal")
+        AllFunc = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
+        
+        table = MDDataTable(
             pos_hint = {"center_x": .5, "center_y": .5},
             size_hint = (1, 1),
             rows_num = 7,
@@ -39,13 +39,14 @@ class MainWindows(MDApp):
             ]
         )
 
-        Func = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
+
+
         btnAddUser = Button(text = "Add Family Member",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
-        btnAddUser.bind(on_press = User_Button.window)
+        btnAddUser.bind(on_press = btnUser.mainWindow)
 
         btnAddFood = Button(text = "Add Food",
                             background_color =(0,249,255,1.000),
@@ -74,74 +75,75 @@ class MainWindows(MDApp):
                             size_hint = (.5,.5),
                             pos_hint = {"center_x": .5})
         # btnNutrition.bind(on_press = self.test)
-
-        Func.add_widget(btnAddUser)
-        Func.add_widget(btnAddFood)
-        Func.add_widget(btnOrder)
-        Func.add_widget(btnPickNow)
-        Func.add_widget(btnNutrition)
-
-        window.add_widget(Func)
-        window.add_widget(calendar)
-        screen.add_widget(window)
         
+
+
+
+        AllFunc.add_widget(btnAddUser)
+        AllFunc.add_widget(btnAddFood)
+        AllFunc.add_widget(btnOrder)
+        AllFunc.add_widget(btnPickNow)
+        AllFunc.add_widget(btnNutrition)
+
+        mainProgram.add_widget(AllFunc)
+        mainProgram.add_widget(table)
+        
+        screen.add_widget(mainProgram)
+
         return screen
 
-
-
-
-
-class test():
-    def test(self, event):
-        print("dang phat trien")
-
-
-
-
-class User_Button():
-    def window(self):
-        func = BoxLayout(orientation = "horizontal", padding = 10,size_hint = (1,0.6))
-        btnAdd = Button(text = "Add Member",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            pos_hint = {"center_y": .5})
-        btnAdd.bind(on_press = self.check_add_user)
-        btnRem = Button(text = "Remove All Member",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            pos_hint = {"center_y": .5})
-        btnRem.bind(on_press = self.RemoveUser)
-        func.add_widget(btnAdd)
-        func.add_widget(btnRem)
-
-
-
+class btnUser():
+    def mainWindow(self):
+        layout = BoxLayout(orientation = "vertical")
+        
+        layout.add_widget(input)
+        layout.add_widget(func)
+        popUp = Popup(  content  = layout,
+                        auto_dismiss = True,
+                        size_hint = (.8 , .8),
+                        pos_hint = {"center_x": .5, "center_y": .5},
+                        background_color = (255,255,255,0.8),
+                        title = "Manage member",
+                        title_color = (0,0,0,1.00),
+                        title_align = "center",
+                        title_size = dp(20))
+        popUp.open()
+    
+    def userInput(self, event):
+        global input
         input = GridLayout(cols = 2)
+        Sex = BoxLayout(orientation = "horizontal")
+        global sex
+        sex = int(5)
+        global style
+        style = int(6)
 
-        sex_layout = BoxLayout(orientation = "horizontal")
         def checkbox_male(checkbox, value):
             if value :
                 global sex
                 sex = 0
         male = CheckBox(color = (0,0,0,1), group = "sex")
         male.bind(active = checkbox_male)
+
         def checkbox_female(checkbox, value):
             if value :
                 global sex
                 sex = 1
         female = CheckBox(color = (0,0,0,1), group = "sex")
         female.bind(active= checkbox_female)
-        sex_layout.add_widget(Label(text ="Male",color = (0,0,0,1)))
-        sex_layout.add_widget(male)
-        sex_layout.add_widget(Label(text ="Female",color = (0,0,0,1)))
-        sex_layout.add_widget(female)
+
+        Sex.add_widget(Label(text ="Male",color = (0,0,0,1)))
+        Sex.add_widget(male)
+        Sex.add_widget(Label(text ="Female",color = (0,0,0,1)))
+        Sex.add_widget(female)
 
         global height
+        height = TextInput(multiline=False, text = "cm")
         global weight
+        weight = TextInput(multiline=False, text = "kg")
         global age
-        height = TextInput(multiline=False)
-        weight = TextInput(multiline=False)
-        age = TextInput(multiline=False)
+        age = TextInput(multiline=False, text = "year")
+
 
         def takeStyle(value):
             global style
@@ -175,78 +177,87 @@ class User_Button():
         btnStyle.bind(on_release = Style.open)
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
 
+
+
         input.add_widget(Label(text = "What is your sex",color = (0,0,0,1)))
-        input.add_widget(sex_layout)
-        input.add_widget(Label(text = "Height(cm)",color = (0,0,0,1)))
+        input.add_widget(Sex)
+        input.add_widget(Label(text = "Height",color = (0,0,0,1)))
         input.add_widget(height)
-        input.add_widget(Label(text = "Weight(kg)",color = (0,0,0,1)))
+        input.add_widget(Label(text = "Weight",color = (0,0,0,1)))
         input.add_widget(weight)
         input.add_widget(Label(text = "Age",color = (0,0,0,1)))
         input.add_widget(age)
         input.add_widget(Label(text = "Style",color = (0,0,0,1)))
         input.add_widget(btnStyle)
 
+    def btnFunction(self):
+        global func
+        func = BoxLayout(orientation = "horizontal", padding = 10,size_hint = (1,0.6))
+        btnAdd = Button(text = "Add Member",
+                            background_color =(0,249,255,1.000),
+                            color = (0,0,0,1.000),
+                            pos_hint = {"center_y": .5})
+        btnAdd.bind(on_press = check_add_user(event))
+        btnRem = Button(text = "Remove All Member",
+                            background_color =(0,249,255,1.000),
+                            color = (0,0,0,1.000),
+                            pos_hint = {"center_y": .5})
+        btnRem.bind(on_press = RemoveUser(event))
+
+        func.add_widget(btnAdd)
+        func.add_widget(btnRem)
         
-        layout = BoxLayout(orientation = "vertical")
-        layout.add_widget(input)
-        layout.add_widget(func)
-
-        popUp = Popup(  content  = layout,
-                        auto_dismiss = True,
-                        size_hint = (.8 , .8),
-                        pos_hint = {"center_x": .5, "center_y": .5},
-                        background_color = (255,255,255,0.8),
-                        title = "Manage member",
-                        title_color = (0,0,0,1.00),
-                        title_align = "center",
-                        title_size = dp(20))
-        popUp.open()
-
-    def check_add_user(self, event):
-        if sex == 1 | sex == 0 :
-            if style == 1 | style == 2 | style == 3 | style == 4 | style == 5 :
-                if height != int() :
-                    if weight != int():
-                        if age !=int():
-                            self.AddUser()
+        def check_add_user(event):
+            print(sex)
+            print(style)
+            print(height.text)
+            print(type(height))
+            print(weight)
+            print(age)
+            if sex == 1 or sex == 0 :
+                if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                    if not "cm" in height.text :
+                        if not "kg" in weight.text :
+                            if not "year" in age.text :
+                                AddUser(event)
+                            else :
+                                noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                noti.open()
                         else :
-                            noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                            noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
                             noti.open()
                     else :
-                        noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
+                        noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
                         noti.open()
                 else :
-                    noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
+                    noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
                     noti.open()
             else :
-                noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
+                noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
                 noti.open()
-        else :
-            noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
+
+
+
+        def AddUser(event):
+            with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
+                f.write(str(sex))
+                f.write("\n")
+                f.write(height.text)
+                f.write("\n")
+                f.write(weight.text)
+                f.write("\n")
+                f.write(age.text)
+                f.write("\n")
+                f.write(str(style))
+            f.close()
+            noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
+            subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 
-    def AddUser(self, event):
-        with open("D:\code\KHKT-Order\InOut\heightWeight.txt","w") as f:
-            f.write(sex)
-            f.write("\n")
-            f.write(height.text)
-            f.write("\n")
-            f.write(weight.text)
-            f.write("\n")
-            f.write(age.text)
-            f.write("\n")
-            f.write(style)
-        f.close()
-        noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
-        noti.open()
-        subprocess.Popen(["D:\code\KHKT-Order\Calories-Calculator\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
-
-    def RemoveUser(self, event):
-        noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
-        noti.open()
-        subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
-
-        
+        def RemoveUser(event):
+            noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+            noti.open()
+            subprocess.Popen(["D:\code\KHKT-Order\clearTotalCalories\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 
 
-MainWindows().run()
+MenuApp().run()
