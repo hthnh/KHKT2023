@@ -217,12 +217,6 @@ class MenuApp(MDApp):
         popUp.open()
     
     def check_add_user(self, event):
-        print(sex)
-        print(style)
-        print(height.text)
-        print(type(height))
-        print(weight)
-        print(age)
         if sex == 1 or sex == 0 :
             if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
                 if not "cm" in height.text :
