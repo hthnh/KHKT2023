@@ -52,8 +52,9 @@ class MenuApp(MDApp):
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5})
-        # btnAddFood.bind(on_press = self.Food)
+                            pos_hint = {"center_x": .5},
+                            on_press = btnUser.manager_Food)
+
 
         btnOrder = Button(text = "Order",
                             background_color =(0,249,255,1.000),
@@ -258,47 +259,62 @@ class btnUser():
 
 
 
-        def Food(self, event):
-            layout = BoxLayout(orientation = "vertical")
-            func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
-            input = GridLayout(cols = 2)
+    def manager_Food(self):
+        def add_food(self):
+            print(name_food)
+            print(calories_of_food)
+            with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
+                f.write("\n")
+                f.write(" ")
+                f.write("\n")
+                f.write(name_food.text)
+                f.write("\n")
+                f.write("0")
+                f.write("\n")
+                f.write("0")
+                f.write("\n")
+                f.write(calories_of_food.text)
+            f.close()
 
-            btnAdd = Button(text = "Add Food",
-                                background_color =(0,249,255,1.000),
-                                color = (0,0,0,1.000),
-                                pos_hint = {"center_y": .5})
-            btnAdd.bind(on_press = self.add_food)
-            btnAll = Button(text = "All Food",
-                                background_color =(0,249,255,1.000),
-                                color = (0,0,0,1.000),
-                                pos_hint = {"center_y": .5})
-            btnAll.bind(on_press = self.test)
-            func.add_widget(btnAdd)
-            func.add_widget(btnAll)
+        layout = BoxLayout(orientation = "vertical")
+        func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
+        input = GridLayout(cols = 2)
 
-            global name_food
-            name_food = TextInput(multiline = False)
-            global calories_of_food
-            calories_of_food = TextInput(multiline = False)
+        btnAdd = Button(text = "Add Food",
+                            background_color =(0,249,255,1.000),
+                            color = (0,0,0,1.000),
+                            pos_hint = {"center_y": .5},
+                            on_press = add_food)
+        btnAll = Button(text = "All Food",
+                            background_color =(0,249,255,1.000),
+                            color = (0,0,0,1.000),
+                            pos_hint = {"center_y": .5})
+        func.add_widget(btnAdd)
+        func.add_widget(btnAll)
+
+        global name_food
+        name_food = TextInput(multiline = False)
+        global calories_of_food
+        calories_of_food = TextInput(multiline = False)
 
 
-            input.add_widget(Label(text = "Name food:",color = (0,0,0,1)))
-            input.add_widget(name_food)
-            input.add_widget(Label(text = "Calories of food:", color = (0,0,0,1)))
-            input.add_widget(calories_of_food)
+        input.add_widget(Label(text = "Name food:",color = (0,0,0,1)))
+        input.add_widget(name_food)
+        input.add_widget(Label(text = "Calories of food:", color = (0,0,0,1)))
+        input.add_widget(calories_of_food)
 
-            layout.add_widget(input)
-            layout.add_widget(func)
-            popUp = Popup(  content  = layout,
-                            auto_dismiss = True,
-                            size_hint = (.8 , .8),
-                            pos_hint = {"center_x": .5, "center_y": .5},
-                            background_color = (255,255,255,0.8),
-                            title = "AddFood",
-                            title_color = (0,0,0,1.00),
-                            title_align = "center",
-                            title_size = dp(20))
-            popUp.open()
+        layout.add_widget(input)
+        layout.add_widget(func)
+        popUp = Popup(  content  = layout,
+                        auto_dismiss = True,
+                        size_hint = (.8 , .8),
+                        pos_hint = {"center_x": .5, "center_y": .5},
+                        background_color = (255,255,255,0.8),
+                        title = "AddFood",
+                        title_color = (0,0,0,1.00),
+                        title_align = "center",
+                        title_size = dp(20))
+        popUp.open()
 
         
 MenuApp().run()
