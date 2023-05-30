@@ -15,7 +15,7 @@ struct Food{
     int ID;
     char Name[50];
     int PickTime;
-    char LastPick[15];
+    char LastPick[10];
     int Calories;
 };Food F[1000];
 

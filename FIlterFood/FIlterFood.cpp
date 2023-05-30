@@ -8,7 +8,7 @@ struct Food{
     int ID;
     char Name[50];
     int PickTime;
-    int LastPick;
+    char LastPick[10];
     int Calories;
 };Food F[1000],FF[100];
 
@@ -19,7 +19,7 @@ void importFood(){
         fscanf(f,"%d",&F[i].ID);
         fscanf(f,"%s",&F[i].Name);
         fscanf(f,"%d",&F[i].PickTime);
-        fscanf(f,"%d",&F[i].LastPick);
+        fscanf(f,"%s",&F[i].LastPick);
         fscanf(f,"%d",&F[i].Calories);
         if(F[i].ID == 0) break;
         i++;
@@ -34,7 +34,7 @@ void importFoodLog(){
         fscanf(f,"%d",&FF[i].ID);
         fscanf(f,"%s",&FF[i].Name);
         fscanf(f,"%d",&FF[i].PickTime);
-        fscanf(f,"%d",&FF[i].LastPick);
+        fscanf(f,"%s",&FF[i].LastPick);
         fscanf(f,"%d",&FF[i].Calories);
         if(FF[i].ID == 0) break;
         i++;
@@ -46,7 +46,7 @@ void clearFood(int i){
         F[i].ID = F[i+1].ID;
         strcpy(F[i].Name,F[i+1].Name);
         F[i].PickTime = F[i+1].PickTime;
-        F[i].LastPick = F[i+1].LastPick;
+        strcpy(F[i].LastPick,F[i+1].LastPick);
         F[i].Calories = F[i+1].Calories;
         if(F[i+1].ID == 0) break;
         i++;
@@ -54,13 +54,14 @@ void clearFood(int i){
 }
 
 void OutFood(){
-    FILE *f = fopen(FoodAfterFilter,"w");
+    FILE *file = fopen(FoodAfterFilter,"w");
     int i = 0;
     while(1){
-        fprintf(f,"%d\n%s\n%d\n%d\n%d\n",F[i].ID,F[i].Name,F[i].PickTime,F[i].LastPick,F[i].Calories );
+        fprintf(file,"%d\n%s\n%d\n%s\n%d\n",F[i].ID,F[i].Name,F[i].PickTime,F[i].LastPick,F[i].Calories );
         i++;
+        if(F[i].ID == 0)break;
     }
-    fclose(f);
+    fclose(file);
 }
 
 
