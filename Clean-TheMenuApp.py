@@ -282,8 +282,6 @@ class Food():
         def screenAllFood():
             screen = Screen()
             layout = GridLayout(cols = 1)
-
-        
         btnAll = Button(text = "All Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
@@ -294,9 +292,10 @@ class Food():
 
         input = GridLayout(cols = 2)
         global name_food
-        name_food = TextInput(multiline = False)
+        name_food = TextInput(text = "name",multiline = False)
         global calories_of_food
-        calories_of_food = TextInput(multiline = False)
+        calories_of_food = TextInput(text = "calories",multiline = False)
+
         input.add_widget(Label(text = "Name food:",color = (0,0,0,1)))
         input.add_widget(name_food)
         input.add_widget(Label(text = "Calories of food:", color = (0,0,0,1)))
