@@ -108,7 +108,7 @@ void updateFoodLog(int i){
     }
    fclose(f); 
 }
-
+ 
 
 
 
