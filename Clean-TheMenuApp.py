@@ -292,17 +292,18 @@ class Food():
             mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
 
-            
-            for i in range(15):
+            x = 0
+            for i in range(int(len(food)/5)):
                 foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
                 icon = Image(source='D:\code\KHKT-Order\meal-food-icon.png',size_hint = (0.25,None))
                 foodCard.add_widget(icon)
-                mainInformation = BoxLayout(orientation = "horizontal")
-                idLabel = Label(text = "id", height = 50)
-                nameLabel = Label(text = "name")
-                pickTimeLabel = Label(text = "pick time")
-                lastPickLabel = Label(text = "last pick")
-                caloriesLabel = Label(text = "calories")
+                mainInformation = GridLayout(cols = 3)
+                idLabel = Label(text = "ID: %s"%food[x])
+                nameLabel = Label(text = "Name: %s"%food[x+1])
+                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+2])
+                lastPickLabel = Label(text = "Last Selected: %s"%food[x+3])
+                caloriesLabel = Label(text = "Calories: %s"%food[x+4])
+                x+= 5
                 mainInformation.add_widget(idLabel)
                 mainInformation.add_widget(nameLabel)
                 mainInformation.add_widget(pickTimeLabel)
