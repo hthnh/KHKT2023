@@ -14,6 +14,7 @@ from kivy.uix.dropdown import DropDown
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
+from kivy.core.window import Window
 
 class MenuApp(MDApp):
     def build(self):
@@ -288,17 +289,32 @@ class Food():
             food = [s.replace("\n","") for s in food]
             
             mainWindow = GridLayout(cols = 1, spacing=10, size_hint_y=None)
+            mainWindow.bind(minimum_height=mainWindow.setter('height'))
 
-            foodCard = BoxLayout(orientation = "horizontal")
-            icon = Image(source='D:\code\KHKT-Order\meal-food-icon.png',size_hint = (0.25,None))
-            foodCard.add_widget(icon)
-            mainInformation = FloatLayout()
-            foodCard.add_widget(mainInformation)
-            btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None))
-            foodCard.add_widget(btnDelete)
-            mainWindow.add_widget(foodCard)
             
-            scroll = ScrollView(size_hint=(1, 1))
+            for i in range(2):
+                foodCard = BoxLayout(orientation = "horizontal")
+                icon = Image(source='D:\code\KHKT-Order\meal-food-icon.png',size_hint = (0.25,None))
+                foodCard.add_widget(icon)
+                mainInformation = BoxLayout(orientation = "horizontal")
+                idLabel = Label(text = "id", height = 50)
+                nameLabel = Label(text = "name")
+                pickTimeLabel = Label(text = "pick time")
+                lastPickLabel = Label(text = "last pick")
+                caloriesLabel = Label(text = "calories")
+                mainInformation.add_widget(idLabel)
+                mainInformation.add_widget(nameLabel)
+                mainInformation.add_widget(pickTimeLabel)
+                mainInformation.add_widget(lastPickLabel)
+                mainInformation.add_widget(caloriesLabel)
+                foodCard.add_widget(mainInformation)
+                btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None))
+                foodCard.add_widget(btnDelete)
+                mainWindow.add_widget(foodCard)
+
+            
+            
+            scroll = ScrollView(size_hint=(1, None), size = (300,300))
             scroll.add_widget(mainWindow)
             Allfood = Popup(content  = scroll,
                         auto_dismiss = True,
