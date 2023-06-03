@@ -11,6 +11,8 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.checkbox import CheckBox
 from kivy.uix.dropdown import DropDown
+from kivy.uix.scrollview import ScrollView
+from kivy.core.window import Window
 
 class MenuApp(MDApp):
     def build(self):
@@ -280,12 +282,29 @@ class Food():
                             pos_hint = {"center_y": .5},
                             on_press = add_food)
         def screenAllFood(self):
-            screen = Screen()
-            layout = GridLayout(cols = 1)
             f = open("D:\code\KHKT-Order\InOut\AllFood.txt","r")
             food = f.readlines()
+            food = [s.replace("\n","") for s in food]
             
-            print(food)
+            mainWindow = GridLayout(cols = 1, spacing=10, size_hint_y=None)
+            
+            scroll = ScrollView(size_hint=(1, 1))
+            scroll.add_widget(mainWindow)
+            Allfood = Popup(content  = scroll,
+                        auto_dismiss = True,
+                        size_hint = (.8 , .8),
+                        pos_hint = {"center_x": .5, "center_y": .5},
+                        background_color = (255,255,255,0.8),
+                        title = "All Food",
+                        title_color = (0,0,0,1.00),
+                        title_align = "center",
+                        title_size = dp(20))
+            Allfood.open()
+
+
+
+
+
         btnAll = Button(text = "All Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
