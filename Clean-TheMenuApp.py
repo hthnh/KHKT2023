@@ -16,6 +16,7 @@ from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 
+
 class MenuApp(MDApp):
     def build(self):
         screen = Screen()
@@ -288,12 +289,12 @@ class Food():
             food = f.readlines()
             food = [s.replace("\n","") for s in food]
             
-            mainWindow = GridLayout(cols = 1, spacing=10, size_hint_y=None)
+            mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
 
             
-            for i in range(2):
-                foodCard = BoxLayout(orientation = "horizontal")
+            for i in range(15):
+                foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
                 icon = Image(source='D:\code\KHKT-Order\meal-food-icon.png',size_hint = (0.25,None))
                 foodCard.add_widget(icon)
                 mainInformation = BoxLayout(orientation = "horizontal")
@@ -313,12 +314,12 @@ class Food():
                 mainWindow.add_widget(foodCard)
 
             
-            
-            scroll = ScrollView(size_hint=(1, None), size = (300,300))
+
+            scroll = ScrollView(size_hint=(1, None), size=(Window.width, Window.height*0.88))
             scroll.add_widget(mainWindow)
             Allfood = Popup(content  = scroll,
                         auto_dismiss = True,
-                        size_hint = (.8 , .8),
+                        size_hint = (.8 , 1),
                         pos_hint = {"center_x": .5, "center_y": .5},
                         background_color = (255,255,255,0.8),
                         title = "All Food",
