@@ -279,14 +279,18 @@ class Food():
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5},
                             on_press = add_food)
-        def screenAllFood():
+        def screenAllFood(self):
             screen = Screen()
             layout = GridLayout(cols = 1)
+            f = open("D:\code\KHKT-Order\InOut\AllFood.txt","r")
+            food = f.readlines()
+            
+            print(food)
         btnAll = Button(text = "All Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5})
-        # btnAll.bind(on_press = self.test)
+        btnAll.bind(on_press = screenAllFood)
         func.add_widget(btnAdd)
         func.add_widget(btnAll)
 
