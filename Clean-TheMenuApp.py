@@ -266,10 +266,10 @@ class btnUser():
 class Food():
     def mainPopUp(self):
         func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
+
         def add_food(self):
             with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
-                f.write("\n")
-                f.write(" ")
+                f.write("1234")
                 f.write("\n")
                 f.write(name_food.text)
                 f.write("\n")
@@ -279,50 +279,66 @@ class Food():
                 f.write("\n")
                 f.write(calories_of_food.text)
             f.close()
+            noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+            noti.open()
         btnAdd = Button(text = "Add Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
                             pos_hint = {"center_y": .5},
                             on_press = add_food)
+        
         def screenAllFood(self):
             f = open("D:\code\KHKT-Order\InOut\AllFood.txt","r")
             food = f.readlines()
             food = [s.replace("\n","") for s in food]
-            
             mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
-
-            def deleteFood():
+            def deleteFood(self):
+                def delete(self):
+                    f = open("D:\code\KHKT-Order\InOut\deleteID.txt", "w")
+                    f.write(ID.text)
+                    f.close()
+                    noti = Popup(title = "notification",content = Label(text = "Delete successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+                    noti.open()
+                    subprocess.Popen(["D:\code\KHKT-Order\DeleteFood\DeleteFood.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+                    Allfood.dismiss()
+                btn = BoxLayout(orientation = "horizontal")
+                btn.add_widget(Button(text = "Confirm", on_press = delete))
+                btn.add_widget(Button(text = "Cancel", on_press = lambda *args: popUp.dismiss()))
                 layout = BoxLayout(orientation = "vertical")
-                # open popup and let's user text the Id one time again like comfirm and then put the id to the file
-                text = TextInput()
-                
-                f = open("D:\code\KHKT-Order\InOut\deleteID.txt", "w")
-                f.write(value)
-                f.close()
-                subprocess.Popen(["D:\code\KHKT-Order\DeleteFood\DeleteFood.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
-                print(value)
-                print(len(food))
-                
-
+                layout.add_widget(Label(text = "Write an ID again to Confirm",color = (0,0,0,1)))
+                ID = TextInput(multiline=False)
+                layout.add_widget(ID)
+                layout.add_widget(btn)
+                popUp = Popup(content  = layout,
+                        auto_dismiss = True,
+                        size_hint = (.4 , .4),
+                        pos_hint = {"center_x": .5, "center_y": .5},
+                        background_color = (255,255,255,0.8),
+                        title = "Did you want delete Food?",
+                        title_color = (0,0,0,1.00),
+                        title_align = "center",
+                        title_size = dp(20))
+                popUp.open()
             x = 0
             for i in range(int(len(food)/5)):
                 foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
                 icon = Image(source='D:\code\KHKT-Order\meal-food-icon.png',size_hint = (0.25,None))
                 foodCard.add_widget(icon)
                 mainInformation = GridLayout(cols = 3)
-                idLabel = Label(text = "ID: %s"%food[x])
-                nameLabel = Label(text = "Name: %s"%food[x+1])
-                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+2])
-                lastPickLabel = Label(text = "Last Selected: %s"%food[x+3])
-                caloriesLabel = Label(text = "Calories: %s"%food[x+4])
+                idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
+                nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
+                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+2],color = (0,0,0,1))
+                lastPickLabel = Label(text = "Last Selected: %s"%food[x+3],color = (0,0,0,1))
+                caloriesLabel = Label(text = "Calories: %s"%food[x+4],color = (0,0,0,1))
                 mainInformation.add_widget(idLabel)
                 mainInformation.add_widget(nameLabel)
+                mainInformation.add_widget(Label())
                 mainInformation.add_widget(pickTimeLabel)
                 mainInformation.add_widget(lastPickLabel)
                 mainInformation.add_widget(caloriesLabel)
                 foodCard.add_widget(mainInformation)
-                btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood())
+                btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
                 foodCard.add_widget(btnDelete)
                 mainWindow.add_widget(foodCard)
                 x+= 5
@@ -342,16 +358,11 @@ class Food():
                         title_align = "center",
                         title_size = dp(20))
             Allfood.open()
-
-
-
-
-
         btnAll = Button(text = "All Food",
                             background_color =(0,249,255,1.000),
                             color = (0,0,0,1.000),
-                            pos_hint = {"center_y": .5})
-        btnAll.bind(on_press = screenAllFood)
+                            pos_hint = {"center_y": .5},
+                            on_press = screenAllFood)
         func.add_widget(btnAdd)
         func.add_widget(btnAll)
 
