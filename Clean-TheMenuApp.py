@@ -292,6 +292,19 @@ class Food():
             mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
 
+            def deleteFood():
+                layout = BoxLayout(orientation = "vertical")
+                # open popup and let's user text the Id one time again like comfirm and then put the id to the file
+                text = TextInput()
+                
+                f = open("D:\code\KHKT-Order\InOut\deleteID.txt", "w")
+                f.write(value)
+                f.close()
+                subprocess.Popen(["D:\code\KHKT-Order\DeleteFood\DeleteFood.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+                print(value)
+                print(len(food))
+                
+
             x = 0
             for i in range(int(len(food)/5)):
                 foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
@@ -303,16 +316,17 @@ class Food():
                 pickTimeLabel = Label(text = "Selected Time: %s"%food[x+2])
                 lastPickLabel = Label(text = "Last Selected: %s"%food[x+3])
                 caloriesLabel = Label(text = "Calories: %s"%food[x+4])
-                x+= 5
                 mainInformation.add_widget(idLabel)
                 mainInformation.add_widget(nameLabel)
                 mainInformation.add_widget(pickTimeLabel)
                 mainInformation.add_widget(lastPickLabel)
                 mainInformation.add_widget(caloriesLabel)
                 foodCard.add_widget(mainInformation)
-                btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None))
+                btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood())
                 foodCard.add_widget(btnDelete)
                 mainWindow.add_widget(foodCard)
+                x+= 5
+
 
             
 
