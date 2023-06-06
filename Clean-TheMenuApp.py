@@ -23,16 +23,13 @@ class MenuApp(MDApp):
         mainProgram = BoxLayout(orientation = "horizontal")
         AllFunc = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
         
-        table = MDDataTable(
-            pos_hint = {"center_x": .5, "center_y": .5},
-            size_hint = (1, 1),
-            rows_num = 7,
+        table = MDDataTable(pos_hint = {"center_x": .5, "center_y": .5},size_hint = (1, 1),rows_num = 7,
             column_data = [
                 ("date", dp(20)),
                 ("Breakfast", dp(30)),
                 ("Lunch", dp(30)),
-                ("Dinner", dp(30)),
-            ],
+                ("Dinner", dp(30))
+                ],
             row_data = [
                 ("Monday", "", "",""),
                 ("Tuesday", "", "",""),
@@ -40,46 +37,23 @@ class MenuApp(MDApp):
                 ("Thursday", "", "",""),
                 ("Friday", "", "",""),
                 ("Saturday", "", "",""),
-                ("Sunday", "", "",""),
-            ]
+                ("Sunday", "", "","")
+                ]
         )
 
 
 
-        btnAddMem = Button(text = "Add Family Member",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5},
-                            on_press = btnUser.family_Member)
+        btnAddMem = Button(text = "Add Family Member", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = btnUser.family_Member)
 
-        btnAddFood = Button(text = "Add Food",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5},
-                            on_press = Food.mainPopUp)
+        btnAddFood = Button(text = "Add Food", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = Food.mainPopUp)
 
-
-        btnOrder = Button(text = "Order",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5})
+        btnOrder = Button(text = "Order", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5})
         # btnOrder.bind(on_press = self.test)
 
-        btnPickNow = Button(text = "Pick Now",
-                            color = (0,0,0,1.000),
-                            background_color =(0,249,255,1.000),
-                            size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5})
+        btnPickNow = Button(text = "Pick Now", color = (0,0,0,1.000), background_color =(0,249,255,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5})
         # btnPickNow.bind(on_press = self.test)
 
-        btnNutrition = Button(text = "Nutrition",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            size_hint = (.5,.5),
-                            pos_hint = {"center_x": .5})
+        btnNutrition = Button(text = "Nutrition", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5})
         # btnNutrition.bind(on_press = self.test)
         
 
