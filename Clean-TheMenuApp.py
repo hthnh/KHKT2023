@@ -242,8 +242,16 @@ class Food():
         func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
 
         def add_food(self):
+            f = open("D:\code\KHKT-Order\InOut\IDfood.txt", 'r')
+            check = f.read(6)
+            if len(check) == 0:
+                Id = 100001
+            else:
+                Id = int(check) + 1
+            f.close()
+
             with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
-                f.write("1234")
+                f.write(str(Id))
                 f.write("\n")
                 f.write(name_food.text)
                 f.write("\n")
@@ -252,6 +260,10 @@ class Food():
                 f.write("0")
                 f.write("\n")
                 f.write(calories_of_food.text)
+                f.write("\n")
+            f.close()
+            f = open("D:\code\KHKT-Order\InOut\IDfood.txt", 'w')
+            f.write(str(Id))
             f.close()
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()

@@ -28,12 +28,12 @@ void importFood(){
 void deleteFood(int i){
     
     while(1){
+        if(F[i+1].ID == 0) break;
         F[i].ID = F[i+1].ID;
         strcpy(F[i].Name,F[i+1].Name);
         F[i].PickTime = F[i+1].PickTime;
         strcpy(F[i].LastPick,F[i+1].LastPick);
         F[i].Calories = F[i+1].Calories;
-        if(F[i+1].ID == 0) break;
         i++;
     }
 }
