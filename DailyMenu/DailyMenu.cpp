@@ -69,7 +69,7 @@ void findCaloNeed(){
 
 void findTime(){ 
     time_t timer; 
-    struct tm* tm_info; 
+    struct tm* tm_info;  
     char day[3]; 
     char month[3]; 
     char year[5]; 
