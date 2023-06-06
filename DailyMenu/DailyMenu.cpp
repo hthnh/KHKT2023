@@ -9,7 +9,7 @@ char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
 char caloriesIN[50] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
-char date[20];
+char date[15];
 
 struct Food{
     int ID;
@@ -199,6 +199,8 @@ void check(){
 int main(){
 
 importFood();
+check();
+
 importCalories();
 findCaloNeed();
 findTime();
@@ -207,7 +209,6 @@ LNch();
 DNer();
 
 
-check();
 
 
 }
