@@ -9,7 +9,7 @@ char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
 char caloriesIN[50] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
-char date[15];
+char date[10];
 
 struct Food{
     int ID;
@@ -24,17 +24,17 @@ struct Food{
 struct Breakfast{
     char Name[50];
     float caloNeed;
-};Breakfast B[7];
+};Breakfast B[6];
 
 struct Lunch{
     char Name[50];
     float caloNeed;
-};Lunch L[5];
+};Lunch L[6];
 
 struct Dinner{
     char Name[50];
     float caloNeed;
-};Dinner D[5];
+};Dinner D[6];
 
 
 void importFood(){
@@ -82,12 +82,10 @@ void findTime(){
     strftime(month, 3, "%m", tm_info); 
     strftime(year, 5, "%Y", tm_info); 
 
-    char date2[20];
-    strcpy(date2,strcat(day,xet));
-    strcat(date2,month);
-    strcat(date2,xet);
-    strcat(date2,year);
-    strcpy(date,date2);
+    strcpy(date,strcat(day,xet));
+    strcat(date,month);
+    strcat(date,xet);
+    strcat(date,year);
 
 }
 void updateLastPick(int i){
@@ -96,7 +94,7 @@ void updateLastPick(int i){
 }
 
 int updatePickTime(int i){
-     return F[i].PickTime++;
+    return F[i].PickTime++;
 }
 
 void updateFoodLog(int i){
@@ -113,7 +111,17 @@ void updateFoodLog(int i){
     }
    fclose(f); 
 }
-
+void clearFood(int i){
+    while(1){
+        if(F[i+1].ID == 0) break;
+        F[i].ID = F[i+1].ID;
+        strcpy(F[i].Name,F[i+1].Name);
+        F[i].PickTime = F[i+1].PickTime;
+        strcpy(F[i].LastPick,F[i+1].LastPick);
+        F[i].Calories = F[i+1].Calories;
+        i++;
+    }
+}
 
 
 
@@ -130,6 +138,7 @@ void BFast(){
             if(F[j].Calories <= B->caloNeed + 3 && F[j].Calories <= B->caloNeed - 3){
                 updateFoodLog(F[j].ID);
                 strcpy(B[i].Name, F[j].Name);
+                clearFood(j);
                 j=0;
                 break;
             }
@@ -146,6 +155,7 @@ void LNch(){
                 updateFoodLog(F[j].ID);
                 strcpy(L[i].Name, F[j].Name);
                 updatePickTime(F[j].PickTime);
+                clearFood(j);
                 j=0;
                 break;
             }
@@ -161,6 +171,7 @@ void DNer(){
             if(F[j].Calories <= D->caloNeed + 3 && F[j].Calories <= D->caloNeed - 3){
                 updateFoodLog(F[j].ID);
                 strcpy(D[i].Name, F[j].Name);
+                clearFood(j);
                 j=0;
                 break;
             }
@@ -171,35 +182,34 @@ void DNer(){
 
 void check(){
     int i = 0;
-    while(1){
-        if(F[i].ID ==0) break;
-        printf("%d\n",F[i].ID);
-        printf("%s\n",F[i].Name);
-        printf("%d\n",F[i].PickTime);
-        printf("%s\n",F[i].LastPick);
-        printf("%d\n",F[i].Calories);
-        i++;
+    // while(1){
+    //     if(F[i].ID ==0) break;
+    //     printf("%d\n",F[i].ID);
+    //     printf("%s\n",F[i].Name);
+    //     printf("%d\n",F[i].PickTime);
+    //     printf("%s\n",F[i].LastPick);
+    //     printf("%d\n",F[i].Calories);
+    //     i++;
+    // }
+    printf("%d\n",calories);
+    printf("%.2f %.2f %.2f",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed);
+    printf(" %s", date);
+    for(i = 0; i<=6; i++){
+        printf("\n%s",B[i].Name);
     }
-    // printf("%d\n",calories);
-    // printf("%.2f %.2f %.2f",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed);
-    // printf(" %s", date);
-    // for(i = 0; i<=6; i++){
-    //     printf("\n%s",B[i].Name);
-    // }
-    // printf(" \n");
-    // for(i = 0; i<=6; i++){
-    //     printf("\n%s",L[i].Name);
-    // }
-    // printf(" \n");
-    // for(i = 0; i<=6; i++){
-    //     printf("\n%s",D[i].Name);
-    // }
+    printf(" \n");
+    for(i = 0; i<=6; i++){
+        printf("\n%s",L[i].Name);
+    }
+    printf(" \n");
+    for(i = 0; i<=6; i++){
+        printf("\n%s",D[i].Name);
+    }
 }
 
 int main(){
 
 importFood();
-check();
 
 importCalories();
 findCaloNeed();
@@ -207,6 +217,7 @@ findTime();
 BFast();
 LNch();
 DNer();
+check();
 
 
 
