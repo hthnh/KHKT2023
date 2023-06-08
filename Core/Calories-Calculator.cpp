@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-char heightWeight[100] = "D:\\code\\KHKT-Order\\InOut\\heightWeight.txt";
-char TotalCalories[100] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
+char heightWeight[100] = "InOut\\heightWeight.txt";
+char TotalCalories[100] = "InOut\\TotalCalories.txt";
 float calories = 0,totalCalo = 0;
 int in,numOfPeople;
 struct CaloriesCalculator{
