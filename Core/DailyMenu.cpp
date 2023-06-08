@@ -4,9 +4,9 @@
 
 
 
-char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
-char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
-char caloriesIN[50] = "InOut\\TotalCalories.txt";
+char WeeklyLog[100] = "D:\\code\\KHKT-Order\\InOut\\WeeklyLog.txt";
+char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
+char caloriesIN[50] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
 char date[10];
@@ -135,12 +135,15 @@ void BFast(){
     int j = 0;
     for(int i = 0; i<=6; i++){
         while(1){
-            if(F[j].Calories <= B->caloNeed + 3 && F[j].Calories <= B->caloNeed - 3){
-                updateFoodLog(F[j].ID);
+            if( F[j].Calories <= B->caloNeed + 3 ){
+                if (F[j].Calories >= B->caloNeed - 3)
+                {
+                   updateFoodLog(F[j].ID);
                 strcpy(B[i].Name, F[j].Name);
                 clearFood(j);
                 j=0;
                 break;
+                }
             }
             j++;
         }
@@ -151,13 +154,15 @@ void LNch(){
     int j = 0;
     for(int i = 0; i<=6; i++){
         while(1){
-            if(F[j].Calories <= L->caloNeed + 3 && F[j].Calories <= L->caloNeed - 3){
-                updateFoodLog(F[j].ID);
+            if( F[j].Calories <= L->caloNeed + 3 ){
+                if (F[j].Calories >= L->caloNeed - 3)
+                {
+                   updateFoodLog(F[j].ID);
                 strcpy(L[i].Name, F[j].Name);
-                updatePickTime(F[j].PickTime);
                 clearFood(j);
                 j=0;
                 break;
+                }
             }
             j++;
         }
@@ -165,15 +170,18 @@ void LNch(){
 }
 
 void DNer(){
-    int j = 0;
+     int j = 0;
     for(int i = 0; i<=6; i++){
         while(1){
-            if(F[j].Calories <= D->caloNeed + 3 && F[j].Calories <= D->caloNeed - 3){
-                updateFoodLog(F[j].ID);
+            if( F[j].Calories <= D->caloNeed + 3 ){
+                if (F[j].Calories >= D->caloNeed - 3)
+                {
+                   updateFoodLog(F[j].ID);
                 strcpy(D[i].Name, F[j].Name);
                 clearFood(j);
                 j=0;
                 break;
+                }
             }
             j++;
         }
@@ -182,15 +190,6 @@ void DNer(){
 
 void check(){
     int i = 0;
-    // while(1){
-    //     if(F[i].ID ==0) break;
-    //     printf("%d\n",F[i].ID);
-    //     printf("%s\n",F[i].Name);
-    //     printf("%d\n",F[i].PickTime);
-    //     printf("%s\n",F[i].LastPick);
-    //     printf("%d\n",F[i].Calories);
-    //     i++;
-    // }
     printf("%d\n",calories);
     printf("%.2f %.2f %.2f",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed);
     printf(" %s", date);
