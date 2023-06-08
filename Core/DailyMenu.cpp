@@ -4,11 +4,13 @@
 
 
 
-char WeeklyLog[100] = "Core\\InOut\\WeeklyLog.txt";
-char FoodAfterFilter[100] = "Core\\InOut\\FoodAfterFilter.txt";
-char caloriesIN[50] = "Core\\InOut\\TotalCalories.txt";
+char WeeklyLog[100] = "D:\\code\\KHKT-Order\\InOut\\WeeklyLog.txt";
+char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
+char caloriesIN[50] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
+int countfoodbyid;
+char cantfind[20] = "can't find any food";
 char date[10];
 
 struct Food{
@@ -23,17 +25,17 @@ struct Food{
 
 struct Breakfast{
     char Name[50];
-    int caloNeed;
+    float caloNeed;
 };Breakfast B[6];
 
 struct Lunch{
     char Name[50];
-    int caloNeed;
+    float caloNeed;
 };Lunch L[6];
 
 struct Dinner{
     char Name[50];
-    int caloNeed;
+    float caloNeed;
 };Dinner D[6];
 
 
@@ -122,8 +124,16 @@ void clearFood(int i){
         i++;
     }
 }
-
-
+int CountFood(){
+     countfoodbyid=0;
+    while(1>0)
+    {
+    if(F[countfoodbyid].ID == 0)
+        break;
+        countfoodbyid++;
+    }
+    return countfoodbyid;
+}
 
 
 
@@ -132,58 +142,52 @@ void clearFood(int i){
 
 
 void BFast(){
-    int j = 0;
+    int j;
     for(int i = 0; i<=6; i++){
-        while(1){
+        for(j = 0; j<= countfoodbyid-1; j++){
+            strcpy(B[i].Name,cantfind);
             if( F[j].Calories <= B->caloNeed + 3 ){
-                if (F[j].Calories >= B->caloNeed - 3)
-                {
-                   updateFoodLog(F[j].ID);
-                strcpy(B[i].Name, F[j].Name);
-                clearFood(j);
-                j=0;
-                break;
+                    if (F[j].Calories >= B->caloNeed - 3){
+                    updateFoodLog(F[j].ID);
+                    strcpy(B[i].Name, F[j].Name);
+                    clearFood(j);
+                    break;
                 }
             }
-            j++;
         }
     }
 }
 
 void LNch(){
-    int j = 0;
+     int j;
     for(int i = 0; i<=6; i++){
-        while(1){
+        for(j = 0; j<= countfoodbyid-1; j++){
+            strcpy( L[i].Name,cantfind); 
             if( F[j].Calories <= L->caloNeed + 3 ){
-                if (F[j].Calories >= L->caloNeed - 3)
-                {
-                   updateFoodLog(F[j].ID);
-                strcpy(L[i].Name, F[j].Name);
-                clearFood(j);
-                j=0;
-                break;
+                    if (F[j].Calories >= L->caloNeed - 3){
+                    updateFoodLog(F[j].ID);
+                    strcpy( L[i].Name, F[j].Name);
+                    clearFood(j);
+                    break;
                 }
             }
-            j++;
         }
     }
 }
 
 void DNer(){
-     int j = 0;
+     int j;
     for(int i = 0; i<=6; i++){
-        while(1){
+        for(j = 0; j<= countfoodbyid-1; j++){
+            strcpy( D[i].Name,cantfind); 
             if( F[j].Calories <= D->caloNeed + 3 ){
-                if (F[j].Calories >= D->caloNeed - 3)
-                {
-                   updateFoodLog(F[j].ID);
-                strcpy(D[i].Name, F[j].Name);
-                clearFood(j);
-                j=0;
-                break;
+                    if (F[j].Calories >= D->caloNeed - 3){
+                    updateFoodLog(F[j].ID);
+                    strcpy( D[i].Name, F[j].Name);
+                    clearFood(j);
+                    break;
                 }
             }
-            j++;
         }
     }
 }
@@ -213,6 +217,7 @@ importFood();
 importCalories();
 findCaloNeed();
 findTime();
+CountFood();
 BFast();
 LNch();
 DNer();
