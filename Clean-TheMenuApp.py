@@ -254,7 +254,7 @@ class Food():
                 Id = int(check) + 1
             f.close()
 
-            with open("D:\code\KHKT-Order\InOut\AllFood.txt","a") as f:
+            with open("Core\InOut\AllFood.txt","a") as f:
                 f.write(str(Id))
                 f.write("\n")
                 f.write(name_food.text)
@@ -278,14 +278,14 @@ class Food():
                             on_press = add_food)
         
         def screenAllFood(self):
-            f = open("KHKT-Order\Core\InOut\AllFood.txt","r")
+            f = open("Core\InOut\AllFood.txt","r")
             food = f.readlines()
             food = [s.replace("\n","") for s in food]
             mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
             def deleteFood(self):
                 def delete(self):
-                    f = open("D:\code\KHKT-Order\InOut\deleteID.txt", "w")
+                    f = open("Core\InOut\deleteID.txt", "w")
                     f.write(ID.text)
                     f.close()
                     noti = Popup(title = "notification",content = Label(text = "Delete successful"), auto_dismiss = True, size_hint = (0.2,0.2))

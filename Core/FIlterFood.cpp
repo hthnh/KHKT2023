@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-char AllFood[100] = "D:\\code\\KHKT-Order\\InOut\\AllFood.txt";
-char WeeklyLog[100] = "D:\\code\\KHKT-Order\\InOut\\WeeklyLog.txt";
-char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
+char AllFood[100] = "InOut\\AllFood.txt";
+char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
+char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
 struct Food{
     int ID;
     char Name[50];

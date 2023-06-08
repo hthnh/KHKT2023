@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-char AllFood[100] = "D:\\code\\KHKT-Order\\InOut\\AllFood.txt";
-char deleteID[100] = "D:\\code\\KHKT-Order\\InOut\\deleteID.txt"; int ID;
+char AllFood[100] = "InOut\\AllFood.txt";
+char deleteID[100] = "InOut\\deleteID.txt"; int ID;
 struct Food{
     int ID;
     char Name[50];

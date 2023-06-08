@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-char WeeklyLog[100] = "D:\\code\\KHKT-Order\\InOut\\WeeklyLog.txt";
+char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
 
 int main(){
     FILE *f = fopen(WeeklyLog,"w");
