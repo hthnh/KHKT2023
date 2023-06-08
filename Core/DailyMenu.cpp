@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+// delete here to fix ->
+'
 
+chia ti le khong tim ra food thi = cach nao do chon food sao cho tong calories food = caloNeed
 
-
-char WeeklyLog[100] = "D:\\code\\KHKT-Order\\InOut\\WeeklyLog.txt";
-char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
-char caloriesIN[50] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
+char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
+char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
+char caloriesIN[50] = "InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
 int countfoodbyid;
