@@ -23,17 +23,17 @@ struct Food{
 
 struct Breakfast{
     char Name[50];
-    float caloNeed;
+    int caloNeed;
 };Breakfast B[6];
 
 struct Lunch{
     char Name[50];
-    float caloNeed;
+    int caloNeed;
 };Lunch L[6];
 
 struct Dinner{
     char Name[50];
-    float caloNeed;
+    int caloNeed;
 };Dinner D[6];
 
 
