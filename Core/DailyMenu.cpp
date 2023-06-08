@@ -4,9 +4,9 @@
 
 
 
-char WeeklyLog[100] = "D:\\code\\KHKT-Order\\InOut\\WeeklyLog.txt";
-char FoodAfterFilter[100] = "D:\\code\\KHKT-Order\\InOut\\FoodAfterFilter.txt";
-char caloriesIN[50] = "D:\\code\\KHKT-Order\\InOut\\TotalCalories.txt";
+char WeeklyLog[100] = "Core\\InOut\\WeeklyLog.txt";
+char FoodAfterFilter[100] = "Core\\InOut\\FoodAfterFilter.txt";
+char caloriesIN[50] = "Core\\InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
 char date[10];
