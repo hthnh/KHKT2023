@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-// delete here to fix ->
-'
+
 
 chia ti le khong tim ra food thi = cach nao do chon food sao cho tong calories food = caloNeed
 
