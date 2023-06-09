@@ -58,6 +58,9 @@ void importCalories(){
     FILE *f = fopen(caloriesIN,"r");
     fscanf(f,"%d",&numOfPeople);
     fscanf(f,"%d",&calories);
+    // them chuc nang Giam can or Tang can, Dieu kien chon food phu thuoc vo
+    // neu Giam can ->  -0.1*
+    // neu Tang -> +0.1*
     calories+=1;
     fclose(f);
 }
