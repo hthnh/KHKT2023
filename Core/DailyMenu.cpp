@@ -3,7 +3,6 @@
 #include <time.h>
 
 
-chia ti le khong tim ra food thi = cach nao do chon food sao cho tong calories food = caloNeed
 
 char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
 char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
