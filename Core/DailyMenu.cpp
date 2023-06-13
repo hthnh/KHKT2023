@@ -10,6 +10,7 @@ char caloriesIN[50] = "InOut\\TotalCalories.txt";
 int numOfPeople;
 int calories;
 int countfoodbyid;
+int chooseOfUser;
 char cantfind[20] = "can't find any food";
 char date[10];
 
@@ -58,17 +59,31 @@ void importCalories(){
     FILE *f = fopen(caloriesIN,"r");
     fscanf(f,"%d",&numOfPeople);
     fscanf(f,"%d",&calories);
+    fscanf(f,"%d",&chooseOfUser);
     // them chuc nang Giam can or Tang can, Dieu kien chon food phu thuoc vo
-    // neu Giam can ->  -0.1*
-    // neu Tang -> +0.1*
+    // neu Giam can ->  -0.1*(2)
+    // neu Tang -> +0.1*(1)
+    // neu Duy Tri -> giu nguyen(0)
     calories+=1;
     fclose(f);
 }
 
 void findCaloNeed(){
-    B[0].caloNeed = calories * 0.2;
-    L[0].caloNeed = calories * 0.5;
-    D[0].caloNeed = calories * 0.3;
+    if(chooseOfUser == 0){
+        B[0].caloNeed = calories * 0.2;
+        L[0].caloNeed = calories * 0.5;
+        D[0].caloNeed = calories * 0.3;
+    }
+    if(chooseOfUser == 1){
+        B[0].caloNeed = calories * 0.2 + calories *0.2 * 0.1;
+        L[0].caloNeed = calories * 0.5 + calories *0.5 * 0.1;
+        D[0].caloNeed = calories * 0.3 + calories *0.3 * 0.1;
+    }
+    if(chooseOfUser == 2){
+        B[0].caloNeed = calories * 0.2 + calories *0.2 * -0.1;
+        L[0].caloNeed = calories * 0.5 + calories *0.5 * -0.1;
+        D[0].caloNeed = calories * 0.3 + calories *0.3 * -0.1;
+}
 }
 
 
