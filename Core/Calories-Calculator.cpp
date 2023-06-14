@@ -3,7 +3,7 @@
 char heightWeight[100] = "InOut\\heightWeight.txt";
 char TotalCalories[100] = "InOut\\TotalCalories.txt";
 float calories = 0,totalCalo = 0;
-int in,numOfPeople;
+int numOfPeople;
 struct CaloriesCalculator{
    int sex; // 0 = male  1 = female
    int height;

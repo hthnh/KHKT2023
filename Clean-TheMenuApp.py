@@ -186,7 +186,7 @@ class btnUser():
                 noti.open()
 
         def AddUser():
-            with open("Core\InOut\heightWeight.txt","w") as f:
+            with open("..\Core\InOut\heightWeight.txt","w") as f:
                 f.write(str(sex))
                 f.write("\n")
                 f.write(height.text)
@@ -199,12 +199,12 @@ class btnUser():
             f.close()
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
-            subprocess.Popen(["Core\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+            subprocess.Popen(["..\Core\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 
         def RemoveUser(self):
             noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
-            subprocess.Popen(["Core\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+            subprocess.Popen(["..\Core\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
         
 
         func = BoxLayout(orientation = "horizontal", padding = 10,size_hint = (1,0.6))
@@ -246,7 +246,7 @@ class Food():
         func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
 
         def add_food(self):
-            f = open("Core\InOut\IDfood.txt", 'r')
+            f = open(".\Core\InOut\IDfood.txt", 'r')
             check = f.read(6)
             if len(check) == 0:
                 Id = 100001
@@ -254,7 +254,7 @@ class Food():
                 Id = int(check) + 1
             f.close()
 
-            with open("Core\InOut\AllFood.txt","a") as f:
+            with open(".\Core\InOut\AllFood.txt","a") as f:
                 f.write(str(Id))
                 f.write("\n")
                 f.write(name_food.text)

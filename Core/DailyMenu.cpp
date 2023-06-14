@@ -11,7 +11,7 @@ int numberOfPeople;
 int calories;
 int numberOfFood = 0;
 int chooseOfUser;
-int caloriesApproximately;
+int positiveLimit, negativeLimit;
 char cantfind[20] = "can't find any food";
 char date[10];
 
@@ -70,7 +70,13 @@ void findCaloNeed(){
     B[0].caloNeed = calories * 0.2;
     L[0].caloNeed = calories * 0.5;
     D[0].caloNeed = calories * 0.3;
-    caloriesApproximately = calories * 0.1;
+    if(chooseOfUser == 0){
+        positiveLimit = 0;
+        negativeLimit = calories * 0.1;
+    } else if(chooseOfUser == 1){
+        positiveLimit = calories * 0.1; 
+        negativeLimit = 0;
+    }
 }
 
 
@@ -145,16 +151,16 @@ void CountFood(){
 void BFast(){
     int j;
     for(int i = 0; i<=6; i++){
-        for(j = 0; j<= numberOfFood-1; j++){
-            
-            if( F[j].Calories <= B->caloNeed + caloriesApproximately ){
-                if (F[j].Calories >= B->caloNeed - caloriesApproximately){
+        for(j = 0; j<= numberOfFood-1; j++){  
+            if( F[j].Calories <= B->caloNeed + positiveLimit ){
+                strcpy(B[i].Name,cantfind);
+                if (F[j].Calories >= B->caloNeed - negativeLimit){
                     updateFoodLog(F[j].ID);
                     strcpy(B[i].Name, F[j].Name);
                     clearFood(j);
                     break;
                 }
-            } else strcpy(B[i].Name,cantfind);
+            } 
         }
     }
 }
@@ -164,8 +170,8 @@ void LNch(){
     for(int i = 0; i<=6; i++){
         for(j = 0; j<= numberOfFood-1; j++){
             strcpy( L[i].Name,cantfind); 
-            if( F[j].Calories <= L->caloNeed + caloriesApproximately ){
-                    if (F[j].Calories >= L->caloNeed - caloriesApproximately){
+            if( F[j].Calories <= L->caloNeed + positiveLimit ){
+                    if (F[j].Calories >= L->caloNeed - negativeLimit){
                     updateFoodLog(F[j].ID);
                     strcpy( L[i].Name, F[j].Name);
                     clearFood(j);
@@ -177,27 +183,16 @@ void LNch(){
 }
 
 void DNer(){
-     int j;
+    int j;
     for(int i = 0; i<=6; i++){
         for(j = 0; j<= numberOfFood-1; j++){
-            strcpy( D[i].Name,cantfind);
-            if(chooseOfUser == 1){
-                if( F[j].Calories <= D->caloNeed + caloriesApproximately ){
-                        if (F[j].Calories >= D->caloNeed ){
-                        updateFoodLog(F[j].ID);
-                        strcpy( D[i].Name, F[j].Name);
-                        clearFood(j);
-                        break;
-                    }
+            if( F[j].Calories <= D->caloNeed + positiveLimit ){
+                if (F[j].Calories >= D->caloNeed - negativeLimit ){   
+                updateFoodLog(F[j].ID);
+                strcpy( D[i].Name, F[j].Name);
+                clearFood(j);
+                break;
                 }
-            }else if(chooseOfUser == 2){
-                if( F[j].Calories <= D->caloNeed  ){
-                        if (F[j].Calories >= D->caloNeed - caloriesApproximately){
-                        updateFoodLog(F[j].ID);
-                        strcpy( D[i].Name, F[j].Name);
-                        clearFood(j);
-                        break;
-                    }
             }
         }
     }
@@ -206,7 +201,7 @@ void DNer(){
 void check(){
     int i = 0;
     printf("%d\n",calories);
-    printf(" B:%.2f L:%.2f D:%.2f chenh lech cho phep %d",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed, caloriesApproximately);
+    printf(" B:%.2f L:%.2f D:%.2f chenh lech cho phep %d %d",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed, positiveLimit , negativeLimit);
     printf(" %s", date);
     for(i = 0; i<=6; i++){
         printf("\n%s",B[i].Name);

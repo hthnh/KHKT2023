@@ -1,11 +1,2 @@
-1
-1326
-0
-
-if( F[j].Calories <= D->caloNeed ){
-    if (F[j].Calories >= D->caloNeed - caloriesApproximately){
-
-
-if( F[j].Calories <= D->caloNeed + caloriesApproximately ){
-    if (F[j].Calories >= D->caloNeed ){
-
+5
+9316.50
