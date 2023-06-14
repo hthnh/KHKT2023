@@ -186,7 +186,7 @@ class btnUser():
                 noti.open()
 
         def AddUser():
-            with open("..\Core\InOut\heightWeight.txt","w") as f:
+            with open("KHKT-Order\Core\InOut\heightWeight.txt","w") as f:
                 f.write(str(sex))
                 f.write("\n")
                 f.write(height.text)
@@ -197,9 +197,9 @@ class btnUser():
                 f.write("\n")
                 f.write(str(style))
             f.close()
+            subprocess.call(['KHKT-Order\Core\Calories-Calculator.exe'], shell= True)
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
-            subprocess.Popen(["..\Core\Calories-Calculator.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
 
         def RemoveUser(self):
             noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
