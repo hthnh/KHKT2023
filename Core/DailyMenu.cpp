@@ -180,14 +180,24 @@ void DNer(){
      int j;
     for(int i = 0; i<=6; i++){
         for(j = 0; j<= numberOfFood-1; j++){
-            strcpy( D[i].Name,cantfind); 
-            if( F[j].Calories <= D->caloNeed + caloriesApproximately ){
-                    if (F[j].Calories >= D->caloNeed - caloriesApproximately){
-                    updateFoodLog(F[j].ID);
-                    strcpy( D[i].Name, F[j].Name);
-                    clearFood(j);
-                    break;
+            strcpy( D[i].Name,cantfind);
+            if(chooseOfUser == 1){
+                if( F[j].Calories <= D->caloNeed + caloriesApproximately ){
+                        if (F[j].Calories >= D->caloNeed ){
+                        updateFoodLog(F[j].ID);
+                        strcpy( D[i].Name, F[j].Name);
+                        clearFood(j);
+                        break;
+                    }
                 }
+            }else if(chooseOfUser == 2){
+                if( F[j].Calories <= D->caloNeed  ){
+                        if (F[j].Calories >= D->caloNeed - caloriesApproximately){
+                        updateFoodLog(F[j].ID);
+                        strcpy( D[i].Name, F[j].Name);
+                        clearFood(j);
+                        break;
+                    }
             }
         }
     }
