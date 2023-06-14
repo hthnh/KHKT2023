@@ -7,10 +7,11 @@
 char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
 char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
 char caloriesIN[50] = "InOut\\TotalCalories.txt";
-int numOfPeople;
+int numberOfPeople;
 int calories;
-int countfoodbyid;
+int numberOfFood = 0;
 int chooseOfUser;
+int caloriesApproximately;
 char cantfind[20] = "can't find any food";
 char date[10];
 
@@ -27,17 +28,17 @@ struct Food{
 struct Breakfast{
     char Name[50];
     float caloNeed;
-};Breakfast B[6];
+};Breakfast B[7];
 
 struct Lunch{
     char Name[50];
     float caloNeed;
-};Lunch L[6];
+};Lunch L[7];
 
 struct Dinner{
     char Name[50];
     float caloNeed;
-};Dinner D[6];
+};Dinner D[7];
 
 
 void importFood(){
@@ -57,33 +58,19 @@ void importFood(){
 
 void importCalories(){
     FILE *f = fopen(caloriesIN,"r");
-    fscanf(f,"%d",&numOfPeople);
+    fscanf(f,"%d",&numberOfPeople);
     fscanf(f,"%d",&calories);
     fscanf(f,"%d",&chooseOfUser);
-    // them chuc nang Giam can or Tang can, Dieu kien chon food phu thuoc vo
-    // neu Giam can ->  -0.1*(2)
-    // neu Tang -> +0.1*(1)
-    // neu Duy Tri -> giu nguyen(0)
     calories+=1;
+    calories /= numberOfPeople;
     fclose(f);
 }
 
 void findCaloNeed(){
-    if(chooseOfUser == 0){
-        B[0].caloNeed = calories * 0.2;
-        L[0].caloNeed = calories * 0.5;
-        D[0].caloNeed = calories * 0.3;
-    }
-    if(chooseOfUser == 1){
-        B[0].caloNeed = calories * 0.2 + calories *0.2 * 0.1;
-        L[0].caloNeed = calories * 0.5 + calories *0.5 * 0.1;
-        D[0].caloNeed = calories * 0.3 + calories *0.3 * 0.1;
-    }
-    if(chooseOfUser == 2){
-        B[0].caloNeed = calories * 0.2 + calories *0.2 * -0.1;
-        L[0].caloNeed = calories * 0.5 + calories *0.5 * -0.1;
-        D[0].caloNeed = calories * 0.3 + calories *0.3 * -0.1;
-}
+    B[0].caloNeed = calories * 0.2;
+    L[0].caloNeed = calories * 0.5;
+    D[0].caloNeed = calories * 0.3;
+    caloriesApproximately = calories * 0.1;
 }
 
 
@@ -142,15 +129,11 @@ void clearFood(int i){
         i++;
     }
 }
-int CountFood(){
-     countfoodbyid=0;
-    while(1>0)
-    {
-    if(F[countfoodbyid].ID == 0)
-        break;
-        countfoodbyid++;
+void CountFood(){
+    while(1>0){
+        if(F[numberOfFood].ID == 0) break;
+        numberOfFood++;
     }
-    return countfoodbyid;
 }
 
 
@@ -162,16 +145,16 @@ int CountFood(){
 void BFast(){
     int j;
     for(int i = 0; i<=6; i++){
-        for(j = 0; j<= countfoodbyid-1; j++){
-            strcpy(B[i].Name,cantfind);
-            if( F[j].Calories <= B->caloNeed + 3 ){
-                    if (F[j].Calories >= B->caloNeed - 3){
+        for(j = 0; j<= numberOfFood-1; j++){
+            
+            if( F[j].Calories <= B->caloNeed + caloriesApproximately ){
+                if (F[j].Calories >= B->caloNeed - caloriesApproximately){
                     updateFoodLog(F[j].ID);
                     strcpy(B[i].Name, F[j].Name);
                     clearFood(j);
                     break;
                 }
-            }
+            } else strcpy(B[i].Name,cantfind);
         }
     }
 }
@@ -179,10 +162,10 @@ void BFast(){
 void LNch(){
      int j;
     for(int i = 0; i<=6; i++){
-        for(j = 0; j<= countfoodbyid-1; j++){
+        for(j = 0; j<= numberOfFood-1; j++){
             strcpy( L[i].Name,cantfind); 
-            if( F[j].Calories <= L->caloNeed + 3 ){
-                    if (F[j].Calories >= L->caloNeed - 3){
+            if( F[j].Calories <= L->caloNeed + caloriesApproximately ){
+                    if (F[j].Calories >= L->caloNeed - caloriesApproximately){
                     updateFoodLog(F[j].ID);
                     strcpy( L[i].Name, F[j].Name);
                     clearFood(j);
@@ -196,10 +179,10 @@ void LNch(){
 void DNer(){
      int j;
     for(int i = 0; i<=6; i++){
-        for(j = 0; j<= countfoodbyid-1; j++){
+        for(j = 0; j<= numberOfFood-1; j++){
             strcpy( D[i].Name,cantfind); 
-            if( F[j].Calories <= D->caloNeed + 3 ){
-                    if (F[j].Calories >= D->caloNeed - 3){
+            if( F[j].Calories <= D->caloNeed + caloriesApproximately ){
+                    if (F[j].Calories >= D->caloNeed - caloriesApproximately){
                     updateFoodLog(F[j].ID);
                     strcpy( D[i].Name, F[j].Name);
                     clearFood(j);
@@ -213,7 +196,7 @@ void DNer(){
 void check(){
     int i = 0;
     printf("%d\n",calories);
-    printf("%.2f %.2f %.2f",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed);
+    printf(" B:%.2f L:%.2f D:%.2f chenh lech cho phep %d",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed, caloriesApproximately);
     printf(" %s", date);
     for(i = 0; i<=6; i++){
         printf("\n%s",B[i].Name);
