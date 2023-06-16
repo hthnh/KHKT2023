@@ -4,7 +4,6 @@ from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
-import subprocess
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
@@ -15,6 +14,12 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
+import os
+
+path_to = 'D:\code\KHKT-Order'
+os.chdir(path_to)
+
+
 
 
 class MenuApp(MDApp):
@@ -186,7 +191,7 @@ class btnUser():
                 noti.open()
 
         def AddUser():
-            with open("KHKT-Order\C-progress\InOut\heightWeight.txt","w") as f:
+            with open("C-progress\InOut\heightWeight.txt","w") as f:
                 f.write(str(sex))
                 f.write("\n")
                 f.write(height.text)
@@ -197,14 +202,18 @@ class btnUser():
                 f.write("\n")
                 f.write(str(style))
             f.close()
-            subprocess.call(['KHKT-Order\C-progress\Calories-Calculator.exe'], shell= True)
+            os.chdir("C-progress")
+            os.system("Calories-Calculator.exe")
+            os.chdir("..")
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
 
         def RemoveUser(self):
             noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
-            subprocess.Popen(["..\Core\clearTotalCalories.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+            os.chdir("C-progress")
+            os.system("clearTotalCalories.exe")
+            os.chdir("..")
         
 
         func = BoxLayout(orientation = "horizontal", padding = 10,size_hint = (1,0.6))
@@ -246,7 +255,7 @@ class Food():
         func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
 
         def add_food(self):
-            f = open("KHKT-Order\C-progress\InOut\IDfood.txt", 'r')
+            f = open("C-progress\InOut\IDfood.txt", 'r')
             check = f.read(6)
             if len(check) == 0:
                 Id = 100001
@@ -254,7 +263,7 @@ class Food():
                 Id = int(check) + 1
             f.close()
 
-            with open("KHKT-Order\C-progress\InOut\Allfood.txt","a") as f:
+            with open("C-progress\InOut\Allfood.txt","a") as f:
                 f.write(str(Id))
                 f.write("\n")
                 f.write(name_food.text)
@@ -266,7 +275,7 @@ class Food():
                 f.write(calories_of_food.text)
                 f.write("\n")
             f.close()
-            f = open("KHKT-Order\C-progress\InOut\IDfood.txt", 'w')
+            f = open("C-progress\InOut\IDfood.txt", 'w')
             f.write(str(Id))
             f.close()
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
@@ -278,19 +287,21 @@ class Food():
                             on_press = add_food)
         
         def screenAllFood(self):
-            f = open("KHKT-Order\C-progress\InOut\AllFood.txt","r")
+            f = open("C-progress\InOut\AllFood.txt","r")
             food = f.readlines()
             food = [s.replace("\n","") for s in food]
             mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
             def deleteFood(self):
                 def delete(self):
-                    f = open("KHKT-Order\C-progress\InOut\deleteID.txt", "w")
+                    f = open("C-progress\InOut\deleteID.txt", "w")
                     f.write(ID.text)
                     f.close()
                     noti = Popup(title = "notification",content = Label(text = "Delete successful"), auto_dismiss = True, size_hint = (0.2,0.2))
                     noti.open()
-                    subprocess.Popen(["KHKT-Order\C-progress\DeleteFood.exe"],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True).communicate()
+                    os.chdir("C-progress")
+                    os.system("DeleteFood.exe")
+                    os.chdir("..")
                     Allfood.dismiss()
                 btn = BoxLayout(orientation = "horizontal")
                 btn.add_widget(Button(text = "Confirm", on_press = delete))
