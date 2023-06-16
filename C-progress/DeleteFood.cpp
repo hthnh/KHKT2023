@@ -15,18 +15,17 @@ void importFood(){
     int i = 0;
     while(1){
         fscanf(f,"%d",&F[i].ID);
+        if(F[i].ID == 0) break;
         fscanf(f,"%s",&F[i].Name);
         fscanf(f,"%d",&F[i].PickTime);
         fscanf(f,"%s",&F[i].LastPick);
         fscanf(f,"%d",&F[i].Calories);
-        if(F[i].ID == 0) break;
         i++;
     }  
     fclose(f);
 }
 
 void deleteFood(int i){
-    
     while(1){
         F[i].ID = F[i+1].ID;
         strcpy(F[i].Name,F[i+1].Name);
@@ -34,7 +33,6 @@ void deleteFood(int i){
         strcpy(F[i].LastPick,F[i+1].LastPick);
         F[i].Calories = F[i+1].Calories;
         if(F[i+1].ID == 0) break;
-
         i++;
     }
 }

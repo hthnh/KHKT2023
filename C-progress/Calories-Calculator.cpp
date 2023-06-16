@@ -14,7 +14,7 @@ int Style;
 /*
 1 = khong van dong hoac ngoi nhieu
 2 = van dong nhe nhung khong lien tuc
-3 = moi tuan luyen tap 3-5 lan
+3 = moi tuan luyen tap 3-5 lan 
 4 = moi ngay deu luyen tap
 5 = tinh chat cong viec gan lien voi the thao
 */

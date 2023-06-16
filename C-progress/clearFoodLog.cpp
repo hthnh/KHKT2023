@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+ 
 char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
 
 int main(){

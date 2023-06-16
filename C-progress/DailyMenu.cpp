@@ -62,7 +62,7 @@ void importCalories(){
     fscanf(f,"%d",&calories);
     fscanf(f,"%d",&chooseOfUser);
     calories+=1;
-    calories /= numberOfPeople;
+    calories = calories / numberOfPeople;
     fclose(f);
 }
 
