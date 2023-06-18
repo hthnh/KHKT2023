@@ -27,6 +27,17 @@ class MenuApp(MDApp):
         screen = Screen()
         mainProgram = BoxLayout(orientation = "horizontal")
         AllFunc = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
+        B = {}
+        L = {}
+        D = {}
+
+        with open("C-progress\InOut\DailyFood.txt","r") as f:
+            for i in range(7):
+                B[i] = f.readline()
+            for i in range(7):
+                L[i] = f.readline()
+            for i in range(7):
+                D[i] = f.readline()
         
         table = MDDataTable(pos_hint = {"center_x": .5, "center_y": .5},size_hint = (1, 1),rows_num = 7,
             column_data = [
@@ -36,13 +47,13 @@ class MenuApp(MDApp):
                 ("Dinner", dp(30))
                 ],
             row_data = [
-                ("Monday", "", "",""),
-                ("Tuesday", "", "",""),
-                ("Wednesday", "", "",""),
-                ("Thursday", "", "",""),
-                ("Friday", "", "",""),
-                ("Saturday", "", "",""),
-                ("Sunday", "", "","")
+                ("Monday", B[0], L[0],D[0]),
+                ("Tuesday", B[1], L[1],D[1]),
+                ("Wednesday", B[2], L[2], D[2]),
+                ("Thursday", B[3], L[3],D[3]),
+                ("Friday", B[4], L[4],D[4]),
+                ("Saturday", B[5], L[5],D[5]),
+                ("Sunday", B[6], L[6],D[6])
                 ]
         )
 
