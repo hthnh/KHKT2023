@@ -19,8 +19,9 @@ import os
 path_to = 'D:\code\KHKT-Order'
 os.chdir(path_to)
 
-
-
+os.chdir("C-progress")
+os.system("ActivateCore.exe")
+os.chdir("..")
 
 class MenuApp(MDApp):
     def build(self):
