@@ -8,7 +8,7 @@ char date[10];
 char conditionActivateFile[50] = "InOut\\conditionActivate.txt";
 char conditionDailyMenu[10];
 char conditionClearLog[10];
-char Monday[10] = "Wednesday";
+char Monday[10] = "Monday";
 
 
 void findTime(){ 
@@ -42,13 +42,6 @@ int main(){
             fprintf(f,"%s", date);
             system("FilterFood.exe")
             system("DailyMenu.exe")
-        }
-        else if(strcmp(conditionClearLog, "first")){
-            fprintf(f,"second");
-        }
-        else if(strcmp(conditionClearLog, "second")){
-            system("clearFoodLog.exe")
-            fprintf(f,"");
         }
 
 
