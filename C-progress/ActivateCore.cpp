@@ -40,8 +40,8 @@ int main(){
     if(strcmp(day,Monday) == 0)
         if(strcmp(conditionDailyMenu, date) != 0){
             fprintf(f,"%s", date);
-            system("FilterFood.exe")
-            system("DailyMenu.exe")
+            system("FilterFood.exe");
+            system("DailyMenu.exe");
         }
 
 
