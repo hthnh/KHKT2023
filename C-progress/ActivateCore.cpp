@@ -21,7 +21,6 @@ void findTime(){
     strftime(day, 10, "%A", tm_info); 
     strftime(date, 10, "%x", tm_info); 
 
-
 }
 
 int main(){
@@ -42,6 +41,7 @@ int main(){
             fprintf(f,"%s", date);
             system("FilterFood.exe");
             system("DailyMenu.exe");
+
         }
 
 
