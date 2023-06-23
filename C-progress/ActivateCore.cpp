@@ -53,15 +53,19 @@ int main(){
             system("DailyMenu.exe");
         }
     if(strcmp(day,Monday) == 0){
-        if(conditionClearLog == 2){
+        if(conditionClearLog != 2){
             fprintf(f,"%d",conditionClearLog);
-            system("clearFoodLog.exe");
      }
     }
+    if(strcmp(day,Monday) == 0){
+        if(conditionClearLog == 2){
+            conditionClearLog =0;
+            fprintf(f,"%d",conditionClearLog);
+            system("DeleteFood.exe");
 
-
+        }
+    }
     fclose(f);
-
 
     
 }
