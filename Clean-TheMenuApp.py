@@ -15,7 +15,6 @@ from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 import os
-
 path_to = 'D:\code\KHKT-Order'
 os.chdir(path_to)
 
