@@ -8,7 +8,7 @@ char date[10];
 char conditionActivateFile[50] = "InOut\\conditionActivate.txt";
 char conditionDailyMenu[10];
 int conditionClearLog;
-char Monday[10] = "Monday";
+char Monday[10] = "Saturday";
 
 
 void findTime(){ 
@@ -25,7 +25,7 @@ void findTime(){
 }
 void countDay(){
     if(strcmp(day,Monday) == 0){
-        if(conditionClearLog == 0 ||conditionClearLog == 1){
+        if(conditionClearLog <=1){
             conditionClearLog++;
         }
     }
@@ -44,27 +44,23 @@ int main(){
     findTime();
     countDay();
 
-    f= fopen(conditionActivateFile, "w");
 
     if(strcmp(day,Monday) == 0)
         if(strcmp(conditionDailyMenu, date) != 0){
+            f= fopen(conditionActivateFile, "w");
             fprintf(f,"%s\n", date);
             system("FilterFood.exe");
             system("DailyMenu.exe");
+            if(conditionClearLog != 2){
+                fprintf(f,"%d",conditionClearLog);
+            }
+            if(conditionClearLog == 2){
+                conditionClearLog =0;
+                fprintf(f,"%d",conditionClearLog);
+                system("clearFoodLog.exe");
+            }
         }
-    if(strcmp(day,Monday) == 0){
-        if(conditionClearLog != 2){
-            fprintf(f,"%d",conditionClearLog);
-     }
-    }
-    if(strcmp(day,Monday) == 0){
-        if(conditionClearLog == 2){
-            conditionClearLog =0;
-            fprintf(f,"%d",conditionClearLog);
-            system("DeleteFood.exe");
 
-        }
-    }
     fclose(f);
 
     
