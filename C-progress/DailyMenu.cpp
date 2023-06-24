@@ -7,6 +7,7 @@
 char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
 char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
 char caloriesIN[50] = "InOut\\TotalCalories.txt";
+char DailyFood[50] = "InOut\\DailyFood.txt";
 int numberOfPeople;
 int calories;
 int numberOfFood = 0;
@@ -68,7 +69,7 @@ void importCalories(){
 
 void findCaloNeed(){
     B[0].caloNeed = calories * 0.2;
-    L[0].caloNeed = calories * 0.5;
+    L[0].caloNeed = calories * 0.35;
     D[0].caloNeed = calories * 0.3;
     if(chooseOfUser == 0){
         positiveLimit = 0;
@@ -216,7 +217,21 @@ void check(){
     }
 }
 
-int main(){
+void Output(){
+    int i;
+    FILE *f = fopen(DailyFood,"w");
+    for(i = 0; i<=6; i++){
+        fprintf(f,"%s\n",B[i].Name);
+    }
+    for(i = 0; i<=6; i++){
+        fprintf(f,"%s\n",L[i].Name);
+    }
+    for(i = 0; i<=6; i++){
+        fprintf(f,"%s\n",D[i].Name);
+    }
+}
+
+int main(void){
 
 importFood();
 
@@ -227,7 +242,7 @@ CountFood();
 BFast();
 LNch();
 DNer();
-check();
+Output();
 
 
 
