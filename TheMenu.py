@@ -271,13 +271,15 @@ class Food():
         func = BoxLayout(orientation = "horizontal", padding = 10, size_hint = (1,0.6))
 
         def add_food(self):
-            f = open("C-progress\InOut\IDfood.txt", 'r')
-            check = f.read(6)
-            if len(check) == 0:
-                Id = 100001
-            else:
-                Id = int(check) + 1
+            
+            os.chdir("C-progress")
+            os.system("findIdFood.exe")
+            os.chdir("..")
+
+            f = open("C-progress\InOut\IDfood.txt","r")
+            Id = f.readline()
             f.close()
+
 
             with open("C-progress\InOut\Allfood.txt","a") as f:
                 f.write(str(Id))
@@ -290,10 +292,7 @@ class Food():
                 f.write("\n")
                 f.write(calories_of_food.text)
                 f.write("\n")
-            f.close()
-            f = open("C-progress\InOut\IDfood.txt", 'w')
-            f.write(str(Id))
-            f.close()
+           
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
         btnAdd = Button(text = "Add Food",
