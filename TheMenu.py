@@ -17,7 +17,7 @@ from kivy.core.window import Window
 import os
 path_to = 'D:\code\KHKT-Order'
 os.chdir(path_to)
-
+ 
 os.chdir("C-progress\InOut")
 if os.path.getsize("TotalCalories.txt") != 0 :
     os.chdir("..")
