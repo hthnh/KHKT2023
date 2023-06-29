@@ -15,10 +15,12 @@ from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 import os
-path_to = 'D:\code\KHKT-Order'
+path_to = os.getcwd()
 os.chdir(path_to)
- 
-os.chdir("C-progress\InOut")
+os.chdir("KHKT")
+
+
+os.chdir("Core\InOut")
 if os.path.getsize("TotalCalories.txt") != 0 :
     os.chdir("..")
     os.system("ActivateCore.exe")
@@ -36,7 +38,7 @@ class MenuApp(MDApp):
         L = {}
         D = {}
 
-        with open("C-progress\InOut\DailyFood.txt","r") as f:
+        with open("Core\InOut\DailyFood.txt","r") as f:
             for i in range(7):
                 B[i] = f.readline()
             for i in range(7):
@@ -207,7 +209,7 @@ class btnUser():
                 noti.open()
 
         def AddUser():
-            with open("C-progress\InOut\heightWeight.txt","w") as f:
+            with open("Core\InOut\heightWeight.txt","w") as f:
                 f.write(str(sex))
                 f.write("\n")
                 f.write(height.text)
@@ -218,7 +220,7 @@ class btnUser():
                 f.write("\n")
                 f.write(str(style))
             f.close()
-            os.chdir("C-progress")
+            os.chdir("Core")
             os.system("Calories-Calculator.exe")
             os.chdir("..")
             noti = Popup(title = "notification",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
@@ -227,7 +229,7 @@ class btnUser():
         def RemoveUser(self):
             noti = Popup(title = "notification",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
             noti.open()
-            os.chdir("C-progress")
+            os.chdir("Core")
             os.system("clearTotalCalories.exe")
             os.chdir("..")
         
@@ -272,16 +274,16 @@ class Food():
 
         def add_food(self):
             
-            os.chdir("C-progress")
+            os.chdir("Core")
             os.system("findIdFood.exe")
             os.chdir("..")
 
-            f = open("C-progress\InOut\IDfood.txt","r")
+            f = open("Core\InOut\IDfood.txt","r")
             Id = f.readline()
             f.close()
 
 
-            with open("C-progress\InOut\Allfood.txt","a") as f:
+            with open("Core\InOut\Allfood.txt","a") as f:
                 f.write(str(Id))
                 f.write("\n")
                 f.write(name_food.text)
@@ -302,19 +304,19 @@ class Food():
                             on_press = add_food)
         
         def screenAllFood(self):
-            f = open("C-progress\InOut\AllFood.txt","r")
+            f = open("Core\InOut\AllFood.txt","r")
             food = f.readlines()
             food = [s.replace("\n","") for s in food]
             mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
             mainWindow.bind(minimum_height=mainWindow.setter('height'))
             def deleteFood(self):
                 def delete(self):
-                    f = open("C-progress\InOut\deleteID.txt", "w")
+                    f = open("Core\InOut\deleteID.txt", "w")
                     f.write(ID.text)
                     f.close()
                     noti = Popup(title = "notification",content = Label(text = "Delete successful"), auto_dismiss = True, size_hint = (0.2,0.2))
                     noti.open()
-                    os.chdir("C-progress")
+                    os.chdir("Core")
                     os.system("DeleteFood.exe")
                     os.chdir("..")
                     Allfood.dismiss()
