@@ -6,7 +6,7 @@ block_cipher = None
 
 a = Analysis(
     ['TheMenu.py'],
-    pathex=['C:\\Users\\haith\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages'],
+    pathex=[],
     binaries=[],
     datas=[],
     hiddenimports=[],
