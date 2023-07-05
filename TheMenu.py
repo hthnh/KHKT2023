@@ -18,6 +18,7 @@ import os
 path_to = os.getcwd()
 os.chdir(path_to)
 
+
 os.chdir("Core\InOut")
 if os.path.getsize("TotalCalories.txt") != 0 :
     os.chdir("..")
