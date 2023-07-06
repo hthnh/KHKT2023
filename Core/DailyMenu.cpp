@@ -1,61 +1,76 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 
+#define WeeklyLog "InOut\\WeeklyLog.txt"
+#define FoodAfterFilter "InOut\\FoodAfterFilter.txt"
+#define caloriesIN "InOut\\TotalCalories.txt"
+#define DailyFood "InOut\\DailyFood.txt"
+#define cantfind "can't find any food"
 
 
-char WeeklyLog[100] = "InOut\\WeeklyLog.txt";
-char FoodAfterFilter[100] = "InOut\\FoodAfterFilter.txt";
-char caloriesIN[50] = "InOut\\TotalCalories.txt";
-char DailyFood[50] = "InOut\\DailyFood.txt";
-int numberOfPeople;
-int calories;
-int numberOfFood = 0;
-int chooseOfUser;
-int positiveLimit, negativeLimit;
-char cantfind[20] = "can't find any food";
+int numberOfFood = 0,numberOfPeople,chooseOfUser,calories,positiveLimit, negativeLimit;
 char date[10];
 
 struct Food{
     int ID;
     char Name[50];
+    int TimeOfDay;
+    int withRice;
     int PickTime;
     char LastPick[15];
     int Calories;
 };Food F[1000];
 
-
-
-struct Breakfast{
+// Struct for food of week Breakfast Lunch Dinner
+struct Menu{
     char Name[50];
     float caloNeed;
-};Breakfast B[7];
+};Menu B[7],L[7],D[7];
 
-struct Lunch{
-    char Name[50];
-    float caloNeed;
-};Lunch L[7];
 
-struct Dinner{
-    char Name[50];
-    float caloNeed;
-};Dinner D[7];
 
 
 void importFood(){
-    FILE *f = fopen(FoodAfterFilter,"r");
-    int i = 0;
-    while(1){
-        fscanf(f,"%d",&F[i].ID);
-        if(F[i].ID == 0 ) break;
-        fscanf(f,"%s",&F[i].Name);
-        fscanf(f,"%d",&F[i].PickTime);
-        fscanf(f,"%s",&F[i].LastPick);
-        fscanf(f,"%d",&F[i].Calories);
+    struct Temp{char temp[50];};Temp t[7];
+    int i = 0,y = 0;
+    FILE *fp = fopen(FoodAfterFilter,"r");
+    char *line_buf = NULL;
+    size_t line_buf_size = 0;
+    ssize_t line_size;
+    /* Đọc dòng đầu tiên trong file */
+    line_size = getline(&line_buf, &line_buf_size, fp);
+
+    /* Lặp lại việc đọc và hiển thị nội dung cho tới khi hoàn tất */
+    while (line_size >= 0)
+    {
+        do{
         i++;
-    }  
-    fclose(f);
+        strcpy(t[i].temp,line_buf);
+        /* Đọc dòng tiếp theo */
+        line_size = getline(&line_buf, &line_buf_size, fp);
+        }while(i<7);
+        i = 0;
+        F[y].ID = atoi(t[0].temp);
+        strcpy(F[y].Name,t[1].temp);
+        F[y].TimeOfDay = atoi(t[2].temp);
+        F[y].withRice = atoi(t[3].temp);
+        strcpy(F[y].LastPick,t[4].temp);
+        F[y].PickTime = atoi(t[5].temp);
+        F[y].Calories = atoi(t[6].temp);
+        y++;
+
+    }
+    /* Giải phóng buffer */
+    free(line_buf);
+    line_buf = NULL;
+
+    /* Đóng file pointer */
+    fclose(fp);
+
 }
+    
 
 void importCalories(){
     FILE *f = fopen(caloriesIN,"r");
@@ -199,23 +214,6 @@ void DNer(){
     }
 }
 
-void check(){
-    int i = 0;
-    printf("%d\n",calories);
-    printf(" B:%.2f L:%.2f D:%.2f chenh lech cho phep %d %d",B[0].caloNeed,L[0].caloNeed,D[0].caloNeed, positiveLimit , negativeLimit);
-    printf(" %s", date);
-    for(i = 0; i<=6; i++){
-        printf("\n%s",B[i].Name);
-    }
-    printf(" \n");
-    for(i = 0; i<=6; i++){
-        printf("\n%s",L[i].Name);
-    }
-    printf(" \n");
-    for(i = 0; i<=6; i++){
-        printf("\n%s",D[i].Name);
-    }
-}
 
 void Output(){
     int i;
@@ -231,18 +229,23 @@ void Output(){
     }
 }
 
+void check(){
+    int i = 0;
+    while(1){
+        printf("%d",&F[i].ID);
+        if(F[i].ID == 0 ) break;
+        printf("%s",&F[i].Name);
+        printf("%d",&F[i].PickTime);
+        printf("%s",&F[i].LastPick);
+        printf("%d",&F[i].Calories);
+        i++;
+    }  
+}
+
 int main(void){
 
 importFood();
-
-importCalories();
-findCaloNeed();
-findTime();
-CountFood();
-BFast();
-LNch();
-DNer();
-Output();
+check();
 
 
 

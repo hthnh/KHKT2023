@@ -6,7 +6,7 @@
         Ke`m Com(0\1)
             Co phai la mon an kem voi com hay khong
         Ngay chon cuoi
-        Lan chon cuoi
+        Lan chon
         Calories
 
 1000001
