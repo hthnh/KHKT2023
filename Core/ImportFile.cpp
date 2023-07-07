@@ -2,6 +2,9 @@
 
 int main(){
     FILE *f;
+    f = fopen("InOut\\AllFood.txt","w");
+    fprintf(f,"");
+    fclose(f);
     f = fopen("InOut\\conditionActivate.txt","w");
     fprintf(f,"");
     fclose(f);

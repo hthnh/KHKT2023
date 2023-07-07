@@ -1,7 +1,6 @@
 #include <stdio.h>
-
-char heightWeight[100] = "InOut\\heightWeight.txt";
-char TotalCalories[100] = "InOut\\TotalCalories.txt";
+#define heightWeight "InOut\\heightWeight.txt"
+#define TotalCalories "InOut\\TotalCalories.txt"
 float calories = 0,totalCalo = 0;
 int numOfPeople;
 struct CaloriesCalculator{
@@ -47,7 +46,7 @@ int main(){
     }else if(C.sex == 1){
         calories = (6.25 * C.height) + (10 * C.weight) - (5 * C.age) - 161;
     }
-    if(Style == 1) calories *= 1.2;
+    if(Style == 1) calories *= 1.232;
     if(Style == 2) calories *= 1.375;
     if(Style == 3) calories *= 1.55;
     if(Style == 4) calories *= 1.725;
