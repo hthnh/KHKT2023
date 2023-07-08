@@ -47,6 +47,7 @@ int main(){
     fscanf(f,"%d",&C.weight);
     fscanf(f,"%d",&C.age);
     fscanf(f,"%d",&Style);
+    fscanf(f,"%d",&Type);
     fclose(f);
     if (C.sex == 0){
         calories = (6.25 * C.height) + (10 * C.weight) - (5 * C.age) + 5;
