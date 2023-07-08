@@ -17,6 +17,12 @@ int Style;
 4 = moi ngay deu luyen tap
 5 = tinh chat cong viec gan lien voi the thao
 */
+int Type;
+/*
+1 = Gain weight
+2 = Loss weight
+3 = Normal
+*/
 
 
 void updateCalories(){
@@ -29,6 +35,7 @@ void updateCalories(){
     f = fopen(TotalCalories,"w");
     fprintf(f,"%d\n",numOfPeople);
     fprintf(f,"%.2f",totalCalo);
+    fprintf(f,"%d",Type);
     fclose(f);
 }
 

@@ -4,6 +4,7 @@ from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.stacklayout import StackLayout
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
@@ -126,11 +127,21 @@ class btnUser():
         female = CheckBox(color = (0,0,0,1), group = "sex")
         female.bind(active= checkbox_female)
 
-        Sex.add_widget(Label(text ="Male",color = (0,0,0,1)))
-        Sex.add_widget(male)
-        Sex.add_widget(Label(text ="Female",color = (0,0,0,1)))
-        Sex.add_widget(female)
+        Male = BoxLayout(orientation = "horizontal")
+        Female = BoxLayout(orientation = "horizontal")
 
+        Male.add_widget(Label())
+        Male.add_widget(male)
+        Male.add_widget(Label(text ="Male",color = (0,0,0,1)))
+        Male.add_widget(Label())
+
+        Female.add_widget(Label())
+        Female.add_widget(female)
+        Female.add_widget(Label(text ="Female",color = (0,0,0,1)))
+        Female.add_widget(Label())
+
+        Sex.add_widget(Male)
+        Sex.add_widget(Female)
         global height
         height = TextInput(multiline=False, text = "cm")
         global weight
@@ -171,6 +182,30 @@ class btnUser():
         btnStyle.bind(on_release = Style.open)
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
 
+        def takeType(value):
+            global type
+            if value == "Gain Weight" :
+                style = 1
+            elif value == "Loss Weight" :
+                style = 2
+            elif value == "Normal" :
+                style = 3
+
+        typeMenu = DropDown()
+        #gain weight/loss weight/normal
+        Gw = Button(text = "Gain Weight",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Gw.bind(on_release = lambda Gw: typeMenu.select(Gw.text))
+        Lw = Button(text = "Loss Weight",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
+        Nw = Button(text = "Normal",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
+
+        typeMenu.add_widget(Gw)
+        typeMenu.add_widget(Nw)
+        typeMenu.add_widget(Lw)
+        btnType = Button(text = "Choice type of menu")
+        btnType.bind(on_release = typeMenu.open)
+        typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
 
 
         input.add_widget(Label(text = "What is your sex",color = (0,0,0,1)))
@@ -183,30 +218,37 @@ class btnUser():
         input.add_widget(age)
         input.add_widget(Label(text = "Style",color = (0,0,0,1)))
         input.add_widget(btnStyle)
+        input.add_widget(Label(text = "Type of Menu",color = (0,0,0,1)))
+        input.add_widget(btnType)
+
 
 
 
         def check_add_user(self):
-            if sex == 1 or sex == 0 :
-                if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
-                    if not "cm" in height.text :
-                        if not "kg" in weight.text :
-                            if not "year" in age.text :
-                                AddUser()
+            if type == 1 or type == 2 or type == 3:
+                if sex == 1 or sex == 0 :
+                    if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                        if not "cm" in height.text :
+                            if not "kg" in weight.text :
+                                if not "year" in age.text :
+                                    AddUser()
+                                else :
+                                    noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                    noti.open()
                             else :
-                                noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
                                 noti.open()
                         else :
-                            noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
+                            noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
                             noti.open()
                     else :
-                        noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
+                        noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
                         noti.open()
                 else :
-                    noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
+                    noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
                     noti.open()
             else :
-                noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
+                noti = Popup(title = "notification",content = Label(text = "Missing Type"), auto_dismiss = True, size_hint = (0.2,0.2))
                 noti.open()
 
         def AddUser():
