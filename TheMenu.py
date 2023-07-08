@@ -331,6 +331,8 @@ class Food():
                 f.write("\n")
                 f.write(name_food.text)
                 f.write("\n")
+                f.write(rice.text)
+                f.write("\n")
                 f.write("0")
                 f.write("\n")
                 f.write("0")
@@ -433,10 +435,58 @@ class Food():
         global calories_of_food
         calories_of_food = TextInput(text = "calories",multiline = False)
 
+        TimeOfDay = BoxLayout(orientation = "horizontal")
+
+        global TOD
+        TOD = int(1)
+
+        def checkbox_Morning(checkbox, value):
+            if value :
+                global TOD
+                TOD = 1
+        
+
+
+        Rice = BoxLayout(orientation = "vertical")
+
+        global rice 
+        rice = int(1)
+
+        def checkbox_WR(checkbox, value):
+            if value :
+                global rice
+                rice = 1
+        WR = CheckBox(color = (0,0,0,1),group = "Rice")
+        WR.bind(active = checkbox_WR)
+
+        def checkbox_WOR(checkbox, value):
+            if value :
+                global rice
+                rice = 0
+        WOR =CheckBox(color = (0,0,0,1), group = "Rice")
+        WOR.bind(active = checkbox_WOR)
+
+        withRice = BoxLayout(orientation = "horizontal")
+        withRice.add_widget(Label())
+        withRice.add_widget(WR)
+        withRice.add_widget(Label(text = "Eat with Rice", color = (0,0,0,1)))
+        withRice.add_widget(Label())
+
+        withoutRice = BoxLayout(orientation = "horizontal")
+        withoutRice.add_widget(Label())
+        withoutRice.add_widget(WOR)
+        withoutRice.add_widget(Label(text = "Eat without Rice", color = (0,0,0,1)))
+        withoutRice.add_widget(Label())
+
+        Rice.add_widget(withRice)
+        Rice.add_widget(withoutRice)
+
         input.add_widget(Label(text = "Name food:",color = (0,0,0,1)))
         input.add_widget(name_food)
         input.add_widget(Label(text = "Calories of food:", color = (0,0,0,1)))
         input.add_widget(calories_of_food)
+        input.add_widget(Label(text = "With(out) Rice:", color = (0,0,0,1)))
+        input.add_widget(Rice)
 
         layout = BoxLayout(orientation = "vertical")
         layout.add_widget(input)
