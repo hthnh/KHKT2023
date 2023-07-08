@@ -4,9 +4,11 @@
 
 
 
-int i = 0;
+
 #define AllFood "InOut\\AllFood.txt"
 #define IDfood "InOut\\IDfood.txt"
+
+int numberOfFood = 0;
 
 struct Food{
     int ID;
@@ -21,7 +23,7 @@ struct Food{
 
 void importFood(){
     struct Temp{char temp[50];};Temp t[7];
-    int i = 0,y = 0;
+    int i = 0, y = 0;
     FILE *fp = fopen(AllFood,"r");
     char *line_buf = NULL;
     size_t line_buf_size = 0;
@@ -53,11 +55,18 @@ void importFood(){
 
 }
 
+void CountFood(){
+    while(1>0){
+        if(F[numberOfFood].ID == 0) break;
+        numberOfFood++;
+    }
+}
+
 int main(){
     importFood();
-
+    CountFood();
     FILE *f = fopen(IDfood,"w");
-    fprintf(f,"%d",F[i-1].ID + 1);
+    fprintf(f,"%d",F[numberOfFood-1].ID + 1);
     fclose(f);
 
 }

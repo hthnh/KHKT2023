@@ -331,7 +331,9 @@ class Food():
                 f.write("\n")
                 f.write(name_food.text)
                 f.write("\n")
-                f.write(rice.text)
+                f.write(''.join(str(x) for x in TOD))
+                f.write("\n")
+                f.write(str(rice))
                 f.write("\n")
                 f.write("0")
                 f.write("\n")
@@ -384,19 +386,22 @@ class Food():
                         title_size = dp(20))
                 popUp.open()
             x = 0
-            for i in range(int(len(food)/5)):
+            for i in range(int(len(food)/7)):
                 foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
                 icon = Image(source='meal-food-icon.png',size_hint = (0.25,None))
                 foodCard.add_widget(icon)
                 mainInformation = GridLayout(cols = 3)
                 idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
                 nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
-                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+2],color = (0,0,0,1))
-                lastPickLabel = Label(text = "Last Selected: %s"%food[x+3],color = (0,0,0,1))
-                caloriesLabel = Label(text = "Calories: %s"%food[x+4],color = (0,0,0,1))
+                TODLabel = Label(text = "Time Of Day: %s"%food[x+2],color = (0,0,0,1))
+                withRiceLabel = Label(text = "Rice: %s"%food[x+3],color = (0,0,0,1))
+                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+4],color = (0,0,0,1))
+                lastPickLabel = Label(text = "Last Selected: %s"%food[x+5],color = (0,0,0,1))
+                caloriesLabel = Label(text = "Calories: %s"%food[x+6],color = (0,0,0,1))
                 mainInformation.add_widget(idLabel)
                 mainInformation.add_widget(nameLabel)
-                mainInformation.add_widget(Label())
+                mainInformation.add_widget(TODLabel)
+                mainInformation.add_widget(withRiceLabel)
                 mainInformation.add_widget(pickTimeLabel)
                 mainInformation.add_widget(lastPickLabel)
                 mainInformation.add_widget(caloriesLabel)
@@ -404,7 +409,7 @@ class Food():
                 btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
                 foodCard.add_widget(btnDelete)
                 mainWindow.add_widget(foodCard)
-                x+= 5
+                x+= 7
 
 
             
@@ -438,14 +443,48 @@ class Food():
         TimeOfDay = BoxLayout(orientation = "horizontal")
 
         global TOD
-        TOD = int(1)
+        TOD = [0,0,0]
 
         def checkbox_Morning(checkbox, value):
+            global TOD
             if value :
-                global TOD
-                TOD = 1
+                TOD[0] = 1
+            else :
+                TOD[0] = 0
         
+        def checkbox_Noon(checkbox, value):
+            global TOD
+            if value :
+                TOD[1] = 2
+            else :
+                TOD[1] = 0
 
+        def checkbox_Afternoon(checkbox, value):
+            global TOD
+            if value :
+                TOD[2] = 3
+            else :
+                TOD[2] = 0
+
+        M = CheckBox(color=(0,0,0,1))
+        M.bind(active = checkbox_Morning)
+        Morning = BoxLayout(orientation = "vertical")
+        Morning.add_widget(Label(text = "Morning"))
+        Morning.add_widget(M)
+        N = CheckBox(color=(0,0,0,1))
+        N.bind(active = checkbox_Noon)
+        Noon = BoxLayout(orientation = "vertical")
+        Noon.add_widget(Label(text = "Noon"))
+        Noon.add_widget(N)
+        AN = CheckBox(color=(0,0,0,1))
+        AN.bind(active = checkbox_Afternoon)
+        Afternoon = BoxLayout(orientation = "vertical")
+        Afternoon.add_widget(Label(text = "AfterNoon"))
+        Afternoon.add_widget(AN)
+
+        TimeOfDay.add_widget(Morning)
+        TimeOfDay.add_widget(Noon)
+        TimeOfDay.add_widget(Afternoon)
 
         Rice = BoxLayout(orientation = "vertical")
 
@@ -487,6 +526,8 @@ class Food():
         input.add_widget(calories_of_food)
         input.add_widget(Label(text = "With(out) Rice:", color = (0,0,0,1)))
         input.add_widget(Rice)
+        input.add_widget(Label(text = "Time of day", color = (0,0,0,1)))
+        input.add_widget(TimeOfDay)
 
         layout = BoxLayout(orientation = "vertical")
         layout.add_widget(input)
