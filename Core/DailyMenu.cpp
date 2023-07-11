@@ -87,7 +87,7 @@ void findCaloNeed(){
     } else if(chooseOfUser == 1){
         positiveLimit = calories * 0.1; 
         negativeLimit = 0;
-    } else if(chooseOfUser == 0){
+    } else if(chooseOfUser == 3){
         positiveLimit = calories * 0.05;
         negativeLimit = calories * 0.05;
     }

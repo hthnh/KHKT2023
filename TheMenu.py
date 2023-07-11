@@ -162,6 +162,15 @@ class btnUser():
                 style = 4
             elif value == "athlete" :
                 style = 5
+        def HelpStyle(event):
+            layout = BoxLayout(orientation = "vertical")
+            layout.add_widget(Label(text = "Office work is  work normally carried out in an office or school ") )
+            layout.add_widget(Label(text = "Outdoor work is do something happens outdoors"))
+            layout.add_widget(Label(text = "Exercise sometimes is sometime do physical activities to make your body strong and health"))
+            layout.add_widget(Label(text = "Always exercise is always do physical activities to make your body strong and health"))
+            layout.add_widget(Label(text = "Athlete is you are athlete"))
+            helpPopUp = Popup(title = "Help",content = layout, auto_dismiss = True, size_hint = (0.65,0.5))
+            helpPopUp.open()
         Style = DropDown()
         one = Button(text = "office work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
@@ -178,9 +187,12 @@ class btnUser():
         five = Button(text = "athlete", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         five.bind(on_release = lambda five: Style.select(five.text))
         Style.add_widget(five)
+        helpStyle = Button(text = "Help", size_hint_y = None, height = 35, on_release= lambda style: HelpStyle(event = open))
+        Style.add_widget(helpStyle)
         btnStyle = Button(text = "Choice your life style")
         btnStyle.bind(on_release = Style.open)
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
+
 
         def takeType(value):
             global type
@@ -190,6 +202,13 @@ class btnUser():
                 style = 2
             elif value == "Normal" :
                 style = 3
+        
+        def HelpType(event):
+            layout = BoxLayout(orientation = "vertical")
+            layout.add_widget(Label(text = "Works well in single-user menu") )
+            layout.add_widget(Label(text = "If making a menu for family, choose normal"))
+            helpPopUp = Popup(title = "Help",content = layout, auto_dismiss = True, size_hint = (0.4,0.2))
+            helpPopUp.open()
 
         typeMenu = DropDown()
         #gain weight/loss weight/normal
@@ -199,10 +218,12 @@ class btnUser():
         Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
         Nw = Button(text = "Normal",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
+        Help = Button(text = "Help",size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
 
         typeMenu.add_widget(Gw)
         typeMenu.add_widget(Nw)
         typeMenu.add_widget(Lw)
+        typeMenu.add_widget(Help)
         btnType = Button(text = "Choice type of menu")
         btnType.bind(on_release = typeMenu.open)
         typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
