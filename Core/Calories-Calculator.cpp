@@ -9,7 +9,6 @@ struct CaloriesCalculator{
    int weight;
    int age;
 }; CaloriesCalculator C;
-int Style;
 /*
 1 = khong van dong hoac ngoi nhieu
 2 = van dong nhe nhung khong lien tuc
@@ -17,12 +16,15 @@ int Style;
 4 = moi ngay deu luyen tap
 5 = tinh chat cong viec gan lien voi the thao
 */
-int Type;
+int Style;
+
 /*
 1 = Gain weight
 2 = Loss weight
 3 = Normal
 */
+int Type;
+
 
 
 void updateCalories(){
@@ -34,7 +36,7 @@ void updateCalories(){
     totalCalo += calories ;
     f = fopen(TotalCalories,"w");
     fprintf(f,"%d\n",numOfPeople);
-    fprintf(f,"%.2f",totalCalo);
+    fprintf(f,"%.2f\n",totalCalo);
     fprintf(f,"%d",Type);
     fclose(f);
 }

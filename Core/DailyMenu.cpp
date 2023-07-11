@@ -36,6 +36,7 @@ void importFood(){
     struct Temp{char temp[50];};Temp t[7];
     int i = 0,y = 0;
     FILE *fp = fopen(FoodAfterFilter,"r");
+    if( feof(fp) ) return;
     char *line_buf = NULL;
     size_t line_buf_size = 0;
     ssize_t line_size;
@@ -44,16 +45,16 @@ void importFood(){
     while (line_size >= 0)
     {
         do{
-        i++;
         strcpy(t[i].temp,line_buf);
         line_size = getline(&line_buf, &line_buf_size, fp);
+        i++;
         }while(i<7);
         i = 0;
         F[y].ID = atoi(t[0].temp);
         strncpy(F[y].Name,t[1].temp,strlen(t[1].temp)-1);
-        strncpy(F[y].TimeOfDay,t[2].temp,strlen(t[1].temp)-1);
+        strncpy(F[y].TimeOfDay,t[2].temp,strlen(t[2].temp)-1);
         F[y].withRice = atoi(t[3].temp);
-        strncpy(F[y].LastPick,t[4].temp,strlen(t[1].temp)-1);
+        strncpy(F[y].LastPick,t[4].temp,strlen(t[4].temp)-1);
         F[y].PickTime = atoi(t[5].temp);
         F[y].Calories = atoi(t[6].temp);
         y++;
@@ -68,11 +69,12 @@ void importFood(){
     
 
 void importCalories(){
+    float temp;
     FILE *f = fopen(caloriesIN,"r");
     fscanf(f,"%d",&numberOfPeople);
-    fscanf(f,"%d",&calories);
+    fscanf(f,"%f",&temp);
     fscanf(f,"%d",&chooseOfUser);
-    calories+=1;
+    calories = int(temp);
     calories = calories / numberOfPeople;
     fclose(f);
 }
@@ -123,14 +125,14 @@ int updatePickTime(int i){
     return F[i].PickTime++;
 }
 
-void updateFoodLog(int i){
+void updateFoodLog(int ID){
  FILE *f = fopen(WeeklyLog,"a");
  int j = 0;
     while (1){
-        if( i == F[j].ID){
+        if( ID == F[j].ID){
             updateLastPick(j);
             updatePickTime(j);
-            fprintf(f,"\n%d\n%s\n%s\n%d\n%d\n%s\n%d",F[j].ID,F[j].Name,F[i].TimeOfDay,F[i].withRice,F[j].PickTime,F[j].LastPick,F[j].Calories);
+            fprintf(f,"\n%d\n%s\n%s\n%d\n%d\n%s\n%d",F[j].ID,F[j].Name,F[j].TimeOfDay,F[j].withRice,F[j].PickTime,F[j].LastPick,F[j].Calories);
             break;
         }
         j++;
@@ -167,15 +169,15 @@ void Breakfast(){
     int j;
     for(int i = 0; i<=6; i++){
         for(j = 0; j<= numberOfFood-1; j++){ 
-            if(strchr(F[j].TimeOfDay,'1') != NULL) 
-                if( F[j].Calories <= B->caloNeed + positiveLimit ){
-                    if (F[j].Calories >= B->caloNeed - negativeLimit){
-                        updateFoodLog(F[j].ID);
-                        strcpy(B[i].Name, F[j].Name);
-                        clearFood(j);
-                        break;
-                    }
-                } 
+            if(strchr(F[j].TimeOfDay,'1') == NULL) break;
+            if( F[j].Calories <= B->caloNeed + positiveLimit ){
+                if (F[j].Calories >= B->caloNeed - negativeLimit){
+                    updateFoodLog(F[j].ID);
+                    strcpy(B[i].Name, F[j].Name);
+                    clearFood(j);
+                    break;
+                }
+            } 
         }
     }
 }
@@ -248,6 +250,7 @@ importFood();
 importCalories();
 findCaloNeed();
 findTime();
+CountFood();
 Breakfast();
 Lunch();
 Dinner();

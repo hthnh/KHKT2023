@@ -7,7 +7,7 @@
 struct Food{
     int ID;
     char Name[50];
-    char TimeOfDay[3];
+    char TimeOfDay[3]; 
     int withRice;
     int PickTime;
     char LastPick[15];
@@ -18,6 +18,7 @@ void importFood(){
     struct Temp{char temp[50];};Temp t[7];
     int i = 0,y = 0;
     FILE *fp = fopen(AllFood,"r");
+    if( feof(fp) ) return;
     char *line_buf = NULL;
     size_t line_buf_size = 0;
     ssize_t line_size;
@@ -50,6 +51,7 @@ void importFood(){
 
 void importFoodLog(){
     FILE *fp = fopen(WeeklyLog,"r");
+    if( feof(fp) ) return;
     struct Temp{char temp[50];};Temp t[7];
     int i = 0,y = 0;
     char *line_buf = NULL;
@@ -65,13 +67,13 @@ void importFoodLog(){
         i++;
         }while(i<7);
         i = 0;
-        F[y].ID = atoi(t[0].temp);
-        strncpy(F[y].Name,t[1].temp,strlen(t[1].temp)-1);
-        strncpy(F[y].TimeOfDay,t[2].temp,strlen(t[2].temp)-1);
-        F[y].withRice = atoi(t[3].temp);
-        strncpy(F[y].LastPick,t[4].temp,strlen(t[4].temp)-1);
-        F[y].PickTime = atoi(t[5].temp);
-        F[y].Calories = atoi(t[6].temp);
+        FF[y].ID = atoi(t[0].temp);
+        strncpy(FF[y].Name,t[1].temp,strlen(t[1].temp)-1);
+        strncpy(FF[y].TimeOfDay,t[2].temp,strlen(t[2].temp)-1);
+        FF[y].withRice = atoi(t[3].temp);
+        strncpy(FF[y].LastPick,t[4].temp,strlen(t[4].temp)-1);
+        FF[y].PickTime = atoi(t[5].temp);
+        FF[y].Calories = atoi(t[6].temp);
         y++;
 
     }
@@ -79,7 +81,6 @@ void importFoodLog(){
     line_buf = NULL;
 
     fclose(fp);
-
 }
 void clearFood(int i){
     while(1){

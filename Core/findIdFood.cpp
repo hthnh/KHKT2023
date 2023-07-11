@@ -25,6 +25,7 @@ void importFood(){
     struct Temp{char temp[50];};Temp t[7];
     int i = 0, y = 0;
     FILE *fp = fopen(AllFood,"r");
+    if( feof(fp) ) return;
     char *line_buf = NULL;
     size_t line_buf_size = 0;
     ssize_t line_size;

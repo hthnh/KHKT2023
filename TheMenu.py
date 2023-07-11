@@ -112,6 +112,8 @@ class btnUser():
         sex = int(5)
         global style
         style = int(6)
+        global type
+        type = int(7)
 
         def checkbox_male(checkbox, value):
             if value :
@@ -197,11 +199,11 @@ class btnUser():
         def takeType(value):
             global type
             if value == "Gain Weight" :
-                style = 1
+                type = 1
             elif value == "Loss Weight" :
-                style = 2
+                type = 2
             elif value == "Normal" :
-                style = 3
+                type = 3
         
         def HelpType(event):
             layout = BoxLayout(orientation = "vertical")
@@ -283,6 +285,8 @@ class btnUser():
                 f.write(age.text)
                 f.write("\n")
                 f.write(str(style))
+                f.write("\n")
+                f.write(str(type))
             f.close()
             os.chdir("Core")
             os.system("Calories-Calculator.exe")
