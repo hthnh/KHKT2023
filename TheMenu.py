@@ -149,7 +149,7 @@ class btnUser():
         global weight
         weight = TextInput(multiline=False, text = "kg")
         global age
-        age = TextInput(multiline=False, text = "year")
+        age = TextInput(multiline=False, text = "age")
 
 
         def takeStyle(value):
@@ -253,7 +253,7 @@ class btnUser():
                     if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
                         if not "cm" in height.text :
                             if not "kg" in weight.text :
-                                if not "year" in age.text :
+                                if not "age" in age.text :
                                     AddUser()
                                 else :
                                     noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
