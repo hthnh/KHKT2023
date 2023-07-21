@@ -16,6 +16,10 @@ from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 import os
+import pyuac
+
+if not pyuac.isUserAdmin():
+    pyuac.runAsAdmin()
 
 
 path_to = os.getcwd()
