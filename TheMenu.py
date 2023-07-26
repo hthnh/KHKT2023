@@ -4,6 +4,7 @@ from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.stacklayout import StackLayout
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
@@ -15,6 +16,15 @@ from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 import os
+import pyuac
+from datetime import date
+
+today = date.today()
+
+if not pyuac.isUserAdmin():
+    pyuac.runAsAdmin()
+
+
 path_to = os.getcwd()
 os.chdir(path_to)
 
@@ -47,7 +57,7 @@ class MenuApp(MDApp):
         
         table = MDDataTable(pos_hint = {"center_x": .5, "center_y": .5},size_hint = (1, 1),rows_num = 7,
             column_data = [
-                ("date", dp(20)),
+                (str(today), dp(20)),
                 ("Breakfast", dp(30)),
                 ("Lunch", dp(30)),
                 ("Dinner", dp(30))
@@ -109,6 +119,8 @@ class btnUser():
         sex = int(5)
         global style
         style = int(6)
+        global type
+        type = int(7)
 
         def checkbox_male(checkbox, value):
             if value :
@@ -124,17 +136,27 @@ class btnUser():
         female = CheckBox(color = (0,0,0,1), group = "sex")
         female.bind(active= checkbox_female)
 
-        Sex.add_widget(Label(text ="Male",color = (0,0,0,1)))
-        Sex.add_widget(male)
-        Sex.add_widget(Label(text ="Female",color = (0,0,0,1)))
-        Sex.add_widget(female)
+        Male = BoxLayout(orientation = "horizontal")
+        Female = BoxLayout(orientation = "horizontal")
 
+        Male.add_widget(Label())
+        Male.add_widget(male)
+        Male.add_widget(Label(text ="Male",color = (0,0,0,1)))
+        Male.add_widget(Label())
+
+        Female.add_widget(Label())
+        Female.add_widget(female)
+        Female.add_widget(Label(text ="Female",color = (0,0,0,1)))
+        Female.add_widget(Label())
+
+        Sex.add_widget(Male)
+        Sex.add_widget(Female)
         global height
         height = TextInput(multiline=False, text = "cm")
         global weight
         weight = TextInput(multiline=False, text = "kg")
         global age
-        age = TextInput(multiline=False, text = "year")
+        age = TextInput(multiline=False, text = "age")
 
 
         def takeStyle(value):
@@ -149,6 +171,15 @@ class btnUser():
                 style = 4
             elif value == "athlete" :
                 style = 5
+        def HelpStyle(event):
+            layout = BoxLayout(orientation = "vertical")
+            layout.add_widget(Label(text = "Office work is  work normally carried out in an office or school ") )
+            layout.add_widget(Label(text = "Outdoor work is do something happens outdoors"))
+            layout.add_widget(Label(text = "Exercise sometimes is sometime do physical activities to make your body strong and health"))
+            layout.add_widget(Label(text = "Always exercise is always do physical activities to make your body strong and health"))
+            layout.add_widget(Label(text = "Athlete is you are athlete"))
+            helpPopUp = Popup(title = "Help",content = layout, auto_dismiss = True, size_hint = (0.65,0.5))
+            helpPopUp.open()
         Style = DropDown()
         one = Button(text = "office work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
@@ -165,10 +196,46 @@ class btnUser():
         five = Button(text = "athlete", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         five.bind(on_release = lambda five: Style.select(five.text))
         Style.add_widget(five)
+        helpStyle = Button(text = "Help", size_hint_y = None, height = 35, on_release= lambda style: HelpStyle(event = open))
+        Style.add_widget(helpStyle)
         btnStyle = Button(text = "Choice your life style")
         btnStyle.bind(on_release = Style.open)
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
 
+
+        def takeType(value):
+            global type
+            if value == "Gain Weight" :
+                type = 1
+            elif value == "Loss Weight" :
+                type = 2
+            elif value == "Normal" :
+                type = 3
+        
+        def HelpType(event):
+            layout = BoxLayout(orientation = "vertical")
+            layout.add_widget(Label(text = "Works well in single-user menu") )
+            layout.add_widget(Label(text = "If making a menu for family, choose normal"))
+            helpPopUp = Popup(title = "Help",content = layout, auto_dismiss = True, size_hint = (0.4,0.2))
+            helpPopUp.open()
+
+        typeMenu = DropDown()
+        #gain weight/loss weight/normal
+        Gw = Button(text = "Gain Weight",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Gw.bind(on_release = lambda Gw: typeMenu.select(Gw.text))
+        Lw = Button(text = "Loss Weight",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
+        Nw = Button(text = "Normal",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
+        Help = Button(text = "Help",size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
+
+        typeMenu.add_widget(Gw)
+        typeMenu.add_widget(Nw)
+        typeMenu.add_widget(Lw)
+        typeMenu.add_widget(Help)
+        btnType = Button(text = "Choice type of menu")
+        btnType.bind(on_release = typeMenu.open)
+        typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
 
 
         input.add_widget(Label(text = "What is your sex",color = (0,0,0,1)))
@@ -181,30 +248,37 @@ class btnUser():
         input.add_widget(age)
         input.add_widget(Label(text = "Style",color = (0,0,0,1)))
         input.add_widget(btnStyle)
+        input.add_widget(Label(text = "Type of Menu",color = (0,0,0,1)))
+        input.add_widget(btnType)
+
 
 
 
         def check_add_user(self):
-            if sex == 1 or sex == 0 :
-                if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
-                    if not "cm" in height.text :
-                        if not "kg" in weight.text :
-                            if not "year" in age.text :
-                                AddUser()
+            if type == 1 or type == 2 or type == 3:
+                if sex == 1 or sex == 0 :
+                    if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                        if not "cm" in height.text :
+                            if not "kg" in weight.text :
+                                if not "age" in age.text :
+                                    AddUser()
+                                else :
+                                    noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                    noti.open()
                             else :
-                                noti = Popup(title = "notification",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
                                 noti.open()
                         else :
-                            noti = Popup(title = "notification",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
+                            noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
                             noti.open()
                     else :
-                        noti = Popup(title = "notification",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
+                        noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
                         noti.open()
                 else :
-                    noti = Popup(title = "notification",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
+                    noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
                     noti.open()
             else :
-                noti = Popup(title = "notification",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
+                noti = Popup(title = "notification",content = Label(text = "Missing Type"), auto_dismiss = True, size_hint = (0.2,0.2))
                 noti.open()
 
         def AddUser():
@@ -218,6 +292,8 @@ class btnUser():
                 f.write(age.text)
                 f.write("\n")
                 f.write(str(style))
+                f.write("\n")
+                f.write(str(type))
             f.close()
             os.chdir("Core")
             os.system("Calories-Calculator.exe")
@@ -287,6 +363,10 @@ class Food():
                 f.write("\n")
                 f.write(name_food.text)
                 f.write("\n")
+                f.write(''.join(str(x) for x in TOD))
+                f.write("\n")
+                f.write(str(rice))
+                f.write("\n")
                 f.write("0")
                 f.write("\n")
                 f.write("0")
@@ -338,19 +418,22 @@ class Food():
                         title_size = dp(20))
                 popUp.open()
             x = 0
-            for i in range(int(len(food)/5)):
+            for i in range(int(len(food)/7)):
                 foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
                 icon = Image(source='meal-food-icon.png',size_hint = (0.25,None))
                 foodCard.add_widget(icon)
                 mainInformation = GridLayout(cols = 3)
                 idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
                 nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
-                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+2],color = (0,0,0,1))
-                lastPickLabel = Label(text = "Last Selected: %s"%food[x+3],color = (0,0,0,1))
-                caloriesLabel = Label(text = "Calories: %s"%food[x+4],color = (0,0,0,1))
+                TODLabel = Label(text = "Time Of Day: %s"%food[x+2],color = (0,0,0,1))
+                withRiceLabel = Label(text = "Rice: %s"%food[x+3],color = (0,0,0,1))
+                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+4],color = (0,0,0,1))
+                lastPickLabel = Label(text = "Last Selected: %s"%food[x+5],color = (0,0,0,1))
+                caloriesLabel = Label(text = "Calories: %s"%food[x+6],color = (0,0,0,1))
                 mainInformation.add_widget(idLabel)
                 mainInformation.add_widget(nameLabel)
-                mainInformation.add_widget(Label())
+                mainInformation.add_widget(TODLabel)
+                mainInformation.add_widget(withRiceLabel)
                 mainInformation.add_widget(pickTimeLabel)
                 mainInformation.add_widget(lastPickLabel)
                 mainInformation.add_widget(caloriesLabel)
@@ -358,7 +441,7 @@ class Food():
                 btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
                 foodCard.add_widget(btnDelete)
                 mainWindow.add_widget(foodCard)
-                x+= 5
+                x+= 7
 
 
             
@@ -389,10 +472,94 @@ class Food():
         global calories_of_food
         calories_of_food = TextInput(text = "calories",multiline = False)
 
+        TimeOfDay = BoxLayout(orientation = "horizontal")
+
+        global TOD
+        TOD = [0,0,0]
+
+        def checkbox_Morning(checkbox, value):
+            global TOD
+            if value :
+                TOD[0] = 1
+            else :
+                TOD[0] = 0
+        
+        def checkbox_Noon(checkbox, value):
+            global TOD
+            if value :
+                TOD[1] = 2
+            else :
+                TOD[1] = 0
+
+        def checkbox_Afternoon(checkbox, value):
+            global TOD
+            if value :
+                TOD[2] = 3
+            else :
+                TOD[2] = 0
+
+        M = CheckBox(color=(0,0,0,1))
+        M.bind(active = checkbox_Morning)
+        Morning = BoxLayout(orientation = "vertical")
+        Morning.add_widget(Label(text = "Morning"))
+        Morning.add_widget(M)
+        N = CheckBox(color=(0,0,0,1))
+        N.bind(active = checkbox_Noon)
+        Noon = BoxLayout(orientation = "vertical")
+        Noon.add_widget(Label(text = "Noon"))
+        Noon.add_widget(N)
+        AN = CheckBox(color=(0,0,0,1))
+        AN.bind(active = checkbox_Afternoon)
+        Afternoon = BoxLayout(orientation = "vertical")
+        Afternoon.add_widget(Label(text = "AfterNoon"))
+        Afternoon.add_widget(AN)
+
+        TimeOfDay.add_widget(Morning)
+        TimeOfDay.add_widget(Noon)
+        TimeOfDay.add_widget(Afternoon)
+
+        Rice = BoxLayout(orientation = "vertical")
+
+        global rice 
+        rice = int(1)
+
+        def checkbox_WR(checkbox, value):
+            if value :
+                global rice
+                rice = 1
+        WR = CheckBox(color = (0,0,0,1),group = "Rice")
+        WR.bind(active = checkbox_WR)
+
+        def checkbox_WOR(checkbox, value):
+            if value :
+                global rice
+                rice = 0
+        WOR =CheckBox(color = (0,0,0,1), group = "Rice")
+        WOR.bind(active = checkbox_WOR)
+
+        withRice = BoxLayout(orientation = "horizontal")
+        withRice.add_widget(Label())
+        withRice.add_widget(WR)
+        withRice.add_widget(Label(text = "Eat with Rice", color = (0,0,0,1)))
+        withRice.add_widget(Label())
+
+        withoutRice = BoxLayout(orientation = "horizontal")
+        withoutRice.add_widget(Label())
+        withoutRice.add_widget(WOR)
+        withoutRice.add_widget(Label(text = "Eat without Rice", color = (0,0,0,1)))
+        withoutRice.add_widget(Label())
+
+        Rice.add_widget(withRice)
+        Rice.add_widget(withoutRice)
+
         input.add_widget(Label(text = "Name food:",color = (0,0,0,1)))
         input.add_widget(name_food)
         input.add_widget(Label(text = "Calories of food:", color = (0,0,0,1)))
         input.add_widget(calories_of_food)
+        input.add_widget(Label(text = "With(out) Rice:", color = (0,0,0,1)))
+        input.add_widget(Rice)
+        input.add_widget(Label(text = "Time of day", color = (0,0,0,1)))
+        input.add_widget(TimeOfDay)
 
         layout = BoxLayout(orientation = "vertical")
         layout.add_widget(input)

@@ -1,7 +1,6 @@
 #include <stdio.h>
-
-char heightWeight[100] = "InOut\\heightWeight.txt";
-char TotalCalories[100] = "InOut\\TotalCalories.txt";
+#define heightWeight "InOut\\heightWeight.txt"
+#define TotalCalories "InOut\\TotalCalories.txt"
 float calories = 0,totalCalo = 0;
 int numOfPeople;
 struct CaloriesCalculator{
@@ -10,7 +9,6 @@ struct CaloriesCalculator{
    int weight;
    int age;
 }; CaloriesCalculator C;
-int Style;
 /*
 1 = khong van dong hoac ngoi nhieu
 2 = van dong nhe nhung khong lien tuc
@@ -18,6 +16,15 @@ int Style;
 4 = moi ngay deu luyen tap
 5 = tinh chat cong viec gan lien voi the thao
 */
+int Style;
+
+/*
+1 = Gain weight
+2 = Loss weight
+3 = Normal
+*/
+int Type;
+
 
 
 void updateCalories(){
@@ -29,7 +36,8 @@ void updateCalories(){
     totalCalo += calories ;
     f = fopen(TotalCalories,"w");
     fprintf(f,"%d\n",numOfPeople);
-    fprintf(f,"%.2f",totalCalo);
+    fprintf(f,"%.2f\n",totalCalo);
+    fprintf(f,"%d",Type);
     fclose(f);
 }
 
@@ -41,13 +49,14 @@ int main(){
     fscanf(f,"%d",&C.weight);
     fscanf(f,"%d",&C.age);
     fscanf(f,"%d",&Style);
+    fscanf(f,"%d",&Type);
     fclose(f);
     if (C.sex == 0){
         calories = (6.25 * C.height) + (10 * C.weight) - (5 * C.age) + 5;
     }else if(C.sex == 1){
         calories = (6.25 * C.height) + (10 * C.weight) - (5 * C.age) - 161;
     }
-    if(Style == 1) calories *= 1.2;
+    if(Style == 1) calories *= 1.232;
     if(Style == 2) calories *= 1.375;
     if(Style == 3) calories *= 1.55;
     if(Style == 4) calories *= 1.725;

@@ -2,14 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+#define conditionActivateFile "InOut\\conditionActivate.txt"
+#define Monday "Monday"
 char day[10]; 
 char date[10]; 
-char conditionActivateFile[50] = "InOut\\conditionActivate.txt";
 char conditionDailyMenu[10];
 int conditionClearLog,size;
-char Monday[10] = "Monday";
-
 
 void findTime(){ 
     time_t timer; 
