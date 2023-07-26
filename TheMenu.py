@@ -17,6 +17,9 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
 import os
 import pyuac
+from datetime import date
+
+today = date.today()
 
 if not pyuac.isUserAdmin():
     pyuac.runAsAdmin()
@@ -54,7 +57,7 @@ class MenuApp(MDApp):
         
         table = MDDataTable(pos_hint = {"center_x": .5, "center_y": .5},size_hint = (1, 1),rows_num = 7,
             column_data = [
-                ("date", dp(20)),
+                (str(today), dp(20)),
                 ("Breakfast", dp(30)),
                 ("Lunch", dp(30)),
                 ("Dinner", dp(30))
