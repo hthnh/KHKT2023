@@ -2,7 +2,7 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivymd.uix.datatables import MDDataTable
 from kivy.metrics import dp
-from kivy.uix.button import Button
+from kivy.uix.button import Button,ButtonBehavior
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.stacklayout import StackLayout
 from kivy.uix.popup import Popup
@@ -15,6 +15,7 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.image import Image
 from kivy.uix.floatlayout import FloatLayout
 from kivy.core.window import Window
+from kivy.graphics import Rectangle,Color
 import os
 import pyuac
 from datetime import date
@@ -42,7 +43,7 @@ class MenuApp(MDApp):
     def build(self):
         screen = Screen()
         mainProgram = BoxLayout(orientation = "horizontal")
-        AllFunc = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
+        Func = BoxLayout(orientation = "vertical",padding = 40, spacing = 20)
         B = {}
         L = {}
         D = {}
@@ -74,26 +75,46 @@ class MenuApp(MDApp):
         )
 
 
+        a = ButtonBehavior(ada = 1)
 
-        btnAddMem = Button(text = "Add Family Member", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = btnUser.family_Member)
+        btnAddMem = Button(background_normal = "addfamilybtn.png",size_hint = (.3, .3),pos_hint = {"x":0.35, "y":0.3},on_press = btnUser.family_Member,radius = [300, ])
 
-        btnAddFood = Button(text = "Add Food", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = Food.mainPopUp)
+        btnAddFood = Button(background_color =(0,249,255,1.000), color = (0,0,0,1.000), on_press = Food.mainPopUp)
 
-        btnOrder = Button(text = "Order", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = self.developing)
+        btnOrder = Button(background_color =(0,249,255,1.000), color = (0,0,0,1.000), on_press = self.developing)
 
-        btnPickNow = Button(text = "Pick Now", color = (0,0,0,1.000), background_color =(0,249,255,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = self.developing)
+        btnPickNow = Button(color = (0,0,0,1.000), background_color =(0,249,255,1.000), on_press = self.developing)
 
-        btnNutrition = Button(text = "Nutrition", background_color =(0,249,255,1.000), color = (0,0,0,1.000), size_hint = (.5,.5), pos_hint = {"center_x": .5}, on_press = self.developing)
+        btnNutrition = Button(background_color =(0,249,255,1.000), color = (0,0,0,1.000), on_press = self.developing)
         
+        logo = BoxLayout()
+        logoImage = Image()
+        blankWhiteLabel = Label()
+        logo.add_widget(logoImage)
+        logo.add_widget(blankWhiteLabel)
+
+        allBtn = GridLayout(rows = 4, cols = 3)
+        allBtn.add_widget(btnNutrition)
+        allBtn.add_widget(btnAddMem)
+        allBtn.add_widget(btnAddFood)
+        allBtn.add_widget(Label(text = "NUTRIENT", color = (0,0,0,1)))
+        allBtn.add_widget(Label(text = "ADD FAMILY", color = (0,0,0,1)))
+        allBtn.add_widget(Label(text = "ADD Food", color = (0,0,0,1)))
+        allBtn.add_widget(btnPickNow)
+        allBtn.add_widget(Button())
+        allBtn.add_widget(btnOrder)
+        allBtn.add_widget(Label())
+        allBtn.add_widget(Label())
+        allBtn.add_widget(Label())
 
 
 
-        AllFunc.add_widget(btnAddMem)
-        AllFunc.add_widget(btnAddFood)
-        AllFunc.add_widget(btnOrder)
-        AllFunc.add_widget(btnPickNow)
-        AllFunc.add_widget(btnNutrition)
 
+
+        
+        AllFunc = BoxLayout(orientation = "vertical")
+        AllFunc.add_widget(logo)
+        AllFunc.add_widget(allBtn)
         mainProgram.add_widget(AllFunc)
         mainProgram.add_widget(table)
         
