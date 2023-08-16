@@ -1,3 +1,5 @@
+import kivy
+kivy.require('1.0.7')
 from kivymd.app import MDApp
 from kivymd.uix.screen import Screen
 from kivymd.uix.datatables import MDDataTable
@@ -19,6 +21,9 @@ from kivy.graphics import Rectangle,Color
 import os
 import pyuac
 from datetime import date
+from kivy.config import Config
+Config.set("graphics", 'resizable', True)
+
 
 today = date.today()
 
@@ -75,9 +80,8 @@ class MenuApp(MDApp):
         )
 
 
-        a = ButtonBehavior(ada = 1)
 
-        btnAddMem = Button(background_normal = "addfamilybtn.png",size_hint = (.3, .3),pos_hint = {"x":0.35, "y":0.3},on_press = btnUser.family_Member,radius = [300, ])
+        btnAddMem = Button(background_normal = "addfamilybtn.png",size_hint = (.3, .3),pos_hint = {"x":0.35, "y":0.3},on_press = btnUser.family_Member)
 
         btnAddFood = Button(background_color =(0,249,255,1.000), color = (0,0,0,1.000), on_press = Food.mainPopUp)
 

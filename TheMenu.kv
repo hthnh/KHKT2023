@@ -1,0 +1,75 @@
+#:kivy 1.7.0
+<MainScreen>:
+    size:root.size
+    canvas.before:
+        Color:
+            rgb:(234/255, 219/255, 200/255)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    
+    BoxLayout:
+        background_color:(0,1,0)
+        orientation: "horizontal"
+        RelativeLayout:
+            Image:
+                source: 'logo.png'
+                pos_hint: {'top': 1, 'x': 0.5}
+                size_hint:(.3 , .3)
+            Button:
+                on_press: print("nutrient!")
+                pos_hint: {'x':0}
+                size_hint:(.2,.2)
+                Image:
+                    source:"nutrientbtn.png"
+                    size: self.parent.size
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+            Button:
+                on_press: print("addfamily!")
+                pos_hint: {'x':0.2}
+                size_hint:(.2,.2)
+                Image:
+                    source:"addfamilybtn.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size: self.parent.size
+            Button:
+                on_press: print("addfood!")
+                pos_hint: {'x':0.4}
+                size_hint:(.2,.2)
+                Image:
+                    source:"addfoodbtn.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size: self.parent.size
+            Button:
+                on_press: print("picknow!")
+                pos_hint: {'x':0.6}
+                size_hint:(.2,.2)
+                Image:
+                    source:"picknowbtn.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size: self.parent.size
+            Button:
+                on_press: print("order!")
+                pos_hint: {'x':0.8}
+                size_hint:(.2,.2)
+                Image:
+                    source:"orderbtn.png"
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size: self.parent.size
+
+        BoxLayout:
+            orientation:"vertical"
+            Label:
+                text: "daw"
+                color: (1/150,1/150,1/150)
+            Label:
+                text: "dada"
+                color: (1/150,1/150,1/150)
+
+        
+
