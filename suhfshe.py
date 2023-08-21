@@ -54,6 +54,31 @@ class FoodScreen(Screen):
 class MainScreen(Screen):
     pass
 class MenuScreen(Screen):
-    pass
+    def load_table(self):
+        Window.size = (901,600)
+        layout = AnchorLayout()
+        self.data_tables = MDDataTable(
+            pos_hint = {"center_x": .5, "center_y": .5},
+            rows_num = 7,
+            size_hint=(0.9, 0.9),
+            column_data = [
+                (str(today), dp(20)),
+                ("Breakfast", dp(30)),
+                ("Lunch", dp(30)),
+                ("Dinner", dp(30))
+                ],
+            row_data = [
+                ("Monday", B[0], L[0],D[0]),
+                ("Tuesday", B[1], L[1],D[1]),
+                ("Wednesday", B[2], L[2], D[2]),
+                ("Thursday", B[3], L[3],D[3]),
+                ("Friday", B[4], L[4],D[4]),
+                ("Saturday", B[5], L[5],D[5]),
+                ("Sunday", B[6], L[6],D[6])
+                ])
+        self.add_widget(self.data_tables)
+        return layout
 
+    def on_enter(self):
+        self.load_table()
 MyApp().run()

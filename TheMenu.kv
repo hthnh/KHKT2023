@@ -3,7 +3,7 @@
     size:root.size
     canvas.before:
         Color:
-            rgb:(234/255, 219/255, 200/255)
+            rgb:(27/255, 46/255, 71/255)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -18,48 +18,56 @@
                 size_hint:(.3 , .3)
             Label:
                 text: 'THE MENU'
-                font_size: 40
+                font_size: 80
                 underline: True
+                color: (0/255, 252/255, 255/255)
+            Button:
+                on_press: print("picknow!")
+                pos_hint: {'x':0.6}
+                size_hint:(.1,.2)
+                Image:
+                    source:"Core/image/UI/ButtonOfUI/ButtonPickNow.png"
+                    center_x: self.parent.center_x
+                    size: self.parent.size
             Button:
                 on_press: print("nutrient!")
                 pos_hint: {'x':0}
-                size_hint:(.2,.2)
+                size_hint:(.1,.2)
                 Image:
-                    source:"nutrientbtn.png"
+                    source:"Core/image/UI/ButtonOfUI/ButtonNutrients.png"
                     size: self.parent.size
             Button:
                 on_press: print("addfamily!")
                 pos_hint: {'x':0.2}
-                size_hint:(.2,.2)
+                size_hint:(.1,.2)
                 Image:
-                    source:"addfamilybtn.png"
+                    source:"Core/image/UI/ButtonOfUI/ButtonAddFamily.png"
                     center_x: self.parent.center_x
                     size: self.parent.size
             Button:
                 on_press: print("addfood!")
                 pos_hint: {'x':0.4}
-                size_hint:(.2,.2)
+                size_hint:(.1,.2)
                 Image:
-                    source:"addfoodbtn.png"
-                    center_x: self.parent.center_x
-                    size: self.parent.size
-            Button:
-                on_press: print("picknow!")
-                pos_hint: {'x':0.6}
-                size_hint:(.2,.2)
-                Image:
-                    source:"picknowbtn.png"
+                    source:"Core/image/UI/ButtonOfUI/ButtonAddFood.png"
                     center_x: self.parent.center_x
                     size: self.parent.size
             Button:
                 on_press: print("order!")
                 pos_hint: {'x':0.8}
-                size_hint:(.2,.2)
+                size_hint:(.1,.2)
                 Image:
-                    source:"orderbtn.png"
+                    source:"Core/image/UI/ButtonOfUI/ButtonOrder.png"
                     center_x: self.parent.center_x
                     size: self.parent.size
-        
+            Button:
+                on_press: root.manager.current = 'menu'
+                pos_hint: {'x':0.8}
+                size_hint:(.1,.2)
+                Image:
+                    source:"Core/image/UI/ButtonOfUI/ButtonMenu.png"
+                    center_x: self.parent.center_x
+                    size: self.parent.size
 
 <NotiPopup@Popups>:
 
