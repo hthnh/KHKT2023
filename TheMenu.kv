@@ -14,8 +14,12 @@
         RelativeLayout:
             Image:
                 source: 'logo.png'
-                pos_hint: {'top': 1, 'x': 0.5}
+                pos_hint: {'top': 1, 'x': 0.35}
                 size_hint:(.3 , .3)
+            Label:
+                text: 'THE MENU'
+                font_size: 40
+                underline: True
             Button:
                 on_press: print("nutrient!")
                 pos_hint: {'x':0}
@@ -23,8 +27,6 @@
                 Image:
                     source:"nutrientbtn.png"
                     size: self.parent.size
-                    center_x: self.parent.center_x
-                    center_y: self.parent.center_y
             Button:
                 on_press: print("addfamily!")
                 pos_hint: {'x':0.2}
@@ -32,7 +34,6 @@
                 Image:
                     source:"addfamilybtn.png"
                     center_x: self.parent.center_x
-                    center_y: self.parent.center_y
                     size: self.parent.size
             Button:
                 on_press: print("addfood!")
@@ -41,7 +42,6 @@
                 Image:
                     source:"addfoodbtn.png"
                     center_x: self.parent.center_x
-                    center_y: self.parent.center_y
                     size: self.parent.size
             Button:
                 on_press: print("picknow!")
@@ -50,7 +50,6 @@
                 Image:
                     source:"picknowbtn.png"
                     center_x: self.parent.center_x
-                    center_y: self.parent.center_y
                     size: self.parent.size
             Button:
                 on_press: print("order!")
@@ -59,17 +58,9 @@
                 Image:
                     source:"orderbtn.png"
                     center_x: self.parent.center_x
-                    center_y: self.parent.center_y
                     size: self.parent.size
-
-        BoxLayout:
-            orientation:"vertical"
-            Label:
-                text: "daw"
-                color: (1/150,1/150,1/150)
-            Label:
-                text: "dada"
-                color: (1/150,1/150,1/150)
-
         
+
+<NotiPopup@Popups>:
+
 

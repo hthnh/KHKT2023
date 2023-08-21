@@ -52,7 +52,6 @@ class MenuApp(MDApp):
         B = {}
         L = {}
         D = {}
-
         with open("Core\InOut\DailyFood.txt","r") as f:
             for i in range(7):
                 B[i] = f.readline()
