@@ -1,6 +1,6 @@
 #:kivy 1.7.0
 <MainScreen>:
-    size:root.size
+    size:(600,901)
     canvas.before:
         Color:
             rgb:(27/255, 46/255, 71/255)
@@ -25,11 +25,13 @@
                 font_name: "Core/image/UI/Text/Bevan-Regular.ttf"
                 color: (0/255, 252/255, 255/255)
             Button:
-                on_press: print("picknow!")
+                on_press: root.picknow_button_on()
+                on_release: root.picknow_button_release()
                 pos_hint: {'x':.05, 'y':.4}
                 size_hint:(.255,.2)
                 background_color: 0, 0, 0, 0
                 Image:
+                    id: image_picknow
                     source:"Core/image/UI/ButtonOfUI/ButtonPickNow.png"
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
@@ -41,11 +43,13 @@
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
             Button:
-                on_press: print("nutrient!")
+                on_press: root.nutrients_button_on()
+                on_release: root.nutrients_button_release()
                 pos_hint: {'x':.375, 'y':.4}
                 size_hint:(.25,.2)
                 background_color: 0, 0, 0, 0
                 Image:
+                    id: image_nutrients
                     source:"Core/image/UI/ButtonOfUI/ButtonNutrients.png"
                     center_y: self.parent.center_y
                     center_x: self.parent.center_x
@@ -57,11 +61,13 @@
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
             Button:
-                on_press: print("addfood!")
+                on_press: root.addfood_button_on()
+                on_release: root.addfood_button_release()
                 pos_hint: {'x':.7,'y':.4}
                 size_hint:(.25,.2)
                 background_color: 0, 0, 0, 0
                 Image:
+                    id: image_addfood
                     source:"Core/image/UI/ButtonOfUI/ButtonAddFood.png"
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
@@ -73,11 +79,13 @@
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
             Button:
-                on_press: print("addfamily!")
+                on_press: root.addfamily_button_on()
+                on_release: root.addfamily_button_release()
                 pos_hint: {'x':.05, 'y':.15}
                 size_hint:(.25,.2)
                 background_color: 0, 0, 0, 0
                 Image:
+                    id: image_addfamily
                     source:"Core/image/UI/ButtonOfUI/ButtonAddFamily.png"
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
@@ -89,12 +97,14 @@
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
             Button:
-                on_press: print("order!")
+                on_press: root.menu_button_on()
+                on_release: root.menu_button_release()
                 pos_hint: {'x':.375, 'y':.15}
                 size_hint:(.25,.2)
                 background_color: 0, 0, 0, 0
                 Image:
-                    source:"Core/image/UI/ButtonOfUI/ButtonOrder.png"
+                    id: image_menu
+                    source:"Core/image/UI/ButtonOfUI/ButtonMenu.png"
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
                     size: self.parent.size
@@ -105,12 +115,14 @@
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
             Button:
-                on_press: root.manager.current = 'menu'
+                on_press: root.order_button_on()
+                on_release: root.order_button_release()
                 pos_hint: {'x':.7, 'y':.15}
                 size_hint:(.25,.2)
                 background_color: 0, 0, 0, 0
                 Image:
-                    source:"Core/image/UI/ButtonOfUI/ButtonMenu.png"
+                    id: image_order
+                    source:"Core/image/UI/ButtonOfUI/ButtonOrder.png"
                     center_x: self.parent.center_x
                     center_y: self.parent.center_y
                     size: self.parent.size
@@ -120,7 +132,29 @@
                 font_size: 30
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
+<MenuScreen>:
+    size:root.size
+    Button:
+        on_press: root.manager.current = 'main'
+        size_hint: (.8,.1)
+        pos_hint: {'center_x':0.5, 'y':0.01}
+        background_normal: ''
+        background_color: (27/255, 46/255, 71/255)
+        Label:
+            text: "Back"
+            font_size: 30
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+            
+
 
 <NotiPopup@Popups>:
+
+
+
+<UserScreen>:
+
+
+
 
 
