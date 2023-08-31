@@ -67,14 +67,14 @@ class UserScreen(Screen):
     
     def main(self):
         input_layout = BoxLayout(orientation = 'horizontal')
-        left_side = BoxLayout(orientation = "vertical")
-        right_side = BoxLayout(orientation = "vertical")
-        left_side.add_widget(Label(text = "GENDER INENTIFY",bold = True, color = (37/255, 64/255, 98/255, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        left_side.add_widget(Label(text = "AGE",bold = True, color = (37/255, 64/255, 98/255, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
-        left_side.add_widget(Label(text = "WEIGHT",bold = True, color = (37/255, 64/255, 98/255, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
-        left_side.add_widget(Label(text = "HEIGHT",bold = True, color = (37/255, 64/255, 98/255, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
-        left_side.add_widget(Label(text = "CURRENT STATUS",bold = True, color = (37/255, 64/255, 98/255, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
-        left_side.add_widget(Label(text = "TYPE OF MENU",bold = True, color = (37/255, 64/255, 98/255, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side = BoxLayout(orientation = "vertical",spacing = 20)
+        right_side = BoxLayout(orientation = "vertical", spacing = 20)
+        left_side.add_widget(Label(text = "GENDER INENTIFY",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "AGE",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "WEIGHT",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "HEIGHT",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "CURRENT STATUS",font_size = 23,bold = True, color =(0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "TYPE OF MENU",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
 
 
 
@@ -101,20 +101,20 @@ class UserScreen(Screen):
 
         Male = BoxLayout(orientation = "horizontal")
         Male.add_widget(male)
-        Male.add_widget(Label(text = "MALE"))
+        Male.add_widget(Label(text = "MALE",bold = True, color = (0, 0, 0, 1)))
         Female = BoxLayout(orientation = "horizontal")
         Female.add_widget(female)
-        Female.add_widget(Label(text = "FEMALE"))
+        Female.add_widget(Label(text = "FEMALE",bold = True,color = (0, 0, 0, 1)))
         Sex = BoxLayout(orientation= "horizontal")
         Sex.add_widget(Male)
         Sex.add_widget(Female)
 
         global height
-        height = TextInput(multiline=False, text = "cm")
+        height = TextInput(multiline=False, text = "cm",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
         global weight
-        weight = TextInput(multiline=False, text = "kg")
+        weight = TextInput(multiline=False, text = "kg",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
         global age
-        age = TextInput(multiline=False, text = "age")
+        age = TextInput(multiline=False, text = "age",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
 
 
         def takeStyle(value):
@@ -139,24 +139,24 @@ class UserScreen(Screen):
             helpPopUp = Popup(title = "Help",content = layout, auto_dismiss = True, size_hint = (0.65,0.5))
             helpPopUp.open()
         Style = DropDown()
-        one = Button(text = "office work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        one = Button(text = "office work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
         Style.add_widget(one)
-        two = Button(text = "outdoor work", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        two = Button(text = "outdoor work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         two.bind(on_release = lambda two: Style.select(two.text))
         Style.add_widget(two)
-        three = Button(text = "exercise sometimes", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        three = Button(text = "exercise sometimes",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         three.bind(on_release = lambda three: Style.select(three.text))
         Style.add_widget(three)
-        four = Button(text = "always exercise", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        four = Button(text = "always exercise",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         four.bind(on_release = lambda four: Style.select(four.text))
         Style.add_widget(four)
-        five = Button(text = "athlete", size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        five = Button(text = "athlete",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         five.bind(on_release = lambda five: Style.select(five.text))
         Style.add_widget(five)
-        helpStyle = Button(text = "Help", size_hint_y = None, height = 35, on_release= lambda style: HelpStyle(event = open))
+        helpStyle = Button(text = "Help",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: HelpStyle(event = open))
         Style.add_widget(helpStyle)
-        btnStyle = Button(text = "Choice your life style")
+        btnStyle = Button(text = "Choice your life style",background_normal = "", background_color = (132/255,166/255,207/255,1))
         btnStyle.bind(on_release = Style.open)
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
 
@@ -179,19 +179,19 @@ class UserScreen(Screen):
 
         typeMenu = DropDown()
         #gain weight/loss weight/normal
-        Gw = Button(text = "Gain Weight",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Gw = Button(text = "Gain Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Gw.bind(on_release = lambda Gw: typeMenu.select(Gw.text))
-        Lw = Button(text = "Loss Weight",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Lw = Button(text = "Loss Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
-        Nw = Button(text = "Normal",size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Nw = Button(text = "Normal",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
-        Help = Button(text = "Help",size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
+        Help = Button(text = "Help",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
 
         typeMenu.add_widget(Gw)
         typeMenu.add_widget(Nw)
         typeMenu.add_widget(Lw)
         typeMenu.add_widget(Help)
-        btnType = Button(text = "Choice type of menu")
+        btnType = Button(text = "Choice type of menu",background_normal = "", background_color = (132/255,166/255,207/255,1))
         btnType.bind(on_release = typeMenu.open)
         typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
 
@@ -270,12 +270,19 @@ class UserScreen(Screen):
         right_side.add_widget(btnType)
 
 
+        btn_side = BoxLayout(orientation = "horizontal",spacing = 10,size_hint = (1,.3))
+        btn_side.add_widget(Button(text = "ADD FAMILY MEMBER",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        btn_side.add_widget(Button(text = "DELETE FAMILY MEMBER",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        btn_side.add_widget(Button(text = "DELETE ALL MEMBER",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+
+
 
         input_layout.add_widget(left_side)
         input_layout.add_widget(right_side)
-        screen = BoxLayout(orientation = "vertical")
-        screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 55, bold = True))
+        screen = BoxLayout(orientation = "vertical", spacing = 15)
+        screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
         screen.add_widget(input_layout)
+        screen.add_widget(btn_side)
         screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
         self.add_widget(screen)
         return screen
@@ -307,14 +314,14 @@ class MainScreen(Screen):
         self.ids.image_addfood.source = "Core/image/UI/ButtonOfUI/ButtonAddFood.png"
     def addfamily_button_on(self):
         self.ids.image_addfamily.source = "Core/image/UI/ChooseIcon/AddFamilychoose.png"
-        sm.current = "user"
     def addfamily_button_release(self):
         self.ids.image_addfamily.source = "Core/image/UI/ButtonOfUI/ButtonAddFamily.png"
+        sm.current = "user"
     def menu_button_on(self):
         self.ids.image_menu.source = "Core/image/UI/ChooseIcon/Menuchoose.png"
-        sm.current = 'menu'
     def menu_button_release(self):
         self.ids.image_menu.source = "Core/image/UI/ButtonOfUI/ButtonMenu.png"
+        sm.current = 'menu'
     def order_button_on(self):
         self.ids.image_order.source = "Core/image/UI/ChooseIcon/OrderChoose.png"
     def order_button_release(self):
