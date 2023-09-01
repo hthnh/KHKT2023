@@ -82,6 +82,7 @@ class MyApp(MDApp):
         sm.add_widget(UserScreen(name = "user"))
         sm.add_widget(FoodScreen(name = "food"))
         sm.add_widget(MenuScreen(name = "menu"))
+        sm.add_widget(AllFoodScreen(name = "allfood"))
         return sm
 
 class UserScreen(Screen):
@@ -94,6 +95,7 @@ class UserScreen(Screen):
         input_layout = BoxLayout(orientation = 'horizontal')
         left_side = BoxLayout(orientation = "vertical",spacing = 20)
         right_side = BoxLayout(orientation = "vertical", spacing = 20)
+        
         left_side.add_widget(Label(text = "GENDER INENTIFY",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "AGE",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "WEIGHT",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
@@ -127,9 +129,11 @@ class UserScreen(Screen):
         Male = BoxLayout(orientation = "horizontal")
         Male.add_widget(male)
         Male.add_widget(Label(text = "MALE",bold = True, color = (0, 0, 0, 1)))
+        
         Female = BoxLayout(orientation = "horizontal")
         Female.add_widget(female)
         Female.add_widget(Label(text = "FEMALE",bold = True,color = (0, 0, 0, 1)))
+
         Sex = BoxLayout(orientation= "horizontal")
         Sex.add_widget(Male)
         Sex.add_widget(Female)
@@ -154,6 +158,7 @@ class UserScreen(Screen):
                 style = 4
             elif value == "athlete" :
                 style = 5
+
         def HelpStyle(event):
             layout = BoxLayout(orientation = "vertical")
             layout.add_widget(Label(text = "Office work is  work normally carried out in an office or school ") )
@@ -161,26 +166,34 @@ class UserScreen(Screen):
             layout.add_widget(Label(text = "Exercise sometimes is sometime do physical activities to make your body strong and health"))
             layout.add_widget(Label(text = "Always exercise is always do physical activities to make your body strong and health"))
             layout.add_widget(Label(text = "Athlete is you are athlete"))
-            helpPopUp = Popup(title = "Help",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.65,0.5))
+            helpPopUp = Popup(title = "Help",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.675,0.5))
             helpPopUp.open()
+        
         Style = DropDown()
+
         one = Button(text = "office work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
         Style.add_widget(one)
+
         two = Button(text = "outdoor work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         two.bind(on_release = lambda two: Style.select(two.text))
         Style.add_widget(two)
+
         three = Button(text = "exercise sometimes",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         three.bind(on_release = lambda three: Style.select(three.text))
         Style.add_widget(three)
+        
         four = Button(text = "always exercise",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         four.bind(on_release = lambda four: Style.select(four.text))
         Style.add_widget(four)
+
         five = Button(text = "athlete",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         five.bind(on_release = lambda five: Style.select(five.text))
         Style.add_widget(five)
+
         helpStyle = Button(text = "Help",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: HelpStyle(event = open))
         Style.add_widget(helpStyle)
+
         btnStyle = Button(text = "Choice your life style",background_normal = "", background_color = (132/255,166/255,207/255,1))
         btnStyle.bind(on_release = Style.open)
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
@@ -206,45 +219,50 @@ class UserScreen(Screen):
         #gain weight/loss weight/normal
         Gw = Button(text = "Gain Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Gw.bind(on_release = lambda Gw: typeMenu.select(Gw.text))
+
         Lw = Button(text = "Loss Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
+
         Nw = Button(text = "Normal",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
         Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
+
         Help = Button(text = "Help",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
 
         typeMenu.add_widget(Gw)
         typeMenu.add_widget(Nw)
         typeMenu.add_widget(Lw)
         typeMenu.add_widget(Help)
+
         btnType = Button(text = "Choice type of menu",background_normal = "", background_color = (132/255,166/255,207/255,1))
         btnType.bind(on_release = typeMenu.open)
         typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
 
+
         def check_add_user(self):
-            if type == 1 or type == 2 or type == 3:
-                if sex == 1 or sex == 0 :
-                    if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+            if sex == 1 or sex == 0 :
+                if not "age" in age.text :
+                    if not "kg" in weight.text :
                         if not "cm" in height.text :
-                            if not "kg" in weight.text :
-                                if not "age" in age.text :
+                            if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                                if type == 1 or type == 2 or type == 3 :
                                     AddUser()
                                 else :
-                                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Age"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Type",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                                     noti.open()
                             else :
-                                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Weight"), auto_dismiss = True, size_hint = (0.2,0.2))
+                                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Style",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                                 noti.open()
                         else :
-                            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Height"), auto_dismiss = True, size_hint = (0.2,0.2))
+                            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Height",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                             noti.open()
                     else :
-                        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Style"), auto_dismiss = True, size_hint = (0.2,0.2))
+                        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Weight",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                         noti.open()
                 else :
-                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Sex"), auto_dismiss = True, size_hint = (0.2,0.2))
+                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Age",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                     noti.open()
             else :
-                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Type"), auto_dismiss = True, size_hint = (0.2,0.2))
+                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Sex",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                 noti.open()
 
         def AddUser():
@@ -264,11 +282,11 @@ class UserScreen(Screen):
             os.chdir("Core")
             os.system("Calories-Calculator.exe")
             os.chdir("..")
-            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
             noti.open()
 
         def RemoveUser(self):
-            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Remove successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Remove successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
             noti.open()
             os.chdir("Core")
             os.system("clearTotalCalories.exe")
@@ -276,15 +294,11 @@ class UserScreen(Screen):
         
 
         func = BoxLayout(orientation = "horizontal", padding = 10,size_hint = (1,0.6))
-        btnAdd = Button(text = "Add Member",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            pos_hint = {"center_y": .5})
+
+        btnAdd = Button(text = "Add Member",background_color =(0,249,255,1.000),color = (0,0,0,1.000),pos_hint = {"center_y": .5})
         btnAdd.bind(on_press = check_add_user)
-        btnRem = Button(text = "Remove All Member",
-                            background_color =(0,249,255,1.000),
-                            color = (0,0,0,1.000),
-                            pos_hint = {"center_y": .5})
+
+        btnRem = Button(text = "Remove All Member",background_color =(0,249,255,1.000),color = (0,0,0,1.000), pos_hint = {"center_y": .5})
         btnRem.bind(on_press = RemoveUser)
 
         right_side.add_widget(Sex)
@@ -297,24 +311,27 @@ class UserScreen(Screen):
 
         btn_side = BoxLayout(orientation = "horizontal",spacing = 10,size_hint = (1,.3))
         btn_side.add_widget(Button(text = "ADD FAMILY MEMBER",on_release = check_add_user,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
-        btn_side.add_widget(Button(text = "MANAGE FAMILY MEMBER",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        btn_side.add_widget(Button(text = "MANAGE FAMILY MEMBER",on_release = MainScreen.developing,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
         btn_side.add_widget(Button(text = "DELETE ALL MEMBER",on_release = RemoveUser,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
 
 
 
         input_layout.add_widget(left_side)
         input_layout.add_widget(right_side)
+
         screen = BoxLayout(orientation = "vertical", spacing = 15)
         screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
         screen.add_widget(input_layout)
         screen.add_widget(btn_side)
         screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+
         self.add_widget(screen)
         return screen
     def on_enter(self):
         self.load_size()
         self.main()
-    pass
+
+
 class FoodScreen(Screen):
     def load_size(self):
         Window.size = (600,901)
@@ -358,83 +375,12 @@ class FoodScreen(Screen):
                 f.write(calories_of_food.text)
                 f.write("\n")
            
-            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful"), auto_dismiss = True, size_hint = (0.2,0.2))
+            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
             noti.open()
 
 
 
-        def screenAllFood(self):
-            f = open("Core\InOut\AllFood.txt","r")
-            food = f.readlines()
-            food = [s.replace("\n","") for s in food]
-            mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
-            mainWindow.bind(minimum_height=mainWindow.setter('height'))
-            def deleteFood(self):
-                def delete(self):
-                    f = open("Core\InOut\deleteID.txt", "w")
-                    f.write(ID.text)
-                    f.close()
-                    noti = Popup(title = "notification",content = Label(text = "Delete successful"), auto_dismiss = True, size_hint = (0.2,0.2))
-                    noti.open()
-                    os.chdir("Core")
-                    os.system("DeleteFood.exe")
-                    os.chdir("..")
-                    Allfood.dismiss()
-                btn = BoxLayout(orientation = "horizontal")
-                btn.add_widget(Button(text = "Confirm", on_press = delete))
-                btn.add_widget(Button(text = "Cancel", on_press = lambda *args: popUp.dismiss()))
-                layout = BoxLayout(orientation = "vertical")
-                layout.add_widget(Label(text = "Write an ID again to Confirm",color = (0,0,0,1)))
-                ID = TextInput(multiline=False)
-                layout.add_widget(ID)
-                layout.add_widget(btn)
-                popUp = Popup(content  = layout,
-                        auto_dismiss = True,
-                        size_hint = (.4 , .4),
-                        pos_hint = {"center_x": .5, "center_y": .5},
-                        background_color = (255,255,255,0.8),
-                        title = "DID YOU WANT TO DELETE FOOD?",
-                        title_color = (37/255, 64/255, 98/255, 1),
-                        title_align = "center",
-                        title_size = dp(20))
-                popUp.open()
-            x = 0
-            for i in range(int(len(food)/7)):
-                foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
-                icon = Image(source='meal-food-icon.png',size_hint = (0.25,None))
-                foodCard.add_widget(icon)
-                mainInformation = GridLayout(cols = 3)
-                idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
-                nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
-                TODLabel = Label(text = "Time Of Day: %s"%food[x+2],color = (0,0,0,1))
-                withRiceLabel = Label(text = "Rice: %s"%food[x+3],color = (0,0,0,1))
-                pickTimeLabel = Label(text = "Selected Time: %s"%food[x+4],color = (0,0,0,1))
-                lastPickLabel = Label(text = "Last Selected: %s"%food[x+5],color = (0,0,0,1))
-                caloriesLabel = Label(text = "Calories: %s"%food[x+6],color = (0,0,0,1))
-                mainInformation.add_widget(idLabel)
-                mainInformation.add_widget(nameLabel)
-                mainInformation.add_widget(TODLabel)
-                mainInformation.add_widget(withRiceLabel)
-                mainInformation.add_widget(pickTimeLabel)
-                mainInformation.add_widget(lastPickLabel)
-                mainInformation.add_widget(caloriesLabel)
-                foodCard.add_widget(mainInformation)
-                btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
-                foodCard.add_widget(btnDelete)
-                mainWindow.add_widget(foodCard)
-                x+= 7
-            scroll = ScrollView(size_hint=(1, None), size=(Window.width, Window.height*0.88))
-            scroll.add_widget(mainWindow)
-            Allfood = Popup(content  = scroll,
-                        auto_dismiss = True,
-                        size_hint = (.8 , 1),
-                        pos_hint = {"center_x": .5, "center_y": .5},
-                        title = "ALL FOOD",
-                        title_color = (37/255, 64/255, 98/255, 1),
-                        background_color = (255,255,255,1),
-                        title_align = "center",
-                        title_size = dp(20))
-            Allfood.open()
+        
 
         global name_food
         name_food = TextInput(text = "name",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
@@ -480,7 +426,6 @@ class FoodScreen(Screen):
                 global rice
                 rice = 0
 
-        RICE = BoxLayout(orientation = "vertical")
         WR = CheckBox(group = 'rice',color = (37/255, 64/255, 98/255, 1))
         WR.bind(active = checkbox_WR)
         WOR = CheckBox(group = 'rice',color = (37/255, 64/255, 98/255, 1))
@@ -497,19 +442,41 @@ class FoodScreen(Screen):
         withoutRice.add_widget(Label(text = "WITHOUT RICE",halign="left", color = (0,0,0,1)))
         withoutRice.add_widget(Label())
         
+        RICE = BoxLayout(orientation = "vertical")
         RICE.add_widget(withRice)
         RICE.add_widget(withoutRice)
 
-        TOTD = BoxLayout(orientation = "vertical")
         M = CheckBox(color = (37/255, 64/255, 98/255, 1))
         M.bind(active = checkbox_Morning)
+
         N = CheckBox(color = (37/255, 64/255, 98/255, 1))
         N.bind(active = checkbox_Noon)
+
         AN = CheckBox(color = (37/255, 64/255, 98/255, 1))
         AN.bind(active = checkbox_Afternoon)
-        TOTD.add_widget(M)
-        TOTD.add_widget(N)
-        TOTD.add_widget(AN)
+
+        Morning = BoxLayout(orientation = "horizontal")
+        Morning.add_widget(Label())
+        Morning.add_widget(M)
+        Morning.add_widget(Label(text = "MORNING",halign="left", color = (0,0,0,1)))
+        Morning.add_widget(Label())
+
+        Noon = BoxLayout(orientation = "horizontal")
+        Noon.add_widget(Label())
+        Noon.add_widget(N)
+        Noon.add_widget(Label(text = "NOON",halign = 'left',color = (0,0,0,1)))
+        Noon.add_widget(Label())
+
+        Afternoon = BoxLayout(orientation = "horizontal")
+        Afternoon.add_widget(Label())
+        Afternoon.add_widget(AN)
+        Afternoon.add_widget(Label(text = "AFTERNOON",halign = 'left',color = (0,0,0,1)))
+        Afternoon.add_widget(Label())
+
+        TOTD = BoxLayout(orientation = "vertical")
+        TOTD.add_widget(Morning)
+        TOTD.add_widget(Noon)
+        TOTD.add_widget(Afternoon)
 
         right_side.add_widget(name_food)
         right_side.add_widget(calories_of_food)
@@ -521,7 +488,9 @@ class FoodScreen(Screen):
 
         btn_side = BoxLayout(orientation = "horizontal",spacing = 10,size_hint = (1,.3))
         btn_side.add_widget(Button(text = "ADD FOOD",on_release = add_food,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
-        btn_side.add_widget(Button(text = "MANAGE FOOD",on_release = screenAllFood,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        def open_screen_allfood(b):
+            sm.current = 'allfood'
+        btn_side.add_widget(Button(text = "MANAGE FOOD",on_release = open_screen_allfood,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
         btn_side.add_widget(Button(text = "DELETE ALL FOOD",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
 
 
@@ -539,6 +508,82 @@ class FoodScreen(Screen):
         self.load_size()
         self.main()
 
+class AllFoodScreen(Screen):
+    def back_screen(a, b):
+        sm.current ='main'
+    def main(self):
+        f = open("Core\InOut\AllFood.txt","r")
+        food = f.readlines()
+        food = [s.replace("\n","") for s in food]
+        mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
+        mainWindow.bind(minimum_height=mainWindow.setter('height'))
+        def deleteFood(self):
+            def delete(self):
+                f = open("Core\InOut\deleteID.txt", "w")
+                f.write(ID.text)
+                f.close()
+                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Delete successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                noti.open()
+                os.chdir("Core")
+                os.system("DeleteFood.exe")
+                os.chdir("..")
+                Allfood.dismiss()
+            btn = BoxLayout(orientation = "horizontal")
+            btn.add_widget(Button(text = "Confirm", on_press = delete))
+            btn.add_widget(Button(text = "Cancel", on_press = lambda *args: popUp.dismiss()))
+            layout = BoxLayout(orientation = "vertical")
+            layout.add_widget(Label(text = "Write an ID again to Confirm",color = (0,0,0,1)))
+            ID = TextInput(multiline=False)
+            layout.add_widget(ID)
+            layout.add_widget(btn)
+            popUp = Popup(content  = layout,
+                    auto_dismiss = True,
+                    size_hint = (.4 , .4),
+                    pos_hint = {"center_x": .5, "center_y": .5},
+                    background_color = (255,255,255,0.8),
+                    title = "DID YOU WANT TO DELETE FOOD?",
+                    title_color = (37/255, 64/255, 98/255, 1),
+                    title_align = "center",
+                    title_size = dp(20))
+            popUp.open()
+        x = 0
+        for i in range(int(len(food)/7)):
+            foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
+            icon = Image(source='meal-food-icon.png',size_hint = (0.25,None))
+            foodCard.add_widget(icon)
+            mainInformation = GridLayout(cols = 3)
+            idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
+            nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
+            TODLabel = Label(text = "Time Of Day: %s"%food[x+2],color = (0,0,0,1))
+            withRiceLabel = Label(text = "Rice: %s"%food[x+3],color = (0,0,0,1))
+            pickTimeLabel = Label(text = "Selected Time: %s"%food[x+4],color = (0,0,0,1))
+            lastPickLabel = Label(text = "Last Selected: %s"%food[x+5],color = (0,0,0,1))
+            caloriesLabel = Label(text = "Calories: %s"%food[x+6],color = (0,0,0,1))
+            mainInformation.add_widget(idLabel)
+            mainInformation.add_widget(nameLabel)
+            mainInformation.add_widget(TODLabel)
+            mainInformation.add_widget(withRiceLabel)
+            mainInformation.add_widget(pickTimeLabel)
+            mainInformation.add_widget(lastPickLabel)
+            mainInformation.add_widget(caloriesLabel)
+            foodCard.add_widget(mainInformation)
+            btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
+            foodCard.add_widget(btnDelete)
+            mainWindow.add_widget(foodCard)
+            x+= 7
+        scroll = ScrollView(size_hint=(1, 0.8))
+        scroll.add_widget(mainWindow)
+        screen = BoxLayout(orientation = "vertical")
+        screen.add_widget(scroll)
+        screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        self.add_widget(screen)
+        
+    def resize_windows(self):
+        Window.size = (901,600)
+    def on_enter(self):
+        self.resize_windows()
+        self.main()
+            
     
 class MainScreen(Screen):
     def load_size(self):
