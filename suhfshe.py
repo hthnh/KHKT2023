@@ -72,8 +72,8 @@ with open("Core\InOut\DailyFood.txt","r") as f:
         L[i] = f.readline()
     for i in range(7):
         D[i] = f.readline()
-sm = ScreenManager()
 
+sm = ScreenManager()
 
 
 class MyApp(MDApp):
@@ -477,6 +477,7 @@ class FoodScreen(Screen):
         TOTD.add_widget(Morning)
         TOTD.add_widget(Noon)
         TOTD.add_widget(Afternoon)
+        
 
         right_side.add_widget(name_food)
         right_side.add_widget(calories_of_food)
@@ -571,17 +572,18 @@ class AllFoodScreen(Screen):
             foodCard.add_widget(btnDelete)
             mainWindow.add_widget(foodCard)
             x+= 7
-        scroll = ScrollView(size_hint=(1, 0.8))
+        scroll = ScrollView()
         scroll.add_widget(mainWindow)
         screen = BoxLayout(orientation = "vertical")
-        screen.add_widget(scroll)
-        screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        popup = Popup(title = "MANAGE FOOD",title_align = "center",title_size = 40,title_color = (37/255, 64/255, 98/255, 1),size_hint=(1, 0.8),background_color = (255,255,255,1))
+        popup.add_widget(scroll)
+        screen.add_widget(popup)
+        screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
         self.add_widget(screen)
         
     def resize_windows(self):
         Window.size = (901,600)
     def on_enter(self):
-        self.resize_windows()
         self.main()
             
     
