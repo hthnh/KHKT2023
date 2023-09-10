@@ -474,7 +474,7 @@ class FoodScreen(Screen):
         Afternoon.add_widget(Label())
 
         TOTD = BoxLayout(orientation = "vertical")
-        TOTD.add_widget(Morning)
+        TOTD.add_widget(Morning)                                                           
         TOTD.add_widget(Noon)
         TOTD.add_widget(Afternoon)
         
