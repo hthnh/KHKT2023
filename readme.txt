@@ -1,12 +1,6 @@
-Welcome to The Menu
+Project by hthnh and Khang, for "KHKT"
+If you want to be an beta-user, contact haithinh.work@gmail.com
 
--note-
-	Alway run TheMenu.exe as administrator
+Introduction:
+	Ứng dụng The Menu là một công cụ hỗ trợ người dùng trong công cuộc lựa chọn món ăn hằng ngày, dựa theo các tiêu chí( như calories) sẽ chọn ra cho người dùng thực đơn hợp lý trong 1 tuần, từ đó giảm một phần gánh nặng cho người nội trợ
 
--How to use-
-	At the first time install, go to the Core folder and run importFile.exe with administrator
-	Then open application and add the user for menu
-	Then re-open it.
-		-Done-
-
--All question about application please contact to mail: haithinh.work@gmail.com-
