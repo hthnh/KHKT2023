@@ -528,7 +528,7 @@ class AllFoodScreen(Screen):
                 os.chdir("Core")
                 os.system("DeleteFood.exe")
                 os.chdir("..")
-                Allfood.dismiss()
+                popUp.dismiss()
             btn = BoxLayout(orientation = "horizontal")
             btn.add_widget(Button(text = "Confirm", on_press = delete))
             btn.add_widget(Button(text = "Cancel", on_press = lambda *args: popUp.dismiss()))
