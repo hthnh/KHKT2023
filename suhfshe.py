@@ -1,5 +1,5 @@
 from kivy.config import Config
-Config.set('graphics', 'resizable', False)
+Config.set('graphics', 'resizable', True)
 
 import kivy
 kivy.require('1.7.0')
@@ -62,6 +62,23 @@ if not pyuac.isUserAdmin():
     pyuac.runAsAdmin()
 
 
+import ctypes
+from screeninfo import get_monitors
+
+size_screen_x = 600
+size_screen_y = 901
+
+# 600 901
+
+
+scale = ctypes.windll.shcore.GetScaleFactorForDevice(0)/100
+size_screen_x = 600 * (2-scale)
+size_screen_y = 901 * (2-scale)
+
+
+
+
+
 B = {}
 L = {}
 D = {}
@@ -73,23 +90,10 @@ with open("Core\InOut\DailyFood.txt","r") as f:
     for i in range(7):
         D[i] = f.readline()
 
-sm = ScreenManager()
-
-
-class MyApp(MDApp):
-    def build(self):
-        sm.add_widget(MainScreen(name = "main"))
-        sm.add_widget(UserScreen(name = "user"))
-        sm.add_widget(FoodScreen(name = "food"))
-        sm.add_widget(MenuScreen(name = "menu"))
-        sm.add_widget(AllFoodScreen(name = "allfood"))
-        return sm
 
 class UserScreen(Screen):
     def load_size(self):
-        Window.size = (600,901)
-    def back_screen(a, b):
-        sm.current ='main'
+        Window.size = (size_screen_x, size_screen_y)
     
     def main(self):
         input_layout = BoxLayout(orientation = 'horizontal')
@@ -323,7 +327,7 @@ class UserScreen(Screen):
         screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
         screen.add_widget(input_layout)
         screen.add_widget(btn_side)
-        screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        screen.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
 
         self.add_widget(screen)
         return screen
@@ -334,10 +338,7 @@ class UserScreen(Screen):
 
 class FoodScreen(Screen):
     def load_size(self):
-        Window.size = (600,901)
-    def back_screen(a, b):
-        sm.current ='main'
-
+        Window.size = (size_screen_x,size_screen_y)
     def main(self):
         input_layout = BoxLayout(orientation = 'horizontal')
         left_side = BoxLayout(orientation = "vertical",spacing = 20)
@@ -489,9 +490,8 @@ class FoodScreen(Screen):
 
         btn_side = BoxLayout(orientation = "horizontal",spacing = 10,size_hint = (1,.3))
         btn_side.add_widget(Button(text = "ADD FOOD",on_release = add_food,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
-        def open_screen_allfood(b):
-            sm.current = 'allfood'
-        btn_side.add_widget(Button(text = "MANAGE FOOD",on_release = open_screen_allfood,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        
+        btn_side.add_widget(Button(text = "MANAGE FOOD",on_release = themenu.to_AllFoodScreen,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
         btn_side.add_widget(Button(text = "DELETE ALL FOOD",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
 
 
@@ -502,16 +502,13 @@ class FoodScreen(Screen):
         screen.add_widget(Label(text = "ADD FOOD", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
         screen.add_widget(input_layout)
         screen.add_widget(btn_side)
-        screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        screen.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
         self.add_widget(screen)
-        return screen
     def on_enter(self):
         self.load_size()
         self.main()
 
 class AllFoodScreen(Screen):
-    def back_screen(a, b):
-        sm.current ='main'
     def main(self):
         f = open("Core\InOut\AllFood.txt","r")
         food = f.readlines()
@@ -578,18 +575,19 @@ class AllFoodScreen(Screen):
         popup = Popup(title = "MANAGE FOOD",title_align = "center",title_size = 40,title_color = (37/255, 64/255, 98/255, 1),size_hint=(1, 0.8),background_color = (255,255,255,1))
         popup.add_widget(scroll)
         screen.add_widget(popup)
-        screen.add_widget(Button(on_press = self.back_screen,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        screen.add_widget(Button(on_press = themenu.to_FoodScreen ,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
         self.add_widget(screen)
         
     def resize_windows(self):
-        Window.size = (901,600)
+        Window.size = (size_screen_y,size_screen_x)
     def on_enter(self):
+        self.resize_windows()
         self.main()
             
     
 class MainScreen(Screen):
     def load_size(self):
-        Window.size = (600,901)
+        Window.size = (size_screen_x,size_screen_y)
     def on_enter(self):
         self.load_size()
     def developing(self):
@@ -610,12 +608,12 @@ class MainScreen(Screen):
         self.ids.image_addfood.source = "Core/image/UI/ChooseIcon/AddFoodchoose.png"
     def addfood_button_release(self):
         self.ids.image_addfood.source = "Core/image/UI/ButtonOfUI/ButtonAddFood.png"
-        sm.current = 'food'
+        themenu.sm.current = 'food'
     def addfamily_button_on(self):
         self.ids.image_addfamily.source = "Core/image/UI/ChooseIcon/AddFamilychoose.png"
     def addfamily_button_release(self):
         self.ids.image_addfamily.source = "Core/image/UI/ButtonOfUI/ButtonAddFamily.png"
-        sm.current = "user"
+        themenu.sm.current = "user"
     def menu_button_on(self):
         self.ids.image_menu.source = "Core/image/UI/ChooseIcon/Menuchoose.png"
     def menu_button_release(self):
@@ -631,7 +629,7 @@ class MainScreen(Screen):
 
 class MenuScreen(Screen):
     def load_table(self):
-        Window.size = (901,600)
+        Window.size = (size_screen_y,size_screen_x)
         layout = AnchorLayout()
         self.data_tables = MDDataTable(
             pos_hint = {"center_x": .5, "center_y": .55},
@@ -657,4 +655,31 @@ class MenuScreen(Screen):
 
     def on_enter(self):
         self.load_table()
-MyApp().run() 
+
+
+
+
+class MyApp(MDApp):
+    def build(self):
+        self.sm = ScreenManager()
+        self.main_screen = MainScreen(name = "main")
+        self.sm.add_widget(self.main_screen)
+        self.sm.add_widget(UserScreen(name = "user"))
+        self.sm.add_widget(FoodScreen(name = "food"))
+        self.sm.add_widget(MenuScreen(name = "menu"))
+        self.sm.add_widget(AllFoodScreen(name = "allfood"))
+        return self.sm
+    def to_MainScreen(self,b):
+        themenu.sm.current = "main"
+    def to_FoodScreen(a,b):
+        themenu.sm.current = "food"
+    def to_AllFoodScreen(a,b):
+        themenu.sm.current = "allfood"
+
+
+
+
+
+if "_name_" == "_name_":
+    themenu = MyApp()
+    themenu.run() 
