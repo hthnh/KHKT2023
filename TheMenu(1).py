@@ -492,7 +492,7 @@ class FoodScreen(Screen):
         btn_side.add_widget(Button(text = "ADD FOOD",on_release = add_food,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
         
         btn_side.add_widget(Button(text = "MANAGE FOOD",on_release = themenu.to_AllFoodScreen,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
-        btn_side.add_widget(Button(text = "DELETE ALL FOOD",font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        btn_side.add_widget(Button(text = "DELETE ALL FOOD",on_release = MainScreen.developing ,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
 
 
 
@@ -618,7 +618,7 @@ class MainScreen(Screen):
         self.ids.image_menu.source = "Core/image/UI/ChooseIcon/Menuchoose.png"
     def menu_button_release(self):
         self.ids.image_menu.source = "Core/image/UI/ButtonOfUI/ButtonMenu.png"
-        sm.current = 'menu'
+        themenu.sm.current = 'menu'
     def order_button_on(self):
         self.ids.image_order.source = "Core/image/UI/ChooseIcon/OrderChoose.png"
     def order_button_release(self):
