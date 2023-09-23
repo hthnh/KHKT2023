@@ -226,17 +226,29 @@ import time
 from kivy.core.window import Window
 
 import os
+from pathlib import Path
+
 path_to = os.getcwd()
 os.chdir(path_to)
-os.chdir("Core\InOut")
-if os.path.getsize("TotalCalories.txt") != 0 :
+
+path = Path(path_to +"\Core\InOut\AllFood.txt")
+
+if path.is_file():
+    os.chdir("Core\InOut")
+    if os.path.getsize("TotalCalories.txt") != 0 :
+        os.chdir("..")
+        os.system("ActivateCore.exe")
+    else:
+        os.chdir("..")
+
     os.chdir("..")
-    os.system("ActivateCore.exe")
-else:
+else: 
+    print("1")
+    print(path_to)
+    os.chdir("Core")
+    os.system("ImportFile.exe")
     os.chdir("..")
 
-os.chdir("..")
- 
 
 import pyuac
 if not pyuac.isUserAdmin():
