@@ -200,6 +200,8 @@ from kivy.uix.label import Label
 
 from kivy.uix.button import Button
 
+from kivy.uix.textinput import TextInput
+
 from kivy.uix.checkbox import CheckBox
 
 from kivy.uix.textinput import TextInput
@@ -423,34 +425,44 @@ class UserScreen(Screen):
 
 
         def check_add_user(self):
-            if sex == 1 or sex == 0 :
-                if not "age" in age.text :
-                    if not "kg" in weight.text :
-                        if not "cm" in height.text :
-                            if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
-                                if type == 1 or type == 2 or type == 3 :
-                                    AddUser()
+            try :
+                int(age.text)
+                int(height.text)
+                int(weight.text)
+            except:
+                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Wrong type of input",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                noti.open()
+            else:
+                if (sex == 1 or sex == 0) and isinstance(sex, int) :
+                    print(age.text)
+                    if not "age" in age.text and isinstance(int(age.text), int) :
+                        if not "kg" in weight.text :
+                            if not "cm" in height.text :
+                                if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                                    if type == 1 or type == 2 or type == 3 :
+                                        AddUser()
+                                    else :
+                                        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Type",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                                        noti.open()
                                 else :
-                                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Type",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Style",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                                     noti.open()
                             else :
-                                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Style",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Height",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                                 noti.open()
                         else :
-                            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Height",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Weight",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                             noti.open()
                     else :
-                        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Weight",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Age",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                         noti.open()
                 else :
-                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Age",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Sex",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                     noti.open()
-            else :
-                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Sex",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
-                noti.open()
 
         def AddUser():
-            with open("Core\InOut\heightWeight.txt","w") as f:
+            with open("Core\InOut\heightWeight.txt","at") as f:
+                f.write("\n")
                 f.write(str(sex))
                 f.write("\n")
                 f.write(height.text)
@@ -519,6 +531,27 @@ class UserScreen(Screen):
 class FoodScreen(Screen):
     def load_size(self):
         Window.size = (size_screen_x,size_screen_y)
+
+    def deleteAllFood(self,a):
+        def delete1():
+            f = open("Core\InOut\AllFood.txt","w")
+            f.write("")
+            f.close()
+        def delete(value):
+            if "yes" in value:
+                delete1()
+                noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Remove successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                noti.open()
+        layout = BoxLayout(orientation = "vertical",spacing = 10)
+        layout.add_widget(Label(font_size = 15,text = "Are You Sure To Remove All Food(type 'yes' to confirm)",color = (0,0,0,1)))
+        x = TextInput()
+        layout.add_widget(x)
+        layout.add_widget(Button(text = "Confirm",on_press = lambda y: delete(value = x.text),font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        layout.add_widget(Button(text = "No", on_press = lambda *args: noti.dismiss(),font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (.7,.3))
+        noti.open()
+        pass
+
     def main(self):
         input_layout = BoxLayout(orientation = 'horizontal')
         left_side = BoxLayout(orientation = "vertical",spacing = 20)
@@ -555,6 +588,7 @@ class FoodScreen(Screen):
                 f.write("\n")
                 f.write(calories_of_food.text)
                 f.write("\n")
+                f.write(" ")
            
             noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
             noti.open()
@@ -672,7 +706,7 @@ class FoodScreen(Screen):
         btn_side.add_widget(Button(text = "ADD FOOD",on_release = add_food,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
         
         btn_side.add_widget(Button(text = "MANAGE FOOD",on_release = themenu.to_AllFoodScreen,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
-        btn_side.add_widget(Button(text = "DELETE ALL FOOD",on_release = MainScreen.developing ,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
+        btn_side.add_widget(Button(text = "DELETE ALL FOOD",on_release = self.deleteAllFood ,font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
 
 
 
@@ -693,7 +727,7 @@ class AllFoodScreen(Screen):
         f = open("Core\InOut\AllFood.txt","r")
         food = f.readlines()
         food = [s.replace("\n","") for s in food]
-        mainWindow = GridLayout(cols = 1, spacing=10,size_hint_y=None)
+        mainWindow = GridLayout(cols = 1, spacing=30,size_hint_y=None)
         mainWindow.bind(minimum_height=mainWindow.setter('height'))
         def deleteFood(self):
             def delete(self):
@@ -730,17 +764,31 @@ class AllFoodScreen(Screen):
             icon = Image(source='meal-food-icon.png',size_hint = (0.25,None))
             foodCard.add_widget(icon)
             mainInformation = GridLayout(cols = 3)
+            self.tod_string = ""
+            if "1" in food[x+3]:
+                self.have_rice = "Yes"
+            else:
+                self.have_rice = "No"
+            if "1" in food[x+2]:
+                self.tod_string = self.tod_string + "Morning, "
+            if "2" in food[x+2]:
+                self.tod_string = self.tod_string + "Noon, "
+            if "3" in self.tod_string:
+                self.tod_string = self.tod_string + "Afternoon"
+                pass
             idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
             nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
-            TODLabel = Label(text = "Time Of Day: %s"%food[x+2],color = (0,0,0,1))
-            withRiceLabel = Label(text = "Rice: %s"%food[x+3],color = (0,0,0,1))
+            TODLabel = Label(text = "Time Of Day: %s"%self.tod_string,color = (0,0,0,1))
+            withRiceLabel = Label(text = "Rice: %s"%self.have_rice,color = (0,0,0,1))
             pickTimeLabel = Label(text = "Selected Time: %s"%food[x+4],color = (0,0,0,1))
             lastPickLabel = Label(text = "Last Selected: %s"%food[x+5],color = (0,0,0,1))
             caloriesLabel = Label(text = "Calories: %s"%food[x+6],color = (0,0,0,1))
             mainInformation.add_widget(idLabel)
             mainInformation.add_widget(nameLabel)
-            mainInformation.add_widget(TODLabel)
             mainInformation.add_widget(withRiceLabel)
+            mainInformation.add_widget(Label())
+            mainInformation.add_widget(TODLabel)
+            mainInformation.add_widget(Label())
             mainInformation.add_widget(pickTimeLabel)
             mainInformation.add_widget(lastPickLabel)
             mainInformation.add_widget(caloriesLabel)
