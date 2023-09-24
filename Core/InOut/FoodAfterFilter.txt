@@ -1,0 +1,287 @@
+100006
+Banh Xeo
+12
+0
+0
+0
+315
+100007
+Hu_Tieu_Kho^
+13
+0
+0
+0
+379
+100008
+Bot_Chien
+1
+0
+0
+0
+340
+100009
+Mi_xao
+123
+0
+0
+0
+190
+100010
+Beefsteak
+23
+0
+0
+0
+133
+100011
+Com ga xoi mo
+23
+0
+0
+0
+500
+100012
+Sushi
+123
+0
+0
+0
+300
+100014
+Bun thit nuong
+1
+0
+0
+0
+556
+100015
+Hu tieu xao
+13
+0
+0
+0
+646
+100017
+Suon xao chua ngot
+23
+1
+0
+0
+360
+100018
+Mi tuong den
+23
+0
+0
+0
+420
+100019
+Bo luc lac
+23
+1
+0
+0
+350
+100020
+Banh mi
+123
+0
+0
+0
+264
+100021
+Banh mi cha ca
+123
+0
+0
+0
+400
+100022
+Banh mi xuc xich
+123
+0
+0
+0
+126
+100023
+Banh mi trung
+123
+0
+0
+0
+340
+100024
+Banh mi nuong
+1
+0
+0
+0
+314
+100025
+Banh mi nuong muoi ot
+123
+0
+0
+0
+415
+100026
+Banh mi cham sua
+123
+0
+0
+0
+415
+100027
+Banh mi nuong bo
+123
+0
+0
+0
+561
+100028
+Banh mi hap thit bam
+123
+0
+0
+0
+500
+100029
+Mi y
+13
+0
+0
+0
+157
+100030
+Mi cay kho
+12
+0
+0
+0
+545
+100031
+Mi vit tiem kho
+12
+0
+0
+0
+776
+100032
+Mi xao hai san
+123
+0
+0
+0
+245
+100033
+Mi xao rau cu
+123
+0
+0
+0
+230
+100034
+Mi tron
+123
+0
+0
+0
+350
+100035
+Mi xa xiu
+123
+0
+0
+0
+400
+100036
+Mi xao bo
+12
+0
+0
+0
+225
+100037
+Mi y sot kem bo bam
+12
+0
+0
+0
+450
+100038
+Mi y sot ca chua pho mai
+12
+0
+0
+0
+302
+100037
+Mi y sot hai san
+12
+0
+0
+0
+445
+100038
+Mi y sot bo bam
+12
+0
+0
+0
+359
+100039
+Mi y sot kem nam
+12
+0
+0
+0
+377
+100040
+Mi tron top mo
+12
+0
+0
+0
+700
+100041
+Mi tron bo bam
+12
+0
+0
+0
+600
+100042
+Mi tron hai san
+12
+0
+0
+0
+245
+200002
+Mi hai san
+123
+0
+0
+0
+719
+200004
+Mi goi nuoc
+123
+0
+0
+0
+350
+200005
+Hu tieu nam vang
+123
+0
+0
+0
+400
+200006
+Hu tieu go
+123
+0
+0
+0
+410

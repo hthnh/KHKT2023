@@ -243,7 +243,6 @@ if path.is_file():
 
     os.chdir("..")
 else: 
-    print("1")
     print(path_to)
     os.chdir("Core")
     os.system("ImportFile.exe")
@@ -283,6 +282,9 @@ with open("Core\InOut\DailyFood.txt","r") as f:
         L[i] = f.readline()
     for i in range(7):
         D[i] = f.readline()
+
+
+
 
 
 class UserScreen(Screen):
@@ -446,7 +448,6 @@ class UserScreen(Screen):
                 noti.open()
             else:
                 if (sex == 1 or sex == 0) and isinstance(sex, int) :
-                    print(age.text)
                     if not "age" in age.text and isinstance(int(age.text), int) :
                         if not "kg" in weight.text :
                             if not "cm" in height.text :
@@ -474,7 +475,6 @@ class UserScreen(Screen):
 
         def AddUser():
             with open("Core\InOut\heightWeight.txt","at") as f:
-                f.write("\n")
                 f.write(str(sex))
                 f.write("\n")
                 f.write(height.text)
@@ -486,6 +486,7 @@ class UserScreen(Screen):
                 f.write(str(style))
                 f.write("\n")
                 f.write(str(type))
+                f.write("\n")
             f.close()
             os.chdir("Core")
             os.system("Calories-Calculator.exe")
@@ -735,6 +736,7 @@ class FoodScreen(Screen):
         self.main()
 
 class AllFoodScreen(Screen):
+   
     def main(self):
         f = open("Core\InOut\AllFood.txt","r")
         food = f.readlines()
@@ -868,6 +870,18 @@ class MainScreen(Screen):
 
 
 class MenuScreen(Screen):
+    def re_run_core(self):
+        os.chdir("Core")
+        os.system("ActivateCore.exe")
+        os.chdir("..")
+        with open("Core\InOut\DailyFood.txt","r") as f:
+            for i in range(7):
+                B[i] = f.readline()
+            for i in range(7):
+                L[i] = f.readline()
+            for i in range(7):
+                D[i] = f.readline()
+
     def load_table(self):
         Window.size = (size_screen_y,size_screen_x)
         layout = AnchorLayout()
@@ -894,6 +908,7 @@ class MenuScreen(Screen):
         return layout
 
     def on_enter(self):
+        self.re_run_core()
         self.load_table()
 
 

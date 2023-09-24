@@ -132,7 +132,7 @@ void updateFoodLog(int ID){
         if( ID == F[j].ID){
             updateLastPick(j);
             updatePickTime(j);
-            fprintf(f,"\n%d\n%s\n%s\n%d\n%d\n%s\n%d",F[j].ID,F[j].Name,F[j].TimeOfDay,F[j].withRice,F[j].PickTime,F[j].LastPick,F[j].Calories);
+            fprintf(f,"%d\n%s\n%s\n%d\n%d\n%s\n%d\n",F[j].ID,F[j].Name,F[j].TimeOfDay,F[j].withRice,F[j].PickTime,F[j].LastPick,F[j].Calories);
             break;
         }
         j++;

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #define conditionActivateFile "InOut\\conditionActivate.txt"
-#define Monday "Monday"
+#define Monday "Sunday"
 char day[10]; 
 char date[10]; 
 char conditionDailyMenu[10];
