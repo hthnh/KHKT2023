@@ -24,7 +24,6 @@ charset="UTF-8";
 	"xml.etree.ElementPath" [label="<f0> SourceModule| <f1> xml.etree.ElementPath",shape="record"];
 	"xml.etree.ElementInclude" [label="<f0> SourceModule| <f1> xml.etree.ElementInclude",shape="record"];
 	"copy" [label="<f0> SourceModule| <f1> copy",shape="record"];
-	"org" [label="<f0> MissingModule| <f1> org",shape="record"];
 	"pyexpat" [label="<f0> Extension| <f1> pyexpat",shape="record"];
 	"_json" [label="<f0> BuiltinModule| <f1> _json",shape="record"];
 	"json.decoder" [label="<f0> SourceModule| <f1> json.decoder",shape="record"];
@@ -73,6 +72,7 @@ charset="UTF-8";
 	"_opcode" [label="<f0> BuiltinModule| <f1> _opcode",shape="record"];
 	"ast" [label="<f0> SourceModule| <f1> ast",shape="record"];
 	"_ast" [label="<f0> BuiltinModule| <f1> _ast",shape="record"];
+	"org" [label="<f0> MissingModule| <f1> org",shape="record"];
 	"_compat_pickle" [label="<f0> SourceModule| <f1> _compat_pickle",shape="record"];
 	"struct" [label="<f0> SourceModule| <f1> struct",shape="record"];
 	"_struct" [label="<f0> BuiltinModule| <f1> _struct",shape="record"];
@@ -398,7 +398,6 @@ charset="UTF-8";
 	"kivy.uix" [label="<f0> Package| <f1> kivy.uix",shape="record"];
 	"kivy.resources" [label="<f0> SourceModule| <f1> kivy.resources",shape="record"];
 	"kivy.core.image" [label="<f0> Package| <f1> kivy.core.image",shape="record"];
-	"kivy.core.image._img_sdl2" [label="<f0> Extension| <f1> kivy.core.image._img_sdl2",shape="record"];
 	"kivy.graphics.texture" [label="<f0> Extension| <f1> kivy.graphics.texture",shape="record"];
 	"kivy.compat" [label="<f0> SourceModule| <f1> kivy.compat",shape="record"];
 	"Queue" [label="<f0> MissingModule| <f1> Queue",shape="record"];
@@ -713,92 +712,55 @@ charset="UTF-8";
 	"kivymd.utils.fpsmonitor" [label="<f0> SourceModule| <f1> kivymd.utils.fpsmonitor",shape="record"];
 	"kivymd.utils" [label="<f0> Package| <f1> kivymd.utils",shape="record"];
 	"kivy" [label="<f0> Package| <f1> kivy",shape="record"];
-	"kivy.core.clipboard.clipboard_nspaste" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_nspaste",shape="record"];
-	"'pyobjus.dylib_manager'" [label="<f0> MissingModule| <f1> 'pyobjus.dylib_manager'",shape="record"];
-	"pyobjus" [label="<f0> MissingModule| <f1> pyobjus",shape="record"];
-	"kivy.core.window.window_pygame" [label="<f0> SourceModule| <f1> kivy.core.window.window_pygame",shape="record"];
-	"win32gui" [label="<f0> Extension| <f1> win32gui",shape="record"];
-	"kivy.support" [label="<f0> SourceModule| <f1> kivy.support",shape="record"];
-	"gobject" [label="<f0> MissingModule| <f1> gobject",shape="record"];
-	"gi" [label="<f0> MissingModule| <f1> gi",shape="record"];
-	"kivy.core.spelling.spelling_enchant" [label="<f0> SourceModule| <f1> kivy.core.spelling.spelling_enchant",shape="record"];
-	"enchant" [label="<f0> MissingModule| <f1> enchant",shape="record"];
-	"kivy.core.image.img_pil" [label="<f0> SourceModule| <f1> kivy.core.image.img_pil",shape="record"];
-	"Image" [label="<f0> MissingModule| <f1> Image",shape="record"];
-	"kivy.graphics.cgl_backend" [label="<f0> Package| <f1> kivy.graphics.cgl_backend",shape="record"];
-	"kivy.core.image.img_tex" [label="<f0> SourceModule| <f1> kivy.core.image.img_tex",shape="record"];
-	"kivy.core.image.img_dds" [label="<f0> SourceModule| <f1> kivy.core.image.img_dds",shape="record"];
-	"kivy.lib.ddsfile" [label="<f0> SourceModule| <f1> kivy.lib.ddsfile",shape="record"];
-	"kivy.core.clipboard._clipboard_ext" [label="<f0> SourceModule| <f1> kivy.core.clipboard._clipboard_ext",shape="record"];
-	"kivy.uix.spinner" [label="<f0> SourceModule| <f1> kivy.uix.spinner",shape="record"];
-	"kivy.uix.treeview" [label="<f0> SourceModule| <f1> kivy.uix.treeview",shape="record"];
+	"kivy.uix.slider" [label="<f0> SourceModule| <f1> kivy.uix.slider",shape="record"];
 	"kivy.core.clipboard.clipboard_xsel" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_xsel",shape="record"];
-	"kivy.core.clipboard.clipboard_xclip" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_xclip",shape="record"];
-	"kivy.core.audio.audio_ffpyplayer" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_ffpyplayer",shape="record"];
-	"'ffpyplayer.tools'" [label="<f0> MissingModule| <f1> 'ffpyplayer.tools'",shape="record"];
-	"'ffpyplayer.player'" [label="<f0> MissingModule| <f1> 'ffpyplayer.player'",shape="record"];
-	"ffpyplayer" [label="<f0> MissingModule| <f1> ffpyplayer",shape="record"];
-	"kivy.graphics.shader" [label="<f0> Extension| <f1> kivy.graphics.shader",shape="record"];
-	"kivy.core.image.img_ffpyplayer" [label="<f0> SourceModule| <f1> kivy.core.image.img_ffpyplayer",shape="record"];
-	"'ffpyplayer.pic'" [label="<f0> MissingModule| <f1> 'ffpyplayer.pic'",shape="record"];
-	"kivy.core.text.text_pil" [label="<f0> SourceModule| <f1> kivy.core.text.text_pil",shape="record"];
-	"kivy.core.clipboard.clipboard_winctypes" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_winctypes",shape="record"];
-	"kivy.uix.actionbar" [label="<f0> SourceModule| <f1> kivy.uix.actionbar",shape="record"];
-	"kivy.uix.videoplayer" [label="<f0> SourceModule| <f1> kivy.uix.videoplayer",shape="record"];
-	"kivy.core.audio.audio_sdl2" [label="<f0> Extension| <f1> kivy.core.audio.audio_sdl2",shape="record"];
+	"kivy.graphics.svg" [label="<f0> Extension| <f1> kivy.graphics.svg",shape="record"];
+	"kivy.core.image.img_pygame" [label="<f0> SourceModule| <f1> kivy.core.image.img_pygame",shape="record"];
+	"kivy.core.text._text_sdl2" [label="<f0> Extension| <f1> kivy.core.text._text_sdl2",shape="record"];
+	"kivy.core.clipboard.clipboard_android" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_android",shape="record"];
+	"'android.runnable'" [label="<f0> MissingModule| <f1> 'android.runnable'",shape="record"];
+	"kivy.core.image.img_sdl2" [label="<f0> SourceModule| <f1> kivy.core.image.img_sdl2",shape="record"];
+	"kivy.uix.video" [label="<f0> SourceModule| <f1> kivy.uix.video",shape="record"];
+	"kivy.uix.treeview" [label="<f0> SourceModule| <f1> kivy.uix.treeview",shape="record"];
 	"kivy.core.spelling.spelling_osxappkit" [label="<f0> SourceModule| <f1> kivy.core.spelling.spelling_osxappkit",shape="record"];
+	"kivy.graphics.compiler" [label="<f0> Extension| <f1> kivy.graphics.compiler",shape="record"];
 	"kivy.core.camera.camera_opencv" [label="<f0> SourceModule| <f1> kivy.core.camera.camera_opencv",shape="record"];
 	"cv2" [label="<f0> MissingModule| <f1> cv2",shape="record"];
 	"'opencv.highgui'" [label="<f0> MissingModule| <f1> 'opencv.highgui'",shape="record"];
 	"opencv" [label="<f0> MissingModule| <f1> opencv",shape="record"];
+	"kivy.core.spelling.spelling_enchant" [label="<f0> SourceModule| <f1> kivy.core.spelling.spelling_enchant",shape="record"];
+	"enchant" [label="<f0> MissingModule| <f1> enchant",shape="record"];
 	"kivy.uix.progressbar" [label="<f0> SourceModule| <f1> kivy.uix.progressbar",shape="record"];
-	"kivy.core.video.video_ffmpeg" [label="<f0> SourceModule| <f1> kivy.core.video.video_ffmpeg",shape="record"];
-	"ffmpeg" [label="<f0> MissingModule| <f1> ffmpeg",shape="record"];
-	"kivy.core.camera.camera_gi" [label="<f0> SourceModule| <f1> kivy.core.camera.camera_gi",shape="record"];
+	"kivy.uix.carousel" [label="<f0> SourceModule| <f1> kivy.uix.carousel",shape="record"];
+	"kivy.core.clipboard.clipboard_dummy" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_dummy",shape="record"];
+	"kivy.core.image.img_pil" [label="<f0> SourceModule| <f1> kivy.core.image.img_pil",shape="record"];
+	"Image" [label="<f0> MissingModule| <f1> Image",shape="record"];
+	"kivy.uix.effectwidget" [label="<f0> SourceModule| <f1> kivy.uix.effectwidget",shape="record"];
+	"kivy.core.clipboard.clipboard_gtk3" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_gtk3",shape="record"];
 	"'gi.repository'" [label="<f0> MissingModule| <f1> 'gi.repository'",shape="record"];
-	"kivy.uix.stacklayout" [label="<f0> SourceModule| <f1> kivy.uix.stacklayout",shape="record"];
-	"kivy.core.image.img_pygame" [label="<f0> SourceModule| <f1> kivy.core.image.img_pygame",shape="record"];
-	"kivy.core.clipboard.clipboard_android" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_android",shape="record"];
-	"'android.runnable'" [label="<f0> MissingModule| <f1> 'android.runnable'",shape="record"];
+	"gi" [label="<f0> MissingModule| <f1> gi",shape="record"];
+	"kivy.support" [label="<f0> SourceModule| <f1> kivy.support",shape="record"];
+	"gobject" [label="<f0> MissingModule| <f1> gobject",shape="record"];
+	"kivy.uix.splitter" [label="<f0> SourceModule| <f1> kivy.uix.splitter",shape="record"];
+	"kivy.graphics.cgl_backend.cgl_debug" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_debug",shape="record"];
+	"kivy.uix.scatterlayout" [label="<f0> SourceModule| <f1> kivy.uix.scatterlayout",shape="record"];
+	"kivy.core.clipboard.clipboard_nspaste" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_nspaste",shape="record"];
+	"'pyobjus.dylib_manager'" [label="<f0> MissingModule| <f1> 'pyobjus.dylib_manager'",shape="record"];
+	"pyobjus" [label="<f0> MissingModule| <f1> pyobjus",shape="record"];
+	"kivy.weakmethod" [label="<f0> SourceModule| <f1> kivy.weakmethod",shape="record"];
+	"kivy.core.audio.audio_avplayer" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_avplayer",shape="record"];
+	"kivy.core.clipboard.clipboard_sdl2" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_sdl2",shape="record"];
 	"kivy.core.audio" [label="<f0> Package| <f1> kivy.core.audio",shape="record"];
 	"kivy.lib.gstplayer" [label="<f0> Package| <f1> kivy.lib.gstplayer",shape="record"];
 	"kivy.lib.gstplayer._gstplayer" [label="<f0> Extension| <f1> kivy.lib.gstplayer._gstplayer",shape="record"];
-	"kivy.graphics.vertex" [label="<f0> Extension| <f1> kivy.graphics.vertex",shape="record"];
-	"kivy.weakmethod" [label="<f0> SourceModule| <f1> kivy.weakmethod",shape="record"];
-	"kivy.core.window.window_info" [label="<f0> Extension| <f1> kivy.core.window.window_info",shape="record"];
-	"kivy.core.window.window_egl_rpi" [label="<f0> SourceModule| <f1> kivy.core.window.window_egl_rpi",shape="record"];
-	"kivy.lib.vidcore_lite.egl" [label="<f0> MissingModule| <f1> kivy.lib.vidcore_lite.egl",shape="record"];
-	"kivy.lib.vidcore_lite.bcm" [label="<f0> MissingModule| <f1> kivy.lib.vidcore_lite.bcm",shape="record"];
-	"kivy.lib.vidcore_lite" [label="<f0> Package| <f1> kivy.lib.vidcore_lite",shape="record"];
-	"kivy.core.video" [label="<f0> Package| <f1> kivy.core.video",shape="record"];
-	"kivy.graphics.cgl_backend.cgl_mock" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_mock",shape="record"];
 	"kivy.uix.gesturesurface" [label="<f0> SourceModule| <f1> kivy.uix.gesturesurface",shape="record"];
-	"kivy.graphics.cgl_backend.cgl_glew" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_glew",shape="record"];
-	"kivy.core.clipboard.clipboard_pygame" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_pygame",shape="record"];
-	"'pygame.scrap'" [label="<f0> MissingModule| <f1> 'pygame.scrap'",shape="record"];
+	"kivy.uix.switch" [label="<f0> SourceModule| <f1> kivy.uix.switch",shape="record"];
 	"kivy.core.video.video_null" [label="<f0> SourceModule| <f1> kivy.core.video.video_null",shape="record"];
-	"kivy.graphics.svg" [label="<f0> Extension| <f1> kivy.graphics.svg",shape="record"];
-	"kivy.core.clipboard.clipboard_sdl2" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_sdl2",shape="record"];
 	"kivy.core.audio.audio_gstplayer" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_gstplayer",shape="record"];
 	"urllib.pathname2url" [label="<f0> MissingModule| <f1> urllib.pathname2url",shape="record"];
-	"kivy.uix.scatterlayout" [label="<f0> SourceModule| <f1> kivy.uix.scatterlayout",shape="record"];
-	"kivy.graphics.buffer" [label="<f0> Extension| <f1> kivy.graphics.buffer",shape="record"];
-	"kivy.core.clipboard._clipboard_sdl2" [label="<f0> Extension| <f1> kivy.core.clipboard._clipboard_sdl2",shape="record"];
-	"kivy.uix.effectwidget" [label="<f0> SourceModule| <f1> kivy.uix.effectwidget",shape="record"];
-	"kivy.effects.opacityscroll" [label="<f0> SourceModule| <f1> kivy.effects.opacityscroll",shape="record"];
-	"kivy.uix.sandbox" [label="<f0> SourceModule| <f1> kivy.uix.sandbox",shape="record"];
-	"kivy.uix.slider" [label="<f0> SourceModule| <f1> kivy.uix.slider",shape="record"];
-	"kivy.uix.video" [label="<f0> SourceModule| <f1> kivy.uix.video",shape="record"];
-	"kivy.uix.camera" [label="<f0> SourceModule| <f1> kivy.uix.camera",shape="record"];
-	"kivy.core.audio.audio_avplayer" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_avplayer",shape="record"];
-	"kivy.core.video.video_ffpyplayer" [label="<f0> SourceModule| <f1> kivy.core.video.video_ffpyplayer",shape="record"];
-	"kivy.core.audio.audio_pygame" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_pygame",shape="record"];
-	"android_mixer" [label="<f0> MissingModule| <f1> android_mixer",shape="record"];
-	"'android.mixer'" [label="<f0> MissingModule| <f1> 'android.mixer'",shape="record"];
-	"kivy.core.clipboard.clipboard_gtk3" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_gtk3",shape="record"];
-	"kivy.uix.recycleboxlayout" [label="<f0> SourceModule| <f1> kivy.uix.recycleboxlayout",shape="record"];
+	"kivy.uix.videoplayer" [label="<f0> SourceModule| <f1> kivy.uix.videoplayer",shape="record"];
+	"kivy.core.spelling" [label="<f0> Package| <f1> kivy.core.spelling",shape="record"];
 	"kivy.core.audio.audio_android" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_android",shape="record"];
-	"kivy.core.text._text_sdl2" [label="<f0> Extension| <f1> kivy.core.text._text_sdl2",shape="record"];
 	"kivy.uix.rst" [label="<f0> SourceModule| <f1> kivy.uix.rst",shape="record"];
 	"docutils.parsers.rst.directives" [label="<f0> Package| <f1> docutils.parsers.rst.directives",shape="record"];
 	"docutils.parsers.rst.languages.en" [label="<f0> SourceModule| <f1> docutils.parsers.rst.languages.en",shape="record"];
@@ -1252,36 +1214,74 @@ charset="UTF-8";
 	"docutils.parsers.rst.roles" [label="<f0> SourceModule| <f1> docutils.parsers.rst.roles",shape="record"];
 	"docutils.parsers.rst" [label="<f0> Package| <f1> docutils.parsers.rst",shape="record"];
 	"docutils.parsers" [label="<f0> Package| <f1> docutils.parsers",shape="record"];
-	"kivy.core.image.img_sdl2" [label="<f0> SourceModule| <f1> kivy.core.image.img_sdl2",shape="record"];
-	"kivy.uix.carousel" [label="<f0> SourceModule| <f1> kivy.uix.carousel",shape="record"];
-	"kivy.graphics.cgl_backend.cgl_debug" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_debug",shape="record"];
-	"kivy.uix.pagelayout" [label="<f0> SourceModule| <f1> kivy.uix.pagelayout",shape="record"];
-	"kivy.uix.switch" [label="<f0> SourceModule| <f1> kivy.uix.switch",shape="record"];
-	"kivy.core.camera.camera_android" [label="<f0> SourceModule| <f1> kivy.core.camera.camera_android",shape="record"];
-	"kivy.graphics.vbo" [label="<f0> Extension| <f1> kivy.graphics.vbo",shape="record"];
-	"kivy.core.text.text_sdl2" [label="<f0> SourceModule| <f1> kivy.core.text.text_sdl2",shape="record"];
-	"kivy.gesture" [label="<f0> SourceModule| <f1> kivy.gesture",shape="record"];
-	"kivy.uix.accordion" [label="<f0> SourceModule| <f1> kivy.uix.accordion",shape="record"];
-	"kivy.core.clipboard.clipboard_dummy" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_dummy",shape="record"];
-	"kivy.core.clipboard.clipboard_dbusklipper" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_dbusklipper",shape="record"];
-	"dbus" [label="<f0> MissingModule| <f1> dbus",shape="record"];
+	"kivy.multistroke" [label="<f0> SourceModule| <f1> kivy.multistroke",shape="record"];
+	"kivy.uix.sandbox" [label="<f0> SourceModule| <f1> kivy.uix.sandbox",shape="record"];
+	"kivy.core.clipboard.clipboard_xclip" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_xclip",shape="record"];
+	"kivy.core.image.img_ffpyplayer" [label="<f0> SourceModule| <f1> kivy.core.image.img_ffpyplayer",shape="record"];
+	"'ffpyplayer.tools'" [label="<f0> MissingModule| <f1> 'ffpyplayer.tools'",shape="record"];
+	"'ffpyplayer.pic'" [label="<f0> MissingModule| <f1> 'ffpyplayer.pic'",shape="record"];
+	"ffpyplayer" [label="<f0> MissingModule| <f1> ffpyplayer",shape="record"];
+	"kivy.core.image._img_sdl2" [label="<f0> Extension| <f1> kivy.core.image._img_sdl2",shape="record"];
+	"kivy.core.audio.audio_pygame" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_pygame",shape="record"];
+	"android_mixer" [label="<f0> MissingModule| <f1> android_mixer",shape="record"];
+	"'android.mixer'" [label="<f0> MissingModule| <f1> 'android.mixer'",shape="record"];
 	"kivy.core.camera.camera_picamera" [label="<f0> SourceModule| <f1> kivy.core.camera.camera_picamera",shape="record"];
 	"picamera" [label="<f0> MissingModule| <f1> picamera",shape="record"];
-	"kivy.graphics.compiler" [label="<f0> Extension| <f1> kivy.graphics.compiler",shape="record"];
+	"kivy.uix.recycleboxlayout" [label="<f0> SourceModule| <f1> kivy.uix.recycleboxlayout",shape="record"];
+	"kivy.core.clipboard._clipboard_ext" [label="<f0> SourceModule| <f1> kivy.core.clipboard._clipboard_ext",shape="record"];
+	"kivy.graphics.cgl_backend.cgl_mock" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_mock",shape="record"];
+	"kivy.core.audio.audio_ffpyplayer" [label="<f0> SourceModule| <f1> kivy.core.audio.audio_ffpyplayer",shape="record"];
+	"'ffpyplayer.player'" [label="<f0> MissingModule| <f1> 'ffpyplayer.player'",shape="record"];
+	"kivy.core.image.img_dds" [label="<f0> SourceModule| <f1> kivy.core.image.img_dds",shape="record"];
+	"kivy.lib.ddsfile" [label="<f0> SourceModule| <f1> kivy.lib.ddsfile",shape="record"];
+	"kivy.graphics.shader" [label="<f0> Extension| <f1> kivy.graphics.shader",shape="record"];
+	"kivy.core.clipboard.clipboard_pygame" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_pygame",shape="record"];
+	"'pygame.scrap'" [label="<f0> MissingModule| <f1> 'pygame.scrap'",shape="record"];
+	"kivy.graphics.vbo" [label="<f0> Extension| <f1> kivy.graphics.vbo",shape="record"];
+	"kivy.graphics.buffer" [label="<f0> Extension| <f1> kivy.graphics.buffer",shape="record"];
+	"kivy.uix.pagelayout" [label="<f0> SourceModule| <f1> kivy.uix.pagelayout",shape="record"];
+	"kivy.gesture" [label="<f0> SourceModule| <f1> kivy.gesture",shape="record"];
+	"kivy.core.camera.camera_android" [label="<f0> SourceModule| <f1> kivy.core.camera.camera_android",shape="record"];
+	"kivy.core.clipboard.clipboard_dbusklipper" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_dbusklipper",shape="record"];
+	"dbus" [label="<f0> MissingModule| <f1> dbus",shape="record"];
+	"kivy.graphics.vertex" [label="<f0> Extension| <f1> kivy.graphics.vertex",shape="record"];
+	"kivy.core.video.video_ffmpeg" [label="<f0> SourceModule| <f1> kivy.core.video.video_ffmpeg",shape="record"];
+	"ffmpeg" [label="<f0> MissingModule| <f1> ffmpeg",shape="record"];
+	"kivy.uix.behaviors.knspace" [label="<f0> SourceModule| <f1> kivy.uix.behaviors.knspace",shape="record"];
+	"kivy.uix.actionbar" [label="<f0> SourceModule| <f1> kivy.uix.actionbar",shape="record"];
 	"kivy.core.text.text_pygame" [label="<f0> SourceModule| <f1> kivy.core.text.text_pygame",shape="record"];
-	"kivy.graphics.cgl_backend.cgl_gl" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_gl",shape="record"];
-	"kivy.core.camera" [label="<f0> Package| <f1> kivy.core.camera",shape="record"];
-	"kivy.core.video.video_gstplayer" [label="<f0> SourceModule| <f1> kivy.core.video.video_gstplayer",shape="record"];
+	"kivy.core.video" [label="<f0> Package| <f1> kivy.core.video",shape="record"];
+	"kivy.core.window.window_pygame" [label="<f0> SourceModule| <f1> kivy.core.window.window_pygame",shape="record"];
+	"win32gui" [label="<f0> Extension| <f1> win32gui",shape="record"];
+	"kivy.uix.stacklayout" [label="<f0> SourceModule| <f1> kivy.uix.stacklayout",shape="record"];
+	"kivy.graphics.cgl_backend.cgl_sdl2" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_sdl2",shape="record"];
+	"kivy.core.audio.audio_sdl2" [label="<f0> Extension| <f1> kivy.core.audio.audio_sdl2",shape="record"];
+	"kivy.core.window.window_egl_rpi" [label="<f0> SourceModule| <f1> kivy.core.window.window_egl_rpi",shape="record"];
+	"kivy.lib.vidcore_lite.egl" [label="<f0> MissingModule| <f1> kivy.lib.vidcore_lite.egl",shape="record"];
+	"kivy.lib.vidcore_lite.bcm" [label="<f0> MissingModule| <f1> kivy.lib.vidcore_lite.bcm",shape="record"];
+	"kivy.lib.vidcore_lite" [label="<f0> Package| <f1> kivy.lib.vidcore_lite",shape="record"];
 	"kivy.uix.recycleview.__init__" [label="<f0> SourceModule| <f1> kivy.uix.recycleview.__init__",shape="record"];
+	"kivy.uix.spinner" [label="<f0> SourceModule| <f1> kivy.uix.spinner",shape="record"];
+	"kivy.core.video.video_gstplayer" [label="<f0> SourceModule| <f1> kivy.core.video.video_gstplayer",shape="record"];
+	"kivy.core.text.text_pil" [label="<f0> SourceModule| <f1> kivy.core.text.text_pil",shape="record"];
+	"kivy.core.video.video_ffpyplayer" [label="<f0> SourceModule| <f1> kivy.core.video.video_ffpyplayer",shape="record"];
+	"kivy.core.image.img_tex" [label="<f0> SourceModule| <f1> kivy.core.image.img_tex",shape="record"];
 	"kivy.graphics.tesselator" [label="<f0> Extension| <f1> kivy.graphics.tesselator",shape="record"];
-	"kivy.uix.splitter" [label="<f0> SourceModule| <f1> kivy.uix.splitter",shape="record"];
-	"kivy.core.spelling" [label="<f0> Package| <f1> kivy.core.spelling",shape="record"];
-	"kivy.multistroke" [label="<f0> SourceModule| <f1> kivy.multistroke",shape="record"];
+	"kivy.core.window.window_info" [label="<f0> Extension| <f1> kivy.core.window.window_info",shape="record"];
+	"kivy.effects.opacityscroll" [label="<f0> SourceModule| <f1> kivy.effects.opacityscroll",shape="record"];
 	"kivy.uix.codeinput" [label="<f0> SourceModule| <f1> kivy.uix.codeinput",shape="record"];
 	"kivy.extras.highlight" [label="<f0> SourceModule| <f1> kivy.extras.highlight",shape="record"];
 	"kivy.extras" [label="<f0> Package| <f1> kivy.extras",shape="record"];
-	"kivy.graphics.cgl_backend.cgl_sdl2" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_sdl2",shape="record"];
-	"kivy.uix.behaviors.knspace" [label="<f0> SourceModule| <f1> kivy.uix.behaviors.knspace",shape="record"];
+	"kivy.core.text.text_sdl2" [label="<f0> SourceModule| <f1> kivy.core.text.text_sdl2",shape="record"];
+	"kivy.graphics.cgl_backend" [label="<f0> Package| <f1> kivy.graphics.cgl_backend",shape="record"];
+	"kivy.core.clipboard._clipboard_sdl2" [label="<f0> Extension| <f1> kivy.core.clipboard._clipboard_sdl2",shape="record"];
+	"kivy.core.clipboard.clipboard_winctypes" [label="<f0> SourceModule| <f1> kivy.core.clipboard.clipboard_winctypes",shape="record"];
+	"kivy.graphics.cgl_backend.cgl_glew" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_glew",shape="record"];
+	"kivy.uix.accordion" [label="<f0> SourceModule| <f1> kivy.uix.accordion",shape="record"];
+	"kivy.core.camera" [label="<f0> Package| <f1> kivy.core.camera",shape="record"];
+	"kivy.core.camera.camera_gi" [label="<f0> SourceModule| <f1> kivy.core.camera.camera_gi",shape="record"];
+	"kivy.uix.camera" [label="<f0> SourceModule| <f1> kivy.uix.camera",shape="record"];
+	"kivy.graphics.cgl_backend.cgl_gl" [label="<f0> Extension| <f1> kivy.graphics.cgl_backend.cgl_gl",shape="record"];
 	"kivy_deps" [label="<f0> Package| <f1> kivy_deps",shape="record"];
 	"kivy.deps" [label="<f0> Package| <f1> kivy.deps",shape="record"];
 	"site" [label="<f0> SourceModule| <f1> site",shape="record"];
@@ -1293,13 +1293,64 @@ charset="UTF-8";
 	"kivymd.icon_definitions" [label="<f0> SourceModule| <f1> kivymd.icon_definitions",shape="record"];
 	"kivy.config" [label="<f0> SourceModule| <f1> kivy.config",shape="record"];
 	"ConfigParser" [label="<f0> MissingModule| <f1> ConfigParser",shape="record"];
+	"urllib.robotparser" [label="<f0> SourceModule| <f1> urllib.robotparser",shape="record"];
+	"urllib.response" [label="<f0> SourceModule| <f1> urllib.response",shape="record"];
+	"urllib.request" [label="<f0> SourceModule| <f1> urllib.request",shape="record"];
+	"_scproxy" [label="<f0> MissingModule| <f1> _scproxy",shape="record"];
+	"getpass" [label="<f0> SourceModule| <f1> getpass",shape="record"];
+	"nturl2path" [label="<f0> SourceModule| <f1> nturl2path",shape="record"];
+	"ftplib" [label="<f0> SourceModule| <f1> ftplib",shape="record"];
+	"netrc" [label="<f0> SourceModule| <f1> netrc",shape="record"];
+	"http.cookiejar" [label="<f0> SourceModule| <f1> http.cookiejar",shape="record"];
+	"_ssl" [label="<f0> Extension| <f1> _ssl",shape="record"];
+	"urllib.parse" [label="<f0> SourceModule| <f1> urllib.parse",shape="record"];
+	"urllib.error" [label="<f0> SourceModule| <f1> urllib.error",shape="record"];
+	"urllib" [label="<f0> Package| <f1> urllib",shape="record"];
+	"io" [label="<f0> SourceModule| <f1> io",shape="record"];
+	"genericpath" [label="<f0> SourceModule| <f1> genericpath",shape="record"];
+	"collections.abc" [label="<f0> SourceModule| <f1> collections.abc",shape="record"];
+	"collections" [label="<f0> Package| <f1> collections",shape="record"];
+	"token" [label="<f0> SourceModule| <f1> token",shape="record"];
+	"linecache" [label="<f0> SourceModule| <f1> linecache",shape="record"];
+	"functools" [label="<f0> SourceModule| <f1> functools",shape="record"];
+	"_functools" [label="<f0> BuiltinModule| <f1> _functools",shape="record"];
+	"enum" [label="<f0> SourceModule| <f1> enum",shape="record"];
+	"stat" [label="<f0> SourceModule| <f1> stat",shape="record"];
+	"_stat" [label="<f0> BuiltinModule| <f1> _stat",shape="record"];
+	"tokenize" [label="<f0> SourceModule| <f1> tokenize",shape="record"];
+	"_tokenize" [label="<f0> BuiltinModule| <f1> _tokenize",shape="record"];
+	"weakref" [label="<f0> SourceModule| <f1> weakref",shape="record"];
+	"sre_compile" [label="<f0> SourceModule| <f1> sre_compile",shape="record"];
+	"posixpath" [label="<f0> SourceModule| <f1> posixpath",shape="record"];
+	"operator" [label="<f0> SourceModule| <f1> operator",shape="record"];
+	"pathlib" [label="<f0> SourceModule| <f1> pathlib",shape="record"];
+	"sre_parse" [label="<f0> SourceModule| <f1> sre_parse",shape="record"];
+	"keyword" [label="<f0> SourceModule| <f1> keyword",shape="record"];
+	"locale" [label="<f0> SourceModule| <f1> locale",shape="record"];
+	"_locale" [label="<f0> BuiltinModule| <f1> _locale",shape="record"];
+	"types" [label="<f0> SourceModule| <f1> types",shape="record"];
+	"os" [label="<f0> SourceModule| <f1> os",shape="record"];
+	"ipaddress" [label="<f0> SourceModule| <f1> ipaddress",shape="record"];
 	"re._parser" [label="<f0> SourceModule| <f1> re._parser",shape="record"];
 	"re._constants" [label="<f0> SourceModule| <f1> re._constants",shape="record"];
 	"re._compiler" [label="<f0> SourceModule| <f1> re._compiler",shape="record"];
 	"re._casefix" [label="<f0> SourceModule| <f1> re._casefix",shape="record"];
 	"re" [label="<f0> Package| <f1> re",shape="record"];
-	"posixpath" [label="<f0> SourceModule| <f1> posixpath",shape="record"];
+	"_weakrefset" [label="<f0> SourceModule| <f1> _weakrefset",shape="record"];
+	"_collections_abc" [label="<f0> SourceModule| <f1> _collections_abc",shape="record"];
+	"copyreg" [label="<f0> SourceModule| <f1> copyreg",shape="record"];
+	"heapq" [label="<f0> SourceModule| <f1> heapq",shape="record"];
+	"_heapq" [label="<f0> BuiltinModule| <f1> _heapq",shape="record"];
+	"fnmatch" [label="<f0> SourceModule| <f1> fnmatch",shape="record"];
+	"traceback" [label="<f0> SourceModule| <f1> traceback",shape="record"];
 	"sre_constants" [label="<f0> SourceModule| <f1> sre_constants",shape="record"];
+	"warnings" [label="<f0> SourceModule| <f1> warnings",shape="record"];
+	"tracemalloc" [label="<f0> SourceModule| <f1> tracemalloc",shape="record"];
+	"_tracemalloc" [label="<f0> BuiltinModule| <f1> _tracemalloc",shape="record"];
+	"reprlib" [label="<f0> SourceModule| <f1> reprlib",shape="record"];
+	"abc" [label="<f0> SourceModule| <f1> abc",shape="record"];
+	"_py_abc" [label="<f0> SourceModule| <f1> _py_abc",shape="record"];
+	"_abc" [label="<f0> BuiltinModule| <f1> _abc",shape="record"];
 	"encodings.zlib_codec" [label="<f0> SourceModule| <f1> encodings.zlib_codec",shape="record"];
 	"encodings.uu_codec" [label="<f0> SourceModule| <f1> encodings.uu_codec",shape="record"];
 	"encodings.utf_8_sig" [label="<f0> SourceModule| <f1> encodings.utf_8_sig",shape="record"];
@@ -1427,60 +1478,6 @@ charset="UTF-8";
 	"_codecs_hk" [label="<f0> BuiltinModule| <f1> _codecs_hk",shape="record"];
 	"encodings.big5" [label="<f0> SourceModule| <f1> encodings.big5",shape="record"];
 	"encodings.base64_codec" [label="<f0> SourceModule| <f1> encodings.base64_codec",shape="record"];
-	"encodings.ascii" [label="<f0> SourceModule| <f1> encodings.ascii",shape="record"];
-	"encodings.aliases" [label="<f0> SourceModule| <f1> encodings.aliases",shape="record"];
-	"encodings" [label="<f0> Package| <f1> encodings",shape="record"];
-	"ipaddress" [label="<f0> SourceModule| <f1> ipaddress",shape="record"];
-	"copyreg" [label="<f0> SourceModule| <f1> copyreg",shape="record"];
-	"io" [label="<f0> SourceModule| <f1> io",shape="record"];
-	"functools" [label="<f0> SourceModule| <f1> functools",shape="record"];
-	"_functools" [label="<f0> BuiltinModule| <f1> _functools",shape="record"];
-	"os" [label="<f0> SourceModule| <f1> os",shape="record"];
-	"sre_parse" [label="<f0> SourceModule| <f1> sre_parse",shape="record"];
-	"linecache" [label="<f0> SourceModule| <f1> linecache",shape="record"];
-	"pathlib" [label="<f0> SourceModule| <f1> pathlib",shape="record"];
-	"heapq" [label="<f0> SourceModule| <f1> heapq",shape="record"];
-	"_heapq" [label="<f0> BuiltinModule| <f1> _heapq",shape="record"];
-	"fnmatch" [label="<f0> SourceModule| <f1> fnmatch",shape="record"];
-	"_collections_abc" [label="<f0> SourceModule| <f1> _collections_abc",shape="record"];
-	"reprlib" [label="<f0> SourceModule| <f1> reprlib",shape="record"];
-	"operator" [label="<f0> SourceModule| <f1> operator",shape="record"];
-	"abc" [label="<f0> SourceModule| <f1> abc",shape="record"];
-	"_py_abc" [label="<f0> SourceModule| <f1> _py_abc",shape="record"];
-	"_abc" [label="<f0> BuiltinModule| <f1> _abc",shape="record"];
-	"sre_compile" [label="<f0> SourceModule| <f1> sre_compile",shape="record"];
-	"weakref" [label="<f0> SourceModule| <f1> weakref",shape="record"];
-	"tokenize" [label="<f0> SourceModule| <f1> tokenize",shape="record"];
-	"_tokenize" [label="<f0> BuiltinModule| <f1> _tokenize",shape="record"];
-	"urllib.robotparser" [label="<f0> SourceModule| <f1> urllib.robotparser",shape="record"];
-	"urllib.response" [label="<f0> SourceModule| <f1> urllib.response",shape="record"];
-	"urllib.request" [label="<f0> SourceModule| <f1> urllib.request",shape="record"];
-	"_scproxy" [label="<f0> MissingModule| <f1> _scproxy",shape="record"];
-	"getpass" [label="<f0> SourceModule| <f1> getpass",shape="record"];
-	"nturl2path" [label="<f0> SourceModule| <f1> nturl2path",shape="record"];
-	"ftplib" [label="<f0> SourceModule| <f1> ftplib",shape="record"];
-	"netrc" [label="<f0> SourceModule| <f1> netrc",shape="record"];
-	"http.cookiejar" [label="<f0> SourceModule| <f1> http.cookiejar",shape="record"];
-	"_ssl" [label="<f0> Extension| <f1> _ssl",shape="record"];
-	"urllib.parse" [label="<f0> SourceModule| <f1> urllib.parse",shape="record"];
-	"urllib.error" [label="<f0> SourceModule| <f1> urllib.error",shape="record"];
-	"urllib" [label="<f0> Package| <f1> urllib",shape="record"];
-	"types" [label="<f0> SourceModule| <f1> types",shape="record"];
-	"token" [label="<f0> SourceModule| <f1> token",shape="record"];
-	"locale" [label="<f0> SourceModule| <f1> locale",shape="record"];
-	"_locale" [label="<f0> BuiltinModule| <f1> _locale",shape="record"];
-	"_weakrefset" [label="<f0> SourceModule| <f1> _weakrefset",shape="record"];
-	"keyword" [label="<f0> SourceModule| <f1> keyword",shape="record"];
-	"genericpath" [label="<f0> SourceModule| <f1> genericpath",shape="record"];
-	"traceback" [label="<f0> SourceModule| <f1> traceback",shape="record"];
-	"stat" [label="<f0> SourceModule| <f1> stat",shape="record"];
-	"_stat" [label="<f0> BuiltinModule| <f1> _stat",shape="record"];
-	"warnings" [label="<f0> SourceModule| <f1> warnings",shape="record"];
-	"tracemalloc" [label="<f0> SourceModule| <f1> tracemalloc",shape="record"];
-	"_tracemalloc" [label="<f0> BuiltinModule| <f1> _tracemalloc",shape="record"];
-	"enum" [label="<f0> SourceModule| <f1> enum",shape="record"];
-	"collections.abc" [label="<f0> SourceModule| <f1> collections.abc",shape="record"];
-	"collections" [label="<f0> Package| <f1> collections",shape="record"];
 	"_sre" [label="<f0> BuiltinModule| <f1> _sre",shape="record"];
 	"_posixsubprocess" [label="<f0> MissingModule| <f1> _posixsubprocess",shape="record"];
 	"datetime" [label="<f0> SourceModule| <f1> datetime",shape="record"];
@@ -1490,138 +1487,103 @@ charset="UTF-8";
 	"ntpath" [label="<f0> SourceModule| <f1> ntpath",shape="record"];
 	"posix" [label="<f0> MissingModule| <f1> posix",shape="record"];
 	"resource" [label="<f0> MissingModule| <f1> resource",shape="record"];
-	"codecs" [label="<f0> SourceModule| <f1> codecs",shape="record"];
-	"_codecs" [label="<f0> BuiltinModule| <f1> _codecs",shape="record"];
 	"time" [label="<f0> BuiltinModule| <f1> time",shape="record"];
 	"gc" [label="<f0> BuiltinModule| <f1> gc",shape="record"];
-	subgraph "cluster_collections" {
-		label="collections";
-		"collections" -> "collections.abc" [style="dotted"];
+	"encodings.ascii" [label="<f0> SourceModule| <f1> encodings.ascii",shape="record"];
+	"encodings.aliases" [label="<f0> SourceModule| <f1> encodings.aliases",shape="record"];
+	"encodings" [label="<f0> Package| <f1> encodings",shape="record"];
+	"codecs" [label="<f0> SourceModule| <f1> codecs",shape="record"];
+	"_codecs" [label="<f0> BuiltinModule| <f1> _codecs",shape="record"];
+	subgraph "cluster_docutils.parsers.rst.directives" {
+		label="docutils.parsers.rst.directives";
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.admonitions" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.body" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.html" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.images" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.misc" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.parts" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.references" [style="dotted"];
+		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.tables" [style="dotted"];
 	}
-	subgraph "cluster_kivy.uix" {
-		label="kivy.uix";
-		"kivy.uix" -> "kivy.uix.screenmanager" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.anchorlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.boxlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.label" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.button" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.textinput" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.checkbox" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.dropdown" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.image" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.scrollview" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.popup" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.gridlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.widget" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.vkeyboard" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.scatter" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.behaviors" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.relativelayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.floatlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.layout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.modalview" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.stencilview" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.settings" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.tabbedpanel" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.filechooser" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.colorpicker" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.togglebutton" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.bubble" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.recyclegridlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.recycleview" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.recyclelayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.codeinput" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.splitter" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.accordion" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.switch" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.pagelayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.carousel" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.rst" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.recycleboxlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.camera" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.video" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.slider" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.sandbox" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.effectwidget" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.scatterlayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.gesturesurface" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.stacklayout" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.progressbar" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.videoplayer" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.actionbar" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.treeview" [style="dotted"];
-		"kivy.uix" -> "kivy.uix.spinner" [style="dotted"];
+	subgraph "cluster_kivymd.effects" {
+		label="kivymd.effects";
+		"kivymd.effects" -> "kivymd.effects.stiffscroll" [style="dotted"];
 	}
-	subgraph "cluster_kivymd.uix" {
-		label="kivymd.uix";
-		"kivymd.uix" -> "kivymd.uix.behaviors" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.datatables" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.boxlayout" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.tooltip" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.selectioncontrol" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.floatlayout" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.label" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.menu" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.screen" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.hero" [style="dotted"];
-		"kivymd.uix" -> "kivymd.uix.button" [style="dotted"];
+	subgraph "cluster_certifi" {
+		label="certifi";
+		"certifi" -> "certifi.core" [style="dotted"];
 	}
-	subgraph "cluster_docutils.writers" {
-		label="docutils.writers";
-		"docutils.writers" -> "docutils.writers._html_base" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.docutils_xml" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.manpage" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.null" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.pseudoxml" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.xetex" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.latex2e" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.s5_html" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.html4css1" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.pep_html" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.odf_odt" [style="dotted"];
-		"docutils.writers" -> "docutils.writers.html5_polyglot" [style="dotted"];
+	subgraph "cluster_docutils" {
+		label="docutils";
+		"docutils" -> "docutils.io" [style="dotted"];
+		"docutils" -> "docutils.languages" [style="dotted"];
+		"docutils" -> "docutils.nodes" [style="dotted"];
+		"docutils" -> "docutils.frontend" [style="dotted"];
+		"docutils" -> "docutils.utils" [style="dotted"];
+		"docutils" -> "docutils.writers" [style="dotted"];
+		"docutils" -> "docutils.transforms" [style="dotted"];
+		"docutils" -> "docutils.statemachine" [style="dotted"];
+		"docutils" -> "docutils.readers" [style="dotted"];
+		"docutils" -> "docutils.parsers" [style="dotted"];
 	}
-	subgraph "cluster_kivy.extras" {
-		label="kivy.extras";
-		"kivy.extras" -> "kivy.extras.highlight" [style="dotted"];
+	subgraph "cluster_email" {
+		label="email";
+		"email" -> "email.errors" [style="dotted"];
+		"email" -> "email.charset" [style="dotted"];
+		"email" -> "email.header" [style="dotted"];
+		"email" -> "email._header_value_parser" [style="dotted"];
+		"email" -> "email.parser" [style="dotted"];
+		"email" -> "email.message" [style="dotted"];
+		"email" -> "email.utils" [style="dotted"];
+		"email" -> "email._policybase" [style="dotted"];
+		"email" -> "email._encoded_words" [style="dotted"];
+		"email" -> "email.generator" [style="dotted"];
+		"email" -> "email.iterators" [style="dotted"];
+		"email" -> "email.policy" [style="dotted"];
+		"email" -> "email.headerregistry" [style="dotted"];
+		"email" -> "email.contentmanager" [style="dotted"];
+		"email" -> "email.quoprimime" [style="dotted"];
+		"email" -> "email.base64mime" [style="dotted"];
+		"email" -> "email.encoders" [style="dotted"];
+		"email" -> "email._parseaddr" [style="dotted"];
+		"email" -> "email.feedparser" [style="dotted"];
 	}
-	subgraph "cluster_pywin.dialogs" {
-		label="pywin.dialogs";
-		"pywin.dialogs" -> "pywin.dialogs.status" [style="dotted"];
-		"pywin.dialogs" -> "pywin.dialogs.list" [style="dotted"];
+	subgraph "cluster_win32com.shell" {
+		label="win32com.shell";
+		"win32com.shell" -> "win32com.shell.shellcon" [style="dotted"];
+		"win32com.shell" -> "win32com.shell.shell" [style="dotted"];
 	}
-	subgraph "cluster_docutils.parsers" {
-		label="docutils.parsers";
-		"docutils.parsers" -> "docutils.parsers.rst" [style="dotted"];
+	subgraph "cluster_kivy.core.camera" {
+		label="kivy.core.camera";
+		"kivy.core.camera" -> "kivy.core.camera.camera_gi" [style="dotted"];
+		"kivy.core.camera" -> "kivy.core.camera.camera_android" [style="dotted"];
+		"kivy.core.camera" -> "kivy.core.camera.camera_picamera" [style="dotted"];
+		"kivy.core.camera" -> "kivy.core.camera.camera_opencv" [style="dotted"];
 	}
-	subgraph "cluster_kivy.core.spelling" {
-		label="kivy.core.spelling";
-		"kivy.core.spelling" -> "kivy.core.spelling.spelling_osxappkit" [style="dotted"];
-		"kivy.core.spelling" -> "kivy.core.spelling.spelling_enchant" [style="dotted"];
+	subgraph "cluster_concurrent.futures" {
+		label="concurrent.futures";
+		"concurrent.futures" -> "concurrent.futures._base" [style="dotted"];
+		"concurrent.futures" -> "concurrent.futures.process" [style="dotted"];
+		"concurrent.futures" -> "concurrent.futures.thread" [style="dotted"];
 	}
-	subgraph "cluster_screeninfo.enumerators" {
-		label="screeninfo.enumerators";
-		"screeninfo.enumerators" -> "screeninfo.enumerators.cygwin" [style="dotted"];
-		"screeninfo.enumerators" -> "screeninfo.enumerators.drm" [style="dotted"];
-		"screeninfo.enumerators" -> "screeninfo.enumerators.osx" [style="dotted"];
-		"screeninfo.enumerators" -> "screeninfo.enumerators.windows" [style="dotted"];
-		"screeninfo.enumerators" -> "screeninfo.enumerators.xinerama" [style="dotted"];
-		"screeninfo.enumerators" -> "screeninfo.enumerators.xrandr" [style="dotted"];
+	subgraph "cluster_kivy.core.gl" {
+		label="kivy.core.gl";
 	}
-	subgraph "cluster_kivy.core.clipboard" {
-		label="kivy.core.clipboard";
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_dbusklipper" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_dummy" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_gtk3" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard._clipboard_sdl2" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_sdl2" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_pygame" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_android" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_winctypes" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_xclip" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_xsel" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard._clipboard_ext" [style="dotted"];
-		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_nspaste" [style="dotted"];
+	subgraph "cluster_kivy.graphics.cgl_backend" {
+		label="kivy.graphics.cgl_backend";
+		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_gl" [style="dotted"];
+		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_glew" [style="dotted"];
+		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_sdl2" [style="dotted"];
+		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_mock" [style="dotted"];
+		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_debug" [style="dotted"];
+	}
+	subgraph "cluster_docutils.parsers.rst" {
+		label="docutils.parsers.rst";
+		"docutils.parsers.rst" -> "docutils.parsers.rst.directives" [style="dotted"];
+		"docutils.parsers.rst" -> "docutils.parsers.rst.roles" [style="dotted"];
+		"docutils.parsers.rst" -> "docutils.parsers.rst.tableparser" [style="dotted"];
+		"docutils.parsers.rst" -> "docutils.parsers.rst.states" [style="dotted"];
+		"docutils.parsers.rst" -> "docutils.parsers.rst.languages" [style="dotted"];
 	}
 	subgraph "cluster_docutils.languages" {
 		label="docutils.languages";
@@ -1654,138 +1616,49 @@ charset="UTF-8";
 		"docutils.languages" -> "docutils.languages.zh_cn" [style="dotted"];
 		"docutils.languages" -> "docutils.languages.zh_tw" [style="dotted"];
 	}
-	subgraph "cluster_xml.dom" {
-		label="xml.dom";
-		"xml.dom" -> "xml.dom.domreg" [style="dotted"];
-		"xml.dom" -> "xml.dom.xmlbuilder" [style="dotted"];
-		"xml.dom" -> "xml.dom.minidom" [style="dotted"];
-		"xml.dom" -> "xml.dom.pulldom" [style="dotted"];
-		"xml.dom" -> "xml.dom.minicompat" [style="dotted"];
-		"xml.dom" -> "xml.dom.expatbuilder" [style="dotted"];
-		"xml.dom" -> "xml.dom.NodeFilter" [style="dotted"];
-	}
-	subgraph "cluster_pkg_resources._vendor.jaraco" {
-		label="pkg_resources._vendor.jaraco";
-		"pkg_resources._vendor.jaraco" -> "pkg_resources._vendor.jaraco.context" [style="dotted"];
-		"pkg_resources._vendor.jaraco" -> "pkg_resources._vendor.jaraco.functools" [style="dotted"];
-		"pkg_resources._vendor.jaraco" -> "pkg_resources._vendor.jaraco.text" [style="dotted"];
-	}
-	subgraph "cluster_docutils" {
-		label="docutils";
-		"docutils" -> "docutils.io" [style="dotted"];
-		"docutils" -> "docutils.languages" [style="dotted"];
-		"docutils" -> "docutils.nodes" [style="dotted"];
-		"docutils" -> "docutils.frontend" [style="dotted"];
-		"docutils" -> "docutils.utils" [style="dotted"];
-		"docutils" -> "docutils.writers" [style="dotted"];
-		"docutils" -> "docutils.transforms" [style="dotted"];
-		"docutils" -> "docutils.statemachine" [style="dotted"];
-		"docutils" -> "docutils.readers" [style="dotted"];
-		"docutils" -> "docutils.parsers" [style="dotted"];
-	}
-	subgraph "cluster_docutils.writers.xetex" {
-		label="docutils.writers.xetex";
-	}
-	subgraph "cluster_xml.etree" {
-		label="xml.etree";
-		"xml.etree" -> "xml.etree.ElementPath" [style="dotted"];
-		"xml.etree" -> "xml.etree.ElementTree" [style="dotted"];
-		"xml.etree" -> "xml.etree.ElementInclude" [style="dotted"];
-		"xml.etree" -> "xml.etree.cElementTree" [style="dotted"];
-	}
-	subgraph "cluster_pygments.formatters" {
-		label="pygments.formatters";
-		"pygments.formatters" -> "pygments.formatters._mapping" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.BBCodeFormatter" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.html" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.bbcode" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.groff" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.img" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.irc" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.latex" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.other" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.pangomarkup" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.rtf" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.svg" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.terminal" [style="dotted"];
-		"pygments.formatters" -> "pygments.formatters.terminal256" [style="dotted"];
-	}
-	subgraph "cluster_email" {
-		label="email";
-		"email" -> "email.errors" [style="dotted"];
-		"email" -> "email.charset" [style="dotted"];
-		"email" -> "email.header" [style="dotted"];
-		"email" -> "email._header_value_parser" [style="dotted"];
-		"email" -> "email.parser" [style="dotted"];
-		"email" -> "email.message" [style="dotted"];
-		"email" -> "email.utils" [style="dotted"];
-		"email" -> "email._policybase" [style="dotted"];
-		"email" -> "email._encoded_words" [style="dotted"];
-		"email" -> "email.generator" [style="dotted"];
-		"email" -> "email.iterators" [style="dotted"];
-		"email" -> "email.policy" [style="dotted"];
-		"email" -> "email.headerregistry" [style="dotted"];
-		"email" -> "email.contentmanager" [style="dotted"];
-		"email" -> "email.quoprimime" [style="dotted"];
-		"email" -> "email.base64mime" [style="dotted"];
-		"email" -> "email.encoders" [style="dotted"];
-		"email" -> "email._parseaddr" [style="dotted"];
-		"email" -> "email.feedparser" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.effects.stiffscroll" {
-		label="kivymd.effects.stiffscroll";
-		"kivymd.effects.stiffscroll" -> "kivymd.effects.stiffscroll.stiffscroll" [style="dotted"];
-	}
-	subgraph "cluster_importlib" {
-		label="importlib";
-		"importlib" -> "importlib._bootstrap" [style="dotted"];
-		"importlib" -> "importlib._bootstrap_external" [style="dotted"];
-		"importlib" -> "importlib.machinery" [style="dotted"];
-		"importlib" -> "importlib.readers" [style="dotted"];
-		"importlib" -> "importlib.metadata" [style="dotted"];
-		"importlib" -> "importlib.abc" [style="dotted"];
-		"importlib" -> "importlib._abc" [style="dotted"];
-		"importlib" -> "importlib.resources" [style="dotted"];
-		"importlib" -> "importlib.util" [style="dotted"];
-	}
-	subgraph "cluster_kivy.core.camera" {
-		label="kivy.core.camera";
-		"kivy.core.camera" -> "kivy.core.camera.camera_picamera" [style="dotted"];
-		"kivy.core.camera" -> "kivy.core.camera.camera_android" [style="dotted"];
-		"kivy.core.camera" -> "kivy.core.camera.camera_gi" [style="dotted"];
-		"kivy.core.camera" -> "kivy.core.camera.camera_opencv" [style="dotted"];
-	}
-	subgraph "cluster_concurrent" {
-		label="concurrent";
-		"concurrent" -> "concurrent.futures" [style="dotted"];
-	}
-	subgraph "cluster_xml" {
-		label="xml";
-		"xml" -> "xml.etree" [style="dotted"];
-		"xml" -> "xml.sax" [style="dotted"];
-		"xml" -> "xml.parsers" [style="dotted"];
-		"xml" -> "xml.dom" [style="dotted"];
-	}
-	subgraph "cluster_kivy.core.window" {
-		label="kivy.core.window";
-		"kivy.core.window" -> "kivy.core.window.window_sdl2" [style="dotted"];
-		"kivy.core.window" -> "kivy.core.window._window_sdl2" [style="dotted"];
-		"kivy.core.window" -> "kivy.core.window.window_egl_rpi" [style="dotted"];
-		"kivy.core.window" -> "kivy.core.window.window_info" [style="dotted"];
-		"kivy.core.window" -> "kivy.core.window.window_pygame" [style="dotted"];
-	}
-	subgraph "cluster_kivy.eventmanager" {
-		label="kivy.eventmanager";
+	subgraph "cluster_kivy.input.postproc" {
+		label="kivy.input.postproc";
+		"kivy.input.postproc" -> "kivy.input.postproc.doubletap" [style="dotted"];
+		"kivy.input.postproc" -> "kivy.input.postproc.tripletap" [style="dotted"];
+		"kivy.input.postproc" -> "kivy.input.postproc.ignorelist" [style="dotted"];
+		"kivy.input.postproc" -> "kivy.input.postproc.retaintouch" [style="dotted"];
+		"kivy.input.postproc" -> "kivy.input.postproc.dejitter" [style="dotted"];
+		"kivy.input.postproc" -> "kivy.input.postproc.calibration" [style="dotted"];
 	}
 	subgraph "cluster_kivy.core.image" {
 		label="kivy.core.image";
+		"kivy.core.image" -> "kivy.core.image.img_tex" [style="dotted"];
+		"kivy.core.image" -> "kivy.core.image.img_dds" [style="dotted"];
 		"kivy.core.image" -> "kivy.core.image._img_sdl2" [style="dotted"];
+		"kivy.core.image" -> "kivy.core.image.img_ffpyplayer" [style="dotted"];
+		"kivy.core.image" -> "kivy.core.image.img_pil" [style="dotted"];
 		"kivy.core.image" -> "kivy.core.image.img_sdl2" [style="dotted"];
 		"kivy.core.image" -> "kivy.core.image.img_pygame" [style="dotted"];
-		"kivy.core.image" -> "kivy.core.image.img_ffpyplayer" [style="dotted"];
-		"kivy.core.image" -> "kivy.core.image.img_dds" [style="dotted"];
-		"kivy.core.image" -> "kivy.core.image.img_tex" [style="dotted"];
-		"kivy.core.image" -> "kivy.core.image.img_pil" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.uix.datatables" {
+		label="kivymd.uix.datatables";
+		"kivymd.uix.datatables" -> "kivymd.uix.datatables.datatables" [style="dotted"];
+	}
+	subgraph "cluster_pydoc_data" {
+		label="pydoc_data";
+		"pydoc_data" -> "pydoc_data.topics" [style="dotted"];
+	}
+	subgraph "cluster_pywin.dialogs" {
+		label="pywin.dialogs";
+		"pywin.dialogs" -> "pywin.dialogs.status" [style="dotted"];
+		"pywin.dialogs" -> "pywin.dialogs.list" [style="dotted"];
+	}
+	subgraph "cluster_kivy.lang" {
+		label="kivy.lang";
+		"kivy.lang" -> "kivy.lang.builder" [style="dotted"];
+		"kivy.lang" -> "kivy.lang.parser" [style="dotted"];
+	}
+	subgraph "cluster_screeninfo" {
+		label="screeninfo";
+		"screeninfo" -> "screeninfo.common" [style="dotted"];
+		"screeninfo" -> "screeninfo.enumerators" [style="dotted"];
+		"screeninfo" -> "screeninfo.screeninfo" [style="dotted"];
+		"screeninfo" -> "screeninfo.util" [style="dotted"];
 	}
 	subgraph "cluster_ctypes.macholib" {
 		label="ctypes.macholib";
@@ -1793,48 +1666,201 @@ charset="UTF-8";
 		"ctypes.macholib" -> "ctypes.macholib.framework" [style="dotted"];
 		"ctypes.macholib" -> "ctypes.macholib.dylib" [style="dotted"];
 	}
-	subgraph "cluster_pkg_resources" {
-		label="pkg_resources";
-		"pkg_resources" -> "pkg_resources.extern" [style="dotted"];
-		"pkg_resources" -> "pkg_resources._vendor" [style="dotted"];
+	subgraph "cluster_kivy.graphics" {
+		label="kivy.graphics";
+		"kivy.graphics" -> "kivy.graphics.instructions" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.context_instructions" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.vertex_instructions" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.stencil_instructions" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.gl_instructions" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.fbo" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.boxshadow" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.scissor_instructions" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.transformation" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.cgl" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.context" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.opengl" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.texture" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.opengl_utils" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.tesselator" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.vertex" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.buffer" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.vbo" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.shader" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.compiler" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.svg" [style="dotted"];
+		"kivy.graphics" -> "kivy.graphics.cgl_backend" [style="dotted"];
 	}
-	subgraph "cluster_docutils.transforms" {
-		label="docutils.transforms";
-		"docutils.transforms" -> "docutils.transforms.universal" [style="dotted"];
-		"docutils.transforms" -> "docutils.transforms.writer_aux" [style="dotted"];
-		"docutils.transforms" -> "docutils.transforms.frontmatter" [style="dotted"];
-		"docutils.transforms" -> "docutils.transforms.references" [style="dotted"];
-		"docutils.transforms" -> "docutils.transforms.misc" [style="dotted"];
-		"docutils.transforms" -> "docutils.transforms.parts" [style="dotted"];
+	subgraph "cluster_multiprocessing" {
+		label="multiprocessing";
+		"multiprocessing" -> "multiprocessing.process" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.util" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.AuthenticationError" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.BufferTooShort" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.resource_sharer" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.connection" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.get_start_method" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.set_start_method" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.resource_tracker" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.spawn" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.forkserver" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.reduction" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.get_context" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.TimeoutError" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.pool" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.shared_memory" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.context" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.popen_spawn_win32" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.popen_spawn_posix" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.popen_forkserver" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.popen_fork" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.managers" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.synchronize" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.queues" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.sharedctypes" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.heap" [style="dotted"];
+		"multiprocessing" -> "multiprocessing.dummy" [style="dotted"];
 	}
-	subgraph "cluster_kivymd.utils" {
-		label="kivymd.utils";
-		"kivymd.utils" -> "kivymd.utils.fpsmonitor" [style="dotted"];
+	subgraph "cluster_kivymd.uix.label" {
+		label="kivymd.uix.label";
+		"kivymd.uix.label" -> "kivymd.uix.label.label" [style="dotted"];
 	}
-	subgraph "cluster_pygments.filters" {
-		label="pygments.filters";
+	subgraph "cluster_kivymd.uix.tooltip" {
+		label="kivymd.uix.tooltip";
+		"kivymd.uix.tooltip" -> "kivymd.uix.tooltip.tooltip" [style="dotted"];
 	}
-	subgraph "cluster_pkg_resources._vendor" {
-		label="pkg_resources._vendor";
-		"pkg_resources._vendor" -> "pkg_resources._vendor.appdirs" [style="dotted"];
-		"pkg_resources._vendor" -> "pkg_resources._vendor.zipp" [style="dotted"];
-		"pkg_resources._vendor" -> "pkg_resources._vendor.pyparsing" [style="dotted"];
-		"pkg_resources._vendor" -> "pkg_resources._vendor.packaging" [style="dotted"];
-		"pkg_resources._vendor" -> "pkg_resources._vendor.more_itertools" [style="dotted"];
-		"pkg_resources._vendor" -> "pkg_resources._vendor.jaraco" [style="dotted"];
-		"pkg_resources._vendor" -> "pkg_resources._vendor.importlib_resources" [style="dotted"];
+	subgraph "cluster_kivymd.uix" {
+		label="kivymd.uix";
+		"kivymd.uix" -> "kivymd.uix.behaviors" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.datatables" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.boxlayout" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.tooltip" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.selectioncontrol" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.floatlayout" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.label" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.menu" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.screen" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.hero" [style="dotted"];
+		"kivymd.uix" -> "kivymd.uix.button" [style="dotted"];
 	}
-	subgraph "cluster_kivy.lib.gstplayer" {
-		label="kivy.lib.gstplayer";
-		"kivy.lib.gstplayer" -> "kivy.lib.gstplayer._gstplayer" [style="dotted"];
+	subgraph "cluster_kivy.effects" {
+		label="kivy.effects";
+		"kivy.effects" -> "kivy.effects.dampedscroll" [style="dotted"];
+		"kivy.effects" -> "kivy.effects.scroll" [style="dotted"];
+		"kivy.effects" -> "kivy.effects.kinetic" [style="dotted"];
+		"kivy.effects" -> "kivy.effects.opacityscroll" [style="dotted"];
 	}
-	subgraph "cluster_docutils.utils.math" {
-		label="docutils.utils.math";
-		"docutils.utils.math" -> "docutils.utils.math.unichar2tex" [style="dotted"];
-		"docutils.utils.math" -> "docutils.utils.math.tex2unichar" [style="dotted"];
-		"docutils.utils.math" -> "docutils.utils.math.math2html" [style="dotted"];
-		"docutils.utils.math" -> "docutils.utils.math.latex2mathml" [style="dotted"];
-		"docutils.utils.math" -> "docutils.utils.math.tex2mathml_extern" [style="dotted"];
+	subgraph "cluster_pyuac" {
+		label="pyuac";
+		"pyuac" -> "pyuac.admin" [style="dotted"];
+		"pyuac" -> "pyuac.main_decorator" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.uix.behaviors" {
+		label="kivymd.uix.behaviors";
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.backgroundcolor_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.declarative_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.elevation" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.magic_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.ripple_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.rotate_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.scale_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.stencil_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.touch_behavior" [style="dotted"];
+		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.hover_behavior" [style="dotted"];
+	}
+	subgraph "cluster_kivy.extras" {
+		label="kivy.extras";
+		"kivy.extras" -> "kivy.extras.highlight" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor.jaraco.text" {
+		label="pkg_resources._vendor.jaraco.text";
+	}
+	subgraph "cluster_xml.parsers" {
+		label="xml.parsers";
+		"xml.parsers" -> "xml.parsers.expat" [style="dotted"];
+	}
+	subgraph "cluster_docutils.utils" {
+		label="docutils.utils";
+		"docutils.utils" -> "docutils.utils.punctuation_chars" [style="dotted"];
+		"docutils.utils" -> "docutils.utils.roman" [style="dotted"];
+		"docutils.utils" -> "docutils.utils.urischemes" [style="dotted"];
+		"docutils.utils" -> "docutils.utils.smartquotes" [style="dotted"];
+		"docutils.utils" -> "docutils.utils.code_analyzer" [style="dotted"];
+		"docutils.utils" -> "docutils.utils.math" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers.pep_html" {
+		label="docutils.writers.pep_html";
+	}
+	subgraph "cluster_kivy.core.clipboard" {
+		label="kivy.core.clipboard";
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_winctypes" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard._clipboard_sdl2" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_dbusklipper" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_pygame" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard._clipboard_ext" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_xclip" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_sdl2" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_nspaste" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_gtk3" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_dummy" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_android" [style="dotted"];
+		"kivy.core.clipboard" -> "kivy.core.clipboard.clipboard_xsel" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers.html5_polyglot" {
+		label="docutils.writers.html5_polyglot";
+	}
+	subgraph "cluster_kivy.core.video" {
+		label="kivy.core.video";
+		"kivy.core.video" -> "kivy.core.video.video_ffpyplayer" [style="dotted"];
+		"kivy.core.video" -> "kivy.core.video.video_gstplayer" [style="dotted"];
+		"kivy.core.video" -> "kivy.core.video.video_ffmpeg" [style="dotted"];
+		"kivy.core.video" -> "kivy.core.video.video_null" [style="dotted"];
+	}
+	subgraph "cluster_kivy.lib" {
+		label="kivy.lib";
+		"kivy.lib" -> "kivy.lib.mtdev" [style="dotted"];
+		"kivy.lib" -> "kivy.lib.gstplayer" [style="dotted"];
+		"kivy.lib" -> "kivy.lib.ddsfile" [style="dotted"];
+		"kivy.lib" -> "kivy.lib.vidcore_lite" [style="dotted"];
+	}
+	subgraph "cluster_kivy.core.window" {
+		label="kivy.core.window";
+		"kivy.core.window" -> "kivy.core.window.window_sdl2" [style="dotted"];
+		"kivy.core.window" -> "kivy.core.window._window_sdl2" [style="dotted"];
+		"kivy.core.window" -> "kivy.core.window.window_info" [style="dotted"];
+		"kivy.core.window" -> "kivy.core.window.window_egl_rpi" [style="dotted"];
+		"kivy.core.window" -> "kivy.core.window.window_pygame" [style="dotted"];
+	}
+	subgraph "cluster_kivy.uix.recycleview" {
+		label="kivy.uix.recycleview";
+		"kivy.uix.recycleview" -> "kivy.uix.recycleview.layout" [style="dotted"];
+		"kivy.uix.recycleview" -> "kivy.uix.recycleview.views" [style="dotted"];
+		"kivy.uix.recycleview" -> "kivy.uix.recycleview.datamodel" [style="dotted"];
+		"kivy.uix.recycleview" -> "kivy.uix.recycleview.__init__" [style="dotted"];
+	}
+	subgraph "cluster_http" {
+		label="http";
+		"http" -> "http.client" [style="dotted"];
+		"http" -> "http.server" [style="dotted"];
+		"http" -> "http.cookiejar" [style="dotted"];
+	}
+	subgraph "cluster_win32com" {
+		label="win32com";
+		"win32com" -> "win32com.universal" [style="dotted"];
+		"win32com" -> "win32com.shell" [style="dotted"];
+		"win32com" -> "win32com.client" [style="dotted"];
+		"win32com" -> "win32com.server" [style="dotted"];
+		"win32com" -> "win32com.util" [style="dotted"];
+	}
+	subgraph "cluster_win32com.server" {
+		label="win32com.server";
+		"win32com.server" -> "win32com.server.policy" [style="dotted"];
+		"win32com.server" -> "win32com.server.util" [style="dotted"];
+		"win32com.server" -> "win32com.server.exception" [style="dotted"];
+		"win32com.server" -> "win32com.server.dispatcher" [style="dotted"];
+	}
+	subgraph "cluster_kivy_deps" {
+		label="kivy_deps";
 	}
 	subgraph "cluster_asyncio" {
 		label="asyncio";
@@ -1871,699 +1897,9 @@ charset="UTF-8";
 		"asyncio" -> "asyncio.unix_events" [style="dotted"];
 		"asyncio" -> "asyncio.log" [style="dotted"];
 	}
-	subgraph "cluster_packaging" {
-		label="packaging";
-		"packaging" -> "packaging._elffile" [style="dotted"];
-		"packaging" -> "packaging._manylinux" [style="dotted"];
-		"packaging" -> "packaging._musllinux" [style="dotted"];
-		"packaging" -> "packaging._parser" [style="dotted"];
-		"packaging" -> "packaging._structures" [style="dotted"];
-		"packaging" -> "packaging._tokenizer" [style="dotted"];
-		"packaging" -> "packaging.markers" [style="dotted"];
-		"packaging" -> "packaging.metadata" [style="dotted"];
-		"packaging" -> "packaging.requirements" [style="dotted"];
-		"packaging" -> "packaging.specifiers" [style="dotted"];
-		"packaging" -> "packaging.tags" [style="dotted"];
-		"packaging" -> "packaging.utils" [style="dotted"];
-		"packaging" -> "packaging.version" [style="dotted"];
-	}
-	subgraph "cluster_pywin32_system32" {
-		label="pywin32_system32";
-	}
-	subgraph "cluster_docutils.parsers.rst.directives" {
-		label="docutils.parsers.rst.directives";
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.admonitions" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.body" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.html" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.images" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.misc" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.parts" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.references" [style="dotted"];
-		"docutils.parsers.rst.directives" -> "docutils.parsers.rst.directives.tables" [style="dotted"];
-	}
-	subgraph "cluster_importlib.metadata" {
-		label="importlib.metadata";
-		"importlib.metadata" -> "importlib.metadata._adapters" [style="dotted"];
-		"importlib.metadata" -> "importlib.metadata._meta" [style="dotted"];
-		"importlib.metadata" -> "importlib.metadata._collections" [style="dotted"];
-		"importlib.metadata" -> "importlib.metadata._functools" [style="dotted"];
-		"importlib.metadata" -> "importlib.metadata._itertools" [style="dotted"];
-		"importlib.metadata" -> "importlib.metadata._text" [style="dotted"];
-	}
-	subgraph "cluster_importlib.resources" {
-		label="importlib.resources";
-		"importlib.resources" -> "importlib.resources._common" [style="dotted"];
-		"importlib.resources" -> "importlib.resources._legacy" [style="dotted"];
-		"importlib.resources" -> "importlib.resources.abc" [style="dotted"];
-		"importlib.resources" -> "importlib.resources.readers" [style="dotted"];
-		"importlib.resources" -> "importlib.resources._adapters" [style="dotted"];
-		"importlib.resources" -> "importlib.resources._itertools" [style="dotted"];
-	}
-	subgraph "cluster_docutils.writers.html5_polyglot" {
-		label="docutils.writers.html5_polyglot";
-	}
-	subgraph "cluster_win32com" {
-		label="win32com";
-		"win32com" -> "win32com.universal" [style="dotted"];
-		"win32com" -> "win32com.shell" [style="dotted"];
-		"win32com" -> "win32com.client" [style="dotted"];
-		"win32com" -> "win32com.server" [style="dotted"];
-		"win32com" -> "win32com.util" [style="dotted"];
-	}
-	subgraph "cluster_kivy.lib.vidcore_lite" {
-		label="kivy.lib.vidcore_lite";
-		"kivy.lib.vidcore_lite" -> "kivy.lib.vidcore_lite.bcm" [style="dotted"];
-		"kivy.lib.vidcore_lite" -> "kivy.lib.vidcore_lite.egl" [style="dotted"];
-	}
-	subgraph "cluster_kivy.uix.behaviors" {
-		label="kivy.uix.behaviors";
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.button" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.togglebutton" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.drag" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.focus" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.compoundselection" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.codenavigation" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.emacs" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.cover" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.touchripple" [style="dotted"];
-		"kivy.uix.behaviors" -> "kivy.uix.behaviors.knspace" [style="dotted"];
-	}
-	subgraph "cluster_kivymd" {
-		label="kivymd";
-		"kivymd" -> "kivymd._version" [style="dotted"];
-		"kivymd" -> "kivymd.factory_registers" [style="dotted"];
-		"kivymd" -> "kivymd.font_definitions" [style="dotted"];
-		"kivymd" -> "kivymd.icon_definitions" [style="dotted"];
-		"kivymd" -> "kivymd.app" [style="dotted"];
-		"kivymd" -> "kivymd.uix" [style="dotted"];
-		"kivymd" -> "kivymd.color_definitions" [style="dotted"];
-		"kivymd" -> "kivymd.theming" [style="dotted"];
-		"kivymd" -> "kivymd.material_resources" [style="dotted"];
-		"kivymd" -> "kivymd.tools" [style="dotted"];
-		"kivymd" -> "kivymd.theming_dynamic_text" [style="dotted"];
-		"kivymd" -> "kivymd.effects" [style="dotted"];
-		"kivymd" -> "kivymd.utils" [style="dotted"];
-	}
-	subgraph "cluster_docutils.parsers.rst.languages" {
-		label="docutils.parsers.rst.languages";
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.en" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.af" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ar" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ca" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.cs" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.da" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.de" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.eo" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.es" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.fa" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.fi" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.fr" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.gl" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.he" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.it" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ja" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ko" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.lt" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.lv" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.nl" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.pl" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.pt_br" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ru" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.sk" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.sv" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.uk" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.zh_cn" [style="dotted"];
-		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.zh_tw" [style="dotted"];
-	}
-	subgraph "cluster_docutils.writers.html4css1" {
-		label="docutils.writers.html4css1";
-	}
-	subgraph "cluster_docutils.writers.s5_html" {
-		label="docutils.writers.s5_html";
-	}
-	subgraph "cluster_html" {
-		label="html";
-		"html" -> "html.entities" [style="dotted"];
-	}
-	subgraph "cluster_win32com.client" {
-		label="win32com.client";
-		"win32com.client" -> "win32com.client.build" [style="dotted"];
-		"win32com.client" -> "win32com.client.util" [style="dotted"];
-		"win32com.client" -> "win32com.client.dynamic" [style="dotted"];
-		"win32com.client" -> "win32com.client.CLSIDToClass" [style="dotted"];
-		"win32com.client" -> "win32com.client.gencache" [style="dotted"];
-		"win32com.client" -> "win32com.client.genpy" [style="dotted"];
-		"win32com.client" -> "win32com.client.selecttlb" [style="dotted"];
-		"win32com.client" -> "win32com.client.makepy" [style="dotted"];
-	}
-	subgraph "cluster_xml.sax" {
-		label="xml.sax";
-		"xml.sax" -> "xml.sax.handler" [style="dotted"];
-		"xml.sax" -> "xml.sax.xmlreader" [style="dotted"];
-		"xml.sax" -> "xml.sax.saxutils" [style="dotted"];
-		"xml.sax" -> "xml.sax._exceptions" [style="dotted"];
-		"xml.sax" -> "xml.sax.expatreader" [style="dotted"];
-	}
-	subgraph "cluster_pywin" {
-		label="pywin";
-		"pywin" -> "pywin.mfc" [style="dotted"];
-		"pywin" -> "pywin.dialogs" [style="dotted"];
-	}
-	subgraph "cluster_docutils.utils" {
-		label="docutils.utils";
-		"docutils.utils" -> "docutils.utils.punctuation_chars" [style="dotted"];
-		"docutils.utils" -> "docutils.utils.roman" [style="dotted"];
-		"docutils.utils" -> "docutils.utils.urischemes" [style="dotted"];
-		"docutils.utils" -> "docutils.utils.smartquotes" [style="dotted"];
-		"docutils.utils" -> "docutils.utils.code_analyzer" [style="dotted"];
-		"docutils.utils" -> "docutils.utils.math" [style="dotted"];
-	}
-	subgraph "cluster_pkg_resources._vendor.packaging" {
-		label="pkg_resources._vendor.packaging";
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.__about__" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging._manylinux" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging._musllinux" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging._structures" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.markers" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.requirements" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.specifiers" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.tags" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.utils" [style="dotted"];
-		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.version" [style="dotted"];
-	}
-	subgraph "cluster_kivy.core.text" {
-		label="kivy.core.text";
-		"kivy.core.text" -> "kivy.core.text.text_layout" [style="dotted"];
-		"kivy.core.text" -> "kivy.core.text.text_pango" [style="dotted"];
-		"kivy.core.text" -> "kivy.core.text.markup" [style="dotted"];
-		"kivy.core.text" -> "kivy.core.text.text_pygame" [style="dotted"];
-		"kivy.core.text" -> "kivy.core.text.text_sdl2" [style="dotted"];
-		"kivy.core.text" -> "kivy.core.text._text_sdl2" [style="dotted"];
-		"kivy.core.text" -> "kivy.core.text.text_pil" [style="dotted"];
-	}
-	subgraph "cluster_docutils.writers.pep_html" {
-		label="docutils.writers.pep_html";
-	}
-	subgraph "cluster_kivymd.uix.selectioncontrol" {
-		label="kivymd.uix.selectioncontrol";
-		"kivymd.uix.selectioncontrol" -> "kivymd.uix.selectioncontrol.selectioncontrol" [style="dotted"];
-	}
-	subgraph "cluster_certifi" {
-		label="certifi";
-		"certifi" -> "certifi.core" [style="dotted"];
-	}
-	subgraph "cluster_re" {
-		label="re";
-		"re" -> "re._parser" [style="dotted"];
-		"re" -> "re._compiler" [style="dotted"];
-		"re" -> "re._constants" [style="dotted"];
-		"re" -> "re._casefix" [style="dotted"];
-	}
-	subgraph "cluster_multiprocessing.dummy" {
-		label="multiprocessing.dummy";
-		"multiprocessing.dummy" -> "multiprocessing.dummy.connection" [style="dotted"];
-	}
-	subgraph "cluster_pygments.styles" {
-		label="pygments.styles";
-		"pygments.styles" -> "pygments.styles.abap" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.algol" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.algol_nu" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.arduino" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.autumn" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.borland" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.bw" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.colorful" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.default" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.dracula" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.emacs" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.friendly" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.friendly_grayscale" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.fruity" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.gh_dark" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.gruvbox" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.igor" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.inkpot" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.lightbulb" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.lilypond" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.lovelace" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.manni" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.material" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.monokai" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.murphy" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.native" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.nord" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.onedark" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.paraiso_dark" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.paraiso_light" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.pastie" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.perldoc" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.rainbow_dash" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.rrt" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.sas" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.solarized" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.staroffice" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.stata_dark" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.stata_light" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.tango" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.trac" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.vim" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.vs" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.xcode" [style="dotted"];
-		"pygments.styles" -> "pygments.styles.zenburn" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.uix.datatables" {
-		label="kivymd.uix.datatables";
-		"kivymd.uix.datatables" -> "kivymd.uix.datatables.datatables" [style="dotted"];
-	}
-	subgraph "cluster_pydoc_data" {
-		label="pydoc_data";
-		"pydoc_data" -> "pydoc_data.topics" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.tools" {
-		label="kivymd.tools";
-		"kivymd.tools" -> "kivymd.tools.packaging" [style="dotted"];
-	}
-	subgraph "cluster_screeninfo" {
-		label="screeninfo";
-		"screeninfo" -> "screeninfo.common" [style="dotted"];
-		"screeninfo" -> "screeninfo.enumerators" [style="dotted"];
-		"screeninfo" -> "screeninfo.screeninfo" [style="dotted"];
-		"screeninfo" -> "screeninfo.util" [style="dotted"];
-	}
-	subgraph "cluster_kivy.deps" {
-		label="kivy.deps";
-	}
-	subgraph "cluster_kivymd.effects" {
-		label="kivymd.effects";
-		"kivymd.effects" -> "kivymd.effects.stiffscroll" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.uix.button" {
-		label="kivymd.uix.button";
-		"kivymd.uix.button" -> "kivymd.uix.button.button" [style="dotted"];
-	}
-	subgraph "cluster_pkg_resources._vendor.pyparsing.diagram" {
-		label="pkg_resources._vendor.pyparsing.diagram";
-	}
-	subgraph "cluster_kivy.core.video" {
-		label="kivy.core.video";
-		"kivy.core.video" -> "kivy.core.video.video_gstplayer" [style="dotted"];
-		"kivy.core.video" -> "kivy.core.video.video_ffpyplayer" [style="dotted"];
-		"kivy.core.video" -> "kivy.core.video.video_null" [style="dotted"];
-		"kivy.core.video" -> "kivy.core.video.video_ffmpeg" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.uix.behaviors" {
-		label="kivymd.uix.behaviors";
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.backgroundcolor_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.declarative_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.elevation" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.magic_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.ripple_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.rotate_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.scale_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.stencil_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.touch_behavior" [style="dotted"];
-		"kivymd.uix.behaviors" -> "kivymd.uix.behaviors.hover_behavior" [style="dotted"];
-	}
-	subgraph "cluster_xml.parsers" {
-		label="xml.parsers";
-		"xml.parsers" -> "xml.parsers.expat" [style="dotted"];
-	}
-	subgraph "cluster_pkg_resources.extern" {
-		label="pkg_resources.extern";
-		"pkg_resources.extern" -> "pkg_resources.extern.appdirs" [style="dotted"];
-		"pkg_resources.extern" -> "pkg_resources.extern.packaging" [style="dotted"];
-	}
-	subgraph "cluster_urllib" {
-		label="urllib";
-		"urllib" -> "urllib.pathname2url" [style="dotted"];
-		"urllib" -> "urllib.error" [style="dotted"];
-		"urllib" -> "urllib.parse" [style="dotted"];
-		"urllib" -> "urllib.request" [style="dotted"];
-		"urllib" -> "urllib.response" [style="dotted"];
-		"urllib" -> "urllib.robotparser" [style="dotted"];
-	}
-	subgraph "cluster_kivy.core.audio" {
-		label="kivy.core.audio";
-		"kivy.core.audio" -> "kivy.core.audio.audio_android" [style="dotted"];
-		"kivy.core.audio" -> "kivy.core.audio.audio_pygame" [style="dotted"];
-		"kivy.core.audio" -> "kivy.core.audio.audio_avplayer" [style="dotted"];
-		"kivy.core.audio" -> "kivy.core.audio.audio_gstplayer" [style="dotted"];
-		"kivy.core.audio" -> "kivy.core.audio.audio_sdl2" [style="dotted"];
-		"kivy.core.audio" -> "kivy.core.audio.audio_ffpyplayer" [style="dotted"];
-	}
-	subgraph "cluster_kivy" {
-		label="kivy";
-		"kivy" -> "kivy.logger" [style="dotted"];
-		"kivy" -> "kivy.utils" [style="dotted"];
-		"kivy" -> "kivy._version" [style="dotted"];
-		"kivy" -> "kivy.deps" [style="dotted"];
-		"kivy" -> "kivy.config" [style="dotted"];
-		"kivy" -> "kivy.modules" [style="dotted"];
-		"kivy" -> "kivy.multistroke" [style="dotted"];
-		"kivy" -> "kivy.properties" [style="dotted"];
-		"kivy" -> "kivy.cache" [style="dotted"];
-		"kivy" -> "kivy.gesture" [style="dotted"];
-		"kivy" -> "kivy.factory" [style="dotted"];
-		"kivy" -> "kivy.loader" [style="dotted"];
-		"kivy" -> "kivy.event" [style="dotted"];
-		"kivy" -> "kivy.vector" [style="dotted"];
-		"kivy" -> "kivy.animation" [style="dotted"];
-		"kivy" -> "kivy.weakmethod" [style="dotted"];
-		"kivy" -> "kivy.base" [style="dotted"];
-		"kivy" -> "kivy.clock" [style="dotted"];
-		"kivy" -> "kivy.graphics" [style="dotted"];
-		"kivy" -> "kivy.core" [style="dotted"];
-		"kivy" -> "kivy.metrics" [style="dotted"];
-		"kivy" -> "kivy.context" [style="dotted"];
-		"kivy" -> "kivy.setupconfig" [style="dotted"];
-		"kivy" -> "kivy.resources" [style="dotted"];
-		"kivy" -> "kivy.uix" [style="dotted"];
-		"kivy" -> "kivy.atlas" [style="dotted"];
-		"kivy" -> "kivy.compat" [style="dotted"];
-		"kivy" -> "kivy.weakproxy" [style="dotted"];
-		"kivy" -> "kivy.factory_registers" [style="dotted"];
-		"kivy" -> "kivy.eventmanager" [style="dotted"];
-		"kivy" -> "kivy._event" [style="dotted"];
-		"kivy" -> "kivy.lang" [style="dotted"];
-		"kivy" -> "kivy.input" [style="dotted"];
-		"kivy" -> "kivy.lib" [style="dotted"];
-		"kivy" -> "kivy._clock" [style="dotted"];
-		"kivy" -> "kivy._metrics" [style="dotted"];
-		"kivy" -> "kivy.app" [style="dotted"];
-		"kivy" -> "kivy.effects" [style="dotted"];
-		"kivy" -> "kivy.parser" [style="dotted"];
-		"kivy" -> "kivy.support" [style="dotted"];
-		"kivy" -> "kivy.extras" [style="dotted"];
-	}
-	subgraph "cluster_kivy.lang" {
-		label="kivy.lang";
-		"kivy.lang" -> "kivy.lang.builder" [style="dotted"];
-		"kivy.lang" -> "kivy.lang.parser" [style="dotted"];
-	}
-	subgraph "cluster_docutils.writers.latex2e" {
-		label="docutils.writers.latex2e";
-	}
-	subgraph "cluster_kivy.input.postproc" {
-		label="kivy.input.postproc";
-		"kivy.input.postproc" -> "kivy.input.postproc.doubletap" [style="dotted"];
-		"kivy.input.postproc" -> "kivy.input.postproc.tripletap" [style="dotted"];
-		"kivy.input.postproc" -> "kivy.input.postproc.ignorelist" [style="dotted"];
-		"kivy.input.postproc" -> "kivy.input.postproc.retaintouch" [style="dotted"];
-		"kivy.input.postproc" -> "kivy.input.postproc.dejitter" [style="dotted"];
-		"kivy.input.postproc" -> "kivy.input.postproc.calibration" [style="dotted"];
-	}
-	subgraph "cluster_pygments" {
-		label="pygments";
-		"pygments" -> "pygments.lexer" [style="dotted"];
-		"pygments" -> "pygments.formatter" [style="dotted"];
-		"pygments" -> "pygments.lexers" [style="dotted"];
-		"pygments" -> "pygments.unistring" [style="dotted"];
-		"pygments" -> "pygments.formatters" [style="dotted"];
-		"pygments" -> "pygments.styles" [style="dotted"];
-		"pygments" -> "pygments.token" [style="dotted"];
-		"pygments" -> "pygments.util" [style="dotted"];
-		"pygments" -> "pygments.plugin" [style="dotted"];
-		"pygments" -> "pygments.modeline" [style="dotted"];
-		"pygments" -> "pygments.style" [style="dotted"];
-		"pygments" -> "pygments.scanner" [style="dotted"];
-		"pygments" -> "pygments.console" [style="dotted"];
-		"pygments" -> "pygments.filter" [style="dotted"];
-		"pygments" -> "pygments.filters" [style="dotted"];
-		"pygments" -> "pygments.regexopt" [style="dotted"];
-	}
-	subgraph "cluster_kivy.effects" {
-		label="kivy.effects";
-		"kivy.effects" -> "kivy.effects.dampedscroll" [style="dotted"];
-		"kivy.effects" -> "kivy.effects.scroll" [style="dotted"];
-		"kivy.effects" -> "kivy.effects.kinetic" [style="dotted"];
-		"kivy.effects" -> "kivy.effects.opacityscroll" [style="dotted"];
-	}
-	subgraph "cluster_kivy.input" {
-		label="kivy.input";
-		"kivy.input" -> "kivy.input.motionevent" [style="dotted"];
-		"kivy.input" -> "kivy.input.providers" [style="dotted"];
-		"kivy.input" -> "kivy.input.postproc" [style="dotted"];
-		"kivy.input" -> "kivy.input.provider" [style="dotted"];
-		"kivy.input" -> "kivy.input.factory" [style="dotted"];
-		"kivy.input" -> "kivy.input.shape" [style="dotted"];
-	}
-	subgraph "cluster_pyuac" {
-		label="pyuac";
-		"pyuac" -> "pyuac.admin" [style="dotted"];
-		"pyuac" -> "pyuac.main_decorator" [style="dotted"];
-	}
-	subgraph "cluster_PIL" {
-		label="PIL";
-		"PIL" -> "PIL._version" [style="dotted"];
-		"PIL" -> "PIL.ExifTags" [style="dotted"];
-		"PIL" -> "PIL.ImageMode" [style="dotted"];
-		"PIL" -> "PIL.TiffTags" [style="dotted"];
-		"PIL" -> "PIL._imaging" [style="dotted"];
-		"PIL" -> "PIL.Image" [style="dotted"];
-		"PIL" -> "PIL.ImageFile" [style="dotted"];
-		"PIL" -> "PIL.GimpGradientFile" [style="dotted"];
-		"PIL" -> "PIL.GimpPaletteFile" [style="dotted"];
-		"PIL" -> "PIL.ImageColor" [style="dotted"];
-		"PIL" -> "PIL.PaletteFile" [style="dotted"];
-		"PIL" -> "PIL.ImagePalette" [style="dotted"];
-		"PIL" -> "PIL.BmpImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.ImageChops" [style="dotted"];
-		"PIL" -> "PIL.ImageSequence" [style="dotted"];
-		"PIL" -> "PIL.GifImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.ImageOps" [style="dotted"];
-		"PIL" -> "PIL.TiffImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.JpegImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PpmImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PngImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PyAccess" [style="dotted"];
-		"PIL" -> "PIL._imagingcms" [style="dotted"];
-		"PIL" -> "PIL.ImageWin" [style="dotted"];
-		"PIL" -> "PIL.ImageCms" [style="dotted"];
-		"PIL" -> "PIL.ImageFilter" [style="dotted"];
-		"PIL" -> "PIL.ImageQt" [style="dotted"];
-		"PIL" -> "PIL.ImageShow" [style="dotted"];
-		"PIL" -> "PIL._imagingft" [style="dotted"];
-		"PIL" -> "PIL.ImageFont" [style="dotted"];
-		"PIL" -> "PIL._imagingagg" [style="dotted"];
-		"PIL" -> "PIL.ImageDraw" [style="dotted"];
-		"PIL" -> "PIL.ImagePath" [style="dotted"];
-		"PIL" -> "PIL.ImageDraw2" [style="dotted"];
-		"PIL" -> "PIL.features" [style="dotted"];
-		"PIL" -> "PIL.Jpeg2KImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PdfParser" [style="dotted"];
-		"PIL" -> "PIL._imagingtk" [style="dotted"];
-		"PIL" -> "PIL.ImageTk" [style="dotted"];
-		"PIL" -> "PIL._webp" [style="dotted"];
-		"PIL" -> "PIL._binary" [style="dotted"];
-		"PIL" -> "PIL._util" [style="dotted"];
-		"PIL" -> "PIL.BlpImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.BufrStubImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.CurImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.DcxImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.DdsImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.EpsImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.FitsImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.FliImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.FpxImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.FtexImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.GbrImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.GribStubImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.Hdf5StubImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.IcnsImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.IcoImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.ImImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.ImtImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.IptcImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.McIdasImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.MicImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.MpegImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.MpoImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.MspImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PalmImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PcdImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PcxImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PdfImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PixarImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.PsdImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.QoiImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.SgiImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.SpiderImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.SunImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.TgaImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.WebPImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.WmfImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.XVThumbImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.XbmImagePlugin" [style="dotted"];
-		"PIL" -> "PIL.XpmImagePlugin" [style="dotted"];
-		"PIL" -> "PIL._deprecate" [style="dotted"];
-		"PIL" -> "PIL.JpegPresets" [style="dotted"];
-	}
-	subgraph "cluster_json" {
-		label="json";
-		"json" -> "json.scanner" [style="dotted"];
-		"json" -> "json.decoder" [style="dotted"];
-		"json" -> "json.encoder" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.uix.menu" {
-		label="kivymd.uix.menu";
-		"kivymd.uix.menu" -> "kivymd.uix.menu.menu" [style="dotted"];
-	}
-	subgraph "cluster_docutils.writers.odf_odt" {
-		label="docutils.writers.odf_odt";
-		"docutils.writers.odf_odt" -> "docutils.writers.odf_odt.pygmentsformatter" [style="dotted"];
-		"docutils.writers.odf_odt" -> "docutils.writers.odf_odt.prepstyles" [style="dotted"];
-	}
-	subgraph "cluster_unittest" {
-		label="unittest";
-		"unittest" -> "unittest.util" [style="dotted"];
-		"unittest" -> "unittest.result" [style="dotted"];
-		"unittest" -> "unittest.case" [style="dotted"];
-		"unittest" -> "unittest.suite" [style="dotted"];
-		"unittest" -> "unittest.loader" [style="dotted"];
-		"unittest" -> "unittest.runner" [style="dotted"];
-		"unittest" -> "unittest.main" [style="dotted"];
-		"unittest" -> "unittest.signals" [style="dotted"];
-		"unittest" -> "unittest.async_case" [style="dotted"];
-		"unittest" -> "unittest._log" [style="dotted"];
-	}
-	subgraph "cluster_http" {
-		label="http";
-		"http" -> "http.client" [style="dotted"];
-		"http" -> "http.server" [style="dotted"];
-		"http" -> "http.cookiejar" [style="dotted"];
-	}
-	subgraph "cluster_concurrent.futures" {
-		label="concurrent.futures";
-		"concurrent.futures" -> "concurrent.futures._base" [style="dotted"];
-		"concurrent.futures" -> "concurrent.futures.process" [style="dotted"];
-		"concurrent.futures" -> "concurrent.futures.thread" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.tools.packaging" {
-		label="kivymd.tools.packaging";
-		"kivymd.tools.packaging" -> "kivymd.tools.packaging.pyinstaller" [style="dotted"];
-	}
-	subgraph "cluster_pkg_resources._vendor.jaraco.text" {
-		label="pkg_resources._vendor.jaraco.text";
-	}
-	subgraph "cluster_kivy_deps" {
-		label="kivy_deps";
-	}
-	subgraph "cluster_kivy.core.gl" {
-		label="kivy.core.gl";
-	}
-	subgraph "cluster_kivy.graphics" {
-		label="kivy.graphics";
-		"kivy.graphics" -> "kivy.graphics.instructions" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.context_instructions" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.vertex_instructions" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.stencil_instructions" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.gl_instructions" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.fbo" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.boxshadow" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.scissor_instructions" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.transformation" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.cgl" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.context" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.opengl" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.texture" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.opengl_utils" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.tesselator" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.compiler" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.vbo" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.buffer" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.svg" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.vertex" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.shader" [style="dotted"];
-		"kivy.graphics" -> "kivy.graphics.cgl_backend" [style="dotted"];
-	}
-	subgraph "cluster_kivy.core" {
-		label="kivy.core";
-		"kivy.core" -> "kivy.core.window" [style="dotted"];
-		"kivy.core" -> "kivy.core.gl" [style="dotted"];
-		"kivy.core" -> "kivy.core.image" [style="dotted"];
-		"kivy.core" -> "kivy.core.text" [style="dotted"];
-		"kivy.core" -> "kivy.core.clipboard" [style="dotted"];
-		"kivy.core" -> "kivy.core.audio" [style="dotted"];
-		"kivy.core" -> "kivy.core.video" [style="dotted"];
-		"kivy.core" -> "kivy.core.camera" [style="dotted"];
-		"kivy.core" -> "kivy.core.spelling" [style="dotted"];
-	}
-	subgraph "cluster_pywin.mfc" {
-		label="pywin.mfc";
-		"pywin.mfc" -> "pywin.mfc.object" [style="dotted"];
-		"pywin.mfc" -> "pywin.mfc.window" [style="dotted"];
-		"pywin.mfc" -> "pywin.mfc.dialog" [style="dotted"];
-		"pywin.mfc" -> "pywin.mfc.thread" [style="dotted"];
-	}
-	subgraph "cluster_multiprocessing" {
-		label="multiprocessing";
-		"multiprocessing" -> "multiprocessing.process" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.util" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.AuthenticationError" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.BufferTooShort" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.resource_sharer" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.connection" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.get_start_method" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.set_start_method" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.resource_tracker" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.spawn" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.forkserver" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.reduction" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.get_context" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.TimeoutError" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.pool" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.shared_memory" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.context" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.popen_spawn_win32" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.popen_spawn_posix" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.popen_forkserver" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.popen_fork" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.managers" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.synchronize" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.queues" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.sharedctypes" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.heap" [style="dotted"];
-		"multiprocessing" -> "multiprocessing.dummy" [style="dotted"];
-	}
-	subgraph "cluster_kivy.uix.recycleview" {
-		label="kivy.uix.recycleview";
-		"kivy.uix.recycleview" -> "kivy.uix.recycleview.layout" [style="dotted"];
-		"kivy.uix.recycleview" -> "kivy.uix.recycleview.views" [style="dotted"];
-		"kivy.uix.recycleview" -> "kivy.uix.recycleview.datamodel" [style="dotted"];
-		"kivy.uix.recycleview" -> "kivy.uix.recycleview.__init__" [style="dotted"];
-	}
-	subgraph "cluster_kivy.input.providers" {
-		label="kivy.input.providers";
-		"kivy.input.providers" -> "kivy.input.providers.tuio" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.mouse" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.wm_touch" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.wm_pen" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.mactouch" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.probesysfs" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.mtdev" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.hidinput" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.linuxwacom" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.androidjoystick" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.leapfinger" [style="dotted"];
-		"kivy.input.providers" -> "kivy.input.providers.wm_common" [style="dotted"];
-	}
-	subgraph "cluster_pkg_resources._vendor.more_itertools" {
-		label="pkg_resources._vendor.more_itertools";
-		"pkg_resources._vendor.more_itertools" -> "pkg_resources._vendor.more_itertools.more" [style="dotted"];
-		"pkg_resources._vendor.more_itertools" -> "pkg_resources._vendor.more_itertools.recipes" [style="dotted"];
-	}
-	subgraph "cluster_win32com.shell" {
-		label="win32com.shell";
-		"win32com.shell" -> "win32com.shell.shellcon" [style="dotted"];
-		"win32com.shell" -> "win32com.shell.shell" [style="dotted"];
-	}
-	subgraph "cluster_xmlrpc" {
-		label="xmlrpc";
-		"xmlrpc" -> "xmlrpc.client" [style="dotted"];
-	}
-	subgraph "cluster_tee" {
-		label="tee";
-		"tee" -> "tee.tee" [style="dotted"];
+	subgraph "cluster_docutils.parsers" {
+		label="docutils.parsers";
+		"docutils.parsers" -> "docutils.parsers.rst" [style="dotted"];
 	}
 	subgraph "cluster_pkg_resources._vendor.pyparsing" {
 		label="pkg_resources._vendor.pyparsing";
@@ -2578,57 +1914,34 @@ charset="UTF-8";
 		"pkg_resources._vendor.pyparsing" -> "pkg_resources._vendor.pyparsing.common" [style="dotted"];
 		"pkg_resources._vendor.pyparsing" -> "pkg_resources._vendor.pyparsing.diagram" [style="dotted"];
 	}
-	subgraph "cluster_pkg_resources._vendor.importlib_resources" {
-		label="pkg_resources._vendor.importlib_resources";
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources.abc" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources.readers" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._adapters" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._common" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._legacy" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._compat" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._itertools" [style="dotted"];
-		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources.simple" [style="dotted"];
+	subgraph "cluster_pywin" {
+		label="pywin";
+		"pywin" -> "pywin.mfc" [style="dotted"];
+		"pywin" -> "pywin.dialogs" [style="dotted"];
 	}
-	subgraph "cluster__pyi_rth_utils" {
-		label="_pyi_rth_utils";
-		"_pyi_rth_utils" -> "_pyi_rth_utils._win32" [style="dotted"];
+	subgraph "cluster_html" {
+		label="html";
+		"html" -> "html.entities" [style="dotted"];
 	}
-	subgraph "cluster_kivymd.uix.tooltip" {
-		label="kivymd.uix.tooltip";
-		"kivymd.uix.tooltip" -> "kivymd.uix.tooltip.tooltip" [style="dotted"];
+	subgraph "cluster_docutils.writers.html4css1" {
+		label="docutils.writers.html4css1";
 	}
-	subgraph "cluster_kivy.lib" {
-		label="kivy.lib";
-		"kivy.lib" -> "kivy.lib.mtdev" [style="dotted"];
-		"kivy.lib" -> "kivy.lib.ddsfile" [style="dotted"];
-		"kivy.lib" -> "kivy.lib.gstplayer" [style="dotted"];
-		"kivy.lib" -> "kivy.lib.vidcore_lite" [style="dotted"];
+	subgraph "cluster_pkg_resources" {
+		label="pkg_resources";
+		"pkg_resources" -> "pkg_resources.extern" [style="dotted"];
+		"pkg_resources" -> "pkg_resources._vendor" [style="dotted"];
 	}
-	subgraph "cluster_kivymd.uix.label" {
-		label="kivymd.uix.label";
-		"kivymd.uix.label" -> "kivymd.uix.label.label" [style="dotted"];
+	subgraph "cluster_kivy.input" {
+		label="kivy.input";
+		"kivy.input" -> "kivy.input.motionevent" [style="dotted"];
+		"kivy.input" -> "kivy.input.providers" [style="dotted"];
+		"kivy.input" -> "kivy.input.postproc" [style="dotted"];
+		"kivy.input" -> "kivy.input.provider" [style="dotted"];
+		"kivy.input" -> "kivy.input.factory" [style="dotted"];
+		"kivy.input" -> "kivy.input.shape" [style="dotted"];
 	}
-	subgraph "cluster_kivy.graphics.cgl_backend" {
-		label="kivy.graphics.cgl_backend";
-		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_sdl2" [style="dotted"];
-		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_gl" [style="dotted"];
-		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_debug" [style="dotted"];
-		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_glew" [style="dotted"];
-		"kivy.graphics.cgl_backend" -> "kivy.graphics.cgl_backend.cgl_mock" [style="dotted"];
-	}
-	subgraph "cluster_ctypes" {
-		label="ctypes";
-		"ctypes" -> "ctypes._endian" [style="dotted"];
-		"ctypes" -> "ctypes.wintypes" [style="dotted"];
-		"ctypes" -> "ctypes.util" [style="dotted"];
-		"ctypes" -> "ctypes._aix" [style="dotted"];
-		"ctypes" -> "ctypes.macholib" [style="dotted"];
-	}
-	subgraph "cluster_kivymd.tools.packaging.pyinstaller" {
-		label="kivymd.tools.packaging.pyinstaller";
-	}
-	subgraph "cluster_kivy.modules" {
-		label="kivy.modules";
+	subgraph "cluster_kivy.eventmanager" {
+		label="kivy.eventmanager";
 	}
 	subgraph "cluster_pygments.lexers" {
 		label="pygments.lexers";
@@ -2869,15 +2182,413 @@ charset="UTF-8";
 		"pygments.lexers" -> "pygments.lexers.yara" [style="dotted"];
 		"pygments.lexers" -> "pygments.lexers.zig" [style="dotted"];
 	}
-	subgraph "cluster_logging" {
-		label="logging";
+	subgraph "cluster_importlib" {
+		label="importlib";
+		"importlib" -> "importlib._bootstrap" [style="dotted"];
+		"importlib" -> "importlib._bootstrap_external" [style="dotted"];
+		"importlib" -> "importlib.machinery" [style="dotted"];
+		"importlib" -> "importlib.readers" [style="dotted"];
+		"importlib" -> "importlib.metadata" [style="dotted"];
+		"importlib" -> "importlib.abc" [style="dotted"];
+		"importlib" -> "importlib._abc" [style="dotted"];
+		"importlib" -> "importlib.resources" [style="dotted"];
+		"importlib" -> "importlib.util" [style="dotted"];
 	}
-	subgraph "cluster_win32com.server" {
-		label="win32com.server";
-		"win32com.server" -> "win32com.server.policy" [style="dotted"];
-		"win32com.server" -> "win32com.server.util" [style="dotted"];
-		"win32com.server" -> "win32com.server.exception" [style="dotted"];
-		"win32com.server" -> "win32com.server.dispatcher" [style="dotted"];
+	subgraph "cluster_pygments" {
+		label="pygments";
+		"pygments" -> "pygments.lexer" [style="dotted"];
+		"pygments" -> "pygments.formatter" [style="dotted"];
+		"pygments" -> "pygments.lexers" [style="dotted"];
+		"pygments" -> "pygments.unistring" [style="dotted"];
+		"pygments" -> "pygments.formatters" [style="dotted"];
+		"pygments" -> "pygments.styles" [style="dotted"];
+		"pygments" -> "pygments.token" [style="dotted"];
+		"pygments" -> "pygments.util" [style="dotted"];
+		"pygments" -> "pygments.plugin" [style="dotted"];
+		"pygments" -> "pygments.modeline" [style="dotted"];
+		"pygments" -> "pygments.style" [style="dotted"];
+		"pygments" -> "pygments.scanner" [style="dotted"];
+		"pygments" -> "pygments.console" [style="dotted"];
+		"pygments" -> "pygments.filter" [style="dotted"];
+		"pygments" -> "pygments.filters" [style="dotted"];
+		"pygments" -> "pygments.regexopt" [style="dotted"];
+	}
+	subgraph "cluster_xml.sax" {
+		label="xml.sax";
+		"xml.sax" -> "xml.sax.handler" [style="dotted"];
+		"xml.sax" -> "xml.sax.xmlreader" [style="dotted"];
+		"xml.sax" -> "xml.sax.saxutils" [style="dotted"];
+		"xml.sax" -> "xml.sax._exceptions" [style="dotted"];
+		"xml.sax" -> "xml.sax.expatreader" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor.importlib_resources" {
+		label="pkg_resources._vendor.importlib_resources";
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources.abc" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources.readers" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._adapters" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._common" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._legacy" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._compat" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources._itertools" [style="dotted"];
+		"pkg_resources._vendor.importlib_resources" -> "pkg_resources._vendor.importlib_resources.simple" [style="dotted"];
+	}
+	subgraph "cluster_xml.dom" {
+		label="xml.dom";
+		"xml.dom" -> "xml.dom.domreg" [style="dotted"];
+		"xml.dom" -> "xml.dom.xmlbuilder" [style="dotted"];
+		"xml.dom" -> "xml.dom.minidom" [style="dotted"];
+		"xml.dom" -> "xml.dom.pulldom" [style="dotted"];
+		"xml.dom" -> "xml.dom.minicompat" [style="dotted"];
+		"xml.dom" -> "xml.dom.expatbuilder" [style="dotted"];
+		"xml.dom" -> "xml.dom.NodeFilter" [style="dotted"];
+	}
+	subgraph "cluster_pygments.styles" {
+		label="pygments.styles";
+		"pygments.styles" -> "pygments.styles.abap" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.algol" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.algol_nu" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.arduino" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.autumn" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.borland" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.bw" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.colorful" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.default" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.dracula" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.emacs" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.friendly" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.friendly_grayscale" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.fruity" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.gh_dark" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.gruvbox" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.igor" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.inkpot" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.lightbulb" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.lilypond" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.lovelace" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.manni" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.material" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.monokai" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.murphy" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.native" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.nord" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.onedark" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.paraiso_dark" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.paraiso_light" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.pastie" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.perldoc" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.rainbow_dash" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.rrt" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.sas" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.solarized" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.staroffice" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.stata_dark" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.stata_light" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.tango" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.trac" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.vim" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.vs" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.xcode" [style="dotted"];
+		"pygments.styles" -> "pygments.styles.zenburn" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers.latex2e" {
+		label="docutils.writers.latex2e";
+	}
+	subgraph "cluster_re" {
+		label="re";
+		"re" -> "re._parser" [style="dotted"];
+		"re" -> "re._compiler" [style="dotted"];
+		"re" -> "re._constants" [style="dotted"];
+		"re" -> "re._casefix" [style="dotted"];
+	}
+	subgraph "cluster_ctypes" {
+		label="ctypes";
+		"ctypes" -> "ctypes._endian" [style="dotted"];
+		"ctypes" -> "ctypes.wintypes" [style="dotted"];
+		"ctypes" -> "ctypes.util" [style="dotted"];
+		"ctypes" -> "ctypes._aix" [style="dotted"];
+		"ctypes" -> "ctypes.macholib" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.effects.stiffscroll" {
+		label="kivymd.effects.stiffscroll";
+		"kivymd.effects.stiffscroll" -> "kivymd.effects.stiffscroll.stiffscroll" [style="dotted"];
+	}
+	subgraph "cluster_xml" {
+		label="xml";
+		"xml" -> "xml.etree" [style="dotted"];
+		"xml" -> "xml.sax" [style="dotted"];
+		"xml" -> "xml.parsers" [style="dotted"];
+		"xml" -> "xml.dom" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor.packaging" {
+		label="pkg_resources._vendor.packaging";
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.__about__" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging._manylinux" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging._musllinux" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging._structures" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.markers" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.requirements" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.specifiers" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.tags" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.utils" [style="dotted"];
+		"pkg_resources._vendor.packaging" -> "pkg_resources._vendor.packaging.version" [style="dotted"];
+	}
+	subgraph "cluster_docutils.transforms" {
+		label="docutils.transforms";
+		"docutils.transforms" -> "docutils.transforms.universal" [style="dotted"];
+		"docutils.transforms" -> "docutils.transforms.writer_aux" [style="dotted"];
+		"docutils.transforms" -> "docutils.transforms.frontmatter" [style="dotted"];
+		"docutils.transforms" -> "docutils.transforms.references" [style="dotted"];
+		"docutils.transforms" -> "docutils.transforms.misc" [style="dotted"];
+		"docutils.transforms" -> "docutils.transforms.parts" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.tools" {
+		label="kivymd.tools";
+		"kivymd.tools" -> "kivymd.tools.packaging" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers" {
+		label="docutils.writers";
+		"docutils.writers" -> "docutils.writers._html_base" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.docutils_xml" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.manpage" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.null" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.pseudoxml" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.xetex" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.latex2e" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.s5_html" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.html4css1" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.pep_html" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.odf_odt" [style="dotted"];
+		"docutils.writers" -> "docutils.writers.html5_polyglot" [style="dotted"];
+	}
+	subgraph "cluster_kivy.lib.gstplayer" {
+		label="kivy.lib.gstplayer";
+		"kivy.lib.gstplayer" -> "kivy.lib.gstplayer._gstplayer" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor.pyparsing.diagram" {
+		label="pkg_resources._vendor.pyparsing.diagram";
+	}
+	subgraph "cluster_multiprocessing.dummy" {
+		label="multiprocessing.dummy";
+		"multiprocessing.dummy" -> "multiprocessing.dummy.connection" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.uix.button" {
+		label="kivymd.uix.button";
+		"kivymd.uix.button" -> "kivymd.uix.button.button" [style="dotted"];
+	}
+	subgraph "cluster_kivy.deps" {
+		label="kivy.deps";
+	}
+	subgraph "cluster_pkg_resources.extern" {
+		label="pkg_resources.extern";
+		"pkg_resources.extern" -> "pkg_resources.extern.appdirs" [style="dotted"];
+		"pkg_resources.extern" -> "pkg_resources.extern.packaging" [style="dotted"];
+	}
+	subgraph "cluster_PIL" {
+		label="PIL";
+		"PIL" -> "PIL._version" [style="dotted"];
+		"PIL" -> "PIL.ExifTags" [style="dotted"];
+		"PIL" -> "PIL.ImageMode" [style="dotted"];
+		"PIL" -> "PIL.TiffTags" [style="dotted"];
+		"PIL" -> "PIL._imaging" [style="dotted"];
+		"PIL" -> "PIL.Image" [style="dotted"];
+		"PIL" -> "PIL.ImageFile" [style="dotted"];
+		"PIL" -> "PIL.GimpGradientFile" [style="dotted"];
+		"PIL" -> "PIL.GimpPaletteFile" [style="dotted"];
+		"PIL" -> "PIL.ImageColor" [style="dotted"];
+		"PIL" -> "PIL.PaletteFile" [style="dotted"];
+		"PIL" -> "PIL.ImagePalette" [style="dotted"];
+		"PIL" -> "PIL.BmpImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.ImageChops" [style="dotted"];
+		"PIL" -> "PIL.ImageSequence" [style="dotted"];
+		"PIL" -> "PIL.GifImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.ImageOps" [style="dotted"];
+		"PIL" -> "PIL.TiffImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.JpegImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PpmImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PngImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PyAccess" [style="dotted"];
+		"PIL" -> "PIL._imagingcms" [style="dotted"];
+		"PIL" -> "PIL.ImageWin" [style="dotted"];
+		"PIL" -> "PIL.ImageCms" [style="dotted"];
+		"PIL" -> "PIL.ImageFilter" [style="dotted"];
+		"PIL" -> "PIL.ImageQt" [style="dotted"];
+		"PIL" -> "PIL.ImageShow" [style="dotted"];
+		"PIL" -> "PIL._imagingft" [style="dotted"];
+		"PIL" -> "PIL.ImageFont" [style="dotted"];
+		"PIL" -> "PIL._imagingagg" [style="dotted"];
+		"PIL" -> "PIL.ImageDraw" [style="dotted"];
+		"PIL" -> "PIL.ImagePath" [style="dotted"];
+		"PIL" -> "PIL.ImageDraw2" [style="dotted"];
+		"PIL" -> "PIL.features" [style="dotted"];
+		"PIL" -> "PIL.Jpeg2KImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PdfParser" [style="dotted"];
+		"PIL" -> "PIL._imagingtk" [style="dotted"];
+		"PIL" -> "PIL.ImageTk" [style="dotted"];
+		"PIL" -> "PIL._webp" [style="dotted"];
+		"PIL" -> "PIL._binary" [style="dotted"];
+		"PIL" -> "PIL._util" [style="dotted"];
+		"PIL" -> "PIL.BlpImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.BufrStubImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.CurImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.DcxImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.DdsImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.EpsImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.FitsImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.FliImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.FpxImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.FtexImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.GbrImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.GribStubImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.Hdf5StubImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.IcnsImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.IcoImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.ImImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.ImtImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.IptcImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.McIdasImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.MicImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.MpegImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.MpoImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.MspImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PalmImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PcdImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PcxImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PdfImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PixarImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.PsdImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.QoiImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.SgiImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.SpiderImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.SunImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.TgaImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.WebPImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.WmfImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.XVThumbImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.XbmImagePlugin" [style="dotted"];
+		"PIL" -> "PIL.XpmImagePlugin" [style="dotted"];
+		"PIL" -> "PIL._deprecate" [style="dotted"];
+		"PIL" -> "PIL.JpegPresets" [style="dotted"];
+	}
+	subgraph "cluster_docutils.utils.math" {
+		label="docutils.utils.math";
+		"docutils.utils.math" -> "docutils.utils.math.unichar2tex" [style="dotted"];
+		"docutils.utils.math" -> "docutils.utils.math.tex2unichar" [style="dotted"];
+		"docutils.utils.math" -> "docutils.utils.math.math2html" [style="dotted"];
+		"docutils.utils.math" -> "docutils.utils.math.latex2mathml" [style="dotted"];
+		"docutils.utils.math" -> "docutils.utils.math.tex2mathml_extern" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers.xetex" {
+		label="docutils.writers.xetex";
+	}
+	subgraph "cluster_kivy.core.spelling" {
+		label="kivy.core.spelling";
+		"kivy.core.spelling" -> "kivy.core.spelling.spelling_enchant" [style="dotted"];
+		"kivy.core.spelling" -> "kivy.core.spelling.spelling_osxappkit" [style="dotted"];
+	}
+	subgraph "cluster_kivy.core.audio" {
+		label="kivy.core.audio";
+		"kivy.core.audio" -> "kivy.core.audio.audio_sdl2" [style="dotted"];
+		"kivy.core.audio" -> "kivy.core.audio.audio_ffpyplayer" [style="dotted"];
+		"kivy.core.audio" -> "kivy.core.audio.audio_pygame" [style="dotted"];
+		"kivy.core.audio" -> "kivy.core.audio.audio_android" [style="dotted"];
+		"kivy.core.audio" -> "kivy.core.audio.audio_gstplayer" [style="dotted"];
+		"kivy.core.audio" -> "kivy.core.audio.audio_avplayer" [style="dotted"];
+	}
+	subgraph "cluster_kivy.core.text" {
+		label="kivy.core.text";
+		"kivy.core.text" -> "kivy.core.text.text_layout" [style="dotted"];
+		"kivy.core.text" -> "kivy.core.text.text_pango" [style="dotted"];
+		"kivy.core.text" -> "kivy.core.text.markup" [style="dotted"];
+		"kivy.core.text" -> "kivy.core.text.text_sdl2" [style="dotted"];
+		"kivy.core.text" -> "kivy.core.text.text_pil" [style="dotted"];
+		"kivy.core.text" -> "kivy.core.text.text_pygame" [style="dotted"];
+		"kivy.core.text" -> "kivy.core.text._text_sdl2" [style="dotted"];
+	}
+	subgraph "cluster_collections" {
+		label="collections";
+		"collections" -> "collections.abc" [style="dotted"];
+	}
+	subgraph "cluster_concurrent" {
+		label="concurrent";
+		"concurrent" -> "concurrent.futures" [style="dotted"];
+	}
+	subgraph "cluster_kivy.uix" {
+		label="kivy.uix";
+		"kivy.uix" -> "kivy.uix.screenmanager" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.anchorlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.boxlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.label" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.button" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.textinput" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.checkbox" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.dropdown" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.image" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.scrollview" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.popup" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.gridlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.widget" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.vkeyboard" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.scatter" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.behaviors" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.relativelayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.floatlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.layout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.modalview" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.stencilview" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.settings" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.tabbedpanel" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.filechooser" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.colorpicker" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.togglebutton" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.bubble" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.recyclegridlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.recycleview" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.recyclelayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.camera" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.accordion" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.codeinput" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.spinner" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.stacklayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.actionbar" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.pagelayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.recycleboxlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.sandbox" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.rst" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.videoplayer" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.switch" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.gesturesurface" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.scatterlayout" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.splitter" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.effectwidget" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.carousel" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.progressbar" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.treeview" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.video" [style="dotted"];
+		"kivy.uix" -> "kivy.uix.slider" [style="dotted"];
+	}
+	subgraph "cluster_kivy.lib.vidcore_lite" {
+		label="kivy.lib.vidcore_lite";
+		"kivy.lib.vidcore_lite" -> "kivy.lib.vidcore_lite.bcm" [style="dotted"];
+		"kivy.lib.vidcore_lite" -> "kivy.lib.vidcore_lite.egl" [style="dotted"];
+	}
+	subgraph "cluster_docutils.readers" {
+		label="docutils.readers";
+		"docutils.readers" -> "docutils.readers.standalone" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.uix.menu" {
+		label="kivymd.uix.menu";
+		"kivymd.uix.menu" -> "kivymd.uix.menu.menu" [style="dotted"];
+	}
+	subgraph "cluster_json" {
+		label="json";
+		"json" -> "json.scanner" [style="dotted"];
+		"json" -> "json.decoder" [style="dotted"];
+		"json" -> "json.encoder" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers.odf_odt" {
+		label="docutils.writers.odf_odt";
+		"docutils.writers.odf_odt" -> "docutils.writers.odf_odt.pygmentsformatter" [style="dotted"];
+		"docutils.writers.odf_odt" -> "docutils.writers.odf_odt.prepstyles" [style="dotted"];
 	}
 	subgraph "cluster_encodings" {
 		label="encodings";
@@ -3003,21 +2714,311 @@ charset="UTF-8";
 		"encodings" -> "encodings.uu_codec" [style="dotted"];
 		"encodings" -> "encodings.zlib_codec" [style="dotted"];
 	}
-	subgraph "cluster_docutils.parsers.rst" {
-		label="docutils.parsers.rst";
-		"docutils.parsers.rst" -> "docutils.parsers.rst.directives" [style="dotted"];
-		"docutils.parsers.rst" -> "docutils.parsers.rst.roles" [style="dotted"];
-		"docutils.parsers.rst" -> "docutils.parsers.rst.tableparser" [style="dotted"];
-		"docutils.parsers.rst" -> "docutils.parsers.rst.states" [style="dotted"];
-		"docutils.parsers.rst" -> "docutils.parsers.rst.languages" [style="dotted"];
+	subgraph "cluster_packaging" {
+		label="packaging";
+		"packaging" -> "packaging._elffile" [style="dotted"];
+		"packaging" -> "packaging._manylinux" [style="dotted"];
+		"packaging" -> "packaging._musllinux" [style="dotted"];
+		"packaging" -> "packaging._parser" [style="dotted"];
+		"packaging" -> "packaging._structures" [style="dotted"];
+		"packaging" -> "packaging._tokenizer" [style="dotted"];
+		"packaging" -> "packaging.markers" [style="dotted"];
+		"packaging" -> "packaging.metadata" [style="dotted"];
+		"packaging" -> "packaging.requirements" [style="dotted"];
+		"packaging" -> "packaging.specifiers" [style="dotted"];
+		"packaging" -> "packaging.tags" [style="dotted"];
+		"packaging" -> "packaging.utils" [style="dotted"];
+		"packaging" -> "packaging.version" [style="dotted"];
 	}
-	subgraph "cluster_docutils.readers" {
-		label="docutils.readers";
-		"docutils.readers" -> "docutils.readers.standalone" [style="dotted"];
+	subgraph "cluster_kivy.uix.behaviors" {
+		label="kivy.uix.behaviors";
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.button" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.togglebutton" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.drag" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.focus" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.compoundselection" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.codenavigation" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.emacs" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.cover" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.touchripple" [style="dotted"];
+		"kivy.uix.behaviors" -> "kivy.uix.behaviors.knspace" [style="dotted"];
 	}
+	subgraph "cluster_kivy.core" {
+		label="kivy.core";
+		"kivy.core" -> "kivy.core.window" [style="dotted"];
+		"kivy.core" -> "kivy.core.gl" [style="dotted"];
+		"kivy.core" -> "kivy.core.image" [style="dotted"];
+		"kivy.core" -> "kivy.core.text" [style="dotted"];
+		"kivy.core" -> "kivy.core.clipboard" [style="dotted"];
+		"kivy.core" -> "kivy.core.audio" [style="dotted"];
+		"kivy.core" -> "kivy.core.spelling" [style="dotted"];
+		"kivy.core" -> "kivy.core.video" [style="dotted"];
+		"kivy.core" -> "kivy.core.camera" [style="dotted"];
+	}
+	subgraph "cluster_kivymd" {
+		label="kivymd";
+		"kivymd" -> "kivymd._version" [style="dotted"];
+		"kivymd" -> "kivymd.factory_registers" [style="dotted"];
+		"kivymd" -> "kivymd.font_definitions" [style="dotted"];
+		"kivymd" -> "kivymd.icon_definitions" [style="dotted"];
+		"kivymd" -> "kivymd.app" [style="dotted"];
+		"kivymd" -> "kivymd.uix" [style="dotted"];
+		"kivymd" -> "kivymd.color_definitions" [style="dotted"];
+		"kivymd" -> "kivymd.theming" [style="dotted"];
+		"kivymd" -> "kivymd.material_resources" [style="dotted"];
+		"kivymd" -> "kivymd.tools" [style="dotted"];
+		"kivymd" -> "kivymd.theming_dynamic_text" [style="dotted"];
+		"kivymd" -> "kivymd.effects" [style="dotted"];
+		"kivymd" -> "kivymd.utils" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.tools.packaging.pyinstaller" {
+		label="kivymd.tools.packaging.pyinstaller";
+	}
+	subgraph "cluster_win32com.client" {
+		label="win32com.client";
+		"win32com.client" -> "win32com.client.build" [style="dotted"];
+		"win32com.client" -> "win32com.client.util" [style="dotted"];
+		"win32com.client" -> "win32com.client.dynamic" [style="dotted"];
+		"win32com.client" -> "win32com.client.CLSIDToClass" [style="dotted"];
+		"win32com.client" -> "win32com.client.gencache" [style="dotted"];
+		"win32com.client" -> "win32com.client.genpy" [style="dotted"];
+		"win32com.client" -> "win32com.client.selecttlb" [style="dotted"];
+		"win32com.client" -> "win32com.client.makepy" [style="dotted"];
+	}
+	subgraph "cluster_kivy" {
+		label="kivy";
+		"kivy" -> "kivy.logger" [style="dotted"];
+		"kivy" -> "kivy.utils" [style="dotted"];
+		"kivy" -> "kivy._version" [style="dotted"];
+		"kivy" -> "kivy.deps" [style="dotted"];
+		"kivy" -> "kivy.config" [style="dotted"];
+		"kivy" -> "kivy.modules" [style="dotted"];
+		"kivy" -> "kivy.clock" [style="dotted"];
+		"kivy" -> "kivy.graphics" [style="dotted"];
+		"kivy" -> "kivy.base" [style="dotted"];
+		"kivy" -> "kivy.event" [style="dotted"];
+		"kivy" -> "kivy.properties" [style="dotted"];
+		"kivy" -> "kivy.gesture" [style="dotted"];
+		"kivy" -> "kivy.animation" [style="dotted"];
+		"kivy" -> "kivy.vector" [style="dotted"];
+		"kivy" -> "kivy.multistroke" [style="dotted"];
+		"kivy" -> "kivy.cache" [style="dotted"];
+		"kivy" -> "kivy.weakmethod" [style="dotted"];
+		"kivy" -> "kivy.loader" [style="dotted"];
+		"kivy" -> "kivy.core" [style="dotted"];
+		"kivy" -> "kivy.factory" [style="dotted"];
+		"kivy" -> "kivy.metrics" [style="dotted"];
+		"kivy" -> "kivy.context" [style="dotted"];
+		"kivy" -> "kivy.setupconfig" [style="dotted"];
+		"kivy" -> "kivy.resources" [style="dotted"];
+		"kivy" -> "kivy.uix" [style="dotted"];
+		"kivy" -> "kivy.atlas" [style="dotted"];
+		"kivy" -> "kivy.compat" [style="dotted"];
+		"kivy" -> "kivy.weakproxy" [style="dotted"];
+		"kivy" -> "kivy.factory_registers" [style="dotted"];
+		"kivy" -> "kivy.eventmanager" [style="dotted"];
+		"kivy" -> "kivy._event" [style="dotted"];
+		"kivy" -> "kivy.lang" [style="dotted"];
+		"kivy" -> "kivy.input" [style="dotted"];
+		"kivy" -> "kivy.lib" [style="dotted"];
+		"kivy" -> "kivy._clock" [style="dotted"];
+		"kivy" -> "kivy._metrics" [style="dotted"];
+		"kivy" -> "kivy.app" [style="dotted"];
+		"kivy" -> "kivy.effects" [style="dotted"];
+		"kivy" -> "kivy.parser" [style="dotted"];
+		"kivy" -> "kivy.support" [style="dotted"];
+		"kivy" -> "kivy.extras" [style="dotted"];
+	}
+	subgraph "cluster_docutils.parsers.rst.languages" {
+		label="docutils.parsers.rst.languages";
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.en" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.af" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ar" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ca" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.cs" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.da" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.de" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.eo" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.es" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.fa" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.fi" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.fr" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.gl" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.he" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.it" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ja" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ko" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.lt" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.lv" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.nl" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.pl" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.pt_br" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.ru" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.sk" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.sv" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.uk" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.zh_cn" [style="dotted"];
+		"docutils.parsers.rst.languages" -> "docutils.parsers.rst.languages.zh_tw" [style="dotted"];
+	}
+	subgraph "cluster__pyi_rth_utils" {
+		label="_pyi_rth_utils";
+		"_pyi_rth_utils" -> "_pyi_rth_utils._win32" [style="dotted"];
+	}
+	subgraph "cluster_importlib.resources" {
+		label="importlib.resources";
+		"importlib.resources" -> "importlib.resources._common" [style="dotted"];
+		"importlib.resources" -> "importlib.resources._legacy" [style="dotted"];
+		"importlib.resources" -> "importlib.resources.abc" [style="dotted"];
+		"importlib.resources" -> "importlib.resources.readers" [style="dotted"];
+		"importlib.resources" -> "importlib.resources._adapters" [style="dotted"];
+		"importlib.resources" -> "importlib.resources._itertools" [style="dotted"];
+	}
+	subgraph "cluster_importlib.metadata" {
+		label="importlib.metadata";
+		"importlib.metadata" -> "importlib.metadata._adapters" [style="dotted"];
+		"importlib.metadata" -> "importlib.metadata._meta" [style="dotted"];
+		"importlib.metadata" -> "importlib.metadata._collections" [style="dotted"];
+		"importlib.metadata" -> "importlib.metadata._functools" [style="dotted"];
+		"importlib.metadata" -> "importlib.metadata._itertools" [style="dotted"];
+		"importlib.metadata" -> "importlib.metadata._text" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor" {
+		label="pkg_resources._vendor";
+		"pkg_resources._vendor" -> "pkg_resources._vendor.appdirs" [style="dotted"];
+		"pkg_resources._vendor" -> "pkg_resources._vendor.zipp" [style="dotted"];
+		"pkg_resources._vendor" -> "pkg_resources._vendor.pyparsing" [style="dotted"];
+		"pkg_resources._vendor" -> "pkg_resources._vendor.packaging" [style="dotted"];
+		"pkg_resources._vendor" -> "pkg_resources._vendor.more_itertools" [style="dotted"];
+		"pkg_resources._vendor" -> "pkg_resources._vendor.jaraco" [style="dotted"];
+		"pkg_resources._vendor" -> "pkg_resources._vendor.importlib_resources" [style="dotted"];
+	}
+	subgraph "cluster_unittest" {
+		label="unittest";
+		"unittest" -> "unittest.util" [style="dotted"];
+		"unittest" -> "unittest.result" [style="dotted"];
+		"unittest" -> "unittest.case" [style="dotted"];
+		"unittest" -> "unittest.suite" [style="dotted"];
+		"unittest" -> "unittest.loader" [style="dotted"];
+		"unittest" -> "unittest.runner" [style="dotted"];
+		"unittest" -> "unittest.main" [style="dotted"];
+		"unittest" -> "unittest.signals" [style="dotted"];
+		"unittest" -> "unittest.async_case" [style="dotted"];
+		"unittest" -> "unittest._log" [style="dotted"];
+	}
+	subgraph "cluster_logging" {
+		label="logging";
+	}
+	subgraph "cluster_kivy.input.providers" {
+		label="kivy.input.providers";
+		"kivy.input.providers" -> "kivy.input.providers.tuio" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.mouse" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.wm_touch" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.wm_pen" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.mactouch" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.probesysfs" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.mtdev" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.hidinput" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.linuxwacom" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.androidjoystick" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.leapfinger" [style="dotted"];
+		"kivy.input.providers" -> "kivy.input.providers.wm_common" [style="dotted"];
+	}
+	subgraph "cluster_xmlrpc" {
+		label="xmlrpc";
+		"xmlrpc" -> "xmlrpc.client" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor.jaraco" {
+		label="pkg_resources._vendor.jaraco";
+		"pkg_resources._vendor.jaraco" -> "pkg_resources._vendor.jaraco.context" [style="dotted"];
+		"pkg_resources._vendor.jaraco" -> "pkg_resources._vendor.jaraco.functools" [style="dotted"];
+		"pkg_resources._vendor.jaraco" -> "pkg_resources._vendor.jaraco.text" [style="dotted"];
+	}
+	subgraph "cluster_kivy.modules" {
+		label="kivy.modules";
+	}
+	subgraph "cluster_pygments.formatters" {
+		label="pygments.formatters";
+		"pygments.formatters" -> "pygments.formatters._mapping" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.BBCodeFormatter" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.html" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.bbcode" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.groff" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.img" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.irc" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.latex" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.other" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.pangomarkup" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.rtf" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.svg" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.terminal" [style="dotted"];
+		"pygments.formatters" -> "pygments.formatters.terminal256" [style="dotted"];
+	}
+	subgraph "cluster_screeninfo.enumerators" {
+		label="screeninfo.enumerators";
+		"screeninfo.enumerators" -> "screeninfo.enumerators.cygwin" [style="dotted"];
+		"screeninfo.enumerators" -> "screeninfo.enumerators.drm" [style="dotted"];
+		"screeninfo.enumerators" -> "screeninfo.enumerators.osx" [style="dotted"];
+		"screeninfo.enumerators" -> "screeninfo.enumerators.windows" [style="dotted"];
+		"screeninfo.enumerators" -> "screeninfo.enumerators.xinerama" [style="dotted"];
+		"screeninfo.enumerators" -> "screeninfo.enumerators.xrandr" [style="dotted"];
+	}
+	subgraph "cluster_docutils.writers.s5_html" {
+		label="docutils.writers.s5_html";
+	}
+	subgraph "cluster_kivymd.uix.selectioncontrol" {
+		label="kivymd.uix.selectioncontrol";
+		"kivymd.uix.selectioncontrol" -> "kivymd.uix.selectioncontrol.selectioncontrol" [style="dotted"];
+	}
+	subgraph "cluster_pywin.mfc" {
+		label="pywin.mfc";
+		"pywin.mfc" -> "pywin.mfc.object" [style="dotted"];
+		"pywin.mfc" -> "pywin.mfc.window" [style="dotted"];
+		"pywin.mfc" -> "pywin.mfc.dialog" [style="dotted"];
+		"pywin.mfc" -> "pywin.mfc.thread" [style="dotted"];
+	}
+	subgraph "cluster_xml.etree" {
+		label="xml.etree";
+		"xml.etree" -> "xml.etree.ElementPath" [style="dotted"];
+		"xml.etree" -> "xml.etree.ElementTree" [style="dotted"];
+		"xml.etree" -> "xml.etree.ElementInclude" [style="dotted"];
+		"xml.etree" -> "xml.etree.cElementTree" [style="dotted"];
+	}
+	subgraph "cluster_pkg_resources._vendor.more_itertools" {
+		label="pkg_resources._vendor.more_itertools";
+		"pkg_resources._vendor.more_itertools" -> "pkg_resources._vendor.more_itertools.more" [style="dotted"];
+		"pkg_resources._vendor.more_itertools" -> "pkg_resources._vendor.more_itertools.recipes" [style="dotted"];
+	}
+	subgraph "cluster_pygments.filters" {
+		label="pygments.filters";
+	}
+	subgraph "cluster_kivymd.tools.packaging" {
+		label="kivymd.tools.packaging";
+		"kivymd.tools.packaging" -> "kivymd.tools.packaging.pyinstaller" [style="dotted"];
+	}
+	subgraph "cluster_kivymd.utils" {
+		label="kivymd.utils";
+		"kivymd.utils" -> "kivymd.utils.fpsmonitor" [style="dotted"];
+	}
+	subgraph "cluster_tee" {
+		label="tee";
+		"tee" -> "tee.tee" [style="dotted"];
+	}
+	subgraph "cluster_pywin32_system32" {
+		label="pywin32_system32";
+	}
+	subgraph "cluster_urllib" {
+		label="urllib";
+		"urllib" -> "urllib.pathname2url" [style="dotted"];
+		"urllib" -> "urllib.error" [style="dotted"];
+		"urllib" -> "urllib.parse" [style="dotted"];
+		"urllib" -> "urllib.request" [style="dotted"];
+		"urllib" -> "urllib.response" [style="dotted"];
+		"urllib" -> "urllib.robotparser" [style="dotted"];
+	}
+	"<PyiModuleGraph>" -> "codecs" [];
+	"<PyiModuleGraph>" -> "encodings" [];
 	"<PyiModuleGraph>" -> "gc" [];
 	"<PyiModuleGraph>" -> "time" [];
-	"<PyiModuleGraph>" -> "codecs" [];
 	"<PyiModuleGraph>" -> "posix" [];
 	"<PyiModuleGraph>" -> "ntpath" [];
 	"<PyiModuleGraph>" -> "_pickle" [];
@@ -3025,40 +3026,39 @@ charset="UTF-8";
 	"<PyiModuleGraph>" -> "datetime" [];
 	"<PyiModuleGraph>" -> "_posixsubprocess" [];
 	"<PyiModuleGraph>" -> "_sre" [];
-	"<PyiModuleGraph>" -> "collections" [];
-	"<PyiModuleGraph>" -> "enum" [];
-	"<PyiModuleGraph>" -> "warnings" [];
-	"<PyiModuleGraph>" -> "stat" [];
-	"<PyiModuleGraph>" -> "traceback" [];
-	"<PyiModuleGraph>" -> "genericpath" [];
-	"<PyiModuleGraph>" -> "keyword" [];
-	"<PyiModuleGraph>" -> "_weakrefset" [];
-	"<PyiModuleGraph>" -> "locale" [];
-	"<PyiModuleGraph>" -> "token" [];
-	"<PyiModuleGraph>" -> "types" [];
-	"<PyiModuleGraph>" -> "urllib" [];
-	"<PyiModuleGraph>" -> "_ssl" [];
-	"<PyiModuleGraph>" -> "tokenize" [];
-	"<PyiModuleGraph>" -> "weakref" [];
-	"<PyiModuleGraph>" -> "sre_compile" [];
 	"<PyiModuleGraph>" -> "abc" [];
-	"<PyiModuleGraph>" -> "operator" [];
 	"<PyiModuleGraph>" -> "reprlib" [];
-	"<PyiModuleGraph>" -> "_collections_abc" [];
+	"<PyiModuleGraph>" -> "warnings" [];
+	"<PyiModuleGraph>" -> "sre_constants" [];
+	"<PyiModuleGraph>" -> "traceback" [];
 	"<PyiModuleGraph>" -> "fnmatch" [];
 	"<PyiModuleGraph>" -> "heapq" [];
-	"<PyiModuleGraph>" -> "pathlib" [];
-	"<PyiModuleGraph>" -> "linecache" [];
-	"<PyiModuleGraph>" -> "sre_parse" [];
-	"<PyiModuleGraph>" -> "os" [];
-	"<PyiModuleGraph>" -> "functools" [];
-	"<PyiModuleGraph>" -> "io" [];
 	"<PyiModuleGraph>" -> "copyreg" [];
-	"<PyiModuleGraph>" -> "ipaddress" [];
-	"<PyiModuleGraph>" -> "encodings" [];
-	"<PyiModuleGraph>" -> "sre_constants" [];
-	"<PyiModuleGraph>" -> "posixpath" [];
+	"<PyiModuleGraph>" -> "_collections_abc" [];
+	"<PyiModuleGraph>" -> "_weakrefset" [];
 	"<PyiModuleGraph>" -> "re" [];
+	"<PyiModuleGraph>" -> "ipaddress" [];
+	"<PyiModuleGraph>" -> "os" [];
+	"<PyiModuleGraph>" -> "types" [];
+	"<PyiModuleGraph>" -> "locale" [];
+	"<PyiModuleGraph>" -> "keyword" [];
+	"<PyiModuleGraph>" -> "sre_parse" [];
+	"<PyiModuleGraph>" -> "pathlib" [];
+	"<PyiModuleGraph>" -> "operator" [];
+	"<PyiModuleGraph>" -> "posixpath" [];
+	"<PyiModuleGraph>" -> "sre_compile" [];
+	"<PyiModuleGraph>" -> "weakref" [];
+	"<PyiModuleGraph>" -> "tokenize" [];
+	"<PyiModuleGraph>" -> "stat" [];
+	"<PyiModuleGraph>" -> "enum" [];
+	"<PyiModuleGraph>" -> "functools" [];
+	"<PyiModuleGraph>" -> "linecache" [];
+	"<PyiModuleGraph>" -> "token" [];
+	"<PyiModuleGraph>" -> "collections" [];
+	"<PyiModuleGraph>" -> "genericpath" [];
+	"<PyiModuleGraph>" -> "io" [];
+	"<PyiModuleGraph>" -> "urllib" [];
+	"<PyiModuleGraph>" -> "_ssl" [];
 	"<PyiModuleGraph>" -> "D:\KHKT2023\TheMenu1.py" [];
 	"<PyiModuleGraph>" -> "zipimport" [];
 	"<PyiModuleGraph>" -> "_json" [];
@@ -3099,7 +3099,7 @@ charset="UTF-8";
 	"copy" -> "types" [];
 	"copy" -> "weakref" [];
 	"copy" -> "copyreg" [];
-	"copy" -> "org" [];
+	"copy" -> "'org.python'" [];
 	"json.decoder" -> "re" [];
 	"json.decoder" -> "_json" [];
 	"json.scanner" -> "re" [];
@@ -3267,7 +3267,7 @@ charset="UTF-8";
 	"pickle" -> "codecs" [];
 	"pickle" -> "_compat_pickle" [];
 	"pickle" -> "_pickle" [];
-	"pickle" -> "'org.python'" [];
+	"pickle" -> "org" [];
 	"pickle" -> "pprint" [];
 	"pprint" -> "collections" [];
 	"pprint" -> "dataclasses" [];
@@ -3554,39 +3554,39 @@ charset="UTF-8";
 	"D:\KHKT2023\TheMenu1.py" -> "pyuac" [];
 	"D:\KHKT2023\TheMenu1.py" -> "ctypes" [];
 	"D:\KHKT2023\TheMenu1.py" -> "screeninfo" [];
-	"D:\KHKT2023\TheMenu1.py" -> "collections" [];
-	"D:\KHKT2023\TheMenu1.py" -> "enum" [];
-	"D:\KHKT2023\TheMenu1.py" -> "warnings" [];
-	"D:\KHKT2023\TheMenu1.py" -> "stat" [];
-	"D:\KHKT2023\TheMenu1.py" -> "traceback" [];
-	"D:\KHKT2023\TheMenu1.py" -> "codecs" [];
-	"D:\KHKT2023\TheMenu1.py" -> "genericpath" [];
-	"D:\KHKT2023\TheMenu1.py" -> "keyword" [];
-	"D:\KHKT2023\TheMenu1.py" -> "_weakrefset" [];
-	"D:\KHKT2023\TheMenu1.py" -> "locale" [];
-	"D:\KHKT2023\TheMenu1.py" -> "token" [];
-	"D:\KHKT2023\TheMenu1.py" -> "types" [];
-	"D:\KHKT2023\TheMenu1.py" -> "urllib" [];
-	"D:\KHKT2023\TheMenu1.py" -> "tokenize" [];
-	"D:\KHKT2023\TheMenu1.py" -> "weakref" [];
-	"D:\KHKT2023\TheMenu1.py" -> "sre_compile" [];
+	"D:\KHKT2023\TheMenu1.py" -> "encodings" [];
 	"D:\KHKT2023\TheMenu1.py" -> "abc" [];
-	"D:\KHKT2023\TheMenu1.py" -> "operator" [];
 	"D:\KHKT2023\TheMenu1.py" -> "reprlib" [];
-	"D:\KHKT2023\TheMenu1.py" -> "_collections_abc" [];
+	"D:\KHKT2023\TheMenu1.py" -> "warnings" [];
+	"D:\KHKT2023\TheMenu1.py" -> "sre_constants" [];
+	"D:\KHKT2023\TheMenu1.py" -> "traceback" [];
 	"D:\KHKT2023\TheMenu1.py" -> "fnmatch" [];
 	"D:\KHKT2023\TheMenu1.py" -> "heapq" [];
-	"D:\KHKT2023\TheMenu1.py" -> "linecache" [];
-	"D:\KHKT2023\TheMenu1.py" -> "sre_parse" [];
-	"D:\KHKT2023\TheMenu1.py" -> "functools" [];
-	"D:\KHKT2023\TheMenu1.py" -> "io" [];
 	"D:\KHKT2023\TheMenu1.py" -> "copyreg" [];
-	"D:\KHKT2023\TheMenu1.py" -> "ipaddress" [];
-	"D:\KHKT2023\TheMenu1.py" -> "encodings" [];
-	"D:\KHKT2023\TheMenu1.py" -> "sre_constants" [];
-	"D:\KHKT2023\TheMenu1.py" -> "posixpath" [];
-	"D:\KHKT2023\TheMenu1.py" -> "ntpath" [];
+	"D:\KHKT2023\TheMenu1.py" -> "_collections_abc" [];
+	"D:\KHKT2023\TheMenu1.py" -> "_weakrefset" [];
 	"D:\KHKT2023\TheMenu1.py" -> "re" [];
+	"D:\KHKT2023\TheMenu1.py" -> "ipaddress" [];
+	"D:\KHKT2023\TheMenu1.py" -> "ntpath" [];
+	"D:\KHKT2023\TheMenu1.py" -> "types" [];
+	"D:\KHKT2023\TheMenu1.py" -> "locale" [];
+	"D:\KHKT2023\TheMenu1.py" -> "keyword" [];
+	"D:\KHKT2023\TheMenu1.py" -> "sre_parse" [];
+	"D:\KHKT2023\TheMenu1.py" -> "operator" [];
+	"D:\KHKT2023\TheMenu1.py" -> "posixpath" [];
+	"D:\KHKT2023\TheMenu1.py" -> "sre_compile" [];
+	"D:\KHKT2023\TheMenu1.py" -> "codecs" [];
+	"D:\KHKT2023\TheMenu1.py" -> "weakref" [];
+	"D:\KHKT2023\TheMenu1.py" -> "tokenize" [];
+	"D:\KHKT2023\TheMenu1.py" -> "stat" [];
+	"D:\KHKT2023\TheMenu1.py" -> "enum" [];
+	"D:\KHKT2023\TheMenu1.py" -> "functools" [];
+	"D:\KHKT2023\TheMenu1.py" -> "linecache" [];
+	"D:\KHKT2023\TheMenu1.py" -> "token" [];
+	"D:\KHKT2023\TheMenu1.py" -> "collections" [];
+	"D:\KHKT2023\TheMenu1.py" -> "genericpath" [];
+	"D:\KHKT2023\TheMenu1.py" -> "io" [];
+	"D:\KHKT2023\TheMenu1.py" -> "urllib" [];
 	"D:\KHKT2023\TheMenu1.py" -> "C:\Users\hthnh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\PyInstaller\hooks\rthooks\pyi_rth_inspect.py" [];
 	"D:\KHKT2023\TheMenu1.py" -> "C:\Users\hthnh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\PyInstaller\hooks\rthooks\pyi_rth_win32comgenpy.py" [];
 	"D:\KHKT2023\TheMenu1.py" -> "C:\Users\hthnh\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\_pyinstaller_hooks_contrib\hooks\rthooks\pyi_rth_pywintypes.py" [];
@@ -5054,54 +5054,7 @@ charset="UTF-8";
 	"kivy" -> "importlib" [];
 	"kivy" -> "site" [];
 	"kivy" -> "kivy_deps" [];
-	"kivy.core.clipboard.clipboard_nspaste" -> "pyobjus" [];
-	"kivy.core.clipboard.clipboard_nspaste" -> "'pyobjus.dylib_manager'" [];
-	"kivy.core.window.window_pygame" -> "pygame" [];
-	"kivy.core.window.window_pygame" -> "os" [];
-	"kivy.core.window.window_pygame" -> "os.path" [];
-	"kivy.core.window.window_pygame" -> "kivy" [];
-	"kivy.core.window.window_pygame" -> "android" [];
-	"kivy.core.window.window_pygame" -> "win32api" [];
-	"kivy.core.window.window_pygame" -> "win32gui" [];
-	"kivy.core.window.window_pygame" -> "win32con" [];
-	"kivy.support" -> "gi" [];
-	"kivy.support" -> "gobject" [];
-	"kivy.support" -> "android" [];
-	"kivy.support" -> "pygame" [];
-	"kivy.support" -> "collections" [];
-	"kivy.support" -> "sys" [];
-	"kivy.core.spelling.spelling_enchant" -> "enchant" [];
-	"kivy.core.image.img_pil" -> "Image" [];
-	"kivy.core.image.img_pil" -> "PIL" [];
-	"kivy.core.image.img_tex" -> "json" [];
-	"kivy.core.image.img_tex" -> "struct" [];
-	"kivy.lib.ddsfile" -> "struct" [];
-	"kivy.lib.ddsfile" -> "sys" [];
 	"kivy.core.clipboard.clipboard_xsel" -> "subprocess" [];
-	"kivy.core.clipboard.clipboard_xclip" -> "subprocess" [];
-	"kivy.core.audio.audio_ffpyplayer" -> "ffpyplayer" [];
-	"kivy.core.audio.audio_ffpyplayer" -> "'ffpyplayer.player'" [];
-	"kivy.core.audio.audio_ffpyplayer" -> "'ffpyplayer.tools'" [];
-	"kivy.core.audio.audio_ffpyplayer" -> "time" [];
-	"kivy.core.image.img_ffpyplayer" -> "ffpyplayer" [];
-	"kivy.core.image.img_ffpyplayer" -> "'ffpyplayer.pic'" [];
-	"kivy.core.image.img_ffpyplayer" -> "'ffpyplayer.tools'" [];
-	"kivy.core.text.text_pil" -> "PIL" [];
-	"kivy.core.clipboard.clipboard_winctypes" -> "ctypes" [];
-	"kivy.uix.actionbar" -> "functools" [];
-	"kivy.uix.videoplayer" -> "json" [];
-	"kivy.uix.videoplayer" -> "os.path" [];
-	"kivy.uix.videoplayer" -> "sys" [];
-	"kivy.core.spelling.spelling_osxappkit" -> "AppKit" [];
-	"kivy.core.camera.camera_opencv" -> "__future__" [];
-	"kivy.core.camera.camera_opencv" -> "opencv" [];
-	"kivy.core.camera.camera_opencv" -> "'opencv.highgui'" [];
-	"kivy.core.camera.camera_opencv" -> "cv2" [];
-	"kivy.core.video.video_ffmpeg" -> "ffmpeg" [];
-	"kivy.core.camera.camera_gi" -> "'gi.repository'" [];
-	"kivy.core.camera.camera_gi" -> "ctypes" [];
-	"kivy.core.camera.camera_gi" -> "weakref" [];
-	"kivy.core.camera.camera_gi" -> "atexit" [];
 	"kivy.core.image.img_pygame" -> "os.path" [];
 	"kivy.core.image.img_pygame" -> "pygame" [];
 	"kivy.core.image.img_pygame" -> "traceback" [];
@@ -5110,32 +5063,39 @@ charset="UTF-8";
 	"kivy.core.clipboard.clipboard_android" -> "'android.runnable'" [];
 	"kivy.core.clipboard.clipboard_android" -> "android" [];
 	"kivy.core.clipboard.clipboard_android" -> "time" [];
-	"kivy.core.audio" -> "sys" [];
-	"kivy.lib.gstplayer" -> "os" [];
-	"kivy.weakmethod" -> "weakref" [];
-	"kivy.core.window.window_egl_rpi" -> "os" [];
-	"kivy.uix.gesturesurface" -> "random" [];
-	"kivy.uix.gesturesurface" -> "colorsys" [];
-	"kivy.core.clipboard.clipboard_pygame" -> "pygame" [];
-	"kivy.core.clipboard.clipboard_pygame" -> "'pygame.scrap'" [];
-	"kivy.core.audio.audio_gstplayer" -> "os.path" [];
-	"kivy.core.audio.audio_gstplayer" -> "urllib" [];
-	"kivy.uix.sandbox" -> "functools" [];
-	"kivy.uix.sandbox" -> "traceback" [];
 	"kivy.uix.video" -> "sys" [];
-	"kivy.core.audio.audio_avplayer" -> "pyobjus" [];
-	"kivy.core.audio.audio_avplayer" -> "'pyobjus.dylib_manager'" [];
-	"kivy.core.video.video_ffpyplayer" -> "ffpyplayer" [];
-	"kivy.core.video.video_ffpyplayer" -> "'ffpyplayer.player'" [];
-	"kivy.core.video.video_ffpyplayer" -> "'ffpyplayer.tools'" [];
-	"kivy.core.video.video_ffpyplayer" -> "threading" [];
-	"kivy.core.video.video_ffpyplayer" -> "queue" [];
-	"kivy.core.video.video_ffpyplayer" -> "time" [];
-	"kivy.core.audio.audio_pygame" -> "'android.mixer'" [];
-	"kivy.core.audio.audio_pygame" -> "android_mixer" [];
-	"kivy.core.audio.audio_pygame" -> "pygame" [];
+	"kivy.core.spelling.spelling_osxappkit" -> "AppKit" [];
+	"kivy.core.camera.camera_opencv" -> "__future__" [];
+	"kivy.core.camera.camera_opencv" -> "opencv" [];
+	"kivy.core.camera.camera_opencv" -> "'opencv.highgui'" [];
+	"kivy.core.camera.camera_opencv" -> "cv2" [];
+	"kivy.core.spelling.spelling_enchant" -> "enchant" [];
+	"kivy.uix.carousel" -> "functools" [];
+	"kivy.core.image.img_pil" -> "Image" [];
+	"kivy.core.image.img_pil" -> "PIL" [];
 	"kivy.core.clipboard.clipboard_gtk3" -> "gi" [];
 	"kivy.core.clipboard.clipboard_gtk3" -> "'gi.repository'" [];
+	"kivy.support" -> "'gi.repository'" [];
+	"kivy.support" -> "gobject" [];
+	"kivy.support" -> "android" [];
+	"kivy.support" -> "pygame" [];
+	"kivy.support" -> "collections" [];
+	"kivy.support" -> "sys" [];
+	"kivy.core.clipboard.clipboard_nspaste" -> "pyobjus" [];
+	"kivy.core.clipboard.clipboard_nspaste" -> "'pyobjus.dylib_manager'" [];
+	"kivy.weakmethod" -> "weakref" [];
+	"kivy.core.audio.audio_avplayer" -> "pyobjus" [];
+	"kivy.core.audio.audio_avplayer" -> "'pyobjus.dylib_manager'" [];
+	"kivy.core.audio" -> "sys" [];
+	"kivy.lib.gstplayer" -> "os" [];
+	"kivy.uix.gesturesurface" -> "random" [];
+	"kivy.uix.gesturesurface" -> "colorsys" [];
+	"kivy.core.audio.audio_gstplayer" -> "os.path" [];
+	"kivy.core.audio.audio_gstplayer" -> "urllib" [];
+	"kivy.uix.videoplayer" -> "json" [];
+	"kivy.uix.videoplayer" -> "os.path" [];
+	"kivy.uix.videoplayer" -> "sys" [];
+	"kivy.core.spelling" -> "sys" [];
 	"kivy.core.audio.audio_android" -> "jnius" [];
 	"kivy.core.audio.audio_android" -> "android" [];
 	"kivy.uix.rst" -> "os" [];
@@ -5522,28 +5482,6 @@ charset="UTF-8";
 	"docutils.parsers.rst.roles" -> "docutils" [];
 	"docutils.parsers.rst" -> "docutils" [];
 	"docutils.parsers" -> "importlib" [];
-	"kivy.uix.carousel" -> "functools" [];
-	"kivy.core.camera.camera_android" -> "jnius" [];
-	"kivy.core.camera.camera_android" -> "threading" [];
-	"kivy.core.camera.camera_android" -> "numpy" [];
-	"kivy.core.camera.camera_android" -> "cv2" [];
-	"kivy.gesture" -> "pickle" [];
-	"kivy.gesture" -> "base64" [];
-	"kivy.gesture" -> "zlib" [];
-	"kivy.gesture" -> "math" [];
-	"kivy.gesture" -> "io" [];
-	"kivy.core.clipboard.clipboard_dbusklipper" -> "dbus" [];
-	"kivy.core.camera.camera_picamera" -> "math" [];
-	"kivy.core.camera.camera_picamera" -> "picamera" [];
-	"kivy.core.camera.camera_picamera" -> "numpy" [];
-	"kivy.core.text.text_pygame" -> "pygame" [];
-	"kivy.core.video.video_gstplayer" -> "threading" [];
-	"kivy.core.video.video_gstplayer" -> "functools" [];
-	"kivy.core.video.video_gstplayer" -> "os.path" [];
-	"kivy.core.video.video_gstplayer" -> "weakref" [];
-	"kivy.core.video.video_gstplayer" -> "urllib" [];
-	"kivy.uix.recycleview.__init__" -> "copy" [];
-	"kivy.core.spelling" -> "sys" [];
 	"kivy.multistroke" -> "pickle" [];
 	"kivy.multistroke" -> "base64" [];
 	"kivy.multistroke" -> "zlib" [];
@@ -5551,9 +5489,71 @@ charset="UTF-8";
 	"kivy.multistroke" -> "collections" [];
 	"kivy.multistroke" -> "math" [];
 	"kivy.multistroke" -> "io" [];
+	"kivy.uix.sandbox" -> "functools" [];
+	"kivy.uix.sandbox" -> "traceback" [];
+	"kivy.core.clipboard.clipboard_xclip" -> "subprocess" [];
+	"kivy.core.image.img_ffpyplayer" -> "ffpyplayer" [];
+	"kivy.core.image.img_ffpyplayer" -> "'ffpyplayer.pic'" [];
+	"kivy.core.image.img_ffpyplayer" -> "'ffpyplayer.tools'" [];
+	"kivy.core.audio.audio_pygame" -> "'android.mixer'" [];
+	"kivy.core.audio.audio_pygame" -> "android_mixer" [];
+	"kivy.core.audio.audio_pygame" -> "pygame" [];
+	"kivy.core.camera.camera_picamera" -> "math" [];
+	"kivy.core.camera.camera_picamera" -> "picamera" [];
+	"kivy.core.camera.camera_picamera" -> "numpy" [];
+	"kivy.core.audio.audio_ffpyplayer" -> "ffpyplayer" [];
+	"kivy.core.audio.audio_ffpyplayer" -> "'ffpyplayer.player'" [];
+	"kivy.core.audio.audio_ffpyplayer" -> "'ffpyplayer.tools'" [];
+	"kivy.core.audio.audio_ffpyplayer" -> "time" [];
+	"kivy.lib.ddsfile" -> "struct" [];
+	"kivy.lib.ddsfile" -> "sys" [];
+	"kivy.core.clipboard.clipboard_pygame" -> "pygame" [];
+	"kivy.core.clipboard.clipboard_pygame" -> "'pygame.scrap'" [];
+	"kivy.gesture" -> "pickle" [];
+	"kivy.gesture" -> "base64" [];
+	"kivy.gesture" -> "zlib" [];
+	"kivy.gesture" -> "math" [];
+	"kivy.gesture" -> "io" [];
+	"kivy.core.camera.camera_android" -> "jnius" [];
+	"kivy.core.camera.camera_android" -> "threading" [];
+	"kivy.core.camera.camera_android" -> "numpy" [];
+	"kivy.core.camera.camera_android" -> "cv2" [];
+	"kivy.core.clipboard.clipboard_dbusklipper" -> "dbus" [];
+	"kivy.core.video.video_ffmpeg" -> "ffmpeg" [];
+	"kivy.uix.actionbar" -> "functools" [];
+	"kivy.core.text.text_pygame" -> "pygame" [];
+	"kivy.core.window.window_pygame" -> "pygame" [];
+	"kivy.core.window.window_pygame" -> "os" [];
+	"kivy.core.window.window_pygame" -> "os.path" [];
+	"kivy.core.window.window_pygame" -> "kivy" [];
+	"kivy.core.window.window_pygame" -> "android" [];
+	"kivy.core.window.window_pygame" -> "win32api" [];
+	"kivy.core.window.window_pygame" -> "win32gui" [];
+	"kivy.core.window.window_pygame" -> "win32con" [];
+	"kivy.core.window.window_egl_rpi" -> "os" [];
+	"kivy.uix.recycleview.__init__" -> "copy" [];
+	"kivy.core.video.video_gstplayer" -> "threading" [];
+	"kivy.core.video.video_gstplayer" -> "functools" [];
+	"kivy.core.video.video_gstplayer" -> "os.path" [];
+	"kivy.core.video.video_gstplayer" -> "weakref" [];
+	"kivy.core.video.video_gstplayer" -> "urllib" [];
+	"kivy.core.text.text_pil" -> "PIL" [];
+	"kivy.core.video.video_ffpyplayer" -> "ffpyplayer" [];
+	"kivy.core.video.video_ffpyplayer" -> "'ffpyplayer.player'" [];
+	"kivy.core.video.video_ffpyplayer" -> "'ffpyplayer.tools'" [];
+	"kivy.core.video.video_ffpyplayer" -> "threading" [];
+	"kivy.core.video.video_ffpyplayer" -> "queue" [];
+	"kivy.core.video.video_ffpyplayer" -> "time" [];
+	"kivy.core.image.img_tex" -> "json" [];
+	"kivy.core.image.img_tex" -> "struct" [];
 	"kivy.uix.codeinput" -> "pygments" [];
 	"kivy.extras.highlight" -> "pygments" [];
 	"kivy.extras.highlight" -> "sys" [];
+	"kivy.core.clipboard.clipboard_winctypes" -> "ctypes" [];
+	"kivy.core.camera.camera_gi" -> "gi" [];
+	"kivy.core.camera.camera_gi" -> "ctypes" [];
+	"kivy.core.camera.camera_gi" -> "weakref" [];
+	"kivy.core.camera.camera_gi" -> "atexit" [];
 	"site" -> "sys" [];
 	"site" -> "os" [];
 	"site" -> "builtins" [];
@@ -5581,6 +5581,181 @@ charset="UTF-8";
 	"kivy.config" -> "os" [];
 	"kivy.config" -> "os.path" [];
 	"kivy.config" -> "weakref" [];
+	"urllib.robotparser" -> "collections" [];
+	"urllib.robotparser" -> "time" [];
+	"urllib.response" -> "tempfile" [];
+	"urllib.request" -> "base64" [];
+	"urllib.request" -> "bisect" [];
+	"urllib.request" -> "email" [];
+	"urllib.request" -> "hashlib" [];
+	"urllib.request" -> "io" [];
+	"urllib.request" -> "os" [];
+	"urllib.request" -> "posixpath" [];
+	"urllib.request" -> "re" [];
+	"urllib.request" -> "socket" [];
+	"urllib.request" -> "string" [];
+	"urllib.request" -> "sys" [];
+	"urllib.request" -> "time" [];
+	"urllib.request" -> "tempfile" [];
+	"urllib.request" -> "contextlib" [];
+	"urllib.request" -> "warnings" [];
+	"urllib.request" -> "ssl" [];
+	"urllib.request" -> "mimetypes" [];
+	"urllib.request" -> "ftplib" [];
+	"urllib.request" -> "nturl2path" [];
+	"urllib.request" -> "getpass" [];
+	"urllib.request" -> "fnmatch" [];
+	"urllib.request" -> "_scproxy" [];
+	"urllib.request" -> "winreg" [];
+	"getpass" -> "contextlib" [];
+	"getpass" -> "io" [];
+	"getpass" -> "os" [];
+	"getpass" -> "sys" [];
+	"getpass" -> "warnings" [];
+	"getpass" -> "pwd" [];
+	"getpass" -> "termios" [];
+	"getpass" -> "msvcrt" [];
+	"nturl2path" -> "string" [];
+	"ftplib" -> "sys" [];
+	"ftplib" -> "socket" [];
+	"ftplib" -> "ssl" [];
+	"ftplib" -> "warnings" [];
+	"ftplib" -> "re" [];
+	"ftplib" -> "netrc" [];
+	"netrc" -> "os" [];
+	"netrc" -> "shlex" [];
+	"netrc" -> "stat" [];
+	"netrc" -> "pwd" [];
+	"http.cookiejar" -> "os" [];
+	"http.cookiejar" -> "copy" [];
+	"http.cookiejar" -> "datetime" [];
+	"http.cookiejar" -> "re" [];
+	"http.cookiejar" -> "time" [];
+	"http.cookiejar" -> "threading" [];
+	"http.cookiejar" -> "calendar" [];
+	"http.cookiejar" -> "logging" [];
+	"http.cookiejar" -> "io" [];
+	"http.cookiejar" -> "warnings" [];
+	"http.cookiejar" -> "traceback" [];
+	"_ssl" -> "socket" [];
+	"urllib.parse" -> "collections" [];
+	"urllib.parse" -> "functools" [];
+	"urllib.parse" -> "re" [];
+	"urllib.parse" -> "sys" [];
+	"urllib.parse" -> "types" [];
+	"urllib.parse" -> "warnings" [];
+	"urllib.parse" -> "ipaddress" [];
+	"urllib.parse" -> "unicodedata" [];
+	"urllib.error" -> "io" [];
+	"io" -> "_io" [];
+	"io" -> "abc" [];
+	"io" -> "warnings" [];
+	"genericpath" -> "os" [];
+	"genericpath" -> "stat" [];
+	"collections.abc" -> "_collections_abc" [];
+	"collections" -> "_collections_abc" [];
+	"collections" -> "sys" [];
+	"collections" -> "itertools" [];
+	"collections" -> "keyword" [];
+	"collections" -> "operator" [];
+	"collections" -> "reprlib" [];
+	"collections" -> "_weakref" [];
+	"collections" -> "_collections" [];
+	"collections" -> "heapq" [];
+	"collections" -> "copy" [];
+	"linecache" -> "functools" [];
+	"linecache" -> "sys" [];
+	"linecache" -> "os" [];
+	"linecache" -> "tokenize" [];
+	"functools" -> "abc" [];
+	"functools" -> "collections" [];
+	"functools" -> "reprlib" [];
+	"functools" -> "_thread" [];
+	"functools" -> "types" [];
+	"functools" -> "_functools" [];
+	"functools" -> "weakref" [];
+	"functools" -> "typing" [];
+	"enum" -> "sys" [];
+	"enum" -> "builtins" [];
+	"enum" -> "types" [];
+	"enum" -> "operator" [];
+	"enum" -> "functools" [];
+	"enum" -> "warnings" [];
+	"stat" -> "_stat" [];
+	"tokenize" -> "builtins" [];
+	"tokenize" -> "codecs" [];
+	"tokenize" -> "collections" [];
+	"tokenize" -> "functools" [];
+	"tokenize" -> "io" [];
+	"tokenize" -> "itertools" [];
+	"tokenize" -> "re" [];
+	"tokenize" -> "sys" [];
+	"tokenize" -> "token" [];
+	"tokenize" -> "argparse" [];
+	"tokenize" -> "_tokenize" [];
+	"weakref" -> "_weakref" [];
+	"weakref" -> "_weakrefset" [];
+	"weakref" -> "_collections_abc" [];
+	"weakref" -> "sys" [];
+	"weakref" -> "itertools" [];
+	"weakref" -> "copy" [];
+	"weakref" -> "atexit" [];
+	"weakref" -> "gc" [];
+	"sre_compile" -> "warnings" [];
+	"sre_compile" -> "re" [];
+	"posixpath" -> "os" [];
+	"posixpath" -> "sys" [];
+	"posixpath" -> "stat" [];
+	"posixpath" -> "genericpath" [];
+	"posixpath" -> "pwd" [];
+	"posixpath" -> "re" [];
+	"posixpath" -> "posix" [];
+	"operator" -> "builtins" [];
+	"operator" -> "functools" [];
+	"operator" -> "_operator" [];
+	"pathlib" -> "fnmatch" [];
+	"pathlib" -> "functools" [];
+	"pathlib" -> "io" [];
+	"pathlib" -> "ntpath" [];
+	"pathlib" -> "os" [];
+	"pathlib" -> "posixpath" [];
+	"pathlib" -> "re" [];
+	"pathlib" -> "sys" [];
+	"pathlib" -> "warnings" [];
+	"pathlib" -> "_collections_abc" [];
+	"pathlib" -> "errno" [];
+	"pathlib" -> "operator" [];
+	"pathlib" -> "stat" [];
+	"pathlib" -> "pwd" [];
+	"pathlib" -> "grp" [];
+	"sre_parse" -> "warnings" [];
+	"sre_parse" -> "re" [];
+	"locale" -> "sys" [];
+	"locale" -> "encodings" [];
+	"locale" -> "re" [];
+	"locale" -> "_collections_abc" [];
+	"locale" -> "builtins" [];
+	"locale" -> "functools" [];
+	"locale" -> "_locale" [];
+	"locale" -> "warnings" [];
+	"locale" -> "os" [];
+	"types" -> "sys" [];
+	"types" -> "functools" [];
+	"types" -> "_collections_abc" [];
+	"os" -> "abc" [];
+	"os" -> "sys" [];
+	"os" -> "stat" [];
+	"os" -> "_collections_abc" [];
+	"os" -> "posix" [];
+	"os" -> "posixpath" [];
+	"os" -> "nt" [];
+	"os" -> "ntpath" [];
+	"os" -> "os.path" [];
+	"os" -> "warnings" [];
+	"os" -> "subprocess" [];
+	"os" -> "io" [];
+	"ipaddress" -> "functools" [];
+	"ipaddress" -> "re" [];
 	"re._parser" -> "warnings" [];
 	"re._parser" -> "unicodedata" [];
 	"re._constants" -> "_sre" [];
@@ -5590,15 +5765,44 @@ charset="UTF-8";
 	"re" -> "functools" [];
 	"re" -> "warnings" [];
 	"re" -> "copyreg" [];
-	"posixpath" -> "os" [];
-	"posixpath" -> "sys" [];
-	"posixpath" -> "stat" [];
-	"posixpath" -> "genericpath" [];
-	"posixpath" -> "pwd" [];
-	"posixpath" -> "re" [];
-	"posixpath" -> "posix" [];
+	"_weakrefset" -> "_weakref" [];
+	"_weakrefset" -> "types" [];
+	"_collections_abc" -> "abc" [];
+	"_collections_abc" -> "sys" [];
+	"copyreg" -> "functools" [];
+	"copyreg" -> "operator" [];
+	"heapq" -> "_heapq" [];
+	"fnmatch" -> "os" [];
+	"fnmatch" -> "posixpath" [];
+	"fnmatch" -> "re" [];
+	"fnmatch" -> "functools" [];
+	"traceback" -> "itertools" [];
+	"traceback" -> "linecache" [];
+	"traceback" -> "sys" [];
+	"traceback" -> "textwrap" [];
+	"traceback" -> "contextlib" [];
+	"traceback" -> "ast" [];
 	"sre_constants" -> "warnings" [];
 	"sre_constants" -> "re" [];
+	"warnings" -> "sys" [];
+	"warnings" -> "linecache" [];
+	"warnings" -> "tracemalloc" [];
+	"warnings" -> "re" [];
+	"warnings" -> "builtins" [];
+	"warnings" -> "traceback" [];
+	"warnings" -> "_warnings" [];
+	"tracemalloc" -> "functools" [];
+	"tracemalloc" -> "fnmatch" [];
+	"tracemalloc" -> "linecache" [];
+	"tracemalloc" -> "os.path" [];
+	"tracemalloc" -> "pickle" [];
+	"tracemalloc" -> "_tracemalloc" [];
+	"reprlib" -> "builtins" [];
+	"reprlib" -> "itertools" [];
+	"reprlib" -> "_thread" [];
+	"abc" -> "_abc" [];
+	"abc" -> "_py_abc" [];
+	"_py_abc" -> "_weakrefset" [];
 	"encodings.zlib_codec" -> "codecs" [];
 	"encodings.zlib_codec" -> "zlib" [];
 	"encodings.uu_codec" -> "codecs" [];
@@ -5781,214 +5985,6 @@ charset="UTF-8";
 	"encodings.big5" -> "_multibytecodec" [];
 	"encodings.base64_codec" -> "codecs" [];
 	"encodings.base64_codec" -> "base64" [];
-	"encodings.ascii" -> "codecs" [];
-	"encodings" -> "codecs" [];
-	"encodings" -> "sys" [];
-	"encodings" -> "_winapi" [];
-	"ipaddress" -> "functools" [];
-	"ipaddress" -> "re" [];
-	"copyreg" -> "functools" [];
-	"copyreg" -> "operator" [];
-	"io" -> "_io" [];
-	"io" -> "abc" [];
-	"io" -> "warnings" [];
-	"functools" -> "abc" [];
-	"functools" -> "collections" [];
-	"functools" -> "reprlib" [];
-	"functools" -> "_thread" [];
-	"functools" -> "types" [];
-	"functools" -> "_functools" [];
-	"functools" -> "weakref" [];
-	"functools" -> "typing" [];
-	"os" -> "abc" [];
-	"os" -> "sys" [];
-	"os" -> "stat" [];
-	"os" -> "_collections_abc" [];
-	"os" -> "posix" [];
-	"os" -> "posixpath" [];
-	"os" -> "nt" [];
-	"os" -> "ntpath" [];
-	"os" -> "os.path" [];
-	"os" -> "warnings" [];
-	"os" -> "subprocess" [];
-	"os" -> "io" [];
-	"sre_parse" -> "warnings" [];
-	"sre_parse" -> "re" [];
-	"linecache" -> "functools" [];
-	"linecache" -> "sys" [];
-	"linecache" -> "os" [];
-	"linecache" -> "tokenize" [];
-	"pathlib" -> "fnmatch" [];
-	"pathlib" -> "functools" [];
-	"pathlib" -> "io" [];
-	"pathlib" -> "ntpath" [];
-	"pathlib" -> "os" [];
-	"pathlib" -> "posixpath" [];
-	"pathlib" -> "re" [];
-	"pathlib" -> "sys" [];
-	"pathlib" -> "warnings" [];
-	"pathlib" -> "_collections_abc" [];
-	"pathlib" -> "errno" [];
-	"pathlib" -> "operator" [];
-	"pathlib" -> "stat" [];
-	"pathlib" -> "pwd" [];
-	"pathlib" -> "grp" [];
-	"heapq" -> "_heapq" [];
-	"fnmatch" -> "os" [];
-	"fnmatch" -> "posixpath" [];
-	"fnmatch" -> "re" [];
-	"fnmatch" -> "functools" [];
-	"_collections_abc" -> "abc" [];
-	"_collections_abc" -> "sys" [];
-	"reprlib" -> "builtins" [];
-	"reprlib" -> "itertools" [];
-	"reprlib" -> "_thread" [];
-	"operator" -> "builtins" [];
-	"operator" -> "functools" [];
-	"operator" -> "_operator" [];
-	"abc" -> "_abc" [];
-	"abc" -> "_py_abc" [];
-	"_py_abc" -> "_weakrefset" [];
-	"sre_compile" -> "warnings" [];
-	"sre_compile" -> "re" [];
-	"weakref" -> "_weakref" [];
-	"weakref" -> "_weakrefset" [];
-	"weakref" -> "_collections_abc" [];
-	"weakref" -> "sys" [];
-	"weakref" -> "itertools" [];
-	"weakref" -> "copy" [];
-	"weakref" -> "atexit" [];
-	"weakref" -> "gc" [];
-	"tokenize" -> "builtins" [];
-	"tokenize" -> "codecs" [];
-	"tokenize" -> "collections" [];
-	"tokenize" -> "functools" [];
-	"tokenize" -> "io" [];
-	"tokenize" -> "itertools" [];
-	"tokenize" -> "re" [];
-	"tokenize" -> "sys" [];
-	"tokenize" -> "token" [];
-	"tokenize" -> "argparse" [];
-	"tokenize" -> "_tokenize" [];
-	"urllib.robotparser" -> "collections" [];
-	"urllib.robotparser" -> "time" [];
-	"urllib.response" -> "tempfile" [];
-	"urllib.request" -> "base64" [];
-	"urllib.request" -> "bisect" [];
-	"urllib.request" -> "email" [];
-	"urllib.request" -> "hashlib" [];
-	"urllib.request" -> "io" [];
-	"urllib.request" -> "os" [];
-	"urllib.request" -> "posixpath" [];
-	"urllib.request" -> "re" [];
-	"urllib.request" -> "socket" [];
-	"urllib.request" -> "string" [];
-	"urllib.request" -> "sys" [];
-	"urllib.request" -> "time" [];
-	"urllib.request" -> "tempfile" [];
-	"urllib.request" -> "contextlib" [];
-	"urllib.request" -> "warnings" [];
-	"urllib.request" -> "ssl" [];
-	"urllib.request" -> "mimetypes" [];
-	"urllib.request" -> "ftplib" [];
-	"urllib.request" -> "nturl2path" [];
-	"urllib.request" -> "getpass" [];
-	"urllib.request" -> "fnmatch" [];
-	"urllib.request" -> "_scproxy" [];
-	"urllib.request" -> "winreg" [];
-	"getpass" -> "contextlib" [];
-	"getpass" -> "io" [];
-	"getpass" -> "os" [];
-	"getpass" -> "sys" [];
-	"getpass" -> "warnings" [];
-	"getpass" -> "pwd" [];
-	"getpass" -> "termios" [];
-	"getpass" -> "msvcrt" [];
-	"nturl2path" -> "string" [];
-	"ftplib" -> "sys" [];
-	"ftplib" -> "socket" [];
-	"ftplib" -> "ssl" [];
-	"ftplib" -> "warnings" [];
-	"ftplib" -> "re" [];
-	"ftplib" -> "netrc" [];
-	"netrc" -> "os" [];
-	"netrc" -> "shlex" [];
-	"netrc" -> "stat" [];
-	"netrc" -> "pwd" [];
-	"http.cookiejar" -> "os" [];
-	"http.cookiejar" -> "copy" [];
-	"http.cookiejar" -> "datetime" [];
-	"http.cookiejar" -> "re" [];
-	"http.cookiejar" -> "time" [];
-	"http.cookiejar" -> "threading" [];
-	"http.cookiejar" -> "calendar" [];
-	"http.cookiejar" -> "logging" [];
-	"http.cookiejar" -> "io" [];
-	"http.cookiejar" -> "warnings" [];
-	"http.cookiejar" -> "traceback" [];
-	"_ssl" -> "socket" [];
-	"urllib.parse" -> "collections" [];
-	"urllib.parse" -> "functools" [];
-	"urllib.parse" -> "re" [];
-	"urllib.parse" -> "sys" [];
-	"urllib.parse" -> "types" [];
-	"urllib.parse" -> "warnings" [];
-	"urllib.parse" -> "ipaddress" [];
-	"urllib.parse" -> "unicodedata" [];
-	"urllib.error" -> "io" [];
-	"types" -> "sys" [];
-	"types" -> "functools" [];
-	"types" -> "_collections_abc" [];
-	"locale" -> "sys" [];
-	"locale" -> "encodings" [];
-	"locale" -> "re" [];
-	"locale" -> "_collections_abc" [];
-	"locale" -> "builtins" [];
-	"locale" -> "functools" [];
-	"locale" -> "_locale" [];
-	"locale" -> "warnings" [];
-	"locale" -> "os" [];
-	"_weakrefset" -> "_weakref" [];
-	"_weakrefset" -> "types" [];
-	"genericpath" -> "os" [];
-	"genericpath" -> "stat" [];
-	"traceback" -> "itertools" [];
-	"traceback" -> "linecache" [];
-	"traceback" -> "sys" [];
-	"traceback" -> "textwrap" [];
-	"traceback" -> "contextlib" [];
-	"traceback" -> "ast" [];
-	"stat" -> "_stat" [];
-	"warnings" -> "sys" [];
-	"warnings" -> "linecache" [];
-	"warnings" -> "tracemalloc" [];
-	"warnings" -> "re" [];
-	"warnings" -> "builtins" [];
-	"warnings" -> "traceback" [];
-	"warnings" -> "_warnings" [];
-	"tracemalloc" -> "functools" [];
-	"tracemalloc" -> "fnmatch" [];
-	"tracemalloc" -> "linecache" [];
-	"tracemalloc" -> "os.path" [];
-	"tracemalloc" -> "pickle" [];
-	"tracemalloc" -> "_tracemalloc" [];
-	"enum" -> "sys" [];
-	"enum" -> "builtins" [];
-	"enum" -> "types" [];
-	"enum" -> "operator" [];
-	"enum" -> "functools" [];
-	"enum" -> "warnings" [];
-	"collections.abc" -> "_collections_abc" [];
-	"collections" -> "_collections_abc" [];
-	"collections" -> "sys" [];
-	"collections" -> "itertools" [];
-	"collections" -> "keyword" [];
-	"collections" -> "operator" [];
-	"collections" -> "reprlib" [];
-	"collections" -> "_weakref" [];
-	"collections" -> "_collections" [];
-	"collections" -> "heapq" [];
-	"collections" -> "copy" [];
 	"_sre" -> "copy" [];
 	"_sre" -> "re" [];
 	"_posixsubprocess" -> "gc" [];
@@ -6017,12 +6013,16 @@ charset="UTF-8";
 	"ntpath" -> "nt" [];
 	"ntpath" -> "string" [];
 	"posix" -> "resource" [];
+	"time" -> "_strptime" [];
+	"gc" -> "time" [];
+	"encodings.ascii" -> "codecs" [];
+	"encodings" -> "codecs" [];
+	"encodings" -> "sys" [];
+	"encodings" -> "_winapi" [];
 	"codecs" -> "builtins" [];
 	"codecs" -> "sys" [];
 	"codecs" -> "_codecs" [];
 	"codecs" -> "encodings" [];
-	"time" -> "_strptime" [];
-	"gc" -> "time" [];
 	"xml.sax.expatreader" -> "xml" [];
 	"xml.sax.saxutils" -> "urllib" [];
 	"xml.etree.ElementTree" -> "xml" [];
@@ -6169,42 +6169,28 @@ charset="UTF-8";
 	"kivy.uix.screenmanager" -> "kivy" [];
 	"kivymd.app" -> "kivy" [];
 	"kivymd.utils.fpsmonitor" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_nspaste" -> "kivy" [];
-	"kivy.core.spelling.spelling_enchant" -> "kivy" [];
-	"kivy.core.image.img_pil" -> "kivy" [];
-	"kivy.core.image.img_tex" -> "kivy" [];
-	"kivy.core.image.img_dds" -> "kivy" [];
-	"kivy.uix.spinner" -> "kivy" [];
-	"kivy.uix.treeview" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_xsel" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_xclip" -> "kivy" [];
-	"kivy.core.audio.audio_ffpyplayer" -> "kivy" [];
-	"kivy.core.image.img_ffpyplayer" -> "kivy" [];
-	"kivy.core.text.text_pil" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_winctypes" -> "kivy" [];
-	"kivy.uix.actionbar" -> "kivy" [];
-	"kivy.uix.videoplayer" -> "kivy" [];
-	"kivy.core.camera.camera_opencv" -> "kivy" [];
-	"kivy.uix.progressbar" -> "kivy" [];
-	"kivy.core.camera.camera_gi" -> "kivy" [];
-	"kivy.uix.stacklayout" -> "kivy" [];
-	"kivy.core.image.img_pygame" -> "kivy" [];
-	"kivy.core.audio" -> "kivy" [];
-	"kivy.core.window.window_egl_rpi" -> "kivy" [];
-	"kivy.core.video" -> "kivy" [];
-	"kivy.uix.gesturesurface" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_pygame" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_sdl2" -> "kivy" [];
-	"kivy.core.audio.audio_gstplayer" -> "kivy" [];
-	"kivy.uix.scatterlayout" -> "kivy" [];
-	"kivy.uix.effectwidget" -> "kivy" [];
-	"kivy.uix.sandbox" -> "kivy" [];
 	"kivy.uix.slider" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_xsel" -> "kivy" [];
+	"kivy.core.image.img_pygame" -> "kivy" [];
+	"kivy.core.image.img_sdl2" -> "kivy" [];
 	"kivy.uix.video" -> "kivy" [];
-	"kivy.uix.camera" -> "kivy" [];
-	"kivy.core.video.video_ffpyplayer" -> "kivy" [];
-	"kivy.core.audio.audio_pygame" -> "kivy" [];
+	"kivy.uix.treeview" -> "kivy" [];
+	"kivy.core.camera.camera_opencv" -> "kivy" [];
+	"kivy.core.spelling.spelling_enchant" -> "kivy" [];
+	"kivy.uix.progressbar" -> "kivy" [];
+	"kivy.uix.carousel" -> "kivy" [];
+	"kivy.core.image.img_pil" -> "kivy" [];
+	"kivy.uix.effectwidget" -> "kivy" [];
 	"kivy.core.clipboard.clipboard_gtk3" -> "kivy" [];
+	"kivy.uix.splitter" -> "kivy" [];
+	"kivy.uix.scatterlayout" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_nspaste" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_sdl2" -> "kivy" [];
+	"kivy.core.audio" -> "kivy" [];
+	"kivy.uix.gesturesurface" -> "kivy" [];
+	"kivy.uix.switch" -> "kivy" [];
+	"kivy.core.audio.audio_gstplayer" -> "kivy" [];
+	"kivy.uix.videoplayer" -> "kivy" [];
 	"kivy.uix.rst" -> "kivy" [];
 	"docutils.parsers.rst.languages" -> "docutils" [];
 	"xml.dom.pulldom" -> "xml" [];
@@ -6482,26 +6468,40 @@ charset="UTF-8";
 	"docutils.writers.odf_odt" -> "xml" [];
 	"docutils.writers.latex2e" -> "urllib" [];
 	"docutils.writers._html_base" -> "urllib" [];
-	"kivy.core.image.img_sdl2" -> "kivy" [];
-	"kivy.uix.carousel" -> "kivy" [];
-	"kivy.uix.pagelayout" -> "kivy" [];
-	"kivy.uix.switch" -> "kivy" [];
-	"kivy.core.camera.camera_android" -> "kivy" [];
-	"kivy.core.text.text_sdl2" -> "kivy" [];
-	"kivy.uix.accordion" -> "kivy" [];
-	"kivy.core.clipboard.clipboard_dbusklipper" -> "kivy" [];
+	"kivy.uix.sandbox" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_xclip" -> "kivy" [];
+	"kivy.core.image.img_ffpyplayer" -> "kivy" [];
+	"kivy.core.audio.audio_pygame" -> "kivy" [];
 	"kivy.core.camera.camera_picamera" -> "kivy" [];
-	"kivy.core.text.text_pygame" -> "kivy" [];
-	"kivy.core.camera" -> "kivy" [];
-	"kivy.core.video.video_gstplayer" -> "kivy" [];
-	"kivy.uix.recycleview.__init__" -> "kivy" [];
-	"kivy.uix.splitter" -> "kivy" [];
-	"kivy.uix.codeinput" -> "kivy" [];
+	"kivy.core.audio.audio_ffpyplayer" -> "kivy" [];
+	"kivy.core.image.img_dds" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_pygame" -> "kivy" [];
+	"kivy.uix.pagelayout" -> "kivy" [];
+	"kivy.core.camera.camera_android" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_dbusklipper" -> "kivy" [];
 	"kivy.uix.behaviors.knspace" -> "kivy" [];
-	"pathlib" -> "urllib" [];
+	"kivy.uix.actionbar" -> "kivy" [];
+	"kivy.core.text.text_pygame" -> "kivy" [];
+	"kivy.core.video" -> "kivy" [];
+	"kivy.uix.stacklayout" -> "kivy" [];
+	"kivy.core.window.window_egl_rpi" -> "kivy" [];
+	"kivy.uix.recycleview.__init__" -> "kivy" [];
+	"kivy.uix.spinner" -> "kivy" [];
+	"kivy.core.video.video_gstplayer" -> "kivy" [];
+	"kivy.core.text.text_pil" -> "kivy" [];
+	"kivy.core.video.video_ffpyplayer" -> "kivy" [];
+	"kivy.core.image.img_tex" -> "kivy" [];
+	"kivy.uix.codeinput" -> "kivy" [];
+	"kivy.core.text.text_sdl2" -> "kivy" [];
+	"kivy.core.clipboard.clipboard_winctypes" -> "kivy" [];
+	"kivy.uix.accordion" -> "kivy" [];
+	"kivy.core.camera" -> "kivy" [];
+	"kivy.core.camera.camera_gi" -> "kivy" [];
+	"kivy.uix.camera" -> "kivy" [];
 	"urllib.request" -> "http" [];
 	"nturl2path" -> "urllib" [];
 	"http.cookiejar" -> "urllib" [];
+	"pathlib" -> "urllib" [];
 	"traceback" -> "collections" [];
 	"tracemalloc" -> "collections" [];
 	"_elementtree" -> "xml" [];
@@ -6515,7 +6515,7 @@ charset="UTF-8";
 	"kivymd.uix.floatlayout" -> "kivy" [];
 	"kivymd.uix.boxlayout" -> "kivy" [];
 	"kivy" -> "xml" [];
-	"kivy.core.video.video_ffmpeg" -> "kivy" [];
 	"docutils.nodes" -> "xml" [];
 	"docutils.writers.docutils_xml" -> "xml" [];
+	"kivy.core.video.video_ffmpeg" -> "kivy" [];
 }
