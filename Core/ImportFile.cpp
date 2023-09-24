@@ -27,6 +27,6 @@ int main(){
     fprintf(f,"");
     fclose(f);
     f = fopen("InOut\\WeeklyLog.txt","w");
-    fprintf(f,"");
+    fprintf(f," ");
     fclose(f);
 }
