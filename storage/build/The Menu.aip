@@ -28,6 +28,7 @@
     <ROW Directory="ButtonOfUI_Dir" Directory_Parent="UI_Dir" DefaultDir="BUTTON~1|ButtonOfUI"/>
     <ROW Directory="ChooseIcon_Dir" Directory_Parent="UI_Dir" DefaultDir="CHOOSE~1|ChooseIcon"/>
     <ROW Directory="Core_Dir" Directory_Parent="APPDIR" DefaultDir="Core"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="InOut_Dir" Directory_Parent="Core_Dir" DefaultDir="InOut"/>
     <ROW Directory="Noto_Serif_Dir" Directory_Parent="Text_Dir" DefaultDir="NOTO_S~1|Noto_Serif"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
@@ -38,26 +39,24 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{AF7938F5-94A9-4DC9-995E-EDB66B4FA8FA}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="ActivateCore.exe" ComponentId="{4505979F-99F9-4887-B4DE-FA8491B7E8C7}" Directory_="Core_Dir" Attributes="0" KeyPath="ActivateCore.exe"/>
-    <ROW Component="AddFamilyChoose.png" ComponentId="{AA21C1CE-5BD8-4E1B-B55C-02314EE39325}" Directory_="ChooseIcon_Dir" Attributes="0" KeyPath="AddFamilyChoose.png" Type="0"/>
-    <ROW Component="BevanItalic.ttf" ComponentId="{784CB609-F4D3-4514-9092-8B9CB5CC3FAA}" Directory_="Text_Dir" Attributes="0" Type="0"/>
-    <ROW Component="ButtonAddFamily.png" ComponentId="{ECABBF28-4B05-44C2-87F0-3A721349AA53}" Directory_="ButtonOfUI_Dir" Attributes="0" KeyPath="ButtonAddFamily.png" Type="0"/>
-    <ROW Component="CaloriesCalculator.exe" ComponentId="{E55006B2-70E3-49CB-A3BC-A38D1FEEF1EC}" Directory_="Core_Dir" Attributes="0" KeyPath="CaloriesCalculator.exe"/>
-    <ROW Component="DailyMenu.exe" ComponentId="{AC2D3C9D-BABA-43D3-84F9-BC5661FC450E}" Directory_="Core_Dir" Attributes="0" KeyPath="DailyMenu.exe"/>
-    <ROW Component="DeleteFood.exe" ComponentId="{9DCFFAC6-79B7-40E1-8AE5-D7C52A9995D9}" Directory_="Core_Dir" Attributes="0" KeyPath="DeleteFood.exe"/>
-    <ROW Component="FilterFood.exe" ComponentId="{898B686F-88F7-4DDC-875B-2D84A8992DA6}" Directory_="Core_Dir" Attributes="0" KeyPath="FilterFood.exe"/>
-    <ROW Component="ImportFile.exe" ComponentId="{1B62097F-9F96-4974-8A61-DBAD1961227C}" Directory_="Core_Dir" Attributes="0" KeyPath="ImportFile.exe"/>
-    <ROW Component="InOut" ComponentId="{FE2B4E31-C291-4F5A-971B-66C6520399E4}" Directory_="InOut_Dir" Attributes="0"/>
-    <ROW Component="NotoSerifBlack.ttf" ComponentId="{C35A0081-F66B-4544-999A-81DE86C90FE1}" Directory_="static_Dir" Attributes="0" Type="0"/>
-    <ROW Component="NotoSerifItalicVariableFont_wdthwght.ttf" ComponentId="{FDC8560C-367C-49EB-8C36-E9E49BEB22B5}" Directory_="Noto_Serif_Dir" Attributes="0" Type="0"/>
+    <ROW Component="ActivateCore.exe" ComponentId="{04A4DB15-C276-4BCC-BF63-B9D38E9C6742}" Directory_="Core_Dir" Attributes="0" KeyPath="ActivateCore.exe"/>
+    <ROW Component="AddFamilyChoose.png" ComponentId="{6EE50FAF-F657-4EB8-89D8-8C5553F8F053}" Directory_="ChooseIcon_Dir" Attributes="0" KeyPath="AddFamilyChoose.png" Type="0"/>
+    <ROW Component="BevanItalic.ttf" ComponentId="{E30E672F-8F66-4F6B-8669-EFBE117527C3}" Directory_="Text_Dir" Attributes="0" Type="0"/>
+    <ROW Component="ButtonAddFamily.png" ComponentId="{A9AB4BD1-B57B-439D-BBC2-7B3B8E161DA7}" Directory_="ButtonOfUI_Dir" Attributes="0" KeyPath="ButtonAddFamily.png" Type="0"/>
+    <ROW Component="CaloriesCalculator.exe" ComponentId="{91A830D1-2840-4DDC-87A4-C1700C28B4DC}" Directory_="Core_Dir" Attributes="0" KeyPath="CaloriesCalculator.exe"/>
+    <ROW Component="DailyMenu.exe" ComponentId="{06EAD68C-1D3C-4A0E-A902-D7D736E4A51C}" Directory_="Core_Dir" Attributes="0" KeyPath="DailyMenu.exe"/>
+    <ROW Component="DeleteFood.exe" ComponentId="{1277E3F0-F436-4D0A-9CF9-27E816A2A5B1}" Directory_="Core_Dir" Attributes="0" KeyPath="DeleteFood.exe"/>
+    <ROW Component="FilterFood.exe" ComponentId="{6A553FDB-D440-449B-A560-C6B64A421BE1}" Directory_="Core_Dir" Attributes="0" KeyPath="FilterFood.exe"/>
+    <ROW Component="ImportFile.exe" ComponentId="{38194CE8-37A2-4633-A4A8-CBE86ACF1FD4}" Directory_="Core_Dir" Attributes="0" KeyPath="ImportFile.exe"/>
+    <ROW Component="InOut" ComponentId="{3F55E76E-19A4-46C9-A356-A360154E4C31}" Directory_="InOut_Dir" Attributes="0"/>
+    <ROW Component="NotoSerifBlack.ttf" ComponentId="{7A36055D-C837-45C6-B1FF-958DC3B2A201}" Directory_="static_Dir" Attributes="0" Type="0"/>
+    <ROW Component="NotoSerifItalicVariableFont_wdthwght.ttf" ComponentId="{F25855FA-AC9B-4D34-A870-493BCAB4700E}" Directory_="Noto_Serif_Dir" Attributes="0" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{2FA2136C-F0A2-4990-A07A-41504C5FE615}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="TheMenu.exe" ComponentId="{95D40B47-10DE-47A5-B9EF-7DB17CE44D9F}" Directory_="APPDIR" Attributes="256" KeyPath="TheMenu.exe"/>
-    <ROW Component="clearFoodLog.exe" ComponentId="{091CC011-053C-40AB-AAE6-E269698DBCE7}" Directory_="Core_Dir" Attributes="0" KeyPath="clearFoodLog.exe"/>
-    <ROW Component="clearTotalCalories.exe" ComponentId="{E15B72A0-014F-4532-9245-53A6E9FD9E80}" Directory_="Core_Dir" Attributes="0" KeyPath="clearTotalCalories.exe"/>
-    <ROW Component="findIdFood.exe" ComponentId="{BB73B0B0-3D91-4F20-A848-FA9E1DDED18A}" Directory_="Core_Dir" Attributes="0" KeyPath="findIdFood.exe"/>
-    <ROW Component="libgcc_s_dw21.dll" ComponentId="{8E8C437B-4EAC-4925-A637-4D3F09E021DF}" Directory_="APPDIR" Attributes="0" KeyPath="libgcc_s_dw21.dll"/>
-    <ROW Component="libmingwex4.dll" ComponentId="{E71AD5FA-C3D8-448E-BD3F-48E9BB5436BE}" Directory_="APPDIR" Attributes="0" KeyPath="libmingwex4.dll"/>
-    <ROW Component="logo.ico" ComponentId="{7B98525A-63E5-4C4C-AEBE-5ADCF125DB01}" Directory_="image_Dir" Attributes="0" KeyPath="logo.ico" Type="0"/>
+    <ROW Component="TheMenu1.exe" ComponentId="{8794339D-1B39-4F7B-B6DF-48BEEFA8D5BB}" Directory_="APPDIR" Attributes="256" KeyPath="TheMenu1.exe"/>
+    <ROW Component="clearFoodLog.exe" ComponentId="{04A38AC1-EB7C-411F-AE3E-CCB7C3EE5069}" Directory_="Core_Dir" Attributes="0" KeyPath="clearFoodLog.exe"/>
+    <ROW Component="clearTotalCalories.exe" ComponentId="{FB1B77E1-600C-4D2C-9E69-0BDA0958558D}" Directory_="Core_Dir" Attributes="0" KeyPath="clearTotalCalories.exe"/>
+    <ROW Component="findIdFood.exe" ComponentId="{EDFCD770-5503-4289-BFEB-3E57661403A0}" Directory_="Core_Dir" Attributes="0" KeyPath="findIdFood.exe"/>
+    <ROW Component="logo.ico" ComponentId="{0D73D570-CB54-4D48-A2C9-6318E39FEB7E}" Directory_="image_Dir" Attributes="0" KeyPath="logo.ico" Type="0"/>
     <ROW Component="logo.png" ComponentId="{4AA773EB-CEAB-45C5-8C9E-4DC6511DB51E}" Directory_="APPDIR" Attributes="0" KeyPath="logo.png" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
@@ -69,6 +68,7 @@
     <ROW File="mealfoodicon.png" Component_="logo.png" FileName="MEAL-F~1.PNG|meal-food-icon.png" Attributes="0" SourcePath="..\..\meal-food-icon.png" SelfReg="false"/>
     <ROW File="menu_1046747.ico" Component_="logo.png" FileName="MENU_1~1.ICO|menu_1046747.ico" Attributes="0" SourcePath="..\..\menu_1046747.ico" SelfReg="false"/>
     <ROW File="readme.txt" Component_="logo.png" FileName="readme.txt" Attributes="0" SourcePath="..\..\readme.txt" SelfReg="false"/>
+    <ROW File="ActivateCore.exe" Component_="ActivateCore.exe" FileName="ACTIVA~1.EXE|ActivateCore.exe" Attributes="0" SourcePath="..\..\Core\ActivateCore.exe" SelfReg="false" DigSign="true"/>
     <ROW File="CaloriesCalculator.exe" Component_="CaloriesCalculator.exe" FileName="CALORI~1.EXE|Calories-Calculator.exe" Attributes="0" SourcePath="..\..\Core\Calories-Calculator.exe" SelfReg="false" DigSign="true"/>
     <ROW File="clearFoodLog.exe" Component_="clearFoodLog.exe" FileName="CLEARF~1.EXE|clearFoodLog.exe" Attributes="0" SourcePath="..\..\Core\clearFoodLog.exe" SelfReg="false" DigSign="true"/>
     <ROW File="clearTotalCalories.exe" Component_="clearTotalCalories.exe" FileName="CLEART~1.EXE|clearTotalCalories.exe" Attributes="0" SourcePath="..\..\Core\clearTotalCalories.exe" SelfReg="false" DigSign="true"/>
@@ -170,10 +170,7 @@
     <ROW File="NotoSerif_SemiCondensedThin.ttf" Component_="NotoSerifBlack.ttf" FileName="NOTOS~71.TTF|NotoSerif_SemiCondensed-Thin.ttf" Attributes="0" SourcePath="..\..\Core\image\UI\Text\Noto_Serif\static\NotoSerif_SemiCondensed-Thin.ttf" SelfReg="false"/>
     <ROW File="NotoSerif_SemiCondensedThinItalic.ttf" Component_="NotoSerifBlack.ttf" FileName="NOTOS~72.TTF|NotoSerif_SemiCondensed-ThinItalic.ttf" Attributes="0" SourcePath="..\..\Core\image\UI\Text\Noto_Serif\static\NotoSerif_SemiCondensed-ThinItalic.ttf" SelfReg="false"/>
     <ROW File="ImportFile.exe" Component_="ImportFile.exe" FileName="IMPORT~1.EXE|ImportFile.exe" Attributes="0" SourcePath="..\..\Core\ImportFile.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="ActivateCore.exe" Component_="ActivateCore.exe" FileName="ACTIVA~1.EXE|ActivateCore.exe" Attributes="0" SourcePath="..\..\Core\ActivateCore.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="TheMenu.exe" Component_="TheMenu.exe" FileName="TheMenu.exe" Attributes="0" SourcePath="..\..\dist\TheMenu.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="libgcc_s_dw21.dll" Component_="libgcc_s_dw21.dll" FileName="LIBGCC~1.DLL|libgcc_s_dw2-1.dll" Attributes="0" SourcePath="libgcc_s_dw2-1.dll" SelfReg="false"/>
-    <ROW File="libmingwex4.dll" Component_="libmingwex4.dll" FileName="LIBMIN~1.DLL|libmingwex-4.dll" Attributes="0" SourcePath="libmingwex-4.dll" SelfReg="false"/>
+    <ROW File="TheMenu1.exe" Component_="TheMenu1.exe" FileName="TheMenu1.exe" Attributes="0" SourcePath="..\..\dist\TheMenu1.exe" SelfReg="false" DigSign="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -250,6 +247,7 @@
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="logo.png"/>
+    <ROW Feature_="MainFeature" Component_="ActivateCore.exe"/>
     <ROW Feature_="MainFeature" Component_="CaloriesCalculator.exe"/>
     <ROW Feature_="MainFeature" Component_="clearFoodLog.exe"/>
     <ROW Feature_="MainFeature" Component_="clearTotalCalories.exe"/>
@@ -262,13 +260,10 @@
     <ROW Feature_="MainFeature" Component_="AddFamilyChoose.png"/>
     <ROW Feature_="MainFeature" Component_="BevanItalic.ttf"/>
     <ROW Feature_="MainFeature" Component_="NotoSerifItalicVariableFont_wdthwght.ttf"/>
-    <ROW Feature_="MainFeature" Component_="TheMenu.exe"/>
     <ROW Feature_="MainFeature" Component_="NotoSerifBlack.ttf"/>
     <ROW Feature_="MainFeature" Component_="ImportFile.exe"/>
-    <ROW Feature_="MainFeature" Component_="ActivateCore.exe"/>
+    <ROW Feature_="MainFeature" Component_="TheMenu1.exe"/>
     <ROW Feature_="MainFeature" Component_="InOut"/>
-    <ROW Feature_="MainFeature" Component_="libgcc_s_dw21.dll"/>
-    <ROW Feature_="MainFeature" Component_="libmingwex4.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -297,6 +292,9 @@
     <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
     <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="TheMenu1" Directory_="DesktopFolder" Name="TheMenu1" Component_="TheMenu1.exe" Target="[#TheMenu1.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>

@@ -192,11 +192,15 @@ from kivy.uix.screenmanager import Screen, ScreenManager
 
 from kivymd.uix.datatables import MDDataTable
 
+from kivymd.uix.card import MDCard
+
 from kivy.uix.anchorlayout import AnchorLayout
 
 from kivy.uix.boxlayout import BoxLayout
 
 from kivy.uix.label import Label
+
+from kivymd.uix.dropdownitem import MDDropDownItem
 
 from kivy.uix.button import Button
 
@@ -215,6 +219,8 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.popup import Popup
 
 from kivy.uix.gridlayout import GridLayout
+
+from kivymd.uix.gridlayout import GridLayout
 
 from kivy.metrics import dp
 
@@ -601,7 +607,6 @@ class FoodScreen(Screen):
                 f.write("\n")
                 f.write(calories_of_food.text)
                 f.write("\n")
-                f.write(" ")
            
             noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
             noti.open()
