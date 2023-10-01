@@ -919,9 +919,15 @@ class NutrientsScreen(Screen):
         main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
         main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
 
+        func_side = BoxLayout(orientation = "horizontal")
+        func_side.add_widget(Button(text = "All Food",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        func_side.add_widget(Button(text = "Choose Type",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        func_side.add_widget(Button(text = "Choose Diet",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+
         screen = BoxLayout(orientation = "vertical", spacing = 15)
         screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
         screen.add_widget(main_side)
+        screen.add_widget(func_side)
         screen.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
 
         self.add_widget(screen)
