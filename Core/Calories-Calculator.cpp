@@ -17,11 +17,6 @@ struct CaloriesCalculator{
                 4 = moi ngay deu luyen tap
                 5 = tinh chat cong viec gan lien voi the thao
                 */
-    int Type;   /*
-                1 = Gain weight
-                2 = Loss weight
-                3 = Normal
-                */
         
 
 }; CaloriesCalculator C[1000];
@@ -42,14 +37,13 @@ void addMenber(){
         strcpy(t[i].temp,line_buf);
         line_size = getline(&line_buf, &line_buf_size, fp);
         i++;
-        }while(i<6);
+        }while(i<5);
         i = 0;
         C[y].sex = atoi(t[0].temp);
         C[y].height = atoi(t[1].temp);
         C[y].weight = atoi(t[2].temp);
         C[y].age = atoi(t[3].temp);
         C[y].Style = atoi(t[4].temp);
-        C[y].Type = atoi(t[5].temp);
         y++;
         len++;
 
@@ -82,7 +76,6 @@ int main(){
     FILE *f = fopen(TotalCalories,"w");
     fprintf(f,"%d",len);
     fprintf(f,"\n%.2f",totalcalo);
-    fprintf(f,"\n%d",C[0].Type);
 
     
 
