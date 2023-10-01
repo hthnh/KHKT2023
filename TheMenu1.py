@@ -172,6 +172,15 @@ Builder.load_string("""
             width: 5
             points: self.x,self.center_y*1.8,self.center_x*2,self.center_y*1.8
 
+<NutrientsScreen>:
+    canvas.before:
+        Color:
+            rgb:(27/255, 46/255, 71/255)
+        Line:
+            width: 5
+            points: self.x,self.center_y*1.8,self.center_x*2,self.center_y*1.8
+
+
 
 <FoodScreen>:
     canvas.before:
@@ -354,46 +363,56 @@ class UserScreen(Screen):
 
         def takeStyle(value):
             global style
-            if value == "office work" :
+            if value == "Office work" :
                 style = 1
-            elif value == "outdoor work" :
+            elif value == "Outdoor work" :
                 style = 2
-            elif value == "exercise sometimes" :
+            elif value == "Exercise sometimes" :
                 style = 3
-            elif value == "always exercise" :
+            elif value == "Always exercise" :
                 style = 4
-            elif value == "athlete" :
+            elif value == "Athlete" :
                 style = 5
 
         def HelpStyle(event):
             layout = BoxLayout(orientation = "vertical")
-            layout.add_widget(Label(text = "Office work is  work normally carried out in an office or school ") )
-            layout.add_widget(Label(text = "Outdoor work is do something happens outdoors"))
-            layout.add_widget(Label(text = "Exercise sometimes is sometime do physical activities to make your body strong and health"))
-            layout.add_widget(Label(text = "Always exercise is always do physical activities to make your body strong and health"))
-            layout.add_widget(Label(text = "Athlete is you are athlete"))
+            l1 = Label(color = (0,0,0,1) ,text = "Office work is  work normally carried out in an office or school ")
+            l1.bind(size=lambda s, w: s.setter('text_size')(s, w))
+            layout.add_widget(l1)
+            l2 = Label(color = (0,0,0,1) ,text = "Outdoor work is do something happens outdoors")
+            l2.bind(size=lambda s,w : s.setter('text_size')(s,w))
+            layout.add_widget(l2)
+            l3 = Label(color = (0,0,0,1) ,text = "Exercise sometimes is sometime do physical activities to make your body strong and health")
+            l3.bind(size=lambda s,w : s.setter('text_size')(s,w))
+            layout.add_widget(l3)
+            l4 = Label(color = (0,0,0,1) ,text = "Always exercise is always do physical activities to make your body strong and health")
+            l4.bind(size=lambda s,w : s.setter('text_size')(s,w))
+            layout.add_widget(l4)
+            l5 = Label(color = (0,0,0,1) ,text = "Athlete is you are athlete")
+            l5.bind(size=lambda s,w : s.setter('text_size')(s,w))
+            layout.add_widget(l5)
             helpPopUp = Popup(title = "Help",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.675,0.5))
             helpPopUp.open()
         
         Style = DropDown()
 
-        one = Button(text = "office work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        one = Button(text = "Office work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         one.bind(on_release = lambda one: Style.select(one.text))
         Style.add_widget(one)
 
-        two = Button(text = "outdoor work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        two = Button(text = "Outdoor work",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         two.bind(on_release = lambda two: Style.select(two.text))
         Style.add_widget(two)
 
-        three = Button(text = "exercise sometimes",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        three = Button(text = "Exercise sometimes",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         three.bind(on_release = lambda three: Style.select(three.text))
         Style.add_widget(three)
         
-        four = Button(text = "always exercise",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        four = Button(text = "Always exercise",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         four.bind(on_release = lambda four: Style.select(four.text))
         Style.add_widget(four)
 
-        five = Button(text = "athlete",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
+        five = Button(text = "Athlete",background_normal = "", background_color = (132/255,166/255,207/255,1), size_hint_y = None, height = 35, on_release= lambda style: takeStyle(value=style.text))
         five.bind(on_release = lambda five: Style.select(five.text))
         Style.add_widget(five)
 
@@ -832,47 +851,6 @@ class AllFoodScreen(Screen):
         self.main()
             
     
-class MainScreen(Screen):
-    def load_size(self):
-        Window.size = (size_screen_x,size_screen_y)
-    def on_enter(self):
-        self.load_size()
-    def developing(self):
-        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Developing",color = (0,0,0,1.00),), auto_dismiss = True, size_hint = (0.5,0.2))
-        noti.open()
-        pass
-    def picknow_button_on(self):
-        self.ids.image_picknow.source = "Core/image/UI/ChooseIcon/PickNowChoose.png"
-    def picknow_button_release(self):
-        self.ids.image_picknow.source = "Core/image/UI/ButtonOfUI/ButtonPickNow.png"
-        self.developing()
-    def nutrients_button_on(self):
-        self.ids.image_nutrients.source = "Core/image/UI/ChooseIcon/NutriChoose.png"
-    def nutrients_button_release(self):
-        self.ids.image_nutrients.source = "Core/image/UI/ButtonOfUI/ButtonNutrients.png"
-        self.developing()
-    def addfood_button_on(self):
-        self.ids.image_addfood.source = "Core/image/UI/ChooseIcon/AddFoodchoose.png"
-    def addfood_button_release(self):
-        self.ids.image_addfood.source = "Core/image/UI/ButtonOfUI/ButtonAddFood.png"
-        themenu.sm.current = 'food'
-    def addfamily_button_on(self):
-        self.ids.image_addfamily.source = "Core/image/UI/ChooseIcon/AddFamilychoose.png"
-    def addfamily_button_release(self):
-        self.ids.image_addfamily.source = "Core/image/UI/ButtonOfUI/ButtonAddFamily.png"
-        themenu.sm.current = "user"
-    def menu_button_on(self):
-        self.ids.image_menu.source = "Core/image/UI/ChooseIcon/Menuchoose.png"
-    def menu_button_release(self):
-        self.ids.image_menu.source = "Core/image/UI/ButtonOfUI/ButtonMenu.png"
-        themenu.sm.current = 'menu'
-    def order_button_on(self):
-        self.ids.image_order.source = "Core/image/UI/ChooseIcon/OrderChoose.png"
-    def order_button_release(self):
-        self.ids.image_order.source = "Core/image/UI/ButtonOfUI/ButtonOrder.png"
-        self.developing()
-    pass    
-
 
 class MenuScreen(Screen):
     def re_run_core(self):
@@ -886,9 +864,11 @@ class MenuScreen(Screen):
                 L[i] = f.readline()
             for i in range(7):
                 D[i] = f.readline()
+    
+    def load_screen_size(self):
+        Window.size = (size_screen_y,size_screen_x)
 
     def load_table(self):
-        Window.size = (size_screen_y,size_screen_x)
         layout = AnchorLayout()
         self.data_tables = MDDataTable(
             pos_hint = {"center_x": .5, "center_y": .55},
@@ -914,9 +894,83 @@ class MenuScreen(Screen):
 
     def on_enter(self):
         self.re_run_core()
+        self.load_screen_size()
         self.load_table()
 
 
+class NutrientsScreen(Screen):
+    def load_screen_size(self):
+        Window.size = (size_screen_x,size_screen_y)
+
+    def main(self):
+        main_side = GridLayout(cols = 2)
+        main_side.add_widget(Label(text = "1",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "1",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "2",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "2",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "3",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "3",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "4",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "4",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "5",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "5",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "6",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "6",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
+        main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
+
+        screen = BoxLayout(orientation = "vertical", spacing = 15)
+        screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
+        screen.add_widget(main_side)
+        screen.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+
+        self.add_widget(screen)
+        return screen
+
+    def on_enter(self):
+        self.load_screen_size()
+        self.main()
+
+
+class MainScreen(Screen):
+    def load_size(self):
+        Window.size = (size_screen_x,size_screen_y)
+    def on_enter(self):
+        self.load_size()
+    def developing(self):
+        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Developing",color = (0,0,0,1.00),), auto_dismiss = True, size_hint = (0.5,0.2))
+        noti.open()
+        pass
+    def picknow_button_on(self):
+        self.ids.image_picknow.source = "Core/image/UI/ChooseIcon/PickNowChoose.png"
+    def picknow_button_release(self):
+        self.ids.image_picknow.source = "Core/image/UI/ButtonOfUI/ButtonPickNow.png"
+        self.developing()
+    def nutrients_button_on(self):
+        self.ids.image_nutrients.source = "Core/image/UI/ChooseIcon/NutriChoose.png"
+    def nutrients_button_release(self):
+        self.ids.image_nutrients.source = "Core/image/UI/ButtonOfUI/ButtonNutrients.png"
+        themenu.sm.current = "nutrients"
+    def addfood_button_on(self):
+        self.ids.image_addfood.source = "Core/image/UI/ChooseIcon/AddFoodchoose.png"
+    def addfood_button_release(self):
+        self.ids.image_addfood.source = "Core/image/UI/ButtonOfUI/ButtonAddFood.png"
+        themenu.sm.current = 'food'
+    def addfamily_button_on(self):
+        self.ids.image_addfamily.source = "Core/image/UI/ChooseIcon/AddFamilychoose.png"
+    def addfamily_button_release(self):
+        self.ids.image_addfamily.source = "Core/image/UI/ButtonOfUI/ButtonAddFamily.png"
+        themenu.sm.current = "user"
+    def menu_button_on(self):
+        self.ids.image_menu.source = "Core/image/UI/ChooseIcon/Menuchoose.png"
+    def menu_button_release(self):
+        self.ids.image_menu.source = "Core/image/UI/ButtonOfUI/ButtonMenu.png"
+        themenu.sm.current = 'menu'
+    def order_button_on(self):
+        self.ids.image_order.source = "Core/image/UI/ChooseIcon/OrderChoose.png"
+    def order_button_release(self):
+        self.ids.image_order.source = "Core/image/UI/ButtonOfUI/ButtonOrder.png"
+        self.developing()
 
 
 class MyApp(MDApp):
@@ -928,6 +982,7 @@ class MyApp(MDApp):
         self.sm.add_widget(FoodScreen(name = "food"))
         self.sm.add_widget(MenuScreen(name = "menu"))
         self.sm.add_widget(AllFoodScreen(name = "allfood"))
+        self.sm.add_widget(NutrientsScreen(name = "nutrients"))
         return self.sm
     def to_MainScreen(self,b):
         themenu.sm.current = "main"
