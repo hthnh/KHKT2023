@@ -264,7 +264,18 @@ int Dinner(){
     }
     return y;
 }
+void a(){
+    if(B[i].Carb + L[i].Carb + D[i].Carb = DNeed.Card){
+        strcpy(Ds[y].Breakfast.Name,B[i]
+    }
+}
 
+void test(){
+    numberOfFoodBreakfast = Breakfast();
+    numberOfFoodDinner = Dinner();
+    numberOfFoodLunch = Lunch();
+    
+}
 
 
 void findFood(){
