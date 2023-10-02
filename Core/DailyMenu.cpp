@@ -206,7 +206,7 @@ void clearFood(int i){
 }
 
 
-void Breakfast(){
+int Breakfast(){
  int y = 0;
     for(int i = 0; i <= numberOfFood-1; i++){
         if(strchr(F[i].TimeOfDay, '1') != NULL){
@@ -223,9 +223,10 @@ void Breakfast(){
             y++;
         }
     }
+    return y;
 }
 
-void Lunch(){
+int Lunch(){
     int y = 0;
     for(int i = 0; i <= numberOfFood-1; i++){
         if(strchr(F[i].TimeOfDay, '2') != NULL){
@@ -242,8 +243,9 @@ void Lunch(){
             y++;
         }
     }
+    return y;
 }
-void Dinner(){
+int Dinner(){
     int y=0;
    for(int i = 0; i <= numberOfFood-1; i++){
         if(strchr(F[i].TimeOfDay, '3') != NULL){
@@ -260,6 +262,7 @@ void Dinner(){
             y++;
         }
     }
+    return y;
 }
 
 
