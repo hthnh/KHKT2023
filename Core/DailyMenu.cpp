@@ -11,7 +11,7 @@
 #define Properties "InOut\\Properties.txt"
 
 
-int numberOfFood = 0,numberOfFoodBreakfast = 0,numberOfFoodDinner = 0,numberOfFoodLunch = 0,numberOfPeople,kcal,positiveLimit, negativeLimit, len;
+int numberOfFood =0,numberOfFoodBreakfast[2],numberOfFoodDinner[2],numberOfFoodLunch[2],numberOfPeople,kcal,positiveLimit, negativeLimit, len;
 char date[10];
 int type, diet;
 struct Food{
@@ -81,12 +81,10 @@ void importFood(){
     }
     free(line_buf);
     line_buf = NULL;
-
     fclose(fp);
-
 }
     
-    void CountFood(){
+void CountFood(){
     while(1>0){
         if(F[numberOfFood].ID == 0) break;
         numberOfFood++;
@@ -100,7 +98,6 @@ void importCalories(){
     fscanf(f,"%f",&temp);
     kcal = int(temp);
     kcal = kcal / numberOfPeople;
-
     fclose(f);
 }
 
@@ -184,7 +181,7 @@ void updateFoodLog(int ID){
         if( ID == F[j].ID){
             updateLastPick(j);
             updatePickTime(j);
-            fprintf(f,"%d\n%s\n%s\n%d\n%d\n%s\n%d\n",F[j].ID,F[j].Name,F[j].TimeOfDay,F[j].withRice,F[j].PickTime,F[j].LastPick,F[j].kcal);
+            fprintf(f,"%d\n%s\n%s\n%d\n%d\n%s\n%d\n%d\n%d\n%d\n",F[j].ID,F[j].Name,F[j].TimeOfDay,F[j].withRice,F[j].PickTime,F[j].LastPick,F[j].kcal,F[j].Carb,F[j].Protein,F[j].Fat);
             break;
         }
         j++;
@@ -201,6 +198,9 @@ void clearFood(int i){
         F[i].PickTime = F[i+1].PickTime;
         strcpy(F[i].LastPick,F[i+1].LastPick);
         F[i].kcal = F[i+1].kcal;
+        F[i].Carb = F[i+1].Carb;
+        F[i].Protein = F[i+1].Protein;
+        F[i].Fat = F[i].Fat;
         i++;
     }
 }
@@ -208,7 +208,7 @@ void clearFood(int i){
 
 int Breakfast(){
  int y = 0;
-    for(int i = 0; i <= numberOfFood-1; i++){
+    for(int i = 0; i < numberOfFood; i++){
         if(strchr(F[i].TimeOfDay, '1') != NULL){
             B[y].ID = F[i].ID;
             strcpy(B[y].Name ,F[i].Name);
@@ -228,7 +228,7 @@ int Breakfast(){
 
 int Lunch(){
     int y = 0;
-    for(int i = 0; i <= numberOfFood-1; i++){
+    for(int i = 0; i < numberOfFood; i++){
         if(strchr(F[i].TimeOfDay, '2') != NULL){
             L[y].ID = F[i].ID;
             strcpy(L[y].Name ,F[i].Name);
@@ -247,7 +247,7 @@ int Lunch(){
 }
 int Dinner(){
     int y=0;
-   for(int i = 0; i <= numberOfFood-1; i++){
+   for(int i = 0; i < numberOfFood; i++){
         if(strchr(F[i].TimeOfDay, '3') != NULL){
             D[y].ID = F[i].ID;
             strcpy(D[y].Name ,F[i].Name);
@@ -264,59 +264,95 @@ int Dinner(){
     }
     return y;
 }
-void a(){
-    if(B[i].Carb + L[i].Carb + D[i].Carb = DNeed.Card){
-        strcpy(Ds[y].Breakfast.Name,B[i]
+void a(int y){
+    if(numberOfFoodBreakfast[1] >= numberOfFoodBreakfast[0]){
+        numberOfFoodLunch[1] += 1;
+        numberOfFoodBreakfast[1] = 0;
+        a(y);
+        return;
     }
-}
-
-void test(){
-    numberOfFoodBreakfast = Breakfast();
-    numberOfFoodDinner = Dinner();
-    numberOfFoodLunch = Lunch();
-    
-}
-
-
-void findFood(){
-    int i=0, j=0;
-    while (1){
-        while(1>0){
-        if(B[numberOfFoodBreakfast].ID == 0) break;
-        numberOfFoodBreakfast++;
+    if(numberOfFoodLunch[1] >= numberOfFoodLunch[0]){
+        numberOfFoodDinner[1] += 1;
+        numberOfFoodLunch[1] = 0;
+        numberOfFoodBreakfast[1] = 0;
+        a(y);
+        return;
     }
-        if(i == numberOfFoodBreakfast) break;
-        if(B[i].Carb <= DNeed.carb + positiveLimit/4){
-            if(B[i].Protein <= DNeed.protein + positiveLimit/4){
-                if(B[i].Fat <= DNeed.fat + positiveLimit/4){
-                    if(B[i].Carb >= DNeed.carb - negativeLimit/4){
-                        if(B[i].Protein >= DNeed.protein - negativeLimit/4){
-                            if(B[i].Fat >= DNeed.fat - negativeLimit/4){
-                                updateFoodLog(B[i].ID);
-                                    strcpy(Ds[i].Breakfast.Name,B[i].Name);
-                                    Ds[i].Breakfast.carb = B[i].Carb;
-                                    Ds[i].Breakfast.protein = B[i].Protein;
-                                    Ds[i].Breakfast.fat = B[i].Fat;
-                                    while(1){
-                                        if(B[j+1].ID == 0) break;
-                                        B[j].ID = B[j+1].ID;
-                                        strcpy(B[j].Name,B[j+1].Name);
-                                        strcpy(B[j].TimeOfDay,B[j+1].TimeOfDay);
-                                        B[j].withRice = B[j+1].withRice;
-                                        B[j].PickTime = B[j+1].PickTime;
-                                        strcpy(B[j].LastPick,B[j+1].LastPick);
-                                        B[j].kcal = B[j+1].kcal;
-                                        j++;
-                                } 
-                            }
-                        }
-                    }
-                }
+    int carb = B[numberOfFoodBreakfast[1]].Carb + L[numberOfFoodLunch[1]].Carb + D[numberOfFoodDinner[1]].Carb;
+    int protein = B[numberOfFoodBreakfast[1]].Protein + L[numberOfFoodLunch[1]].Protein + D[numberOfFoodDinner[1]].Protein;
+    int fat = B[numberOfFoodBreakfast[1]].Fat + L[numberOfFoodLunch[1]].Fat + D[numberOfFoodDinner[1]].Fat;
+    if( carb == DNeed.carb + positiveLimit || carb == DNeed.carb - negativeLimit){
+        if( protein == DNeed.protein + positiveLimit || protein == DNeed.protein - negativeLimit){ 
+            if( fat == DNeed.fat + positiveLimit || fat == DNeed.fat - negativeLimit){
+                strcpy(Ds[y].Breakfast.Name,B[numberOfFoodBreakfast[1]].Name);
+                strcpy(Ds[y].Lunch.Name,L[numberOfFoodBreakfast[1]].Name);
+                strcpy(Ds[y].Dinner.Name,D[numberOfFoodBreakfast[1]].Name);
+                numberOfFoodBreakfast[1] = 0;
+                return;
             }
         }
+    }else{
+        numberOfFoodBreakfast[1] += 1;
+        a(y);
+        return;
+    }
+    return;
+}
+
+void b(){
+    numberOfFoodBreakfast[0] = Breakfast();
+    numberOfFoodDinner[0] = Dinner();
+    numberOfFoodLunch[0] = Lunch();
+
+    for(int i = 0; i < 7; i++){
+        a(i);
+        numberOfFoodBreakfast[1] = 0;
+        numberOfFoodDinner[1] = 0;
+        numberOfFoodLunch[1] = 0;
     }
     
 }
+
+
+// void findFood(){
+//     int i=0, j=0;
+//     while (1){
+//         while(1>0){
+//         if(B[numberOfFoodBreakfast].ID == 0) break;
+//         numberOfFoodBreakfast++;
+//     }
+//         if(i == numberOfFoodBreakfast) break;
+//         if(B[i].Carb <= DNeed.carb + positiveLimit/4){
+//             if(B[i].Protein <= DNeed.protein + positiveLimit/4){
+//                 if(B[i].Fat <= DNeed.fat + positiveLimit/4){
+//                     if(B[i].Carb >= DNeed.carb - negativeLimit/4){
+//                         if(B[i].Protein >= DNeed.protein - negativeLimit/4){
+//                             if(B[i].Fat >= DNeed.fat - negativeLimit/4){
+//                                 updateFoodLog(B[i].ID);
+//                                     strcpy(Ds[i].Breakfast.Name,B[i].Name);
+//                                     Ds[i].Breakfast.carb = B[i].Carb;
+//                                     Ds[i].Breakfast.protein = B[i].Protein;
+//                                     Ds[i].Breakfast.fat = B[i].Fat;
+//                                     while(1){
+//                                         if(B[j+1].ID == 0) break;
+//                                         B[j].ID = B[j+1].ID;
+//                                         strcpy(B[j].Name,B[j+1].Name);
+//                                         strcpy(B[j].TimeOfDay,B[j+1].TimeOfDay);
+//                                         B[j].withRice = B[j+1].withRice;
+//                                         B[j].PickTime = B[j+1].PickTime;
+//                                         strcpy(B[j].LastPick,B[j+1].LastPick);
+//                                         B[j].kcal = B[j+1].kcal;
+//                                         j++;
+//                                 } 
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+    
+// }
 
 
 void check(){
@@ -328,12 +364,10 @@ void check(){
     }  
 }
 
-int main(void){
-importFood();
-CountFood();
-findNutrition();
-findFood();
-check();
-    return 0;
+int main(){
 
+
+
+
+    return 0;
 }
