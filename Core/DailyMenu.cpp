@@ -48,6 +48,14 @@ struct Diet{
     float fat;
 };Diet DNeed;
 
+    
+void CountFood(){
+    while(1>0){
+        if(F[numberOfFood].ID == 0) break;
+        numberOfFood++;
+    }
+}
+
 void importFood(){
     struct Temp{char temp[50];};Temp t[10];
     int i = 0,y = 0;
@@ -82,14 +90,9 @@ void importFood(){
     free(line_buf);
     line_buf = NULL;
     fclose(fp);
+    CountFood();
 }
-    
-void CountFood(){
-    while(1>0){
-        if(F[numberOfFood].ID == 0) break;
-        numberOfFood++;
-    }
-}
+
 
 void importCalories(){
     float temp;
@@ -278,6 +281,7 @@ void a(int y){
         a(y);
         return;
     }
+    if(numberOfFoodDinner[1]>= numberOfFoodDinner[0]) return;
     int carb = B[numberOfFoodBreakfast[1]].Carb + L[numberOfFoodLunch[1]].Carb + D[numberOfFoodDinner[1]].Carb;
     int protein = B[numberOfFoodBreakfast[1]].Protein + L[numberOfFoodLunch[1]].Protein + D[numberOfFoodDinner[1]].Protein;
     int fat = B[numberOfFoodBreakfast[1]].Fat + L[numberOfFoodLunch[1]].Fat + D[numberOfFoodDinner[1]].Fat;
@@ -358,14 +362,17 @@ void b(){
 void check(){
     int i = 0;
     while(1){
-        printf("%s",D[i]);
+        printf("%s %s %s %d \n",Ds[i].Breakfast.Name,Ds[i].Dinner.Name,Ds[i].Lunch.Name, i);
         if(F[i].ID == 0 ) break;
         i++;
     }  
 }
 
 int main(){
-
+    importFood();
+    findNutrition();
+    b();
+    check();
 
 
 

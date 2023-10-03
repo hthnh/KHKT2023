@@ -424,43 +424,9 @@ class UserScreen(Screen):
         Style.bind(on_select = lambda instance, x: setattr(btnStyle, 'text', x))
 
 
-        def takeType(value):
-            global type
-            if value == "Gain Weight" :
-                type = 1
-            elif value == "Loss Weight" :
-                type = 2
-            elif value == "Normal" :
-                type = 3
         
-        def HelpType(event):
-            layout = BoxLayout(orientation = "vertical")
-            layout.add_widget(Label(text = "Works well in single-user menu") )
-            layout.add_widget(Label(text = "If making a menu for family, choose normal"))
-            helpPopUp = Popup(title = "HELP",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.4,0.2))
-            helpPopUp.open()
-
-        typeMenu = DropDown()
-        #gain weight/loss weight/normal
-        Gw = Button(text = "Gain Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
-        Gw.bind(on_release = lambda Gw: typeMenu.select(Gw.text))
-
-        Lw = Button(text = "Loss Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
-        Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
-
-        Nw = Button(text = "Normal",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
-        Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
-
-        Help = Button(text = "Help",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
-
-        typeMenu.add_widget(Gw)
-        typeMenu.add_widget(Nw)
-        typeMenu.add_widget(Lw)
-        typeMenu.add_widget(Help)
-
-        btnType = Button(text = "Choice type of menu",background_normal = "", background_color = (132/255,166/255,207/255,1))
-        btnType.bind(on_release = typeMenu.open)
-        typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
+        
+       
 
 
         def check_add_user(self):
@@ -509,8 +475,6 @@ class UserScreen(Screen):
                 f.write(age.text)
                 f.write("\n")
                 f.write(str(style))
-                f.write("\n")
-                f.write(str(type))
                 f.write("\n")
             f.close()
             os.chdir("Core")
@@ -903,6 +867,8 @@ class NutrientsScreen(Screen):
         Window.size = (size_screen_x,size_screen_y)
 
     def main(self):
+
+
         main_side = GridLayout(cols = 2)
         main_side.add_widget(Label(text = "1",color = (0,0,0,1)))
         main_side.add_widget(Label(text = "1",color = (0,0,0,1)))
@@ -919,10 +885,50 @@ class NutrientsScreen(Screen):
         main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
         main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
 
+        
+
+        def HelpType(event):
+            layout = BoxLayout(orientation = "vertical")
+            l1 = Label(color = (0,0,0,1) ,text = "Works well in single-user menu")
+            l1.bind(size = lambda s,w: s.setter('text_size')(s,w))
+            layout.add_widget(l1)
+            l2 = Label(color = (0,0,0,1) ,text = "If making a menu for family, choose normal")
+            l2.bind(size=lambda s,w : s.setter('text_size')(s,w))
+            layout.add_widget(l2)
+            helpPopUp = Popup(title = "HELP",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.4,0.2))
+            helpPopUp.open()
+        def takeType(value):
+            if value == "Gain Weight" :
+                type = 1
+            elif value == "Loss Weight" :
+                type = 2
+            elif value == "Normal" :
+                type = 3
+        typeMenu = DropDown()
+        #gain weight/loss weight/normal
+        Gw = Button(text = "Gain Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Gw.bind(on_release = lambda Gw: typeMenu.select(Gw.text))
+        Lw = Button(text = "Loss Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Lw.bind(on_release = lambda Lw: typeMenu.select(Lw.text))
+        Nw = Button(text = "Normal",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
+        Nw.bind(on_release = lambda Nw: typeMenu.select(Nw.text))
+        Help = Button(text = "Help",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: HelpType(event=open))
+        typeMenu.add_widget(Gw)
+        typeMenu.add_widget(Nw)
+        typeMenu.add_widget(Lw)
+        typeMenu.add_widget(Help)
+        btnType = Button(text = "Choose Type",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= '')
+        btnType.bind(on_release = typeMenu.open)
+        typeMenu.bind(on_select = lambda instance, x: setattr(btnType, "text", x))
+
+
+
         func_side = BoxLayout(orientation = "horizontal")
         func_side.add_widget(Button(text = "All Food",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
-        func_side.add_widget(Button(text = "Choose Type",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        func_side.add_widget(btnType)
         func_side.add_widget(Button(text = "Choose Diet",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+
+
 
         screen = BoxLayout(orientation = "vertical", spacing = 15)
         screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
