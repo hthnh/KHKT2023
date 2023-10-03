@@ -361,9 +361,8 @@ void b(){
 
 void check(){
     int i = 0;
-    while(1){
+    for(int i = 0; i< 7;){
         printf("%s %s %s %d \n",Ds[i].Breakfast.Name,Ds[i].Dinner.Name,Ds[i].Lunch.Name, i);
-        if(F[i].ID == 0 ) break;
         i++;
     }  
 }
