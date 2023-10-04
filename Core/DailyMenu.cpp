@@ -267,6 +267,20 @@ int Dinner(){
     }
     return y;
 }
+bool check_dupl(){
+    for(int j = 0; j<7; j++){
+        if(strcmp(B[numberOfFoodBreakfast[1]].Name, Ds[j].Breakfast.Name) == 0) return true;
+        if(strcmp(B[numberOfFoodBreakfast[1]].Name, Ds[j].Lunch.Name) == 0) return true;
+        if(strcmp(B[numberOfFoodBreakfast[1]].Name, Ds[j].Dinner.Name) == 0) return true;
+        if(strcmp(L[numberOfFoodLunch[1]].Name, Ds[j].Lunch.Name) == 0) return true;
+        if(strcmp(L[numberOfFoodLunch[1]].Name, Ds[j].Breakfast.Name) == 0) return true;
+        if(strcmp(L[numberOfFoodLunch[1]].Name, Ds[j].Dinner.Name) == 0) return true;
+        if(strcmp(D[numberOfFoodDinner[1]].Name, Ds[j].Dinner.Name) == 0) return true;
+        if(strcmp(D[numberOfFoodDinner[1]].Name, Ds[j].Breakfast.Name) == 0) return true;
+        if(strcmp(D[numberOfFoodDinner[1]].Name, Ds[j].Lunch.Name) == 0) return true;
+    }
+    return false;
+}
 void a(int y){
     if(numberOfFoodBreakfast[1] >= numberOfFoodBreakfast[0]){
         numberOfFoodLunch[1] += 1;
@@ -285,16 +299,25 @@ void a(int y){
     int carb = B[numberOfFoodBreakfast[1]].Carb + L[numberOfFoodLunch[1]].Carb + D[numberOfFoodDinner[1]].Carb;
     int protein = B[numberOfFoodBreakfast[1]].Protein + L[numberOfFoodLunch[1]].Protein + D[numberOfFoodDinner[1]].Protein;
     int fat = B[numberOfFoodBreakfast[1]].Fat + L[numberOfFoodLunch[1]].Fat + D[numberOfFoodDinner[1]].Fat;
-    if( carb == DNeed.carb + positiveLimit || carb == DNeed.carb - negativeLimit){
-        if( protein == DNeed.protein + positiveLimit || protein == DNeed.protein - negativeLimit){ 
-            if( fat == DNeed.fat + positiveLimit || fat == DNeed.fat - negativeLimit){
+    if( carb <= DNeed.carb + (positiveLimit/4) || carb >= DNeed.carb - (negativeLimit/4)){
+        if( protein <= DNeed.protein + (positiveLimit/4) || protein >= DNeed.protein - (negativeLimit/4)){ 
+            if( fat <= DNeed.fat + (positiveLimit/9) || fat >= DNeed.fat - (negativeLimit/9)){
+                if(check_dupl()) return;
                 strcpy(Ds[y].Breakfast.Name,B[numberOfFoodBreakfast[1]].Name);
                 strcpy(Ds[y].Lunch.Name,L[numberOfFoodBreakfast[1]].Name);
                 strcpy(Ds[y].Dinner.Name,D[numberOfFoodBreakfast[1]].Name);
                 numberOfFoodBreakfast[1] = 0;
                 return;
-            }
-        }
+            }else{
+        numberOfFoodBreakfast[1] += 1;
+        a(y);
+        return;
+    }
+        }else{
+        numberOfFoodBreakfast[1] += 1;
+        a(y);
+        return;
+    }
     }else{
         numberOfFoodBreakfast[1] += 1;
         a(y);

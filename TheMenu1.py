@@ -316,7 +316,6 @@ class UserScreen(Screen):
         left_side.add_widget(Label(text = "WEIGHT",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "HEIGHT",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "CURRENT STATUS",font_size = 23,bold = True, color =(0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
-        left_side.add_widget(Label(text = "TYPE OF MENU",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
 
 
 
@@ -504,7 +503,6 @@ class UserScreen(Screen):
         right_side.add_widget(weight)
         right_side.add_widget(height)
         right_side.add_widget(btnStyle)
-        right_side.add_widget(btnType)
 
 
         btn_side = BoxLayout(orientation = "horizontal",spacing = 10,size_hint = (1,.3))
@@ -552,7 +550,6 @@ class FoodScreen(Screen):
         layout.add_widget(Button(text = "No", on_press = lambda *args: noti.dismiss(),font_size = 15,background_normal = "", background_color = (37/255, 64/255, 98/255, 1)))
         noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (.7,.3))
         noti.open()
-        pass
 
     def main(self):
         input_layout = BoxLayout(orientation = 'horizontal')
@@ -561,6 +558,9 @@ class FoodScreen(Screen):
 
         left_side.add_widget(Label(text = "NAME FOOD",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "CALORIES",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "Carbohydrate",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "Protein",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
+        left_side.add_widget(Label(text = "Fat",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "WITH(OUT) RICE",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
         left_side.add_widget(Label(text = "TIME OF DAY",font_size = 23,bold = True, color = (0, 0, 0, 1),font_family = 'Core/image/UI/Text/Noto_Serif'))
 
@@ -590,6 +590,12 @@ class FoodScreen(Screen):
                 f.write("\n")
                 f.write(calories_of_food.text)
                 f.write("\n")
+                f.write(carbohydrate_of_food.text)
+                f.write("\n")
+                f.write(protein_of_food.text)
+                f.write("\n")
+                f.write(fat_of_food.text)
+                f.write("\n")
            
             noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
             noti.open()
@@ -602,6 +608,12 @@ class FoodScreen(Screen):
         name_food = TextInput(text = "name",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
         global calories_of_food
         calories_of_food = TextInput(text = "calories",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        global carbohydrate_of_food
+        carbohydrate_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        global protein_of_food
+        protein_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        global fat_of_food
+        fat_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
 
 
         global TOD
@@ -697,6 +709,9 @@ class FoodScreen(Screen):
 
         right_side.add_widget(name_food)
         right_side.add_widget(calories_of_food)
+        right_side.add_widget(carbohydrate_of_food)
+        right_side.add_widget(protein_of_food)
+        right_side.add_widget(fat_of_food)
         right_side.add_widget(RICE)
         right_side.add_widget(TOTD)
         
@@ -761,7 +776,7 @@ class AllFoodScreen(Screen):
                     title_size = dp(20))
             popUp.open()
         x = 0
-        for i in range(int(len(food)/7)):
+        for i in range(int(len(food)/10)):
             foodCard = BoxLayout(orientation = "horizontal", size_hint_y=None)
             icon = Image(source='meal-food-icon.png',size_hint = (0.25,None))
             foodCard.add_widget(icon)
@@ -798,7 +813,7 @@ class AllFoodScreen(Screen):
             btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
             foodCard.add_widget(btnDelete)
             mainWindow.add_widget(foodCard)
-            x+= 7
+            x+= 10
         scroll = ScrollView()
         scroll.add_widget(mainWindow)
         screen = BoxLayout(orientation = "vertical")
@@ -940,7 +955,7 @@ class AllFoodNutrientsScreen(Screen):
             btnDelete = Button(text = "Delete",font_size = dp(20),size_hint = (0.25,None),on_press = deleteFood)
             foodCard.add_widget(btnDelete)
             mainWindow.add_widget(foodCard)
-            x+= 7
+            x+= 10
         scroll = ScrollView()
         scroll.add_widget(mainWindow)
         screen = BoxLayout(orientation = "vertical")
