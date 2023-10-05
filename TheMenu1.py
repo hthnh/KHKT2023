@@ -442,11 +442,7 @@ class UserScreen(Screen):
                         if not "kg" in weight.text :
                             if not "cm" in height.text :
                                 if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
-                                    if type == 1 or type == 2 or type == 3 :
                                         AddUser()
-                                    else :
-                                        noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Type",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
-                                        noti.open()
                                 else :
                                     noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Style",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                                     noti.open()
@@ -884,6 +880,7 @@ class AllFoodNutrientsScreen(Screen):
         f = open("Core\InOut\AllFood.txt","r")
         food = f.readlines()
         food = [s.replace("\n","") for s in food]
+        f.close()
         mainWindow = GridLayout(cols = 1, spacing=30,size_hint_y=None)
         mainWindow.bind(minimum_height=mainWindow.setter('height'))
         def deleteFood(self):
@@ -981,22 +978,47 @@ class NutrientsScreen(Screen):
 
     def main(self):
 
-
+        with open("Core\InOut\TotalCalories.txt","r") as f:
+            self.temp = f.readlines()
+            self.temp = [x.replace("\n","") for x in self.temp]
+            self.numberOfPeople = int(float(self.temp[0]))
+            self.totalKcal = int(float(self.temp[1]))
         main_side = GridLayout(cols = 2)
-        main_side.add_widget(Label(text = "Number of family members",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "1",color = (0,0,0,1)))
-        main_side.add_widget(Label(text = "Calories / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "2",color = (0,0,0,1)))
-        main_side.add_widget(Label(text = "Carbohydrate / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "3",color = (0,0,0,1)))
-        main_side.add_widget(Label(text = "Protein / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "4",color = (0,0,0,1)))
-        main_side.add_widget(Label(text = "Fat / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "5",color = (0,0,0,1)))
-        main_side.add_widget(Label(text = "Current Diet",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "6",color = (0,0,0,1)))
-        main_side.add_widget(Label(text = "Current type of menu",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-        main_side.add_widget(Label(text = "7",color = (0,0,0,1)))
+
+        with open("Core\InOut\Properties.txt","r") as f:
+            properties = f.readlines()
+            properties = [s.replace("\n","") for s in properties]
+            self.type = properties[0]
+            self.diet = properties[1]
+            self.diet = 1
+            if(self.diet == 1):
+                self.carbo = round(0.35 * self.totalKcal / 4)
+                self.protein = round(0.43 * self.totalKcal / 4)
+                self.fat = 0.22 * round(self.totalKcal / 9)
+            if(self.diet == 2):
+                self.carbo = round(0.25 * self.totalKcal / 4)
+                self.protein = round(0.35 * self.totalKcal / 4)
+                self.fat = round(0.4 * self.totalKcal / 9)
+            if(self.diet == 3):
+                self.carbo = round(0.7 * self.totalKcal / 4)
+                self.protein = round(0.15 * self.totalKcal / 4)
+                self.fat = round(0.15 * self.totalKcal / 9)
+
+
+            main_side.add_widget(Label(text = "Number of family members",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.numberOfPeople,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "Calories / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.totalKcal,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "Carbohydrate / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.carbo,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "Protein / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.protein,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "Fat / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.fat,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "Current Diet",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.diet,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "Current type of menu",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
+            main_side.add_widget(Label(text = "%s"%self.type,color = (0,0,0,1)))
 
         
 
@@ -1011,12 +1033,25 @@ class NutrientsScreen(Screen):
             helpPopUp = Popup(title = "HELP",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.4,0.2))
             helpPopUp.open()
         def takeType(value):
+            with open("Core\InOut\Properties.txt","r") as f:
+                properties = f.rlines()
+                properties = [s.replace("\n","") for s in properties]
+                self.type = properties[0]
+                self.diet = properties[1]
             if value == "Gain Weight" :
-                type = 1
+                self.type = 1
             elif value == "Loss Weight" :
-                type = 2
+                self.type = 2
             elif value == "Normal" :
-                type = 3
+                self.type = 3
+            with open("Core\InOut\Properties.txt","w") as f:
+                f.write(str(self.type))
+                f.write("\n")
+                f.write(str(self.diet))
+            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Change successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+            noti.open()
+
+        
         typeMenu = DropDown()
         #gain weight/loss weight/normal
         Gw = Button(text = "Gain Weight",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda type: takeType(value = type.text))
@@ -1047,12 +1082,25 @@ class NutrientsScreen(Screen):
             helpPopUp = Popup(title = "HELP",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = layout, auto_dismiss = True, size_hint = (0.4,0.2))
             helpPopUp.open()
         def takeDiet(value):
+            with open("Core\InOut\Properties.txt","r") as f:
+                properties = f.readlines()
+                properties = [s.replace("\n","") for s in properties]
+                for x in properties:
+                    self.type = properties[0]
+                    global diet 
+                    self.diet = properties[1]
             if value == "Rich Protein" :
-                Diet = 1
+                self.diet = 1
             elif value == "Rich Fat" :
-                Diet = 2
+                self.diet = 2
             elif value == "Rich Carb" :
-                Diet = 3
+                self.diet = 3
+            with open("Core\InOut\Properties.txt","w") as f:
+                f.write(str(self.type))
+                f.write("\n")
+                f.write(str(self.diet))
+            noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Change successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+            noti.open()
         dietMenu = DropDown()
         #gain weight/loss weight/normal
         Rp = Button(text = "Rich Protein",background_normal = "", background_color = (132/255,166/255,207/255,1),size_hint_y = None, height = 35, on_release = lambda diet: takeDiet(value = diet.text))
