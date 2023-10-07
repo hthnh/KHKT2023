@@ -181,7 +181,6 @@ Builder.load_string("""
             points: self.x,self.center_y*1.8,self.center_x*2,self.center_y*1.8
 
 
-
 <FoodScreen>:
     canvas.before:
         Color:
@@ -988,9 +987,8 @@ class NutrientsScreen(Screen):
         with open("Core\InOut\Properties.txt","r") as f:
             properties = f.readlines()
             properties = [s.replace("\n","") for s in properties]
-            self.type = properties[0]
-            self.diet = properties[1]
-            self.diet = 1
+            self.type = int(properties[0])
+            self.diet = int(properties[1])
             if(self.diet == 1):
                 self.carbo = round(0.35 * self.totalKcal / 4)
                 self.protein = round(0.43 * self.totalKcal / 4)
@@ -1003,6 +1001,20 @@ class NutrientsScreen(Screen):
                 self.carbo = round(0.7 * self.totalKcal / 4)
                 self.protein = round(0.15 * self.totalKcal / 4)
                 self.fat = round(0.15 * self.totalKcal / 9)
+            if self.type == 1 :
+                self.Strtype = "Gain Weight"
+            elif self.type == 2 :
+                self.Strtype = "Loss Weight"
+            elif self.type == 3 :
+                self.Strtype = "Normal"
+            
+            if self.diet == 1 :
+                self.Strdiet = "Rich Protein"
+            elif self.diet == 2 :
+                self.Strdiet = "Rich Fat"
+            elif self.diet == 3 :
+                self.Strdiet = "Rich Carb"
+            
 
 
             main_side.add_widget(Label(text = "Number of family members",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
@@ -1016,9 +1028,9 @@ class NutrientsScreen(Screen):
             main_side.add_widget(Label(text = "Fat / day",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
             main_side.add_widget(Label(text = "%s"%self.fat,color = (0,0,0,1)))
             main_side.add_widget(Label(text = "Current Diet",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-            main_side.add_widget(Label(text = "%s"%self.diet,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "%s"%self.Strdiet,color = (0,0,0,1)))
             main_side.add_widget(Label(text = "Current type of menu",font_size = 23,bold = True, color = (0, 0, 0, 1), font_family = 'Core/image/UI/Text/Noto_Serif'))
-            main_side.add_widget(Label(text = "%s"%self.type,color = (0,0,0,1)))
+            main_side.add_widget(Label(text = "%s"%self.Strtype,color = (0,0,0,1)))
 
         
 
@@ -1034,7 +1046,7 @@ class NutrientsScreen(Screen):
             helpPopUp.open()
         def takeType(value):
             with open("Core\InOut\Properties.txt","r") as f:
-                properties = f.rlines()
+                properties = f.readlines()
                 properties = [s.replace("\n","") for s in properties]
                 self.type = properties[0]
                 self.diet = properties[1]
@@ -1117,15 +1129,6 @@ class NutrientsScreen(Screen):
         btnDiet = Button(text = "Choose Diet",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= '')
         btnDiet.bind(on_release = dietMenu.open)
         dietMenu.bind(on_select = lambda instance, x: setattr(btnDiet, "text", x))
-
-
-
-
-        
-
-
-
-
 
 
 
