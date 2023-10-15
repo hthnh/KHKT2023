@@ -455,7 +455,7 @@ class UserScreen(Screen):
                         noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Age",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                         noti.open()
                 else :
-                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Sex",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
+                    noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Gender",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                     noti.open()
 
         def AddUser():
@@ -1140,7 +1140,7 @@ class NutrientsScreen(Screen):
 
 
         screen = BoxLayout(orientation = "vertical", spacing = 15)
-        screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
+        screen.add_widget(Label(text = "NUTRIENTS", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
         screen.add_widget(main_side)
         screen.add_widget(func_side)
         screen.add_widget(Button(on_release = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
