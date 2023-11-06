@@ -6,8 +6,6 @@ from kivymd.icon_definitions import md_icons
 import kivy
 kivy.require('1.7.0')
 
-from kivymd.app import MDApp
-
 from kivy.lang import Builder
 # Builder.load_file('TheMenu.kv')
 Builder.load_string("""
@@ -144,7 +142,7 @@ Builder.load_string("""
                 font_size: 30
                 font_name: "Core/image/UI/Text/NotoSans-Medium.ttf"
                 color: (0/255, 252/255, 255/255)
-<MenuScreen@AnchorLayout>:
+<MenuScreen>:
     size:root.size
     Button:
         on_press: root.manager.current = 'main'
@@ -164,7 +162,7 @@ Builder.load_string("""
 
 
 
-<UserScreen@BoxLayout>:
+<UserScreen>:
     canvas.before:
         Color:
             rgb:(27/255, 46/255, 71/255)
@@ -172,7 +170,7 @@ Builder.load_string("""
             width: 5
             points: self.x,self.center_y*1.8,self.center_x*2,self.center_y*1.8
 
-<NutrientsScreen@BoxLayout>:
+<NutrientsScreen>:
     canvas.before:
         Color:
             rgb:(27/255, 46/255, 71/255)
@@ -181,7 +179,7 @@ Builder.load_string("""
             points: self.x,self.center_y*1.8,self.center_x*2,self.center_y*1.8
 
 
-<FoodScreen@BoxLayout>:
+<FoodScreen>:
     canvas.before:
         Color:
             rgb:(27/255, 46/255, 71/255)
@@ -195,6 +193,8 @@ Builder.load_string("""
 
 
 """)
+
+from kivymd.app import MDApp
 
 from kivy.uix.screenmanager import Screen, ScreenManager
 
@@ -283,7 +283,11 @@ size_screen_x = 600 * (2-scale)
 size_screen_y = 901 * (2-scale)
 
 
+def load_size_portrait_screen(self):
+    Window.size = (size_screen_x, size_screen_y)
 
+def load_size_landscape_screen(self):
+    Window.size = (size_screen_y, size_screen_x)
 
 
 B = {}
@@ -300,11 +304,7 @@ with open("Core\InOut\DailyFood.txt","r") as f:
 
 
 
-
-class UserScreen(Screen):
-    def load_size(self):
-        Window.size = (size_screen_x, size_screen_y)
-    
+class UserScreen(BoxLayout):
     def main(self):
         input_layout = BoxLayout(orientation = 'horizontal')
         left_side = BoxLayout(orientation = "vertical",spacing = 20)
@@ -318,24 +318,19 @@ class UserScreen(Screen):
 
 
 
-        global sex
-        sex = int(5)
-        global style
-        style = int(6)
-        global type
-        type = int(7)
+        self.sex = int(5)
+        self.style = int(6)
+        self.type = int(7)
 
-        def checkbox_male(checkbox, value):
+        def checkbox_male(checkbox, value, self):
             if value :
-                global sex
-                sex = 0
+                self.sex = 0
         male = CheckBox(color = (0,0,0,1), group = "sex")
         male.bind(active = checkbox_male)
 
-        def checkbox_female(checkbox, value):
+        def checkbox_female(checkbox, value, self):
             if value :
-                global sex
-                sex = 1
+                self.sex = 1
         female = CheckBox(color = (0,0,0,1), group = "sex")
         female.bind(active= checkbox_female)
 
@@ -351,26 +346,22 @@ class UserScreen(Screen):
         Sex.add_widget(Male)
         Sex.add_widget(Female)
 
-        global height
-        height = TextInput(multiline=False, text = "cm",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
-        global weight
-        weight = TextInput(multiline=False, text = "kg",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
-        global age
-        age = TextInput(multiline=False, text = "age",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.height = TextInput(multiline=False, text = "cm",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.weight = TextInput(multiline=False, text = "kg",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.age = TextInput(multiline=False, text = "age",background_normal = "", background_color = (132/255,166/255,207/255,0.8))
 
 
         def takeStyle(value):
-            global style
             if value == "Office work" :
-                style = 1
+                self.style = 1
             elif value == "Outdoor work" :
-                style = 2
+                self.style = 2
             elif value == "Exercise sometimes" :
-                style = 3
+                self.style = 3
             elif value == "Always exercise" :
-                style = 4
+                self.style = 4
             elif value == "Athlete" :
-                style = 5
+                self.style = 5
 
         def HelpStyle(event):
             layout = BoxLayout(orientation = "vertical")
@@ -429,18 +420,18 @@ class UserScreen(Screen):
 
         def check_add_user(self):
             try :
-                int(age.text)
-                int(height.text)
-                int(weight.text)
+                int(self.age.text)
+                int(self.height.text)
+                int(self.weight.text)
             except:
                 noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Wrong type of input",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                 noti.open()
             else:
-                if (sex == 1 or sex == 0) and isinstance(sex, int) :
-                    if not "age" in age.text and isinstance(int(age.text), int) :
-                        if not "kg" in weight.text :
-                            if not "cm" in height.text :
-                                if style == 1 or style == 2 or style == 3 or style == 4 or style == 5 :
+                if (self.sex == 1 or self.sex == 0) and isinstance(self.sex, int) :
+                    if not "age" in self.age.text and isinstance(int(self.age.text), int) :
+                        if not "kg" in self.weight.text :
+                            if not "cm" in self.height.text :
+                                if self.style == 1 or self.style == 2 or self.style == 3 or self.style == 4 or self.style == 5 :
                                         AddUser()
                                 else :
                                     noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Style",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
@@ -458,17 +449,17 @@ class UserScreen(Screen):
                     noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Missing Gender",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
                     noti.open()
 
-        def AddUser():
+        def AddUser(self):
             with open("Core\InOut\heightWeight.txt","at") as f:
-                f.write(str(sex))
+                f.write(str(self.sex))
                 f.write("\n")
-                f.write(height.text)
+                f.write(self.height.text)
                 f.write("\n")
-                f.write(weight.text)
+                f.write(self.weight.text)
                 f.write("\n")
-                f.write(age.text)
+                f.write(self.age.text)
                 f.write("\n")
-                f.write(str(style))
+                f.write(str(self.style))
                 f.write("\n")
             f.close()
             os.chdir("Core")
@@ -510,23 +501,16 @@ class UserScreen(Screen):
         input_layout.add_widget(left_side)
         input_layout.add_widget(right_side)
 
-        screen = BoxLayout(orientation = "vertical", spacing = 15)
-        screen.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
-        screen.add_widget(input_layout)
-        screen.add_widget(btn_side)
-        screen.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+        
+        self.orientation = "vertical"
+        self.spacing = 15
+        self.add_widget(Label(text = "ADD MEMBER", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
+        self.add_widget(input_layout)
+        self.add_widget(btn_side)
+        self.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+    
 
-        self.add_widget(screen)
-        return screen
-    def on_enter(self):
-        self.load_size()
-        self.main()
-
-
-class FoodScreen(Screen):
-    def load_size(self):
-        Window.size = (size_screen_x,size_screen_y)
-
+class FoodScreen(BoxLayout):
     def deleteAllFood(self,a):
         def delete1():
             f = open("Core\InOut\AllFood.txt","w")
@@ -571,25 +555,25 @@ class FoodScreen(Screen):
             f.close()
 
             with open("Core\InOut\Allfood.txt","a") as f:
-                f.write(str(Id))
+                f.write(str(self.Id))
                 f.write("\n")
-                f.write(name_food.text)
+                f.write(self.name_food.text)
                 f.write("\n")
-                f.write(''.join(str(x) for x in TOD))
+                f.write(''.join(str(x) for x in self.TOD))
                 f.write("\n")
-                f.write(str(rice))
-                f.write("\n")
-                f.write("0")
+                f.write(str(self.rice))
                 f.write("\n")
                 f.write("0")
                 f.write("\n")
-                f.write(calories_of_food.text)
+                f.write("0")
                 f.write("\n")
-                f.write(carbohydrate_of_food.text)
+                f.write(self.calories_of_food.text)
                 f.write("\n")
-                f.write(protein_of_food.text)
+                f.write(self.carbohydrate_of_food.text)
                 f.write("\n")
-                f.write(fat_of_food.text)
+                f.write(self.protein_of_food.text)
+                f.write("\n")
+                f.write(self.fat_of_food.text)
                 f.write("\n")
            
             noti = Popup(title = "NOTIFICATION",title_color = (37/255, 64/255, 98/255, 1),background_color = (255,255,255,1),title_align = "center",content = Label(text = "Add successful",color = (0,0,0,1)), auto_dismiss = True, size_hint = (0.4,0.15))
@@ -599,55 +583,43 @@ class FoodScreen(Screen):
 
         
 
-        global name_food
-        name_food = TextInput(text = "name",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
-        global calories_of_food
-        calories_of_food = TextInput(text = "calories",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
-        global carbohydrate_of_food
-        carbohydrate_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
-        global protein_of_food
-        protein_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
-        global fat_of_food
-        fat_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.name_food = TextInput(text = "name",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.calories_of_food = TextInput(text = "calories",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.carbohydrate_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.protein_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
+        self.fat_of_food = TextInput(text = "gram",multiline = False,background_normal = "", background_color = (132/255,166/255,207/255,0.8))
 
 
-        global TOD
-        TOD = [0,0,0]
+        self.TOD = [0,0,0]
 
-        def checkbox_Morning(checkbox, value):
-            global TOD
+        def checkbox_Morning(checkbox, value, self):
             if value :
-                TOD[0] = 1
+                self.TOD[0] = 1
             else :
-                TOD[0] = 0
+                self.TOD[0] = 0
         
-        def checkbox_Noon(checkbox, value):
-            global TOD
+        def checkbox_Noon(checkbox, value, self):
             if value :
-                TOD[1] = 2
+                self.TOD[1] = 2
             else :
-                TOD[1] = 0
+                self.TOD[1] = 0
 
         def checkbox_Afternoon(checkbox, value):
-            global TOD
             if value :
-                TOD[2] = 3
+                self.TOD[2] = 3
             else :
-                TOD[2] = 0
+                self.TOD[2] = 0
         
 
-        global rice 
-        rice = int(1)
+        self.rice = int(1)
 
-        def checkbox_WR(checkbox, value):
+        def checkbox_WR(checkbox, value, self):
             if value :
-                global rice
-                rice = 1
+                self.rice = 1
 
         def checkbox_WOR(checkbox, value):
             if value :
-                global rice
-                rice = 0
+                self.rice = 0
 
         WR = CheckBox(group = 'rice',color = (37/255, 64/255, 98/255, 1))
         WR.bind(active = checkbox_WR)
@@ -723,22 +695,20 @@ class FoodScreen(Screen):
 
         input_layout.add_widget(left_side)
         input_layout.add_widget(right_side)
-        screen = BoxLayout(orientation = "vertical", spacing = 15)
-        screen.add_widget(Label(text = "ADD FOOD", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
-        screen.add_widget(input_layout)
-        screen.add_widget(btn_side)
-        screen.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
-        self.add_widget(screen)
-    def on_enter(self):
-        self.load_size()
-        self.main()
+        self.orientation = "vertical"
+        self.spacing = 15
+        self.add_widget(Label(text = "ADD FOOD", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
+        self.add_widget(input_layout)
+        self.add_widget(btn_side)
+        self.add_widget(Button(on_press = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
+    
 
-class AllFoodScreen(Screen):
-   
+
+class AllFoodScreen(BoxLayout):
     def main(self):
         f = open("Core\InOut\AllFood.txt","r")
-        food = f.readlines()
-        food = [s.replace("\n","") for s in food]
+        self.food = f.readlines()
+        self.food = [s.replace("\n","") for s in food]
         mainWindow = GridLayout(cols = 1, spacing=30,size_hint_y=None)
         mainWindow.bind(minimum_height=mainWindow.setter('height'))
         def deleteFood(self):
@@ -811,23 +781,17 @@ class AllFoodScreen(Screen):
             x+= 10
         scroll = ScrollView()
         scroll.add_widget(mainWindow)
-        screen = BoxLayout(orientation = "vertical")
+        self.orientation = "vertical"
         popup = Popup(title = "MANAGE FOOD",title_align = "center",title_size = 40,title_color = (37/255, 64/255, 98/255, 1),size_hint=(1, 0.8),background_color = (255,255,255,1))
         popup.add_widget(scroll)
-        screen.add_widget(popup)
-        screen.add_widget(Button(on_press = themenu.to_FoodScreen ,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
-        self.add_widget(screen)
+        self.add_widget(popup)
+        self.add_widget(Button(on_press = themenu.to_FoodScreen ,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
         
-    def resize_windows(self):
-        Window.size = (size_screen_y,size_screen_x)
-    def on_enter(self):
-        self.resize_windows()
-        self.main()
-            
-    
 
-class MenuScreen(Screen):
-    def re_run_core(self):
+
+
+class MenuScreen(AnchorLayout):
+    def load_table(self):
         os.chdir("Core")
         os.system("ActivateCore.exe")
         os.chdir("..")
@@ -838,12 +802,6 @@ class MenuScreen(Screen):
                 L[i] = f.readline()
             for i in range(7):
                 D[i] = f.readline()
-    
-    def load_screen_size(self):
-        Window.size = (size_screen_y,size_screen_x)
-
-    def load_table(self):
-        layout = AnchorLayout()
         self.data_tables = MDDataTable(
             pos_hint = {"center_x": .5, "center_y": .55},
             rows_num = 7,
@@ -864,21 +822,12 @@ class MenuScreen(Screen):
                 ("Sunday", B[6], L[6],D[6])
                 ])
         self.add_widget(self.data_tables)
-        return self
 
-    def on_enter(self):
-        self.re_run_core()
-        self.load_screen_size()
-        self.load_table()
-
-
-
-
-class AllFoodNutrientsScreen(Screen):
+class AllFoodNutrientsScreen(BoxLayout):
     def main(self):
         f = open("Core\InOut\AllFood.txt","r")
-        food = f.readlines()
-        food = [s.replace("\n","") for s in food]
+        self.food = f.readlines()
+        self.food = [s.replace("\n","") for s in food]
         f.close()
         mainWindow = GridLayout(cols = 1, spacing=30,size_hint_y=None)
         mainWindow.bind(minimum_height=mainWindow.setter('height'))
@@ -918,27 +867,27 @@ class AllFoodNutrientsScreen(Screen):
             foodCard.add_widget(icon)
             mainInformation = GridLayout(cols = 3)
             self.tod_string = ""
-            if "1" in food[x+3]:
+            if "1" in self.food[x+3]:
                 self.have_rice = "Yes"
             else:
                 self.have_rice = "No"
-            if "1" in food[x+2]:
+            if "1" in self.food[x+2]:
                 self.tod_string = self.tod_string + "Morning, "
-            if "2" in food[x+2]:
+            if "2" in self.food[x+2]:
                 self.tod_string = self.tod_string + "Noon, "
             if "3" in self.tod_string:
                 self.tod_string = self.tod_string + "Afternoon"
                 pass
-            idLabel = Label(text = "ID: %s"%food[x],color = (0,0,0,1))
-            nameLabel = Label(text = "Name: %s"%food[x+1],color = (0,0,0,1))
+            idLabel = Label(text = "ID: %s"%self.food[x],color = (0,0,0,1))
+            nameLabel = Label(text = "Name: %s"%self.food[x+1],color = (0,0,0,1))
             TODLabel = Label(text = "Time Of Day: %s"%self.tod_string,color = (0,0,0,1))
             withRiceLabel = Label(text = "Rice: %s"%self.have_rice,color = (0,0,0,1))
-            pickTimeLabel = Label(text = "Selected Time: %s"%food[x+4],color = (0,0,0,1))
-            lastPickLabel = Label(text = "Last Selected: %s"%food[x+5],color = (0,0,0,1))
-            caloriesLabel = Label(text = "Calories: %s"%food[x+6],color = (0,0,0,1))
-            carbLabel = Label(text = "Carbohydrate: %s"%food[x+7],color = (0,0,0,1))
-            proteinLabel = Label(text = "Protein: %s"%food[x+8],color = (0,0,0,1))
-            fatLabel = Label(text = "Fat: %s"%food[x+9],color = (0,0,0,1))
+            pickTimeLabel = Label(text = "Selected Time: %s"%self.food[x+4],color = (0,0,0,1))
+            lastPickLabel = Label(text = "Last Selected: %s"%self.food[x+5],color = (0,0,0,1))
+            caloriesLabel = Label(text = "Calories: %s"%self.food[x+6],color = (0,0,0,1))
+            carbLabel = Label(text = "Carbohydrate: %s"%self.food[x+7],color = (0,0,0,1))
+            proteinLabel = Label(text = "Protein: %s"%self.food[x+8],color = (0,0,0,1))
+            fatLabel = Label(text = "Fat: %s"%self.food[x+9],color = (0,0,0,1))
             mainInformation.add_widget(idLabel)
             mainInformation.add_widget(nameLabel)
             mainInformation.add_widget(withRiceLabel)
@@ -954,26 +903,14 @@ class AllFoodNutrientsScreen(Screen):
             x+= 10
         scroll = ScrollView()
         scroll.add_widget(mainWindow)
-        screen = BoxLayout(orientation = "vertical")
         popup = Popup(title = "MANAGE FOOD",title_align = "center",title_size = 40,title_color = (37/255, 64/255, 98/255, 1),size_hint=(1, 0.8),background_color = (255,255,255,1))
         popup.add_widget(scroll)
-        screen.add_widget(popup)
-        screen.add_widget(Button(on_press = themenu.to_FoodScreen ,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
-        self.add_widget(screen)
-        
-    def resize_windows(self):
-        Window.size = (size_screen_y,size_screen_x)
-    def on_enter(self):
-        self.resize_windows()
-        self.main()
-            
+        self.orientation = "vertical"
+        self.add_widget(popup)
+        self.add_widget(Button(on_press = themenu.to_FoodScreen ,size_hint = (.8, .05),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
 
 
-
-
-class NutrientsScreen(Screen):
-    def load_screen_size(self):
-        Window.size = (size_screen_x,size_screen_y)
+class NutrientsScreen(BoxLayout):
 
     def main(self):
 
@@ -1139,18 +1076,13 @@ class NutrientsScreen(Screen):
 
 
 
-        screen = BoxLayout(orientation = "vertical", spacing = 15)
-        screen.add_widget(Label(text = "NUTRIENTS", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
-        screen.add_widget(main_side)
-        screen.add_widget(func_side)
-        screen.add_widget(Button(on_release = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
-
-        self.add_widget(screen)
+        self.orientation = "vertical"
+        self.spacing = 15
+        self.add_widget(Label(text = "NUTRIENTS", color = (37/255, 64/255, 98/255, 1), font_size = 30, bold = True, size_hint = (1,.2)))
+        self.add_widget(main_side)
+        self.add_widget(func_side)
+        self.add_widget(Button(on_release = themenu.to_MainScreen,size_hint = (.8, .1),pos_hint = {'center_x':.5}, text = "Back",font_size = 30, background_color = (37/255, 64/255, 98/255, 1), background_normal= ''))
         return screen
-
-    def on_enter(self):
-        self.load_screen_size()
-        self.main()
 
 
 class MainScreen(Screen):
@@ -1196,27 +1128,45 @@ class MainScreen(Screen):
 
 class MyApp(MDApp):
     def build(self):
-        def to_MainScreen(self,b):
-            themenu.sm.current = "main"
-        def to_FoodScreen(a,b):
-            themenu.sm.current = "food"
-        def to_AllFoodScreen(a,b):
-            themenu.sm.current = "allfood"
-        def to_Nutrient(a,b):
-            themenu.sm.current = "nutrients"
-        def to_nutrientsAllfood(a,b):
-            themenu.sm.current = "nutrientsAllfood"
         self.sm = ScreenManager()
+
         self.main_screen = MainScreen(name = "main")
         self.sm.add_widget(self.main_screen)
-        self.sm.add_widget(UserScreen(name = "user"))
-        self.sm.add_widget(FoodScreen(name = "food"))
-        self.sm.add_widget(MenuScreen(name = "menu"))
-        self.sm.add_widget(AllFoodScreen(name = "allfood"))
-        self.sm.add_widget(NutrientsScreen(name = "nutrients"))
-        self.sm.add_widget(AllFoodNutrientsScreen(name = "nutrientsAllfood"))
+
+        self.userscreen = Screen(name = "user")
+        self.userscreen.add_widget(UserScreen)
+        self.sm.add_widget(self.userscreen)
+
+        self.foodscreen = Screen(name = "food")
+        self.foodscreen.add_widget(FoodScreen)
+        self.sm.add_widget(self.foodscreen)
+
+        self.menuscreen = Screen(name = "menu")
+        self.menuscreen.add_widget(MenuScreen)
+        self.sm.add_widget(self.menuscreen)
+
+        self.allfoodscreen = Screen(name = "allfood")
+        self.addfoodscreen.add_widget(AllFoodScreen)
+        self.sm.add_widget(self.allfoodscreen)
+
+        self.nutrientsscreen = Screen(name = "nutrients")
+        self.nutrientsscreen.add_widget(NutrientsScreen)
+        self.sm.add_widget(self.nutrientsscreen)
+
+        self.allfoodnutrientsscreen = Screen(name = "nutrientsAllfood")
+        self.allfoodnutrientsscreen.add_widget(AllFoodNutrientsScreen)
+        self.sm.add_widget(self.allfoodnutrientsscreen)
         return self.sm
-    
+    def to_MainScreen(self,b):
+        themenu.sm.current = "main"
+    def to_FoodScreen(a,b):
+        themenu.sm.current = "food"
+    def to_AllFoodScreen(a,b):
+        themenu.sm.current = "allfood"
+    def to_Nutrient(a,b):
+        themenu.sm.current = "nutrients"
+    def to_nutrientsAllfood(a,b):
+        themenu.sm.current = "nutrientsAllfood"
 
 
 
