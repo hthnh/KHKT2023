@@ -1196,16 +1196,7 @@ class MainScreen(Screen):
 
 class MyApp(MDApp):
     def build(self):
-        def to_MainScreen(self,b):
-            themenu.sm.current = "main"
-        def to_FoodScreen(a,b):
-            themenu.sm.current = "food"
-        def to_AllFoodScreen(a,b):
-            themenu.sm.current = "allfood"
-        def to_Nutrient(a,b):
-            themenu.sm.current = "nutrients"
-        def to_nutrientsAllfood(a,b):
-            themenu.sm.current = "nutrientsAllfood"
+       
         self.sm = ScreenManager()
         self.main_screen = MainScreen(name = "main")
         self.sm.add_widget(self.main_screen)
@@ -1216,6 +1207,16 @@ class MyApp(MDApp):
         self.sm.add_widget(NutrientsScreen(name = "nutrients"))
         self.sm.add_widget(AllFoodNutrientsScreen(name = "nutrientsAllfood"))
         return self.sm
+    def to_MainScreen(self,b):
+        themenu.sm.current = "main"
+    def to_FoodScreen(a,b):
+        themenu.sm.current = "food"
+    def to_AllFoodScreen(a,b):
+        themenu.sm.current = "allfood"
+    def to_Nutrient(a,b):
+        themenu.sm.current = "nutrients"
+    def to_nutrientsAllfood(a,b):
+        themenu.sm.current = "nutrientsAllfood"
     
 
 
