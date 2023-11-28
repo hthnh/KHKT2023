@@ -3,16 +3,13 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 employees = [
- { 'id': 1, 'name': 'Ashley' },
- { 'id': 2, 'name': 'Kate' },
- { 'id': 3, 'name': 'Joe' }
+    { 'id': 1, 'name': 'Ashley' },
+    { 'id': 2, 'name': 'Kate' },
+    { 'id': 3, 'name': 'Joe' }
 ]
 
-
 nextEmployeeId = 4
-@app.route('/', methods=['GET'])
-def get_employee():
-    return "hello, im thinh"
+  
 @app.route('/employees', methods=['GET'])
 def get_employees():
     return jsonify(employees)
