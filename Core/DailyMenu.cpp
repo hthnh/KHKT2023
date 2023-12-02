@@ -340,6 +340,20 @@ void b(){
     
 }
 
+void Output(){
+    int i;
+    FILE *f = fopen(DailyFood,"w");
+    for(i = 0; i<=6; i++){
+        fprintf(f,"%s\n",B[i].Name);
+    }
+    for(i = 0; i<=6; i++){
+        fprintf(f,"%s\n",L[i].Name);
+    }
+    for(i = 0; i<=6; i++){
+        fprintf(f,"%s\n",D[i].Name);
+    }
+}
+
 
 // void findFood(){
 //     int i=0, j=0;
@@ -394,8 +408,7 @@ int main(){
     importFood();
     findNutrition();
     b();
-    check();
-
+    Output();
 
 
     return 0;
