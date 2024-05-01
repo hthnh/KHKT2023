@@ -1,7 +1,7 @@
 Project by Hải Thịnh and Khang, for "Khoa Học Kĩ Thuật"
 If you want to continue this project, contact haithinh.work@gmail.com
 
-Introduction(vietnamese):
+Giới thiệu(Vietnamese):
 	Dự án được bắt đầu từ tháng 3 năm 2023 kết thúc vào tháng 12 năm 2023 với dự tham gia của 2 thành viên, mục đích của dự án là xây dựng ra một trí tuệ nhân tạo quản lý tất cả công việc nội trợ, liên quan đến nhà cửa. bước đầu của dự án đã làm được một phần mềm hỗ trợ người sử dụng tạo một thực đơn phù hợp theo các yêu cầu cá nhân, hướng phát triển tiếp theo của dự án là trở thành một trợ lý toàn diện.
 	Dự án hướng đến mục tiêu:
 		- Phần mềm tạo thực đơn theo chế độ dinh dưỡng
